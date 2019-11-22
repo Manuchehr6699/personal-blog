@@ -388,7 +388,7 @@ body.akea-boxed .akea-body-wrapper, .gdlr-core-page-builder .gdlr-core-page-buil
 .akea-body input, .akea-body textarea{ border-color: #d7d7d7; } 
 .akea-body input, .akea-body textarea{ color: #767676; } 
 .akea-body ::-webkit-input-placeholder{  color: #4e4e4e; }.akea-body ::-moz-placeholder{  color: #4e4e4e; }.akea-body :-ms-input-placeholder{  color: #4e4e4e; }.akea-body :-moz-placeholder{  color: #4e4e4e; } 
-.akea-not-found-wrap{ background-color: #23618e; } 
+.akea-not-found-wrap{ background-color: #990066; }
 .akea-not-found-wrap .akea-not-found-head{ color: #ffffff; } 
 .akea-not-found-wrap .akea-not-found-title{ color: #ffffff; } 
 .akea-not-found-wrap .akea-not-found-caption{ color: #c3e7ff; } 

@@ -26,15 +26,13 @@ MainAsset::register($this);
       data-home-url="main/index"/>
 <?php $this->beginBody() ?>
 <?= $this->render('mobile-header') ?>
-<div class="akea-body-outer-wrapper">
+<div class="akea-body-outer-wrapper ">
     <div class="akea-body-wrapper clearfix  akea-with-frame">
         <?= $this->render('header') ?>
         <div class=akea-page-wrapper id=akea-page-wrapper>
-            <?= $this->render('slider') ?>
             <div class="gdlr-core-pbf-sidebar-wrapper ">
                 <div class="gdlr-core-pbf-sidebar-container gdlr-core-line-height-0 clearfix gdlr-core-js gdlr-core-container">
                     <?= $content ?>
-                    <?= $this->render('sidebar') ?>
                 </div>
             </div>
             </div>

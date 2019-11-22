@@ -21,7 +21,7 @@ class MainAsset extends AssetBundle
        'plugins/zilla-likes/styles/zilla-likes.css',
        'css/style-core.css',
        'css/akea-style-custom.css',
-       'https://fonts.googleapis.com/css?family=Poppins%3A400%2C500%2C600%2C700%2C800',
+       'fonts/Poppins/stylesheet.css',
        'https://fonts.googleapis.com/css?family=Montserrat',
        'https://fonts.googleapis.com/css?family=PT+Serif',
        'https://fonts.googleapis.com/css?family=Open+Sans',
