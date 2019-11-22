@@ -51,6 +51,18 @@ AdminAsset::register($this);
         <main>
             <div class="container-fluid">
                 <?= Alert::widget() ?>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="top-breadcrumb">
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                                    <li class="breadcrumb-item active">Dashboard</li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
                 <?= $content ?>
             </div>
         </main>
