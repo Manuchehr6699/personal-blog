@@ -40,7 +40,7 @@ DROP TABLE IF EXISTS `back_menu`;
 
 CREATE TABLE `back_menu` (
   `nodeid` int(6) NOT NULL AUTO_INCREMENT,
-  `parentnodeid` int(6) NOT NULL,
+  `parentnodeid` int(6) NOT NULL DEFAULT '0',
   `nodeshortname` varchar(50) NOT NULL,
   `nodename` varchar(100) NOT NULL,
   `nodeurl` varchar(255) NOT NULL,
@@ -97,7 +97,11 @@ CREATE TABLE `blog_category` (
   `created_by` int(11) DEFAULT NULL,
   `updated_at` int(11) DEFAULT NULL,
   `updated_by` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id`,`blog_id`,`category_id`)
+  PRIMARY KEY (`id`),
+  KEY `blog_id` (`blog_id`),
+  KEY `category_id` (`category_id`),
+  CONSTRAINT `blog_category_ibfk_1` FOREIGN KEY (`blog_id`) REFERENCES `blog` (`id`),
+  CONSTRAINT `blog_category_ibfk_2` FOREIGN KEY (`category_id`) REFERENCES `category` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 /*Data for the table `blog_category` */
@@ -137,7 +141,9 @@ CREATE TABLE `comment` (
   `craeted_by` int(11) DEFAULT NULL,
   `updated_at` int(11) DEFAULT NULL,
   `updated_by` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  KEY `blog_id` (`blog_id`),
+  CONSTRAINT `comment_ibfk_1` FOREIGN KEY (`blog_id`) REFERENCES `blog` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 /*Data for the table `comment` */
@@ -177,6 +183,34 @@ CREATE TABLE `cv` (
 
 /*Data for the table `cv` */
 
+/*Table structure for table `front_menu` */
+
+DROP TABLE IF EXISTS `front_menu`;
+
+CREATE TABLE `front_menu` (
+  `nodeid` int(6) NOT NULL AUTO_INCREMENT,
+  `parentnodeid` int(6) NOT NULL DEFAULT '0',
+  `nodeshortname` varchar(50) NOT NULL,
+  `nodename` varchar(100) NOT NULL,
+  `nodeurl` varchar(255) NOT NULL,
+  `userstatus` varchar(10) NOT NULL DEFAULT 'ALL',
+  `nodeaccess` int(1) NOT NULL,
+  `nodestatus` int(1) NOT NULL,
+  `nodeorder` int(3) NOT NULL,
+  `service_id` int(11) DEFAULT NULL,
+  `nodefile` varchar(255) DEFAULT NULL,
+  `nodeicon` varchar(50) DEFAULT NULL,
+  `ishasdivider` enum('no','yes') NOT NULL DEFAULT 'no',
+  `hasnotify` enum('no','yes') NOT NULL DEFAULT 'no',
+  `notifyscript` varchar(255) DEFAULT '',
+  `isforguest` enum('no','yes') DEFAULT 'yes',
+  `arrow_tag` varchar(255) DEFAULT NULL,
+  `position` enum('left','right','top') DEFAULT NULL,
+  PRIMARY KEY (`nodeid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+/*Data for the table `front_menu` */
+
 /*Table structure for table `in_the_press` */
 
 DROP TABLE IF EXISTS `in_the_press`;
@@ -210,13 +244,14 @@ CREATE TABLE `login_details` (
   PRIMARY KEY (`login_detail_id`),
   KEY `login_user_id` (`login_user_id`),
   CONSTRAINT `login_details_ibfk_1` FOREIGN KEY (`login_user_id`) REFERENCES `user` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 /*Data for the table `login_details` */
 
 insert  into `login_details`(`login_detail_id`,`login_user_id`,`login_status`,`login_at`,`logout_at`,`user_ip_address`) values 
 (1,1,1,'2019-11-14 21:53:57',NULL,'127.0.0.1'),
-(2,1,1,'2019-11-20 23:36:14',NULL,'127.0.0.1');
+(2,1,1,'2019-11-20 23:36:14',NULL,'127.0.0.1'),
+(3,1,1,'2019-11-22 20:11:17',NULL,'127.0.0.1');
 
 /*Table structure for table `miscellanea` */
 
@@ -409,7 +444,7 @@ CREATE TABLE `user` (
 /*Data for the table `user` */
 
 insert  into `user`(`user_id`,`username`,`user_password`,`email`,`user_type`,`is_block`,`avatar`,`created_at`,`created_by`,`updated_at`,`updated_by`,`secret_key`,`auth_key`,`session_id`) values 
-(1,'admin','f6fdffe48c908deb0f4c3bd36c032e72','admin@polytech.tj','E',0,'std7.jpg','2019-10-12 14:32:54',1,'2015-05-27 15:56:35',1,NULL,NULL,'i5jkq4iaht71u3chg4ogp7p5sd8ptdfg'),
+(1,'admin','f6fdffe48c908deb0f4c3bd36c032e72','admin@polytech.tj','E',0,'std7.jpg','2019-10-12 14:32:54',1,'2015-05-27 15:56:35',1,NULL,NULL,'b5ugtsnfpsvso16i1m5jpl7eg86lcil3'),
 (22,'admin2','af8eb328301d219cfd1d50e6c6a48f58',NULL,'A',0,'std5.jpg','2019-10-12 13:45:41',1,NULL,NULL,NULL,NULL,'i44c6ra6ukintfbsfc83gfcelnb5qifb'),
 (23,'admin3','7169390683d2b222ba778ca6374b59d3',NULL,'A',1,'std7.jpg','2019-10-12 13:52:10',1,NULL,NULL,NULL,NULL,'ak5h7tnec99b69cipd80ralc0p2fa23l'),
 (25,'admin4','dfa5f43cb476ef890a83010f0da7c6b0',NULL,'A',1,'std3.jpg','2019-10-12 13:57:57',1,NULL,NULL,NULL,NULL,'2pqp9rissts870sj830jkor0jntj15h9'),
