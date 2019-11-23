@@ -15,41 +15,42 @@
             <h3 class="akea-widget-title"><span class=akea-widget-head-text>About Me</span><span
                         class=akea-widget-head-divider></span></h3><span class=clear></span>
             <div class=textwidget>
-                <p><img class="alignnone size-full wp-image-6650" src=upload/about-image.png alt
-                        width=120>
+                <p><img class="alignnone size-full wp-image-6650" src=upload/about-image.png alt width=120>
                     <br> Far far away, behind the word mountains, far from the countries Vokalia
-                    and Consonantia, there live the blind texts. Separated.</p> <a
-                        class="gdlr-core-button gdlr-core-button-shortcode  gdlr-core-button-transparent gdlr-core-button-with-border"
-                        href=# target=_blank id="a_2207_10" rel="noopener noreferrer"><span
-                            class=gdlr-core-content>more about me</span><i
-                            class="gdlr-core-pos-right arrow_right"></i></a></div>
+                    and Consonantia, there live the blind texts. Separated.</p>
+                <a class="gdlr-core-button gdlr-core-button-shortcode  gdlr-core-button-transparent gdlr-core-button-with-border"
+                   href=# target=_blank id="a_2207_10" rel="noopener noreferrer"><span
+                            class=gdlr-core-content>more about me</span>
+                    <i class="gdlr-core-pos-right arrow_right"></i></a>
+            </div>
         </div>
         <div id=text-7 class="widget widget_text akea-widget">
             <div class=textwidget>
-                <div class="gdlr-core-widget-box-shortcode  gdlr-core-center-align"
-                     id="div_2207_10">
+                <div class="gdlr-core-widget-box-shortcode  gdlr-core-center-align" id="div_2207_10">
                     <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix  gdlr-core-center-align gdlr-core-title-item-caption-top"
                          id="div_2207_11">
                         <div class="gdlr-core-title-item-title-wrap ">
-                            <h3 class="gdlr-core-title-item-title gdlr-core-skin-title "
-                                id="h3_2207_9">Follow Us<span
-                                        class="gdlr-core-title-item-title-divider gdlr-core-skin-divider"></span>
-                            </h3></div>
+                            <h3 class="gdlr-core-title-item-title gdlr-core-skin-title " id="h3_2207_9">Follow Us
+                                <span class="gdlr-core-title-item-title-divider gdlr-core-skin-divider"></span>
+                            </h3>
+                        </div>
                     </div>
                     <div class="gdlr-core-social-network-item gdlr-core-item-pdb  gdlr-core-none-align"
-                         id="div_2207_12"><a href=# target=_blank
-                                             class=gdlr-core-social-network-icon title=facebook
-                                             id="a_2207_11" rel="noopener noreferrer"><i
-                                    class="fa fa-facebook"></i></a><a href=# target=_blank
-                                                                      class=gdlr-core-social-network-icon
-                                                                      title=pinterest
-                                                                      id="a_2207_12"
-                                                                      rel="noopener noreferrer"><i
-                                    class="fa fa-pinterest-p"></i></a><a href=# target=_blank
-                                                                         class=gdlr-core-social-network-icon
-                                                                         title=skype
-                                                                         id="a_2207_13"
-                                                                         rel="noopener noreferrer"><i
+                         id="div_2207_12"><a href=# target=_blank class=gdlr-core-social-network-icon title=facebook
+                                             id="a_2207_11" rel="noopener noreferrer">
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                        <a href=# target=_blank
+                           class=gdlr-core-social-network-icon
+                           title=pinterest
+                           id="a_2207_12"
+                           rel="noopener noreferrer"><i
+                                    class="fa fa-pinterest-p"></i></a>
+                        <a href=# target=_blank
+                           class=gdlr-core-social-network-icon
+                           title=skype
+                           id="a_2207_13"
+                           rel="noopener noreferrer"><i
                                     class="fa fa-skype"></i></a><a href=# target=_blank
                                                                    class=gdlr-core-social-network-icon
                                                                    title=twitter id="a_2207_14"

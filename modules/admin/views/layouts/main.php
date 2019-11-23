@@ -55,13 +55,17 @@ AdminAsset::register($this);
                     <div class="col-md-12">
                         <div class="top-breadcrumb">
                             <nav aria-label="breadcrumb">
-                                <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                                    <li class="breadcrumb-item active">Dashboard</li>
-                                </ol>
+                                <?= Breadcrumbs::widget([
+                                    'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+                                    'tag' => 'ol',
+                                    'options' => ['class' => 'breadcrumb'],
+                                    'itemTemplate' => '<li class="breadcrumb-item">{link}&nbsp;',
+                                    'homeLink' => ['label' => 'Home', 'url' => '/admin'],
+                                ]) ?>
                             </nav>
                         </div>
                     </div>
+
                 </div>
                 <?= $content ?>
             </div>

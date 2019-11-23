@@ -26,12 +26,12 @@ class AdminAsset extends AssetBundle
         'admin_assets/plugins/slimscroll/slimscroll.js',
         'admin_assets/plugins/apex-charts/js/apexcharts.js',
         'admin_assets/js/jquery.cookie-1.4.1.min.js',
-        'admin_assets/js/color.js',
+//        'admin_assets/js/color.js',
         'admin_assets/js/main.js',
         'admin_assets/js/index.js'
     ];
     public $depends = [
-        //'yii\web\YiiAsset',
+        'yii\web\YiiAsset',
         //'yii\bootstrap\BootstrapAsset',
     ];
 }

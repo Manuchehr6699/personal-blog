@@ -9691,6 +9691,6 @@ table {
 /*end network dashboard*/
 
 
-.help-block-error{
+.help-block-error, .help-block{
     color: red;
 }
