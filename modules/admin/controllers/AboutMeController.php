@@ -66,7 +66,9 @@ class AboutMeController extends Controller
     {
         $model = new AboutMe();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        if ($model->load(Yii::$app->request->post())) {
+
+            $model->save();
             return $this->redirect(['view', 'id' => $model->id]);
         }
 

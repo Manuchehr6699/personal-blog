@@ -12,6 +12,7 @@ use yii\widgets\Breadcrumbs;
 use app\assets\AdminAsset;
 
 AdminAsset::register($this);
+
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>

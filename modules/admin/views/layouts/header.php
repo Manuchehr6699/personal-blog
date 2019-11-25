@@ -10,15 +10,15 @@
 
 <!-- headertop -->
 <div class="header">
-    <nav class="navbar">
+    <nav class="navbar" style="margin-bottom: 0px">
         <div class="container-fluid">
             <div class="navbar-holder d-flex justify-content-between">
                 <!-- Navbar Header-->
                 <div class="navbar-header d-flex align-items-center">
                     <!-- Navbar Brand -->
-                    <a href="/admin/main/index" class="navbar-brand ">
-                        <div class="brand-text d-none d-lg-inline-block"><strong>DIVINE</strong></div>
-                        <div class="brand-text  d-sm-inline-block d-lg-none"><strong>DI</strong></div>
+                    <a href="/admin/main/index" class="navbar-brand" style="font-size: 20px">
+                        <div class="brand-text d-none d-lg-inline-block"><strong>Blog</strong></div>
+                        <div class="brand-text  d-sm-inline-block d-lg-none"><strong>BL</strong></div>
                     </a>
                 </div>
                 <!-- Navbar Menu -->

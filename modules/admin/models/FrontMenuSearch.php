@@ -17,7 +17,7 @@ class FrontMenuSearch extends FrontMenu
     public function rules()
     {
         return [
-            [['nodeid', 'parentnodeid', 'nodeaccess', 'nodestatus', 'nodeorder', 'service_id'], 'integer'],
+            [['nodeid', 'parentnodeid', 'nodeaccess', 'nodestatus', 'nodeorder'], 'integer'],
             [['nodeshortname', 'nodename', 'nodeurl', 'userstatus', 'nodefile', 'nodeicon', 'ishasdivider', 'hasnotify', 'notifyscript', 'isforguest', 'arrow_tag', 'position'], 'safe'],
         ];
     }
@@ -63,7 +63,6 @@ class FrontMenuSearch extends FrontMenu
             'nodeaccess' => $this->nodeaccess,
             'nodestatus' => $this->nodestatus,
             'nodeorder' => $this->nodeorder,
-            'service_id' => $this->service_id,
         ]);
 
         $query->andFilterWhere(['like', 'nodeshortname', $this->nodeshortname])

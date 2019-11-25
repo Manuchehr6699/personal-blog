@@ -40,27 +40,40 @@ DROP TABLE IF EXISTS `back_menu`;
 
 CREATE TABLE `back_menu` (
   `nodeid` int(6) NOT NULL AUTO_INCREMENT,
-  `parentnodeid` int(6) NOT NULL DEFAULT '0',
-  `nodeshortname` varchar(50) NOT NULL,
+  `parentnodeid` int(6) DEFAULT '0',
+  `nodeshortname` varchar(50) DEFAULT NULL,
   `nodename` varchar(100) NOT NULL,
   `nodeurl` varchar(255) NOT NULL,
-  `userstatus` varchar(10) NOT NULL DEFAULT 'ALL',
-  `nodeaccess` int(1) NOT NULL,
-  `nodestatus` int(1) NOT NULL,
-  `nodeorder` int(3) NOT NULL,
-  `service_id` int(11) DEFAULT NULL,
+  `userstatus` varchar(10) DEFAULT 'ALL',
+  `nodeaccess` int(1) DEFAULT NULL,
+  `nodestatus` int(1) DEFAULT NULL,
+  `nodeorder` int(3) DEFAULT NULL,
   `nodefile` varchar(255) DEFAULT NULL,
   `nodeicon` varchar(50) DEFAULT NULL,
-  `ishasdivider` enum('no','yes') NOT NULL DEFAULT 'no',
-  `hasnotify` enum('no','yes') NOT NULL DEFAULT 'no',
+  `ishasdivider` enum('no','yes') DEFAULT 'no',
+  `hasnotify` enum('no','yes') DEFAULT 'no',
   `notifyscript` varchar(255) DEFAULT '',
   `isforguest` enum('no','yes') DEFAULT 'yes',
   `arrow_tag` varchar(255) DEFAULT NULL,
   `position` enum('left','right','top') DEFAULT NULL,
   PRIMARY KEY (`nodeid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
 
 /*Data for the table `back_menu` */
+
+insert  into `back_menu`(`nodeid`,`parentnodeid`,`nodeshortname`,`nodename`,`nodeurl`,`userstatus`,`nodeaccess`,`nodestatus`,`nodeorder`,`nodefile`,`nodeicon`,`ishasdivider`,`hasnotify`,`notifyscript`,`isforguest`,`arrow_tag`,`position`) values 
+(1,0,'Dashboard','Dashboard','#','ALL',1,NULL,2,NULL,'fa fa-file','no','no','','yes',NULL,NULL),
+(2,1,'Dashboard','Dashboard','/admin','ALL',1,NULL,0,NULL,'','no','no','','yes',NULL,NULL),
+(3,0,'Manage Pages','Manage Pages','#','ALL',1,NULL,4,NULL,'fa fa-list','no','no','','yes',NULL,NULL),
+(4,3,'Site Menu Items','Site Menu Items','/admin/front-menu/index','ALL',1,NULL,7,NULL,'fa fa-list','no','no','','yes',NULL,NULL),
+(5,3,'Admin Menu Items','Admin Menu Items','/admin/back-menu/index','ALL',1,NULL,9,NULL,'fa fa-list','no','no','','yes',NULL,NULL),
+(6,0,'About Me','About Me','#','ALL',1,NULL,11,NULL,'fa fa-user','no','no','','yes',NULL,NULL),
+(7,6,'About Me','About Me','/admin/about-me/index','ALL',1,NULL,13,NULL,'','no','no','','yes',NULL,NULL),
+(8,6,'CV','CV','/admin/cv/index','ALL',1,NULL,15,NULL,'','no','no','','yes',NULL,NULL),
+(9,6,'Contacts','Contacts','/admin/contact/index','ALL',1,NULL,16,NULL,'','no','no','','yes',NULL,NULL),
+(10,0,'Blog','Blog','/admin/blog/index','ALL',1,NULL,17,NULL,'fa fa-file','no','no','','yes',NULL,NULL),
+(11,10,'My Posts','My Posts','/admin/blog/index','ALL',1,NULL,19,NULL,'','no','no','','yes',NULL,NULL),
+(12,10,'Add new post','Add new post','/admin/blog/create','ALL',1,NULL,20,NULL,'','no','no','','yes',NULL,NULL);
 
 /*Table structure for table `blog` */
 
@@ -189,27 +202,33 @@ DROP TABLE IF EXISTS `front_menu`;
 
 CREATE TABLE `front_menu` (
   `nodeid` int(6) NOT NULL AUTO_INCREMENT,
-  `parentnodeid` int(6) NOT NULL DEFAULT '0',
-  `nodeshortname` varchar(50) NOT NULL,
+  `parentnodeid` int(6) DEFAULT '0',
+  `nodeshortname` varchar(50) DEFAULT NULL,
   `nodename` varchar(100) NOT NULL,
   `nodeurl` varchar(255) NOT NULL,
-  `userstatus` varchar(10) NOT NULL DEFAULT 'ALL',
-  `nodeaccess` int(1) NOT NULL,
-  `nodestatus` int(1) NOT NULL,
-  `nodeorder` int(3) NOT NULL,
-  `service_id` int(11) DEFAULT NULL,
+  `userstatus` varchar(10) DEFAULT 'ALL',
+  `nodeaccess` int(1) DEFAULT NULL,
+  `nodestatus` int(1) DEFAULT NULL,
+  `nodeorder` int(3) DEFAULT NULL,
   `nodefile` varchar(255) DEFAULT NULL,
   `nodeicon` varchar(50) DEFAULT NULL,
-  `ishasdivider` enum('no','yes') NOT NULL DEFAULT 'no',
-  `hasnotify` enum('no','yes') NOT NULL DEFAULT 'no',
+  `ishasdivider` enum('no','yes') DEFAULT 'no',
+  `hasnotify` enum('no','yes') DEFAULT 'no',
   `notifyscript` varchar(255) DEFAULT '',
   `isforguest` enum('no','yes') DEFAULT 'yes',
   `arrow_tag` varchar(255) DEFAULT NULL,
   `position` enum('left','right','top') DEFAULT NULL,
   PRIMARY KEY (`nodeid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 /*Data for the table `front_menu` */
+
+insert  into `front_menu`(`nodeid`,`parentnodeid`,`nodeshortname`,`nodename`,`nodeurl`,`userstatus`,`nodeaccess`,`nodestatus`,`nodeorder`,`nodefile`,`nodeicon`,`ishasdivider`,`hasnotify`,`notifyscript`,`isforguest`,`arrow_tag`,`position`) values 
+(1,0,'About me','About me','/about-me/','ALL',1,NULL,0,NULL,'','no','no','','yes',NULL,NULL),
+(2,1,'CV','CV','/cv/','ALL',1,NULL,1,NULL,'','no','no','','yes',NULL,NULL),
+(3,0,'Blog','Blog','/blog/','ALL',1,NULL,2,NULL,'','no','no','','yes',NULL,NULL),
+(4,0,'Contact','Contact','/contact/','ALL',1,NULL,4,NULL,'','no','no','','yes',NULL,NULL),
+(5,0,'In the press','In the press','/in-the-press/','ALL',1,NULL,5,NULL,'','no','no','','yes',NULL,NULL);
 
 /*Table structure for table `in_the_press` */
 

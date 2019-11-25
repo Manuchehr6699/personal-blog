@@ -38,7 +38,6 @@ $this->params['breadcrumbs'][] = $this->title;
             'nodeaccess',
             'nodestatus',
             'nodeorder',
-            'service_id',
             'nodefile',
             'nodeicon',
             'ishasdivider',

@@ -42,8 +42,8 @@ class BackMenu extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['parentnodeid', 'nodeshortname', 'nodename', 'nodeurl', 'nodeaccess', 'nodestatus', 'nodeorder'], 'required'],
-            [['parentnodeid', 'nodeaccess', 'nodestatus', 'nodeorder', 'service_id'], 'integer'],
+            [['nodename', 'nodeurl'], 'required'],
+            [['parentnodeid', 'nodeaccess', 'nodestatus', 'nodeorder'], 'integer'],
             [['ishasdivider', 'hasnotify', 'isforguest', 'position'], 'string'],
             [['nodeshortname', 'nodeicon'], 'string', 'max' => 50],
             [['nodename'], 'string', 'max' => 100],
@@ -59,17 +59,16 @@ class BackMenu extends \yii\db\ActiveRecord
     {
         return [
             'nodeid' => 'Nodeid',
-            'parentnodeid' => 'Parentnodeid',
-            'nodeshortname' => 'Nodeshortname',
-            'nodename' => 'Nodename',
-            'nodeurl' => 'Nodeurl',
-            'userstatus' => 'Userstatus',
-            'nodeaccess' => 'Nodeaccess',
-            'nodestatus' => 'Nodestatus',
-            'nodeorder' => 'Nodeorder',
-            'service_id' => 'Service ID',
-            'nodefile' => 'Nodefile',
-            'nodeicon' => 'Nodeicon',
+            'parentnodeid' => 'Parent',
+            'nodeshortname' => 'Short Name',
+            'nodename' => 'Name',
+            'nodeurl' => 'Url',
+            'userstatus' => 'User status',
+            'nodeaccess' => 'Access',
+            'nodestatus' => 'Status',
+            'nodeorder' => 'Order',
+            'nodefile' => 'Node file',
+            'nodeicon' => 'Node icon',
             'ishasdivider' => 'Ishasdivider',
             'hasnotify' => 'Hasnotify',
             'notifyscript' => 'Notifyscript',
@@ -77,5 +76,28 @@ class BackMenu extends \yii\db\ActiveRecord
             'arrow_tag' => 'Arrow Tag',
             'position' => 'Position',
         ];
+    }
+
+    public static function getItems(){
+        $items = BackMenu::find()->where(['nodeaccess' => 1, 'parentnodeid' => 0])->asArray()->all();
+        return $items;
+    }
+    public function setItemOrder($id){
+        //after $id
+        if(empty($id)){
+            $id=-1;
+        }
+        if($id == -2){
+            $this->nodeorder = 0;
+            Yii::$app->db->createCommand('UPDATE back_menu SET nodeorder = nodeorder + 1')->execute();
+        }elseif($id == -1){
+            $lastItemOrder = $this::find()->max('nodeorder');
+            $this->nodeorder = $lastItemOrder+1;
+        }else{
+            $id+=1;
+            $this->nodeorder = $id;
+            Yii::$app->db->createCommand('UPDATE back_menu SET nodeorder = nodeorder + 1 WHERE nodeorder >= '.$id)->execute();
+        }
+
     }
 }

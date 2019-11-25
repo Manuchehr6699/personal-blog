@@ -47,6 +47,9 @@ $config = [
             'rules' => [
             ],
         ],
+        'assetManager' => [
+            'appendTimestamp' => true,
+        ],
         'i18n' => [
             'translations' => [
                 'yii2mod.settings' => [

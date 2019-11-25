@@ -65,14 +65,26 @@ class FrontMenuController extends Controller
     public function actionCreate()
     {
         $model = new FrontMenu();
+        //for select parent
+        $menuItems = FrontMenu::getItems();
 
-        //Todo it's first create widget
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->nodeid]);
+        if ($model->load(Yii::$app->request->post())) {
+            if(empty($model->parentnodeid)){
+                $model->parentnodeid = 0;
+            }
+            $model->setItemOrder($model->nodeorder);
+            if($model->save()){
+                Yii::$app->session->setFlash('success', 'Data was saved successfully!');
+                return $this->redirect(['index']);
+            }else{
+                Yii::$app->session->setFlash('error', 'Data was not saved. Please try again!');
+                return $this->redirect(['create']);
+            }
         }
 
         return $this->render('create', [
             'model' => $model,
+            'menuItems' => $menuItems
         ]);
     }
 
@@ -86,13 +98,25 @@ class FrontMenuController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
+        $menuItems = FrontMenu::getItems();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->nodeid]);
+        if($model->load(Yii::$app->request->post())){
+            if(empty($model->parentnodeid)){
+                $model->parentnodeid = 0;
+            }
+            $model->setItemOrder($model->nodeorder);
+            if($model->save()){
+                Yii::$app->session->setFlash('success', 'Data was saved successfully!');
+                return $this->redirect(['index']);
+            }else{
+                Yii::$app->session->setFlash('error', 'Data was not saved. Please try again!');
+                return $this->redirect(['create']);
+            }
         }
 
         return $this->render('update', [
             'model' => $model,
+            'menuItems' => $menuItems
         ]);
     }
 

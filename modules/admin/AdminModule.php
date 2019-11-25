@@ -1,6 +1,7 @@
 <?php
 
 namespace app\modules\admin;
+use app\widgets\AdminMenu;
 
 /**
  * admin module definition class
@@ -23,7 +24,9 @@ class AdminModule extends \yii\base\Module
     {
         parent::init();
 
-        \Yii::$app->errorHandler->errorAction = '/admin/main/login';
+
+        \Yii::$app->view->params['AdminMenu'] = AdminMenu::getMenu();
+        \Yii::$app->errorHandler->errorAction = '/admin/main/error';
         \Yii::$app->user->loginUrl = '/admin/main/login';
 
     }

@@ -6,8 +6,8 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model app\modules\admin\models\BackMenu */
 
-$this->title = $model->nodeid;
-$this->params['breadcrumbs'][] = ['label' => 'Back Menus', 'url' => ['index']];
+$this->title = $model->nodename;
+$this->params['breadcrumbs'][] = ['label' => 'Admin menu', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
 ?>
@@ -24,6 +24,8 @@ $this->params['breadcrumbs'][] = $this->title;
                 'method' => 'post',
             ],
         ]) ?>
+        <?= Html::a('Add New Item', ['create'], ['class' => 'btn btn-success']) ?>
+
     </p>
 
     <?= DetailView::widget([
@@ -31,22 +33,19 @@ $this->params['breadcrumbs'][] = $this->title;
         'attributes' => [
             'nodeid',
             'parentnodeid',
-            'nodeshortname',
             'nodename',
+            'nodeshortname',
             'nodeurl',
-            'userstatus',
             'nodeaccess',
-            'nodestatus',
             'nodeorder',
-            'service_id',
-            'nodefile',
-            'nodeicon',
-            'ishasdivider',
-            'hasnotify',
-            'notifyscript',
-            'isforguest',
-            'arrow_tag',
-            'position',
+//            'nodefile',
+//            'nodeicon',
+//            'ishasdivider',
+//            'hasnotify',
+//            'notifyscript',
+//            'isforguest',
+//            'arrow_tag',
+//            'position',
         ],
     ]) ?>
 

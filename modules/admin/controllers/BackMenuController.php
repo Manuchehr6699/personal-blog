@@ -3,12 +3,12 @@
 namespace app\modules\admin\controllers;
 
 use Yii;
-use app\modules\admin\models\BackMenu;
-use app\modules\admin\models\BackMenuSearch;
+
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-
+use app\modules\admin\models\BackMenu;
+use app\modules\admin\models\BackMenuSearch;
 /**
  * BackMenuController implements the CRUD actions for BackMenu model.
  */
@@ -65,13 +65,26 @@ class BackMenuController extends Controller
     public function actionCreate()
     {
         $model = new BackMenu();
-        //Todo it's first create widget
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->nodeid]);
+        //for select parent
+        $menuItems = BackMenu::getItems();
+
+        if ($model->load(Yii::$app->request->post())) {
+            if(empty($model->parentnodeid)){
+                $model->parentnodeid = 0;
+            }
+            $model->setItemOrder($model->nodeorder);
+            if($model->save()){
+                Yii::$app->session->setFlash('success', 'Data was saved successfully!');
+                return $this->redirect(['index']);
+            }else{
+                Yii::$app->session->setFlash('error', 'Data was not saved. Please try again!');
+                return $this->redirect(['create']);
+            }
         }
 
         return $this->render('create', [
             'model' => $model,
+            'menuItems' => $menuItems
         ]);
     }
 
@@ -85,13 +98,25 @@ class BackMenuController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
+        $menuItems = BackMenu::getItems();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->nodeid]);
+        if ($model->load(Yii::$app->request->post())) {
+            if(empty($model->parentnodeid)){
+                $model->parentnodeid = 0;
+            }
+            $model->setItemOrder($model->nodeorder);
+            if($model->save()){
+                Yii::$app->session->setFlash('success', 'Data was saved successfully!');
+                return $this->redirect(['index']);
+            }else{
+                Yii::$app->session->setFlash('error', 'Data was not saved. Please try again!');
+                return $this->redirect(['create']);
+            }
         }
 
         return $this->render('update', [
             'model' => $model,
+            'menuItems' => $menuItems
         ]);
     }
 
@@ -124,4 +149,6 @@ class BackMenuController extends Controller
 
         throw new NotFoundHttpException('The requested page does not exist.');
     }
+
+
 }

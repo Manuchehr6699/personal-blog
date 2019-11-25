@@ -1,5 +1,6 @@
 <?php
 
+use app\modules\admin\models\ModelStatus;
 use yii\helpers\Html;
 use yii\grid\GridView;
 
@@ -7,15 +8,15 @@ use yii\grid\GridView;
 /* @var $searchModel app\modules\admin\models\FrontMenuSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Menu items for Users';
+$this->title = 'User Menu Items';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="front-menu-index">
 
-    <h1><?= Html::encode($this->title) ?></h1>
-
+<!--    <h1>--><?//= Html::encode($this->title) ?><!--</h1>-->
+    <?= ModelStatus::getNotify() ?>
     <p>
-        <?= Html::a('Create Front Menu', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Add new Menu item for Users', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
@@ -35,7 +36,6 @@ $this->params['breadcrumbs'][] = $this->title;
             //'nodeaccess',
             //'nodestatus',
             //'nodeorder',
-            //'service_id',
             //'nodefile',
             //'nodeicon',
             //'ishasdivider',

@@ -16,7 +16,6 @@ use Yii;
  * @property int $nodeaccess
  * @property int $nodestatus
  * @property int $nodeorder
- * @property int $service_id
  * @property string $nodefile
  * @property string $nodeicon
  * @property string $ishasdivider
@@ -42,8 +41,8 @@ class FrontMenu extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['parentnodeid', 'nodeshortname', 'nodename', 'nodeurl', 'nodeaccess', 'nodestatus', 'nodeorder'], 'required'],
-            [['parentnodeid', 'nodeaccess', 'nodestatus', 'nodeorder', 'service_id'], 'integer'],
+            [['parentnodeid', 'nodeaccess', 'nodestatus', 'nodeorder'], 'integer'],
+            [['nodename', 'nodeurl'], 'required'],
             [['ishasdivider', 'hasnotify', 'isforguest', 'position'], 'string'],
             [['nodeshortname', 'nodeicon'], 'string', 'max' => 50],
             [['nodename'], 'string', 'max' => 100],
@@ -59,17 +58,16 @@ class FrontMenu extends \yii\db\ActiveRecord
     {
         return [
             'nodeid' => 'Nodeid',
-            'parentnodeid' => 'Parentnodeid',
-            'nodeshortname' => 'Nodeshortname',
-            'nodename' => 'Nodename',
-            'nodeurl' => 'Nodeurl',
-            'userstatus' => 'Userstatus',
-            'nodeaccess' => 'Nodeaccess',
-            'nodestatus' => 'Nodestatus',
-            'nodeorder' => 'Nodeorder',
-            'service_id' => 'Service ID',
+            'parentnodeid' => 'Parent',
+            'nodeshortname' => 'Short Name',
+            'nodename' => 'Name',
+            'nodeurl' => 'Url',
+            'userstatus' => 'User Access',
+            'nodeaccess' => 'Access',
+            'nodestatus' => 'Status',
+            'nodeorder' => 'Order',
             'nodefile' => 'Nodefile',
-            'nodeicon' => 'Nodeicon',
+            'nodeicon' => 'Icon',
             'ishasdivider' => 'Ishasdivider',
             'hasnotify' => 'Hasnotify',
             'notifyscript' => 'Notifyscript',
@@ -77,5 +75,28 @@ class FrontMenu extends \yii\db\ActiveRecord
             'arrow_tag' => 'Arrow Tag',
             'position' => 'Position',
         ];
+    }
+
+    public static function getItems(){
+        $items = FrontMenu::find()->where(['nodeaccess' => 1])->asArray()->all();
+        return $items;
+    }
+    public function setItemOrder($id){
+        //after $id
+        if(empty($id)){
+            $id=-1;
+        }
+        if($id == -2){
+            $this->nodeorder = 0;
+            Yii::$app->db->createCommand('UPDATE front_menu SET nodeorder = nodeorder + 1')->execute();
+        }elseif($id == -1){
+            $lastItemOrder = $this::find()->max('nodeorder');
+            $this->nodeorder = $lastItemOrder+1;
+        }else{
+            $id+=1;
+            $this->nodeorder = $id;
+            Yii::$app->db->createCommand('UPDATE front_menu SET nodeorder = nodeorder + 1 WHERE nodeorder >= '.$id)->execute();
+        }
+
     }
 }

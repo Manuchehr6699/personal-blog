@@ -33,8 +33,6 @@ use yii\widgets\ActiveForm;
 
     <?php // echo $form->field($model, 'nodeorder') ?>
 
-    <?php // echo $form->field($model, 'service_id') ?>
-
     <?php // echo $form->field($model, 'nodefile') ?>
 
     <?php // echo $form->field($model, 'nodeicon') ?>
