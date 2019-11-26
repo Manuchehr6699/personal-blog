@@ -15,7 +15,7 @@ use Yii;
  * @property int $created_at
  * @property int $created_by
  * @property int $updated_at
- * @property int $upadted_by
+ * @property int $updated_by
  */
 class CV extends \yii\db\ActiveRecord
 {
@@ -35,7 +35,7 @@ class CV extends \yii\db\ActiveRecord
         return [
             [['title', 'text'], 'required'],
             [['text'], 'string'],
-            [['status', 'order', 'created_at', 'created_by', 'updated_at', 'upadted_by'], 'integer'],
+            [['status', 'order', 'created_at', 'created_by', 'updated_at', 'updated_by'], 'integer'],
             [['title'], 'string', 'max' => 500],
         ];
     }
@@ -54,7 +54,7 @@ class CV extends \yii\db\ActiveRecord
             'created_at' => 'Created At',
             'created_by' => 'Created By',
             'updated_at' => 'Updated At',
-            'upadted_by' => 'Upadted By',
+            'updated_by' => 'Upadted By',
         ];
     }
 }

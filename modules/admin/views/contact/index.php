@@ -1,5 +1,6 @@
 <?php
 
+use app\modules\admin\models\ModelStatus;
 use yii\helpers\Html;
 use yii\grid\GridView;
 
@@ -13,9 +14,9 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="contact-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
-
+    <?= ModelStatus::getNotify() ?>
     <p>
-        <?= Html::a('Create Contact', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Add Contacts', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>

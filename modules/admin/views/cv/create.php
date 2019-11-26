@@ -1,5 +1,6 @@
 <?php
 
+use app\modules\admin\models\ModelStatus;
 use yii\helpers\Html;
 
 /* @var $this yii\web\View */
@@ -10,7 +11,9 @@ $this->params['breadcrumbs'][] = ['label' => 'List of CV sections', 'url' => ['i
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="cv-create">
-    <h2><?= Html::encode($this->title) ?></h2>
+
+<!--    <h2>--><?//= Html::encode($this->title) ?><!--</h2>-->
+    <?= ModelStatus::getNotify() ?>
     <?= $this->render('_form', [
         'model' => $model,
     ]) ?>

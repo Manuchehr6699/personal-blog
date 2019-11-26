@@ -17,7 +17,7 @@ class CVSearch extends CV
     public function rules()
     {
         return [
-            [['id', 'status', 'order', 'created_at', 'created_by', 'updated_at', 'upadted_by'], 'integer'],
+            [['id', 'status', 'order', 'created_at', 'created_by', 'updated_at', 'updated_by'], 'integer'],
             [['title', 'text'], 'safe'],
         ];
     }
@@ -64,7 +64,7 @@ class CVSearch extends CV
             'created_at' => $this->created_at,
             'created_by' => $this->created_by,
             'updated_at' => $this->updated_at,
-            'upadted_by' => $this->upadted_by,
+            'updated_by' => $this->updated_by,
         ]);
 
         $query->andFilterWhere(['like', 'title', $this->title])

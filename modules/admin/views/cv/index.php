@@ -1,5 +1,6 @@
 <?php
 
+use app\modules\admin\models\ModelStatus;
 use yii\helpers\Html;
 use yii\grid\GridView;
 
@@ -13,7 +14,7 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="cv-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
-
+    <?= ModelStatus::getNotify() ?>
     <p>
         <?= Html::a('Create CV', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
