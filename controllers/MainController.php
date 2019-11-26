@@ -8,6 +8,7 @@
 
 namespace app\controllers;
 
+use app\models\AboutMe;
 use Yii;
 use app\models\ContactForm;
 use app\models\LoginForm;
@@ -59,9 +60,11 @@ class MainController extends Controller
         ]);
     }
 
-    public function actionAbout()
+    public function actionAboutMe()
     {
-        return $this->render('about');
+        $data = AboutMe::find()->where(['status' => 1])->asArray()->all();
+
+        return $this->render('about-me', ['data' => $data]);
     }
 
     public function actionError()

@@ -30,7 +30,7 @@ MainAsset::register($this);
     <div class="akea-body-wrapper clearfix  akea-with-frame">
         <?= $this->render('header') ?>
         <div class=akea-page-wrapper id=akea-page-wrapper>
-            <?= $this->render('slider') ?>
+<!--            --><?//= $this->render('slider') ?>
             <div class="gdlr-core-pbf-sidebar-wrapper ">
                 <div class="gdlr-core-pbf-sidebar-container gdlr-core-line-height-0 clearfix gdlr-core-js gdlr-core-container">
                     <?= $content ?>

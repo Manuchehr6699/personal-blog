@@ -21,7 +21,8 @@
         "yii2mod/yii2-rbac": "*",
         "cocur/slugify": "^3.2",
         "yii2mod/yii2-editable": "*",
-        "yii2mod/yii2-enum": "*"
+        "yii2mod/yii2-enum": "*",
+        "2amigos/yii2-tinymce-widget": "~1.1"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.1.0",

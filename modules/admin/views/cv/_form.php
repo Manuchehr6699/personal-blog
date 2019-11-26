@@ -1,8 +1,9 @@
 <?php
 
+use app\modules\admin\models\ModelStatus;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
-
+use dosamigos\tinymce\TinyMce;
 /* @var $this yii\web\View */
 /* @var $model app\models\CV */
 /* @var $form yii\widgets\ActiveForm */
@@ -14,19 +15,29 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'text')->textarea(['rows' => 6]) ?>
+   <?= $form->field($model, 'text')->widget(TinyMce::className(), [
+       'options' => ['rows' => 15],
+       'language' => 'es',
+       'clientOptions' => [
+           'plugins' => [
+               "advlist autolink lists link charmap print preview anchor",
+               "searchreplace visualblocks code fullscreen",
+               "insertdatetime media table contextmenu paste"
+           ],
+           'toolbar' => "undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
+       ]
+   ]);?>
 
-    <?= $form->field($model, 'status')->textInput() ?>
+    <div class="row">
+        <div class="col-md-6">
+           <?= $form->field($model, 'status')->dropDownList(ModelStatus::listData()) ?>
+        </div>
+        <div class="col-md-6">
+           <?= $form->field($model, 'order')->textInput() ?>
+        </div>
+    </div>
 
-    <?= $form->field($model, 'order')->textInput() ?>
 
-    <?= $form->field($model, 'created_at')->textInput() ?>
-
-    <?= $form->field($model, 'created_by')->textInput() ?>
-
-    <?= $form->field($model, 'updated_at')->textInput() ?>
-
-    <?= $form->field($model, 'upadted_by')->textInput() ?>
 
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>

@@ -11,11 +11,12 @@
 <div class="gdlr-core-pbf-sidebar-right gdlr-core-column-extend-right  akea-sidebar-area gdlr-core-column-20 gdlr-core-pbf-sidebar-padding  gdlr-core-line-height"
      data-skin="Blog List" id="div_2207_9">
     <div class="gdlr-core-sidebar-item gdlr-core-item-pdlr">
+        <?php if(Yii::$app->controller->action->id != 'about-me' && Yii::$app->controller->action->id != 'cv'): ?>
         <div id=text-4 class="widget widget_text akea-widget">
             <h3 class="akea-widget-title"><span class=akea-widget-head-text>About Me</span><span
                         class=akea-widget-head-divider></span></h3><span class=clear></span>
             <div class=textwidget>
-                <p><img class="alignnone size-full wp-image-6650" src=upload/about-image.png alt width=120>
+                <p><img class="alignnone size-full wp-image-6650" src=/upload/about-image.png alt width=120>
                     <br> Far far away, behind the word mountains, far from the countries Vokalia
                     and Consonantia, there live the blind texts. Separated.</p>
                 <a class="gdlr-core-button gdlr-core-button-shortcode  gdlr-core-button-transparent gdlr-core-button-with-border"
@@ -24,6 +25,7 @@
                     <i class="gdlr-core-pos-right arrow_right"></i></a>
             </div>
         </div>
+        <?php endif; ?>
         <div id=text-7 class="widget widget_text akea-widget">
             <div class=textwidget>
                 <div class="gdlr-core-widget-box-shortcode  gdlr-core-center-align" id="div_2207_10">
@@ -92,14 +94,14 @@
             <div class="gdlr-core-recent-post-widget-wrap gdlr-core-style-1">
                 <div class="gdlr-core-recent-post-widget clearfix">
                     <div class="gdlr-core-recent-post-widget-thumbnail gdlr-core-media-image">
-                        <img src=upload/qingbao-meng-330658-unsplash-150x150.jpg alt width=150
+                        <img src=//upload/qingbao-meng-330658-unsplash-150x150.jpg alt width=150
                              height=150 title=qingbao-meng-330658-unsplash></div>
                     <div class=gdlr-core-recent-post-widget-content>
                         <div class=gdlr-core-recent-post-widget-title><a href=#>The Most
                                 Beautiful Green Field on Earth</a></div>
                         <div class=gdlr-core-recent-post-widget-info><span
                                     class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-author"><img
-                                        alt src='upload/avatar.jpg'
+                                        alt src=/'upload/avatar.jpg'
                                         class='avatar avatar-50 photo' height=50 width=50><a
                                         href=# title="Posts by Paul Newman"
                                         rel=author>Paul Newman</a></span><span
@@ -109,14 +111,14 @@
                 </div>
                 <div class="gdlr-core-recent-post-widget clearfix">
                     <div class="gdlr-core-recent-post-widget-thumbnail gdlr-core-media-image">
-                        <img src=upload/alexander-mils-365917-unsplash-150x150.jpg alt width=150
+                        <img src=//upload/alexander-mils-365917-unsplash-150x150.jpg alt width=150
                              height=150 title=alexander-mils-365917-unsplash></div>
                     <div class=gdlr-core-recent-post-widget-content>
                         <div class=gdlr-core-recent-post-widget-title><a href=#>How to Shoot
                                 Food on Your Phone Like a Pro</a></div>
                         <div class=gdlr-core-recent-post-widget-info><span
                                     class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-author"><img
-                                        alt src='upload/avatar.jpg'
+                                        alt src=/'upload/avatar.jpg'
                                         class='avatar avatar-50 photo' height=50 width=50><a
                                         href=# title="Posts by Kally Gordon"
                                         rel=author>Kally Gordon</a></span><span
@@ -126,14 +128,14 @@
                 </div>
                 <div class="gdlr-core-recent-post-widget clearfix">
                     <div class="gdlr-core-recent-post-widget-thumbnail gdlr-core-media-image">
-                        <img src=upload/gaetano-cessati-120488-unsplash-150x150.jpg alt
+                        <img src=//upload/gaetano-cessati-120488-unsplash-150x150.jpg alt
                              width=150 height=150 title=gaetano-cessati-120488-unsplash></div>
                     <div class=gdlr-core-recent-post-widget-content>
                         <div class=gdlr-core-recent-post-widget-title><a href=#>One Of The Most
                                 Beautiful Beach In Brazil</a></div>
                         <div class=gdlr-core-recent-post-widget-info><span
                                     class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-author"><img
-                                        alt src='upload/avatar.jpg'
+                                        alt src=/'upload/avatar.jpg'
                                         class='avatar avatar-50 photo' height=50 width=50><a
                                         href=# title="Posts by Paul Newman"
                                         rel=author>Paul Newman</a></span><span
@@ -146,7 +148,7 @@
         <div id=text-5 class="widget widget_text akea-widget">
             <div class=textwidget>
                 <p>
-                    <a href=#><img src=upload/banner-600.jpg alt width=300 height=600
+                    <a href=#><img src=//upload/banner-600.jpg alt width=300 height=600
                                    class="alignnone size-full wp-image-6652"></a>
                 </p>
             </div>
@@ -225,7 +227,7 @@
             <div class=textwidget>
                 <p>
                     <a href=#><img class="alignnone size-full wp-image-6651"
-                                   src=upload/banner-250.jpg alt width=300 height=250></a>
+                                   src=/upload/banner-250.jpg alt width=300 height=250></a>
                 </p>
             </div>
         </div>
@@ -238,7 +240,7 @@
                 <div class="gdlr-core-recent-post-widget clearfix">
                     <div class="gdlr-core-recent-post-widget-thumbnail gdlr-core-media-image">
                         <a class="gdlr-core-lightgallery gdlr-core-js " href=upload/post-vr.jpg><img
-                                    src=upload/post-vr-1000x486.jpg alt width=1000 height=486
+                                    src=/upload/post-vr-1000x486.jpg alt width=1000 height=486
                                     title=post-vr></a><span
                                 class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-category"><a
                                     href=# rel=tag>Trending</a></span></div>
@@ -248,7 +250,7 @@
                         </div>
                         <div class=gdlr-core-recent-post-widget-info><span
                                     class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-author"><img
-                                        alt src='upload/avatar.jpg'
+                                        alt src=/'upload/avatar.jpg'
                                         class='avatar avatar-50 photo' height=50 width=50><a
                                         href=# title="Posts by Jane Smith"
                                         rel=author>Jane Smith</a></span><span
@@ -260,7 +262,7 @@
                     <div class="gdlr-core-recent-post-widget-thumbnail gdlr-core-media-image">
                         <a class="gdlr-core-lightgallery gdlr-core-js "
                            href=upload/yiran-ding-624696-unsplash.jpg><img
-                                    src=upload/yiran-ding-624696-unsplash-1000x486.jpg alt
+                                    src=/upload/yiran-ding-624696-unsplash-1000x486.jpg alt
                                     width=1000 height=486
                                     title=yiran-ding-624696-unsplash></a><span
                                 class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-category"><a
@@ -270,7 +272,7 @@
                                     href=#>Or It&#8217;s Now The End of Smartphones?</a></div>
                         <div class=gdlr-core-recent-post-widget-info><span
                                     class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-author"><img
-                                        alt src='upload/avatar.jpg'
+                                        alt src=/'upload/avatar.jpg'
                                         class='avatar avatar-50 photo' height=50 width=50><a
                                         href=# title="Posts by Janet Jones"
                                         rel=author>Janet Jones</a></span><span
@@ -282,7 +284,7 @@
                     <div class="gdlr-core-recent-post-widget-thumbnail gdlr-core-media-image">
                         <a class="gdlr-core-lightgallery gdlr-core-js "
                            href=upload/christopher-burns-271403-unsplash.jpg><img
-                                    src=upload/christopher-burns-271403-unsplash-1000x486.jpg
+                                    src=/upload/christopher-burns-271403-unsplash-1000x486.jpg
                                     alt width=1000 height=486
                                     title=christopher-burns-271403-unsplash></a><span
                                 class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-category"><a
@@ -293,7 +295,7 @@
                         </div>
                         <div class=gdlr-core-recent-post-widget-info><span
                                     class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-author"><img
-                                        alt src='upload/avatar.jpg'
+                                        alt src=/'upload/avatar.jpg'
                                         class='avatar avatar-50 photo' height=50 width=50><a
                                         href=# title="Posts by Kally Gordon"
                                         rel=author>Kally Gordon</a></span><span
@@ -313,42 +315,42 @@
                     <a class="gdlr-core-lightgallery gdlr-core-js "
                        href="upload/43984881_188819121994766_3216343442474950648_n7d5a.jpg"
                        data-lightbox-group=gdlr-core-img-group-1><img
-                                src="upload/43984881_188819121994766_3216343442474950648_n7d5a.jpg"
+                                src=/"upload/43984881_188819121994766_3216343442474950648_n7d5a.jpg"
                                 width=150 height=150 alt></a>
                 </div>
                 <div class=" gdlr-core-column-20 gdlr-core-media-image">
                     <a class="gdlr-core-lightgallery gdlr-core-js "
                        href="upload/45313783_2158345917812845_5821103427645807423_n7d5a.jpg"
                        data-lightbox-group=gdlr-core-img-group-1><img
-                                src="upload/45313783_2158345917812845_5821103427645807423_n7d5a.jpg"
+                                src=/"upload/45313783_2158345917812845_5821103427645807423_n7d5a.jpg"
                                 width=150 height=150 alt></a>
                 </div>
                 <div class=" gdlr-core-column-20 gdlr-core-media-image">
                     <a class="gdlr-core-lightgallery gdlr-core-js "
                        href="upload/43914986_550843855339634_9131648220594836021_n7d5a.jpg"
                        data-lightbox-group=gdlr-core-img-group-1><img
-                                src="upload/43914986_550843855339634_9131648220594836021_n7d5a.jpg"
+                                src=/"upload/43914986_550843855339634_9131648220594836021_n7d5a.jpg"
                                 width=150 height=150 alt></a>
                 </div>
                 <div class=" gdlr-core-column-20 gdlr-core-column-first gdlr-core-media-image">
                     <a class="gdlr-core-lightgallery gdlr-core-js "
                        href="upload/44371528_263042657731432_6452096443180721983_n7d5a.jpg"
                        data-lightbox-group=gdlr-core-img-group-1><img
-                                src="upload/44371528_263042657731432_6452096443180721983_n7d5a.jpg"
+                                src=/"upload/44371528_263042657731432_6452096443180721983_n7d5a.jpg"
                                 width=150 height=150 alt></a>
                 </div>
                 <div class=" gdlr-core-column-20 gdlr-core-media-image">
                     <a class="gdlr-core-lightgallery gdlr-core-js "
                        href="upload/44292623_399451020592905_6536115609442328805_n7d5a.jpg"
                        data-lightbox-group=gdlr-core-img-group-1><img
-                                src="upload/44292623_399451020592905_6536115609442328805_n7d5a.jpg"
+                                src=/"upload/44292623_399451020592905_6536115609442328805_n7d5a.jpg"
                                 width=150 height=150 alt></a>
                 </div>
                 <div class=" gdlr-core-column-20 gdlr-core-media-image">
                     <a class="gdlr-core-lightgallery gdlr-core-js "
                        href="upload/44898222_267175490542576_6183516087002698981_n7d5a.jpg"
                        data-sub-html="So blue" data-lightbox-group=gdlr-core-img-group-1><img
-                                src="upload/44898222_267175490542576_6183516087002698981_n7d5a.jpg"
+                                src=/"upload/44898222_267175490542576_6183516087002698981_n7d5a.jpg"
                                 width=150 height=150 alt="So blue"></a>
                 </div>
             </div>

@@ -51,4 +51,12 @@ class ModelStatus
                 '</div>';
         }
     }
+
+    public static function setNotifySuccesSaved(){
+       return \Yii::$app->session->setFlash('success', 'Data was saved successfully!');
+    }
+
+   public static function setNotifyErrorSaved(){
+      return \Yii::$app->session->setFlash('error', 'Data was not saved. Please try again!');
+   }
 }

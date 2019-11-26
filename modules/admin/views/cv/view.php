@@ -7,7 +7,7 @@ use yii\widgets\DetailView;
 /* @var $model app\models\CV */
 
 $this->title = $model->title;
-$this->params['breadcrumbs'][] = ['label' => 'Cvs', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'CV', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
 ?>
@@ -24,6 +24,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'method' => 'post',
             ],
         ]) ?>
+        <?//= Html::a('Add New CV', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
     </p>
 
     <?= DetailView::widget([
@@ -31,13 +32,13 @@ $this->params['breadcrumbs'][] = $this->title;
         'attributes' => [
             'id',
             'title',
-            'text:ntext',
+            'text:html',
             'status',
             'order',
-            'created_at',
-            'created_by',
-            'updated_at',
-            'upadted_by',
+//            'created_at',
+//            'created_by',
+//            'updated_at',
+//            'upadted_by',
         ],
     ]) ?>
 

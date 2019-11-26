@@ -5,14 +5,12 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\CV */
 
-$this->title = 'Create Cv';
-$this->params['breadcrumbs'][] = ['label' => 'Cvs', 'url' => ['index']];
+$this->title = 'Add new CV section';
+$this->params['breadcrumbs'][] = ['label' => 'List of CV sections', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="cv-create">
-
-    <h1><?= Html::encode($this->title) ?></h1>
-
+    <h2><?= Html::encode($this->title) ?></h2>
     <?= $this->render('_form', [
         'model' => $model,
     ]) ?>

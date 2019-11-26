@@ -1,5 +1,6 @@
 <?php
 
+use app\modules\admin\models\ModelStatus;
 use yii\helpers\Html;
 use yii\grid\GridView;
 
@@ -7,10 +8,12 @@ use yii\grid\GridView;
 /* @var $searchModel app\modules\admin\models\AboutMeSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'About Mes';
+$this->title = 'About Me';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="about-me-index">
+
+   <?= ModelStatus::getNotify() ?>
 
     <h1><?= Html::encode($this->title) ?></h1>
 
@@ -27,14 +30,13 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\SerialColumn'],
 
             'id',
-            'text:ntext',
-            'photo',
+            'text:html',
+            [
+                   'attribute' => 'photo',
+                   'filter' => false,
+                   'format' => 'html'
+            ],
             'status',
-            'created_at',
-            //'created_by',
-            //'updated_at',
-            //'updated_by',
-
             ['class' => 'yii\grid\ActionColumn'],
         ],
     ]); ?>

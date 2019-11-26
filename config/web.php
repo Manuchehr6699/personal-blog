@@ -11,6 +11,8 @@ $config = [
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
         '@npm'   => '@vendor/npm-asset',
+        '@uploads' => '/uploads',
+        '@uploadroot' => $_SERVER['DOCUMENT_ROOT'].'/upload',
     ],
     'components' => [
         'request' => [

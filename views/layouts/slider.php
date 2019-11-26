@@ -21,7 +21,7 @@
                                 <div class=gdlr-core-post-slider-slide>
                                     <div class="gdlr-core-post-slider-image gdlr-core-media-image">
                                         <a href=#>
-                                            <img src=upload/pexels-photo-736166-1500x635.jpg alt width=1500 height=635 title=pexels-photo-736166>
+                                            <img src=/upload/pexels-photo-736166-1500x635.jpg alt width=1500 height=635 title=pexels-photo-736166>
                                             <span class=gdlr-core-post-slider-overlay id="span_2207_0"></span>
                                         </a>
                                     </div>
@@ -43,7 +43,7 @@
                                 <div class=gdlr-core-post-slider-slide>
                                     <div class="gdlr-core-post-slider-image gdlr-core-media-image">
                                         <a href=#><img
-                                                src=upload/hugues-de-buyer-mimeure-335733-unsplash-1500x635.jpg
+                                                src=/upload/hugues-de-buyer-mimeure-335733-unsplash-1500x635.jpg
                                                 alt width=1500 height=635
                                                 title=hugues-de-buyer-mimeure-335733-unsplash><span
                                                 class=gdlr-core-post-slider-overlay
@@ -67,7 +67,7 @@
                                 <div class=gdlr-core-post-slider-slide>
                                     <div class="gdlr-core-post-slider-image gdlr-core-media-image">
                                         <a href=#><img
-                                                src=upload/brooke-lark-289769-unsplash-1500x635.jpg
+                                                src=/upload/brooke-lark-289769-unsplash-1500x635.jpg
                                                 alt width=1500 height=635
                                                 title=brooke-lark-289769-unsplash><span
                                                 class=gdlr-core-post-slider-overlay
