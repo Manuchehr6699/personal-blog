@@ -2,6 +2,7 @@
 
 namespace app\modules\admin\controllers;
 
+use app\modules\admin\models\ModelStatus;
 use Yii;
 use app\models\Profiles;
 use app\modules\admin\models\ProfilesSearch;
@@ -66,7 +67,9 @@ class ProfilesController extends Controller
     {
         $model = new Profiles();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        if ($model->load(Yii::$app->request->post())) {
+            ModelStatus::setTimeStampCreate($model);
+            $model->save();
             return $this->redirect(['view', 'id' => $model->id]);
         }
 
@@ -86,7 +89,9 @@ class ProfilesController extends Controller
     {
         $model = $this->findModel($id);
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        if ($model->load(Yii::$app->request->post())){
+            ModelStatus::setTimeStampUpdate($model);
+            $model->save();
             return $this->redirect(['view', 'id' => $model->id]);
         }
 

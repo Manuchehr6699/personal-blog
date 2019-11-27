@@ -25,6 +25,16 @@ class ModelStatus
        self::INACTIVE => 'Inactive',
    ];
 
+   public static $listIcons = [
+      'fa fa-twitter' => 'Twitter',
+      'fa fa-google-plus' => 'GOOGLE PLUS',
+      'fa fa-edge' => 'EMAIL',
+      'fa fa-facebook' => 'FACEBOOK',
+      'fa fa-instagram' => 'Instagram',
+      'fa fa-pinterest-square' => 'Pinterest',
+      'fa fa-linkedin-in' => 'LinkedIn',
+   ];
+
    public static function setNotifySuccesSaved()
    {
       return \Yii::$app->session->setFlash('success', 'Data was saved successfully!');
@@ -38,6 +48,13 @@ class ModelStatus
    public static function listData()
    {
       return ArrayHelper::getColumn(static::$list, function ($value) {
+         return $value;
+      });
+   }
+
+   public static function listIconsData()
+   {
+      return ArrayHelper::getColumn(static::$listIcons, function ($value) {
          return $value;
       });
    }

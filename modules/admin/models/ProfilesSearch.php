@@ -18,7 +18,7 @@ class ProfilesSearch extends Profiles
     {
         return [
             [['id', 'order', 'status', 'created_at', 'created_by', 'updated_at', 'updated_by'], 'integer'],
-            [['name', 'link', 'type', 'description'], 'safe'],
+            [['name', 'link', 'type', 'description', 'icon'], 'safe'],
         ];
     }
 
@@ -70,6 +70,7 @@ class ProfilesSearch extends Profiles
         $query->andFilterWhere(['like', 'name', $this->name])
             ->andFilterWhere(['like', 'link', $this->link])
             ->andFilterWhere(['like', 'type', $this->type])
+            ->andFilterWhere(['like', 'icon', $this->icon])
             ->andFilterWhere(['like', 'description', $this->description]);
 
         return $dataProvider;

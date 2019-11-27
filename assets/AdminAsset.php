@@ -30,7 +30,7 @@ class AdminAsset extends AssetBundle
         //'admin_assets/js/jquery.cookie-1.4.1.min.js',
 //        'admin_assets/js/color.js',
         'admin_assets/js/main.js',
-        'admin_assets/js/index.js',
+        //'admin_assets/js/index.js',
 
     ];
     public $depends = [

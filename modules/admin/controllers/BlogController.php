@@ -2,6 +2,10 @@
 
 namespace app\modules\admin\controllers;
 
+use app\models\BlogCategory;
+use app\models\Category;
+use app\modules\admin\models\ModelStatus;
+use Cocur\Slugify\Slugify;
 use Yii;
 use app\models\blog;
 use app\modules\admin\models\BlogSearch;
@@ -65,13 +69,22 @@ class BlogController extends Controller
     public function actionCreate()
     {
         $model = new blog();
+        $blogCategory = new BlogCategory();
+        $slug = new Slugify();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+        $categories = Category::find()->where(['status' => 1])->asArray()->all();
+        $model->alias = $slug->slugify($model->title);
+
+        if ($model->load(Yii::$app->request->post())) {
+            ModelStatus::setTimeStampCreate($model);
+            $model->save();
+            return $this->redirect(['index']);
         }
 
         return $this->render('create', [
             'model' => $model,
+            'blogCategory' => $blogCategory,
+            'categories' => $categories
         ]);
     }
 
@@ -86,7 +99,9 @@ class BlogController extends Controller
     {
         $model = $this->findModel($id);
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        if ($model->load(Yii::$app->request->post())) {
+            ModelStatus::setTimeStampUpdate();
+            $model->save();
             return $this->redirect(['view', 'id' => $model->id]);
         }
 

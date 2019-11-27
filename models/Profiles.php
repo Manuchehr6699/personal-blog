@@ -14,6 +14,7 @@ use Yii;
  * @property string $description
  * @property int $order
  * @property int $status
+ * @property int $icon
  * @property int $created_at
  * @property int $created_by
  * @property int $updated_at
@@ -35,10 +36,10 @@ class Profiles extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name', 'link'], 'required'],
+            [['name'], 'required'],
             [['type', 'description'], 'string'],
-            [['order', 'status', 'created_at', 'created_by', 'updated_at', 'updated_by'], 'integer'],
-            [['name'], 'string', 'max' => 255],
+            [['order', 'status',  'created_at', 'created_by', 'updated_at', 'updated_by'], 'integer'],
+            [['name', 'icon'], 'string', 'max' => 255],
             [['link'], 'string', 'max' => 500],
         ];
     }
@@ -56,6 +57,7 @@ class Profiles extends \yii\db\ActiveRecord
             'description' => 'Description',
             'order' => 'Order',
             'status' => 'Status',
+            'icon' => 'Icon',
             'created_at' => 'Created At',
             'created_by' => 'Created By',
             'updated_at' => 'Updated At',
