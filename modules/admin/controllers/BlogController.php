@@ -18,6 +18,7 @@ use yii\web\UploadedFile;
 /**
  * BlogController implements the CRUD actions for blog model.
  */
+
 class BlogController extends Controller
 {
     /**
@@ -77,7 +78,7 @@ class BlogController extends Controller
 
         $categories = Category::find()->where(['status' => 1])->asArray()->all();
 
-        if ($model->load(Yii::$app->request->post()) && $blogCategory->load(Yii::$app->request->post())){
+        if($model->load(Yii::$app->request->post()) && $blogCategory->load(Yii::$app->request->post())){
             ModelStatus::setTimeStampCreate($model);
             $model->alias = $slug->slugify($model->title);
             $model->tags = $this->setBlogTags($model->tags);
@@ -87,7 +88,7 @@ class BlogController extends Controller
                 $model->photo = $path;
             }
             if($model->save()){
-                foreach ($blogCategory->category_id as $id){
+                foreach($blogCategory->category_id as $id){
                     $blogCat = new BlogCategory();
                     $blogCat->category_id = $id;
                     $blogCat->blog_id = $model->id;
@@ -120,18 +121,45 @@ class BlogController extends Controller
      */
     public function actionUpdate($id)
     {
-        //Todo
         $model = $this->findModel($id);
+        $blogCategory = new BlogCategory();
+        $slug = new Slugify();
+        $photo = new UploadForm();
+        $categories = Category::find()->where(['status' => 1])->asArray()->all();
+        $tags = unserialize($model->tags);
+        $model->tags = implode(',', $tags);
+       if($model->load(Yii::$app->request->post()) && $blogCategory->load(Yii::$app->request->post())){
+          ModelStatus::setTimeStampCreate($model);
+          $model->alias = $slug->slugify($model->title);
+          $model->tags = $this->setBlogTags($model->tags);
+          $photo->imageFile = UploadedFile::getInstance($model, 'photo');
+          if(!empty($photo->imageFile) && $photo->upload('blog')){
+             $path = $photo->imageFile->baseName . '.' . $photo->imageFile->extension;
+             $model->photo = $path;
+          }
+          if($model->save()){
+             foreach ($blogCategory->category_id as $id){
+                $blogCat = new BlogCategory();
+                $blogCat->category_id = $id;
+                $blogCat->blog_id = $model->id;
+                $blogCat->status =1;
+                $blogCat->save();
+                ModelStatus::setTimeStampCreate($blogCat);
+                $blogCat->save();
+                unset($blogCat);
+             }
+             ModelStatus::setNotifySuccesSaved();
+             return $this->redirect(['index']);
+          }else{
+             ModelStatus::setNotifyErrorSaved();
+          }
+       }
 
-        if ($model->load(Yii::$app->request->post())) {
-            ModelStatus::setTimeStampUpdate();
-            $model->save();
-            return $this->redirect(['view', 'id' => $model->id]);
-        }
-
-        return $this->render('update', [
-            'model' => $model,
-        ]);
+       return $this->render('update', [
+           'model' => $model,
+           'blogCategory' => $blogCategory,
+           'categories' => $categories
+       ]);
     }
 
     /**
@@ -143,7 +171,6 @@ class BlogController extends Controller
      */
     public function actionDelete($id)
     {
-        //Todo
         $this->findModel($id)->delete();
 
         return $this->redirect(['index']);

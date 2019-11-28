@@ -21,7 +21,6 @@ class TextEditorAssets extends AssetBundle
     ];
 
     public $js = [
-
         'admin_assets/plugins/bootstrap-select/bootstrap-select.js',
         'admin_assets/plugins/multi-select/jquery.multi-select.js',
         'admin_assets/plugins/tags-input/bootstrap-tagsinput.min.js',

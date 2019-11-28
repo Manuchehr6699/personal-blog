@@ -1,6 +1,7 @@
 <?php
 
 use yii\helpers\Html;
+use yii\web\YiiAsset;
 use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */
@@ -9,12 +10,9 @@ use yii\widgets\DetailView;
 $this->title = $model->title;
 $this->params['breadcrumbs'][] = ['label' => 'Blogs', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
-\yii\web\YiiAsset::register($this);
+
 ?>
 <div class="blog-view">
-
-    <h1><?= Html::encode($this->title) ?></h1>
-
     <p>
         <?= Html::a('Update', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
         <?= Html::a('Delete', ['delete', 'id' => $model->id], [
@@ -26,22 +24,15 @@ $this->params['breadcrumbs'][] = $this->title;
         ]) ?>
     </p>
 
-    <?= DetailView::widget([
-        'model' => $model,
-        'attributes' => [
-            'id',
-            'title',
-            'text:ntext',
-            'photo',
-            'alias',
-            'status',
-            'tags',
-            'like_count',
-            'created_at',
-            'created_by',
-            'updated_at',
-            'updated_by',
-        ],
-    ]) ?>
-
+    <div class="card">
+        <div class="card-header alert-primary">
+            <h2>Blog: <?= $model->title ?></h2>
+        </div>
+        <div class="card-body">
+            <?php if(file_exists($_SERVER['DOCUMENT_ROOT'].'/upload/blog/'.$model->photo) && !empty($model->photo)): ?>
+                <center><img src="/upload/blog/<?= $model->photo ?>"  style="margin-bottom: 20px"/></center>
+            <?php endif; ?>
+            <?= $model->text ?>
+        </div>
+    </div>
 </div>

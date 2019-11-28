@@ -15,8 +15,6 @@ class AdminAsset extends AssetBundle
         'admin_assets/plugins/slimscroll/slimscroll.css',
         'admin_assets/css/colors/default-custom.css',
         'admin_assets/css/colors.css',
-
-
     ];
 
     public $js = [
@@ -26,8 +24,6 @@ class AdminAsset extends AssetBundle
         'admin_assets/plugins/slimscroll/slimscroll.js',
         'admin_assets/plugins/apex-charts/js/apexcharts.js',
         'admin_assets/js/main.js',
-
-
     ];
 
     public $depends = [

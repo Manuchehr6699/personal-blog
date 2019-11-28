@@ -12,6 +12,7 @@ use yii\widgets\ActiveForm;
 /* @var $form yii\widgets\ActiveForm */
 
 TextEditorAssets::register($this);
+
 ?>
 
 <div class="blog-form">
@@ -42,12 +43,9 @@ TextEditorAssets::register($this);
     </div>
     <div class="row" style="margin-bottom: 20px">
         <div class="col-md-6">
-<!--                <label>Tags</label>-->
                 <?= $form->field($model, 'tags')->textInput(['data-role' => 'tagsinput', 'class' => 'form-control']) ?>
-<!--                <input type="text" data-role="tagsinput" class="form-control"  style="font-size: 18px">-->
         </div>
         <div class="col-md-6">
-<!--            <label>Categories</label>-->
             <?= $form->field($blogCategory, 'category_id')->dropDownList(ArrayHelper::map($categories, 'id', 'name'),
                 [
                     'class' => 'selectpicker form-control',
@@ -55,15 +53,7 @@ TextEditorAssets::register($this);
                     'title' => 'Select category ...',
                     'data-hide-disabled' => 'true',
                     'multiple' => 'true',
-
-
                 ]) ?>
-<!--            <select class="selectpicker form-control" id="number2-multiple" title="Select category" data-hide-disabled="true" multiple style="font-size: 20px">-->
-<!--                <option>cow</option>-->
-<!--                <option>ASD</option>-->
-<!--                <option selected>Bla</option>-->
-<!--                <option>Ble</option>-->
-<!--            </select>-->
         </div>
     </div>
     <div class="row">
