@@ -5,6 +5,7 @@ namespace app\modules\admin\controllers;
 use app\models\BlogCategory;
 use app\models\Category;
 use app\modules\admin\models\ModelStatus;
+use app\modules\admin\models\UploadForm;
 use Cocur\Slugify\Slugify;
 use Yii;
 use app\models\blog;
@@ -12,6 +13,7 @@ use app\modules\admin\models\BlogSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\web\UploadedFile;
 
 /**
  * BlogController implements the CRUD actions for blog model.
@@ -71,14 +73,35 @@ class BlogController extends Controller
         $model = new blog();
         $blogCategory = new BlogCategory();
         $slug = new Slugify();
+        $photo = new UploadForm();
 
         $categories = Category::find()->where(['status' => 1])->asArray()->all();
-        $model->alias = $slug->slugify($model->title);
 
-        if ($model->load(Yii::$app->request->post())) {
+        if ($model->load(Yii::$app->request->post()) && $blogCategory->load(Yii::$app->request->post())){
             ModelStatus::setTimeStampCreate($model);
-            $model->save();
-            return $this->redirect(['index']);
+            $model->alias = $slug->slugify($model->title);
+            $model->tags = $this->setBlogTags($model->tags);
+            $photo->imageFile = UploadedFile::getInstance($model, 'photo');
+            if(!empty($photo->imageFile) && $photo->upload('blog')){
+                $path = $photo->imageFile->baseName . '.' . $photo->imageFile->extension;
+                $model->photo = $path;
+            }
+            if($model->save()){
+                foreach ($blogCategory->category_id as $id){
+                    $blogCat = new BlogCategory();
+                    $blogCat->category_id = $id;
+                    $blogCat->blog_id = $model->id;
+                    $blogCat->status =1;
+                    $blogCat->save();
+                    ModelStatus::setTimeStampCreate($blogCat);
+                    $blogCat->save();
+                    unset($blogCat);
+                }
+                ModelStatus::setNotifySuccesSaved();
+                return $this->redirect(['index']);
+            }else{
+                ModelStatus::setNotifyErrorSaved();
+            }
         }
 
         return $this->render('create', [
@@ -97,6 +120,7 @@ class BlogController extends Controller
      */
     public function actionUpdate($id)
     {
+        //Todo
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post())) {
@@ -119,6 +143,7 @@ class BlogController extends Controller
      */
     public function actionDelete($id)
     {
+        //Todo
         $this->findModel($id)->delete();
 
         return $this->redirect(['index']);
@@ -138,5 +163,10 @@ class BlogController extends Controller
         }
 
         throw new NotFoundHttpException('The requested page does not exist.');
+    }
+
+    protected function setBlogTags($tags){
+        $arr = explode(',', $tags);
+        return serialize($arr);
     }
 }

@@ -49,8 +49,8 @@ class BlogCategory extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'blog_id' => 'Blog ID',
-            'category_id' => 'Category ID',
+            'blog_id' => 'Blog',
+            'category_id' => 'Category',
             'status' => 'Status',
             'created_at' => 'Created At',
             'created_by' => 'Created By',

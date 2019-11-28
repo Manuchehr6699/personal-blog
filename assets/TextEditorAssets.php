@@ -14,19 +14,17 @@ class TextEditorAssets extends AssetBundle
     public $basePath = '@webroot';
     public $baseUrl = '@web';
     public $css = [
-        '/admin_assets/js/ajax/libs/highlight.js/9.12.0/styles/monokai-sublime.min.css',
-        '/admin_assets/js/ajax/libs/KaTeX/0.7.1/katex.min.css',
-        '/admin_assets/js/ajax/1.3.6/quill.bubble.css',
-        '/admin_assets/js/ajax/1.3.6/quill.snow.css',
-        '/admin_assets/js/ajax/libs/summernote/0.6.6/summernote.min.css'
+        'admin_assets/plugins/bootstrap-select/bootstrap-select.css',
+        'admin_assets/plugins/multi-select/multi-select.css',
+        'admin_assets/plugins/tags-input/bootstrap-tagsinput.css',
+
     ];
 
     public $js = [
-        '/admin_assets/js/ajax/libs/highlight.js/9.12.0/highlight.min.js',
-        '/admin_assets/js/ajax/libs/KaTeX/0.7.1/katex.min.js',
-        '/admin_assets/js/ajax/1.3.6/quill.js',
-        '/admin_assets/js/ajax/libs/summernote/0.6.6/summernote.min.js',
-        '/admin_assets/js/text-editor-init.js',
+
+        'admin_assets/plugins/bootstrap-select/bootstrap-select.js',
+        'admin_assets/plugins/multi-select/jquery.multi-select.js',
+        'admin_assets/plugins/tags-input/bootstrap-tagsinput.min.js',
     ];
 
     public $depends = [

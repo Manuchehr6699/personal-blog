@@ -27,10 +27,10 @@ class UploadForm extends Model
       ];
    }
 
-   public function upload()
+   public function upload($path_category)
    {
       if($this->validate()){
-         $this->imageFile->saveAs( \Yii::getAlias('@uploadroot').'/avatars/' . $this->imageFile->baseName . '.' . $this->imageFile->extension);
+         $this->imageFile->saveAs( \Yii::getAlias('@uploadroot').'/'.$path_category.'/' . $this->imageFile->baseName . '.' . $this->imageFile->extension);
          return true;
       }else{
          return false;

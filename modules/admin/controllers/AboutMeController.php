@@ -73,7 +73,7 @@ class AboutMeController extends Controller
 
         if ($model->load(Yii::$app->request->post())) {
            $photo->imageFile = UploadedFile::getInstance($model, 'photo');
-            if(!empty($photo->imageFile) && $photo->upload()){
+            if(!empty($photo->imageFile) && $photo->upload('avatars')){
                $path = $photo->imageFile->baseName . '.' . $photo->imageFile->extension;
                $model->photo = $path;
             }

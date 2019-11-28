@@ -1,5 +1,6 @@
 <?php
 
+use app\modules\admin\models\ModelStatus;
 use yii\helpers\Html;
 
 /* @var $this yii\web\View */
@@ -11,8 +12,8 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="blog-create">
 
-    <h1><?= Html::encode($this->title) ?></h1>
-
+<!--    <h1>--><?//= Html::encode($this->title) ?><!--</h1>-->
+    <?= ModelStatus::getNotify() ?>
     <?= $this->render('_form', [
         'model' => $model,
         'blogCategory' => $blogCategory,

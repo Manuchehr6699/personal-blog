@@ -1,8 +1,8 @@
 <?php
 
+use app\assets\TextEditorAssets;
 use app\modules\admin\models\ModelStatus;
 use dosamigos\tinymce\TinyMce;
-use kartik\select2\Select2;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
@@ -10,6 +10,8 @@ use yii\widgets\ActiveForm;
 /* @var $this yii\web\View */
 /* @var $model app\models\blog */
 /* @var $form yii\widgets\ActiveForm */
+
+TextEditorAssets::register($this);
 ?>
 
 <div class="blog-form">
@@ -38,20 +40,30 @@ use yii\widgets\ActiveForm;
            ?>
         </div>
     </div>
-    <div class="row">
+    <div class="row" style="margin-bottom: 20px">
         <div class="col-md-6">
-           <?= $form->field($model, 'tags')->textInput(['maxlength' => true]) ?>
+<!--                <label>Tags</label>-->
+                <?= $form->field($model, 'tags')->textInput(['data-role' => 'tagsinput', 'class' => 'form-control']) ?>
+<!--                <input type="text" data-role="tagsinput" class="form-control"  style="font-size: 18px">-->
         </div>
         <div class="col-md-6">
-           <?php
-               echo $form->field($blogCategory, 'category_id')->widget(Select2::classname(), [
-               'data' => ArrayHelper::map($categories, 'id', 'name'),
-               'options' => ['placeholder' => 'Select categories ...', 'width' => '100%'],
-               'pluginOptions' => [
-                   'allowClear' => true
-               ],
-           ])->label('Categories')
-           ?>
+<!--            <label>Categories</label>-->
+            <?= $form->field($blogCategory, 'category_id')->dropDownList(ArrayHelper::map($categories, 'id', 'name'),
+                [
+                    'class' => 'selectpicker form-control',
+                    'id' => 'number2-multiple',
+                    'title' => 'Select category ...',
+                    'data-hide-disabled' => 'true',
+                    'multiple' => 'true',
+
+
+                ]) ?>
+<!--            <select class="selectpicker form-control" id="number2-multiple" title="Select category" data-hide-disabled="true" multiple style="font-size: 20px">-->
+<!--                <option>cow</option>-->
+<!--                <option>ASD</option>-->
+<!--                <option selected>Bla</option>-->
+<!--                <option>Ble</option>-->
+<!--            </select>-->
         </div>
     </div>
     <div class="row">
@@ -69,3 +81,9 @@ use yii\widgets\ActiveForm;
     <?php ActiveForm::end(); ?>
 
 </div>
+<style>
+    .dropdown-item, .tag{
+        font-size: 14px;
+    }
+
+</style>
