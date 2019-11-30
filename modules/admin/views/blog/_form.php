@@ -52,8 +52,9 @@ TextEditorAssets::register($this);
                     'id' => 'number2-multiple',
                     'title' => 'Select category ...',
                     'data-hide-disabled' => 'true',
-                    'multiple' => 'true',
-                ]) ?>
+                    'multiple' => 'true'
+                ])
+            ?>
         </div>
     </div>
     <div class="row">

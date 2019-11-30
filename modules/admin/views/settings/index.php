@@ -11,7 +11,7 @@ use app\modules\admin\models\SettingModel;
 
 /* @var $dataProvider \yii\data\ActiveDataProvider */
 
-$this->title = 'Настройка текстов';
+$this->title = 'Page Settings';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 
@@ -22,7 +22,7 @@ $this->params['breadcrumbs'][] = $this->title;
             <header><?= $this->title ?></header>
         </div>
         <div class="card-body row">
-    <p><?php echo Html::a('Добавить текст', ['create'], ['class' => 'btn btn-success']); ?></p>
+    <p><?php echo Html::a('Add text', ['create'], ['class' => 'btn btn-success']); ?></p>
     <?php Pjax::begin(['timeout' => 10000, 'enablePushState' => false]); ?>
     <?php echo GridView::widget([
             'dataProvider' => $dataProvider,

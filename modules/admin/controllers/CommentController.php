@@ -35,12 +35,14 @@ class CommentController extends Controller
      */
     public function actionIndex()
     {
-        $searchModel = new CommentSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        $data = Comment::find()
+            ->select('comment.*, blog.title as title')
+            ->innerJoin('blog', 'comment.blog_id = blog.id')
+            ->asArray()
+            ->all();
 
         return $this->render('index', [
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
+            'data' => $data,
         ]);
     }
 

@@ -30,7 +30,7 @@ $this->params['breadcrumbs'][] = $this->title;
         </div>
         <div class="card-body">
             <?php if(file_exists($_SERVER['DOCUMENT_ROOT'].'/upload/blog/'.$model->photo) && !empty($model->photo)): ?>
-                <center><img src="/upload/blog/<?= $model->photo ?>"  style="margin-bottom: 20px"/></center>
+                <center><img src="/upload/blog/<?= $model->photo ?>"  style="margin-bottom: 20px" height="250px" width="auto"/></center>
             <?php endif; ?>
             <?= $model->text ?>
         </div>

@@ -171,7 +171,15 @@ class BlogController extends Controller
      */
     public function actionDelete($id)
     {
-        $this->findModel($id)->delete();
+        $model = $this->findModel($id);
+        if(!empty($model)){
+            Yii::$app->db->createCommand('DELETE FROM blog_category WHERE blog_id ='.$model->id)->execute();
+            if($model->delete()){
+                ModelStatus::setNotifySuccessDeleted();
+            }else{
+                ModelStatus::setNotifyErrorDeleted();
+            }
+        }
 
         return $this->redirect(['index']);
     }

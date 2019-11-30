@@ -82,4 +82,20 @@ class MainController extends Controller
 
         return $this->redirect('/admin/main/login');
     }
+
+    public function actionUserInfo(){
+
+        $userData = User::find()->orderBy('created_at DESC')->asArray()->all();
+
+        return $this->render('user-info', ['userData' => $userData]);
+    }
+
+    public function actionLoginDetails(){
+
+        $data = LoginDetails::find()->select('login_details.*, user.*')
+            ->innerJoin('user','login_details.login_user_id = user.user_id')
+            ->asArray()
+            ->all();
+        return $this->render('user-login-details', ['data' => $data]);
+    }
 }

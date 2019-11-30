@@ -2,8 +2,7 @@
 
 namespace app\components;
 
-use app\modules\admin\models\CompanyMap;
-use app\modules\admin\models\MetatagsYandexMetrika;
+
 use Yii;
 use yii\base\Component;
 use yii\caching\Cache;
@@ -122,7 +121,7 @@ class Settings extends Component
      *
      * @return bool
      */
-    public function set($section, $key, $value, $type = null): bool
+    public function set($section, $key, $value, $type = null):bool
     {
         if ($this->model->setSetting($section, $key, $value, $type)) {
             if ($this->invalidateCache()) {
@@ -141,7 +140,7 @@ class Settings extends Component
      *
      * @return bool
      */
-    public function has($section, $key): bool
+    public function has($section, $key):bool
     {
         $setting = $this->get($section, $key);
 
@@ -156,7 +155,7 @@ class Settings extends Component
      *
      * @return bool
      */
-    public function remove($section, $key): bool
+    public function remove($section, $key):bool
     {
         if ($this->model->removeSetting($section, $key)) {
             if ($this->invalidateCache()) {
@@ -172,7 +171,7 @@ class Settings extends Component
      *
      * @return int
      */
-    public function removeAll(): int
+    public function removeAll():int
     {
         return $this->model->removeAllSettings();
     }
@@ -185,7 +184,7 @@ class Settings extends Component
      *
      * @return bool
      */
-    public function activate($section, $key): bool
+    public function activate($section, $key):bool
     {
         return $this->model->activateSetting($section, $key);
     }
@@ -198,7 +197,7 @@ class Settings extends Component
      *
      * @return bool
      */
-    public function deactivate($section, $key): bool
+    public function deactivate($section, $key):bool
     {
         return $this->model->deactivateSetting($section, $key);
     }
@@ -208,7 +207,7 @@ class Settings extends Component
      *
      * @return array
      */
-    protected function getSettingsConfig(): array
+    protected function getSettingsConfig():array
     {
         if (!$this->cache instanceof Cache) {
             $this->items = $this->model->getSettings();
@@ -230,7 +229,7 @@ class Settings extends Component
      *
      * @return bool
      */
-    public function invalidateCache(): bool
+    public function invalidateCache():bool
     {
         if ($this->cache !== null) {
             $this->cache->delete($this->cacheKey);
@@ -240,32 +239,6 @@ class Settings extends Component
         return true;
     }
 
-    public function getMetaTags(){
-
-       $meta = MetatagsYandexMetrika::find()->where(['status' => 1])->asArray()->one();
-
-       return $meta['tags'];
-    }
-
-
-    public function getMetrikScripts(){
-       $meta = MetatagsYandexMetrika::find()->where(['status' => 1])->asArray()->one();
-
-       return $meta['scripts'];
-    }
-
-
-    public function getAddressLatitude(){
-       $latitude = CompanyMap::find()->asArray()->one();
-
-       return $latitude['center1'];
-    }
-
-   public function getAddressLongitude(){
-      $latitude = CompanyMap::find()->asArray()->one();
-
-      return $latitude['center2'];
-   }
 
     /**
      * Set type for setting

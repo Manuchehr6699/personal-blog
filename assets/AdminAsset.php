@@ -15,6 +15,7 @@ class AdminAsset extends AssetBundle
         'admin_assets/plugins/slimscroll/slimscroll.css',
         'admin_assets/css/colors/default-custom.css',
         'admin_assets/css/colors.css',
+        'admin_assets/css/custom.css',
     ];
 
     public $js = [

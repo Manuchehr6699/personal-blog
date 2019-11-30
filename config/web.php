@@ -4,9 +4,9 @@ $params = require __DIR__ . '/params.php';
 $db = require __DIR__ . '/db.php';
 
 $config = [
-    'id' => 'basic',
+    'id' => 'Blog',
     'basePath' => dirname(__DIR__),
-    'defaultRoute' => 'main/index',
+    'defaultRoute' => '/',
     'bootstrap' => ['log'],
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
@@ -57,6 +57,7 @@ $config = [
                 'yii2mod.settings' => [
                     'class' => 'yii\i18n\PhpMessageSource',
                     'basePath' => '@yii2mod/settings/messages',
+                    //'sourceLanguage' => 'en-US'
                 ],
                 'yii2mod.rbac' => [
                     'class' => 'yii\i18n\PhpMessageSource',

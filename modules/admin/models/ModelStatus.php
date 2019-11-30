@@ -45,6 +45,16 @@ class ModelStatus
       return \Yii::$app->session->setFlash('error', 'Data was not saved. Please try again!');
    }
 
+    public static function setNotifySuccessDeleted()
+    {
+        return \Yii::$app->session->setFlash('success', 'Data was successfully deleted!');
+    }
+
+    public static function setNotifyErrorDeleted()
+    {
+        return \Yii::$app->session->setFlash('error', 'Data was not deleted. Please try again!');
+    }
+
    public static function listData()
    {
       return ArrayHelper::getColumn(static::$list, function ($value) {
