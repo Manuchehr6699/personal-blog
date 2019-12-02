@@ -98,4 +98,10 @@ class MainController extends Controller
             ->all();
         return $this->render('user-login-details', ['data' => $data]);
     }
+
+    public function actionError(){
+
+
+        return $this->render('error');
+    }
 }

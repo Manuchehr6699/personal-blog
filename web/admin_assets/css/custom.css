@@ -4,3 +4,6 @@
 .dropdown-menu a{
     color: black;
 }
+.dropdown-item{
+    font-size: 12px!important;
+}

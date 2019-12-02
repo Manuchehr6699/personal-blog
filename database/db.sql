@@ -1,8 +1,8 @@
 /*
-SQLyog  v13.1.1 (64 bit)
-MySQL - 5.7.25 : Database - blog
+SQLyog Ultimate v12.14 (64 bit)
+MySQL - 10.0.38-MariaDB : Database - blog
 *********************************************************************
-*/
+*/
 
 /*!40101 SET NAMES utf8 */;
 
@@ -30,12 +30,12 @@ CREATE TABLE `about_me` (
   `updated_at` int(11) DEFAULT NULL,
   `updated_by` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 /*Data for the table `about_me` */
 
-insert  into `about_me`(`id`,`text`,`photo`,`status`,`created_at`,`created_by`,`updated_at`,`updated_by`) values 
-(3,'<p>&nbsp;</p>\r\n<p><strong>Lorem Ipsum</strong>&nbsp;is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>\r\n<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using \'Content here, content here\', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for \'lorem ipsum\' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>\r\n<p>&nbsp;</p>\r\n<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using \'Content here, content here\', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for \'lorem ipsum\' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>\r\n<p>&nbsp;</p>\r\n<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using \'Content here, content here\', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for \'lorem ipsum\' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>','icons8_upload_to_ftp_100.png',1,NULL,NULL,NULL,NULL);
+insert  into `about_me`(`id`,`text`,`photo`,`status`,`created_at`,`created_by`,`updated_at`,`updated_by`) values 
+(5,'<h3>asdhawuidhaidhawdaw</h3><p>adwd;akfisjfisjoefjsofjiseofiq</p><p>qwelqe;lkq;fkwrfopergkepg</p>','sdaw',1,NULL,NULL,NULL,NULL);
 
 /*Table structure for table `back_menu` */
 
@@ -60,24 +60,32 @@ CREATE TABLE `back_menu` (
   `arrow_tag` varchar(255) DEFAULT NULL,
   `position` enum('left','right','top') DEFAULT NULL,
   PRIMARY KEY (`nodeid`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
 
 /*Data for the table `back_menu` */
 
-insert  into `back_menu`(`nodeid`,`parentnodeid`,`nodeshortname`,`nodename`,`nodeurl`,`userstatus`,`nodeaccess`,`nodestatus`,`nodeorder`,`nodefile`,`nodeicon`,`ishasdivider`,`hasnotify`,`notifyscript`,`isforguest`,`arrow_tag`,`position`) values 
-(1,0,'Dashboard','Dashboard','#','ALL',1,NULL,2,NULL,'fa fa-file','no','no','','yes',NULL,NULL),
-(2,1,'Dashboard','Dashboard','/admin','ALL',1,NULL,0,NULL,'','no','no','','yes',NULL,NULL),
-(3,0,'Manage Pages','Manage Pages','#','ALL',1,NULL,4,NULL,'fa fa-list','no','no','','yes',NULL,NULL),
-(4,3,'Site Menu Items','Site Menu Items','/admin/front-menu/index','ALL',1,NULL,7,NULL,'fa fa-list','no','no','','yes',NULL,NULL),
-(5,3,'Admin Menu Items','Admin Menu Items','/admin/back-menu/index','ALL',1,NULL,9,NULL,'fa fa-list','no','no','','yes',NULL,NULL),
-(6,0,'About Me','About Me','#','ALL',1,NULL,11,NULL,'fa fa-user','no','no','','yes',NULL,NULL),
-(7,6,'About Me','About Me','/admin/about-me/index','ALL',1,NULL,13,NULL,'','no','no','','yes',NULL,NULL),
-(8,6,'CV','CV','/admin/cv/index','ALL',1,NULL,15,NULL,'','no','no','','yes',NULL,NULL),
-(9,6,'Contacts','Contacts','/admin/contact/index','ALL',1,NULL,16,NULL,'','no','no','','yes',NULL,NULL),
-(10,0,'Blog','Blog','/admin/blog/index','ALL',1,NULL,17,NULL,'fa fa-file','no','no','','yes',NULL,NULL),
-(11,10,'My Posts','My Posts','/admin/blog/index','ALL',1,NULL,19,NULL,'','no','no','','yes',NULL,NULL),
-(12,10,'Add new post','Add new post','/admin/blog/create','ALL',1,NULL,20,NULL,'','no','no','','yes',NULL,NULL),
-(13,6,'Social Profiles','Social Profiles','/admin/profiles/','ALL',1,NULL,21,NULL,'','no','no','','yes',NULL,NULL);
+insert  into `back_menu`(`nodeid`,`parentnodeid`,`nodeshortname`,`nodename`,`nodeurl`,`userstatus`,`nodeaccess`,`nodestatus`,`nodeorder`,`nodefile`,`nodeicon`,`ishasdivider`,`hasnotify`,`notifyscript`,`isforguest`,`arrow_tag`,`position`) values 
+(1,0,'Dashboard','Dashboard','#','ALL',1,NULL,5,NULL,'fa fa-file','no','no','','yes',NULL,NULL),
+(2,1,'Dashboard','Dashboard','/admin','ALL',1,NULL,3,NULL,'','no','no','','yes',NULL,NULL),
+(3,0,'Manage Pages','Manage Pages','#','ALL',1,NULL,28,NULL,'fa fa-file','no','no','','yes',NULL,NULL),
+(4,17,'Site Menu Items','Site Menu Items','/admin/front-menu/index','ALL',1,NULL,33,NULL,'fa fa-list','no','no','','yes',NULL,NULL),
+(5,17,'Admin Menu Items','Admin Menu Items','/admin/back-menu/index','ALL',1,NULL,34,NULL,'fa fa-list','no','no','','yes',NULL,NULL),
+(6,0,'About Me','About Me','#','ALL',1,NULL,16,NULL,'fa fa-user','no','no','','yes',NULL,NULL),
+(7,6,'About Me','About Me','/admin/about-me/index','ALL',1,NULL,18,NULL,'','no','no','','yes',NULL,NULL),
+(8,6,'CV','CV','/admin/cv/index','ALL',1,NULL,20,NULL,'','no','no','','yes',NULL,NULL),
+(9,6,'Contacts','Contacts','/admin/contact/index','ALL',1,NULL,21,NULL,'','no','no','','yes',NULL,NULL),
+(10,0,'Blog','Blog','/admin/blog/index','ALL',1,NULL,22,NULL,'fa fa-file','no','no','','yes',NULL,NULL),
+(11,10,'My Posts','My Posts','/admin/blog/index','ALL',1,NULL,24,NULL,'','no','no','','yes',NULL,NULL),
+(12,10,'Add new post','Add new post','/admin/blog/create','ALL',1,NULL,25,NULL,'','no','no','','yes',NULL,NULL),
+(13,0,'Users','Users','/admin/users/comments','ALL',1,NULL,27,NULL,'fa fa-users','no','no','','yes',NULL,NULL),
+(14,13,'Users Info','Users Info','/admin/main/user-info','ALL',1,NULL,30,NULL,'','no','no','','yes',NULL,NULL),
+(15,13,'Login Details','Login Details','/admin/main/login-details','ALL',1,NULL,31,NULL,'','no','no','','yes',NULL,NULL),
+(16,13,'Comments','Comments','/admin/comment/index','ALL',1,NULL,0,NULL,'fa fa-comments','no','no','','yes',NULL,NULL),
+(17,0,'Menu','Manage Menu','#','ALL',1,NULL,32,NULL,'fa fa-list','no','no','','yes',NULL,NULL),
+(18,3,'New page','Create new page','/admin/pages/create','ALL',1,NULL,36,NULL,'','no','no','','yes',NULL,NULL),
+(19,0,'Web-site settings','Web-site settings','/admin/settings','ALL',1,NULL,37,NULL,'fa fa-cogs','no','no','','yes',NULL,NULL),
+(20,19,'Settings','Settings','/admin/settings','ALL',1,NULL,38,NULL,'','no','no','','yes',NULL,NULL),
+(21,3,'Pages','Pages','/admin/pages','ALL',1,NULL,39,NULL,'','no','no','','yes',NULL,NULL);
 
 /*Table structure for table `blog` */
 
@@ -97,15 +105,12 @@ CREATE TABLE `blog` (
   `updated_at` int(11) DEFAULT NULL,
   `updated_by` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 /*Data for the table `blog` */
 
-insert  into `blog`(`id`,`title`,`text`,`photo`,`alias`,`status`,`tags`,`like_count`,`created_at`,`created_by`,`updated_at`,`updated_by`) values 
-(1,'It\'s a new Blog','<p>It\'s a blog test</p>','','it-s-a-new-blog',1,'a:1:{i:0;s:9:\"adwadadaw\";}',NULL,1574918736,1,NULL,NULL),
-(2,'It\'s a new Blog','<p>It\'s a blog test</p>','','it-s-a-new-blog',1,'a:2:{i:0;s:9:\"adwadadaw\";i:1;s:7:\"awdawda\";}',NULL,1574918745,1,NULL,NULL),
-(3,'dawdawdwadaw','<p>adwadawdawdawda</p>','','dawdawdwadaw',1,'a:1:{i:0;s:9:\"awdwadwaw\";}',NULL,1574918990,1,NULL,NULL),
-(4,'It\'s a new Blog','<p>awdawdawdwad</p>','курсы.png','it-s-a-new-blog',1,'a:3:{i:0;s:4:\"awda\";i:1;s:6:\"dawdaw\";i:2;s:14:\"awdawdawdawdwa\";}',NULL,1574937875,1,NULL,NULL);
+insert  into `blog`(`id`,`title`,`text`,`photo`,`alias`,`status`,`tags`,`like_count`,`created_at`,`created_by`,`updated_at`,`updated_by`) values 
+(7,'its title','<p>awdwadaw</p>','pexels-photo-871053-1000x486.jpg','its-title',1,'a:8:{i:0;s:12:\"dawddawdwada\";i:1;s:7:\"adwdada\";i:2;s:4:\"dawd\";i:3;s:8:\"awdadawd\";i:4;s:5:\"wadda\";i:5;s:5:\"awdad\";i:6;s:1:\"a\";i:7;s:2:\"da\";}',NULL,1574875699,1,NULL,NULL);
 
 /*Table structure for table `blog_category` */
 
@@ -125,15 +130,14 @@ CREATE TABLE `blog_category` (
   KEY `category_id` (`category_id`),
   CONSTRAINT `blog_category_ibfk_1` FOREIGN KEY (`blog_id`) REFERENCES `blog` (`id`),
   CONSTRAINT `blog_category_ibfk_2` FOREIGN KEY (`category_id`) REFERENCES `category` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 
 /*Data for the table `blog_category` */
 
-insert  into `blog_category`(`id`,`blog_id`,`category_id`,`status`,`created_at`,`created_by`,`updated_at`,`updated_by`) values 
-(1,4,1,1,1574920300,1,NULL,NULL),
-(2,4,2,1,1574920300,1,NULL,NULL),
-(3,4,1,1,1574937875,1,NULL,NULL),
-(4,4,2,1,1574937875,1,NULL,NULL);
+insert  into `blog_category`(`id`,`blog_id`,`category_id`,`status`,`created_at`,`created_by`,`updated_at`,`updated_by`) values 
+(7,7,2,1,1574875699,1,NULL,NULL),
+(8,7,3,1,1574875699,1,NULL,NULL),
+(9,7,4,1,1574875699,1,NULL,NULL);
 
 /*Table structure for table `category` */
 
@@ -142,20 +146,22 @@ DROP TABLE IF EXISTS `category`;
 CREATE TABLE `category` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(500) NOT NULL,
-  `description` varchar(550) NOT NULL,
+  `description` text NOT NULL,
   `status` int(11) DEFAULT NULL,
   `created_at` int(11) DEFAULT NULL,
   `created_by` int(11) DEFAULT NULL,
   `updated_at` int(11) DEFAULT NULL,
   `updated_by` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 /*Data for the table `category` */
 
-insert  into `category`(`id`,`name`,`description`,`status`,`created_at`,`created_by`,`updated_at`,`updated_by`) values 
-(1,'fashion','awdawdwa',1,NULL,NULL,NULL,NULL),
-(2,'shop','adwadaw',1,NULL,NULL,NULL,NULL);
+insert  into `category`(`id`,`name`,`description`,`status`,`created_at`,`created_by`,`updated_at`,`updated_by`) values 
+(1,'Education','Education',1,NULL,NULL,NULL,NULL),
+(2,'Fashion','',1,NULL,NULL,NULL,NULL),
+(3,'Food','',1,NULL,NULL,NULL,NULL),
+(4,'Technology','',1,NULL,NULL,NULL,NULL);
 
 /*Table structure for table `comment` */
 
@@ -177,9 +183,12 @@ CREATE TABLE `comment` (
   PRIMARY KEY (`id`),
   KEY `blog_id` (`blog_id`),
   CONSTRAINT `comment_ibfk_1` FOREIGN KEY (`blog_id`) REFERENCES `blog` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 /*Data for the table `comment` */
+
+insert  into `comment`(`id`,`text`,`name`,`email`,`web`,`blog_id`,`is_published`,`status`,`created_at`,`craeted_by`,`updated_at`,`updated_by`) values 
+(5,'adwdawda ewrwrwrwr','qweq','qeq','qew',7,'no',1,1232131,1,NULL,NULL);
 
 /*Table structure for table `contact` */
 
@@ -193,12 +202,9 @@ CREATE TABLE `contact` (
   `phone_number` varchar(255) DEFAULT NULL,
   `status` smallint(2) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 /*Data for the table `contact` */
-
-insert  into `contact`(`id`,`country`,`city`,`address`,`phone_number`,`status`) values 
-(1,'Tajikistan','Khujand','Lorem ipsum','92-700-19-11',1);
 
 /*Table structure for table `cv` */
 
@@ -215,16 +221,9 @@ CREATE TABLE `cv` (
   `updated_at` int(11) DEFAULT NULL,
   `updated_by` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 /*Data for the table `cv` */
-
-insert  into `cv`(`id`,`title`,`text`,`status`,`order`,`created_at`,`created_by`,`updated_at`,`updated_by`) values 
-(1,'Summary','<p><em><strong>Lorem ipsum</strong></em> dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>',1,5,1574761819,1,1574761819,1),
-(2,'Experience','<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>',1,NULL,1574764501,1,1574764501,1),
-(3,'Education','<p><strong>Lorem ipsum</strong> dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>',1,NULL,1574764556,1,1574764556,1),
-(4,'Skills','<ul>\r\n<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</li>\r\n<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</li>\r\n<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</li>\r\n<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</li>\r\n<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</li>\r\n<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</li>\r\n<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</li>\r\n</ul>',1,NULL,1574764598,1,1574764598,1),
-(5,'Courses and Certificates','<ul>\r\n<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</li>\r\n<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</li>\r\n<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</li>\r\n<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</li>\r\n</ul>',1,NULL,1574764627,1,1574764627,1);
 
 /*Table structure for table `front_menu` */
 
@@ -249,16 +248,15 @@ CREATE TABLE `front_menu` (
   `arrow_tag` varchar(255) DEFAULT NULL,
   `position` enum('left','right','top') DEFAULT NULL,
   PRIMARY KEY (`nodeid`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 /*Data for the table `front_menu` */
 
-insert  into `front_menu`(`nodeid`,`parentnodeid`,`nodeshortname`,`nodename`,`nodeurl`,`userstatus`,`nodeaccess`,`nodestatus`,`nodeorder`,`nodefile`,`nodeicon`,`ishasdivider`,`hasnotify`,`notifyscript`,`isforguest`,`arrow_tag`,`position`) values 
-(1,0,'About me','About me','/about-me/','ALL',1,NULL,0,NULL,'','no','no','','yes',NULL,NULL),
-(2,1,'CV','CV','/cv/','ALL',1,NULL,1,NULL,'','no','no','','yes',NULL,NULL),
-(3,0,'Blog','Blog','/blog/','ALL',1,NULL,2,NULL,'','no','no','','yes',NULL,NULL),
-(4,0,'Contact','Contact','/contact/','ALL',1,NULL,4,NULL,'','no','no','','yes',NULL,NULL),
-(5,0,'In the press','In the press','/in-the-press/','ALL',1,NULL,5,NULL,'','no','no','','yes',NULL,NULL);
+insert  into `front_menu`(`nodeid`,`parentnodeid`,`nodeshortname`,`nodename`,`nodeurl`,`userstatus`,`nodeaccess`,`nodestatus`,`nodeorder`,`nodefile`,`nodeicon`,`ishasdivider`,`hasnotify`,`notifyscript`,`isforguest`,`arrow_tag`,`position`) values 
+(1,0,'About me','About me','/about-me/','ALL',1,NULL,0,NULL,'','no','no','','yes',NULL,NULL),
+(2,1,'CV','CV','/cv/','ALL',1,NULL,1,NULL,'','no','no','','yes',NULL,NULL),
+(3,0,'Blog','Blog','/blog/','ALL',1,NULL,2,NULL,'','no','no','','yes',NULL,NULL),
+(4,0,'Contact','Contact','/contact/','ALL',1,NULL,4,NULL,'','no','no','','yes',NULL,NULL);
 
 /*Table structure for table `in_the_press` */
 
@@ -293,15 +291,16 @@ CREATE TABLE `login_details` (
   PRIMARY KEY (`login_detail_id`),
   KEY `login_user_id` (`login_user_id`),
   CONSTRAINT `login_details_ibfk_1` FOREIGN KEY (`login_user_id`) REFERENCES `user` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 /*Data for the table `login_details` */
 
-insert  into `login_details`(`login_detail_id`,`login_user_id`,`login_status`,`login_at`,`logout_at`,`user_ip_address`) values 
-(1,1,1,'2019-11-14 21:53:57',NULL,'127.0.0.1'),
-(2,1,1,'2019-11-20 23:36:14',NULL,'127.0.0.1'),
-(3,1,1,'2019-11-22 20:11:17',NULL,'127.0.0.1'),
-(4,1,1,'2019-11-27 09:40:53',NULL,'127.0.0.1');
+insert  into `login_details`(`login_detail_id`,`login_user_id`,`login_status`,`login_at`,`logout_at`,`user_ip_address`) values 
+(1,1,1,'2019-11-14 21:53:57',NULL,'127.0.0.1'),
+(2,1,1,'2019-11-20 23:36:14',NULL,'127.0.0.1'),
+(3,1,1,'2019-11-22 20:11:17',NULL,'127.0.0.1'),
+(4,1,1,'2019-11-30 09:47:21',NULL,'127.0.0.1'),
+(5,1,1,'2019-11-30 09:49:23',NULL,'127.0.0.1');
 
 /*Table structure for table `miscellanea` */
 
@@ -344,6 +343,33 @@ CREATE TABLE `my_research` (
 
 /*Data for the table `my_research` */
 
+/*Table structure for table `pages` */
+
+DROP TABLE IF EXISTS `pages`;
+
+CREATE TABLE `pages` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `parent_id` int(11) DEFAULT NULL,
+  `title` varchar(500) NOT NULL,
+  `menu_title` varchar(255) DEFAULT NULL,
+  `text` text,
+  `status` tinyint(2) DEFAULT '1',
+  `order` tinyint(3) DEFAULT NULL,
+  `blogs_id` varchar(500) DEFAULT NULL,
+  `tags` varchar(500) DEFAULT NULL,
+  `slug` varchar(500) DEFAULT NULL,
+  `created_at` int(11) DEFAULT NULL,
+  `created_by` int(11) DEFAULT NULL,
+  `updated_at` int(11) DEFAULT NULL,
+  `updated_by` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+/*Data for the table `pages` */
+
+insert  into `pages`(`id`,`parent_id`,`title`,`menu_title`,`text`,`status`,`order`,`blogs_id`,`tags`,`slug`,`created_at`,`created_by`,`updated_at`,`updated_by`) values 
+(1,NULL,'In the Press','In the press','<p>In the Press</p>',1,NULL,'',NULL,NULL,NULL,NULL,NULL,NULL);
+
 /*Table structure for table `profiles` */
 
 DROP TABLE IF EXISTS `profiles`;
@@ -351,9 +377,8 @@ DROP TABLE IF EXISTS `profiles`;
 CREATE TABLE `profiles` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
-  `link` varchar(500) DEFAULT NULL,
+  `link` varchar(500) NOT NULL,
   `type` enum('social','publication') DEFAULT NULL,
-  `icon` varchar(200) DEFAULT NULL,
   `description` text,
   `order` smallint(2) DEFAULT NULL,
   `status` smallint(6) DEFAULT NULL,
@@ -362,13 +387,9 @@ CREATE TABLE `profiles` (
   `updated_at` int(11) DEFAULT NULL,
   `updated_by` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 /*Data for the table `profiles` */
-
-insert  into `profiles`(`id`,`name`,`link`,`type`,`icon`,`description`,`order`,`status`,`created_at`,`created_by`,`updated_at`,`updated_by`) values 
-(1,'@lorem_ipsum','','social','fa fa-instagram','Lorem ipsum dolor',NULL,1,NULL,NULL,NULL,NULL),
-(2,'@lorem_ipsum','','social','fa fa-facebook','Lorem ipsum',NULL,1,1574843068,1,NULL,NULL);
 
 /*Table structure for table `publication` */
 
@@ -425,9 +446,13 @@ CREATE TABLE `setting` (
   `created_at` int(11) NOT NULL,
   `updated_at` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 /*Data for the table `setting` */
+
+insert  into `setting`(`id`,`type`,`section`,`key`,`value`,`status`,`description`,`created_at`,`updated_at`) values 
+(1,'string','Site','sitename','Raul Pacheco-Vega, PhD',1,'It\'s site name and used like Title in home page',1575215973,1575215973),
+(2,'string','Site','description','Understanding and solving intractable resource governance problems.',1,'Describe site',1575216197,1575216197);
 
 /*Table structure for table `talks` */
 
@@ -498,11 +523,11 @@ CREATE TABLE `user` (
 
 /*Data for the table `user` */
 
-insert  into `user`(`user_id`,`username`,`user_password`,`email`,`user_type`,`is_block`,`avatar`,`created_at`,`created_by`,`updated_at`,`updated_by`,`secret_key`,`auth_key`,`session_id`) values 
-(1,'admin','f6fdffe48c908deb0f4c3bd36c032e72','admin@polytech.tj','E',0,'std7.jpg','2019-10-12 14:32:54',1,'2015-05-27 15:56:35',1,NULL,NULL,'9a4p138hd0v0jommpe0etroust8aufrp'),
-(22,'admin2','af8eb328301d219cfd1d50e6c6a48f58',NULL,'A',0,'std5.jpg','2019-10-12 13:45:41',1,NULL,NULL,NULL,NULL,'i44c6ra6ukintfbsfc83gfcelnb5qifb'),
-(23,'admin3','7169390683d2b222ba778ca6374b59d3',NULL,'A',1,'std7.jpg','2019-10-12 13:52:10',1,NULL,NULL,NULL,NULL,'ak5h7tnec99b69cipd80ralc0p2fa23l'),
-(25,'admin4','dfa5f43cb476ef890a83010f0da7c6b0',NULL,'A',1,'std3.jpg','2019-10-12 13:57:57',1,NULL,NULL,NULL,NULL,'2pqp9rissts870sj830jkor0jntj15h9'),
+insert  into `user`(`user_id`,`username`,`user_password`,`email`,`user_type`,`is_block`,`avatar`,`created_at`,`created_by`,`updated_at`,`updated_by`,`secret_key`,`auth_key`,`session_id`) values 
+(1,'admin','f6fdffe48c908deb0f4c3bd36c032e72','admin@polytech.tj','E',0,'std7.jpg','2019-10-12 14:32:54',1,'2015-05-27 15:56:35',1,NULL,NULL,'4koh2fm78e8ctnh976l9733ncg744vef'),
+(22,'admin2','af8eb328301d219cfd1d50e6c6a48f58',NULL,'A',0,'std5.jpg','2019-10-12 13:45:41',1,NULL,NULL,NULL,NULL,'i44c6ra6ukintfbsfc83gfcelnb5qifb'),
+(23,'admin3','7169390683d2b222ba778ca6374b59d3',NULL,'A',1,'std7.jpg','2019-10-12 13:52:10',1,NULL,NULL,NULL,NULL,'ak5h7tnec99b69cipd80ralc0p2fa23l'),
+(25,'admin4','dfa5f43cb476ef890a83010f0da7c6b0',NULL,'A',1,'std3.jpg','2019-10-12 13:57:57',1,NULL,NULL,NULL,NULL,'2pqp9rissts870sj830jkor0jntj15h9'),
 (26,'admin6','b48d62f30f50c2c191ab949186c532d3',NULL,'A',1,'std6.jpg','2019-10-12 14:05:01',1,NULL,NULL,NULL,NULL,'90c8pfqa6cchpcofouj9qsl1hvngu3f3');
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;

@@ -47,7 +47,7 @@ class SettingsController extends Controller
      *
      * @return array
      */
-    public function behaviors(): array
+    public function behaviors():array
     {
         return [
             'verbs' => [
@@ -67,7 +67,7 @@ class SettingsController extends Controller
      *
      * @return array
      */
-    public function actions(): array
+    public function actions():array
     {
         return [
             'edit-setting' => [

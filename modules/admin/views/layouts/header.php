@@ -82,14 +82,10 @@
                                                       class="rounded-circle">
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#"><i class="fas fa-user-circle mr-2"></i>Profile</a>
-                            </li>
-                            <li><a class="dropdown-item" href="#"><i class="fas fa-cog mr-2"></i> Settings</a>
-                            </li>
-                            <li><a class="dropdown-item" href="#"><i class="fas fa-unlock-alt mr-2"></i> Lock
-                                    screen</a></li>
-                            <li><a class="dropdown-item text-danger" href="#"><i
-                                        class="fas fa-power-off mr-2"></i> Logout</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-user-circle mr-2"></i>Profile</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-cog mr-2"></i> Settings</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-unlock-alt mr-2"></i> Lock screen</a></li>
+                            <li><a class="dropdown-item text-danger" href="#"><i class="fas fa-power-off mr-2"></i> Logout</a></li>
                         </ul>
                     </li>
                     <li class="visible-xs d-xs-flex toggle-icon">
@@ -103,3 +99,4 @@
     </nav>
 </div>
 <!-- end headertop -->
+

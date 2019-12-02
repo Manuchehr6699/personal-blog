@@ -16,13 +16,7 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 
 <div class="setting-index">
-<!--    <h1>--><?php //echo Html::encode($this->title); ?><!--</h1>-->
-    <div class="card-box">
-        <div class="card-head">
-            <header><?= $this->title ?></header>
-        </div>
-        <div class="card-body row">
-    <p><?php echo Html::a('Add text', ['create'], ['class' => 'btn btn-success']); ?></p>
+    <p><?php echo Html::a('<i class="fa fa-plus"></i> Add', ['create'], ['class' => 'btn btn-success']); ?></p>
     <?php Pjax::begin(['timeout' => 10000, 'enablePushState' => false]); ?>
     <?php echo GridView::widget([
             'dataProvider' => $dataProvider,
@@ -82,6 +76,4 @@ $this->params['breadcrumbs'][] = $this->title;
         ]
     ); ?>
     <?php Pjax::end(); ?>
-</div>
-    </div>
 </div>

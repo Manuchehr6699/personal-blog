@@ -15,7 +15,7 @@ use yii\widgets\ActiveForm;
     <div class="row">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header bg-material-purple">
+                <div class="card-header">
                     <h2>Add new Menu item for Admin</h2>
                 </div>
                 <div class="card-body">

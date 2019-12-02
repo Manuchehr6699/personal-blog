@@ -42,7 +42,12 @@ $config = [
                 ],
             ],
         ],
+        'settings' => [
+            'class' => 'app\components\Settings',
+        ],
+
         'db' => $db,
+
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
@@ -69,6 +74,10 @@ $config = [
     'modules' => [
         'admin' => [
             'class' => 'app\modules\admin\AdminModule',
+        ],
+        'settings' => [
+            'class' => 'yii2mod\settings\Module',
+            'layout' => '@app/modules/admin/views/layouts/main'
         ],
     ],
     'params' => $params,
