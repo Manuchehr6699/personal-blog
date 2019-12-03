@@ -21,29 +21,29 @@ TextEditorAssets::register($this);
 
     <div class="row">
         <div class="col-md-12">
-           <?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
         </div>
     </div>
     <div class="row">
         <div class="col-md-12">
-           <?= $form->field($model, 'text')->widget(TinyMce::className(), [
-               'options' => ['rows' => 15],
-              //'language' => 'en',
-               'clientOptions' => [
-                   'plugins' => [
-                       "advlist autolink lists link charmap print preview anchor",
-                       "searchreplace visualblocks code fullscreen",
-                       "insertdatetime media table contextmenu paste"
-                   ],
-                   'toolbar' => "undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
-               ]
-           ]);
-           ?>
+            <?= $form->field($model, 'text')->widget(TinyMce::className(), [
+                'options' => ['rows' => 15],
+                //'language' => 'en',
+                'clientOptions' => [
+                    'plugins' => [
+                        "advlist autolink lists link charmap print preview anchor",
+                        "searchreplace visualblocks code fullscreen",
+                        "insertdatetime media table contextmenu paste"
+                    ],
+                    'toolbar' => "undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
+                ]
+            ]);
+            ?>
         </div>
     </div>
     <div class="row" style="margin-bottom: 20px">
         <div class="col-md-6">
-                <?= $form->field($model, 'tags')->textInput(['data-role' => 'tagsinput', 'class' => 'form-control']) ?>
+            <?= $form->field($model, 'tags')->textInput(['data-role' => 'tagsinput', 'class' => 'form-control']) ?>
         </div>
         <div class="col-md-6">
             <?= $form->field($blogCategory, 'category_id')->dropDownList(ArrayHelper::map($categories, 'id', 'name'),
@@ -59,22 +59,14 @@ TextEditorAssets::register($this);
     </div>
     <div class="row">
         <div class="col-md-6">
-           <?= $form->field($model, 'photo')->fileInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'photo')->fileInput(['maxlength' => true]) ?>
         </div>
         <div class="col-md-6">
-           <?= $form->field($model, 'status')->dropDownList(ModelStatus::listData()) ?>
+            <?= $form->field($model, 'status')->dropDownList(ModelStatus::listData()) ?>
         </div>
     </div>
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
     </div>
-
     <?php ActiveForm::end(); ?>
-
 </div>
-<style>
-    .dropdown-item, .tag{
-        font-size: 14px;
-    }
-
-</style>

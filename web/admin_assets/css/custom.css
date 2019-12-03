@@ -3,7 +3,11 @@
 }
 .dropdown-menu a{
     color: black;
+    font-size: 14px!important;
 }
 .dropdown-item{
     font-size: 12px!important;
+}
+.dropdown-item, .tag{
+    font-size: 14px;
 }

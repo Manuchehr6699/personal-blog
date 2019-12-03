@@ -44,7 +44,7 @@ use yii\widgets\ActiveForm;
                         </div>
                         <div class="col-md-6">
                             <?= $form->field($model, 'nodeorder')->dropDownList(ArrayHelper::map($menuItems, 'nodeorder', function ($item) {
-                                  return 'After ' . $item['nodename'];
+                                  return 'After -> ' . $item['nodename'];
                                }) + ['-2' => "It's first Item", '-1' => "It's last Item"],
                                ['prompt' => '----Select Order---'])
                             ?>
@@ -62,3 +62,4 @@ use yii\widgets\ActiveForm;
         </div>
     </div>
 </div>
+

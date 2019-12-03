@@ -2,6 +2,7 @@
 
 namespace app\modules\admin\models;
 
+use app\models\Blog;
 use Yii;
 use yii\helpers\ArrayHelper;
 
@@ -42,8 +43,9 @@ class Pages extends \yii\db\ActiveRecord
             [['parent_id', 'status', 'order', 'created_at', 'created_by', 'updated_at', 'updated_by'], 'integer'],
             [['title'], 'required'],
             [['text'], 'string'],
-            [['title', 'blogs_id', 'slug', 'tags'], 'string', 'max' => 500],
+            [['title', 'slug'], 'string', 'max' => 500],
             [['menu_title'], 'string', 'max' => 255],
+            [['blogs_id', 'tags'], 'safe'],
         ];
     }
 
@@ -59,8 +61,8 @@ class Pages extends \yii\db\ActiveRecord
             'menu_title' => 'Menu Title',
             'text' => 'Text',
             'status' => 'Status',
-            'order' => 'Order',
-            'blogs_id' => 'Blogs ID',
+            'order' => 'Page order',
+            'blogs_id' => 'Blogs',
             'tags' => 'Tags',
             'slug' => 'Slug',
             'created_at' => 'Created At',
@@ -74,5 +76,34 @@ class Pages extends \yii\db\ActiveRecord
         $data = static::find()->where(['status' => 1])->asArray()->all();
         return ArrayHelper::map($data, 'id', 'title');
 
+    }
+
+    static function getBlogList(){
+        $data = Blog::find()->where(['status' => 1])->asArray()->all();
+        return ArrayHelper::map($data, 'id', 'title');
+    }
+
+    static function getPages(){
+        $data = static::find()->where(['status' => 1])->asArray()->all();
+        return $data;
+    }
+
+
+    public function setPageOrder($id){
+        //after $id
+        if(empty($id)){
+            $id=-1;
+        }
+        if($id == -2){
+            $this->order = 0;
+            Yii::$app->db->createCommand('UPDATE pages p SET p.order = p.order + 1')->execute();
+        }elseif($id == -1){
+            $lastItemOrder = static::find()->max('pages.order');
+            $this->order = $lastItemOrder+1;
+        }else{
+            $id+=1;
+            $this->order = $id;
+            Yii::$app->db->createCommand('UPDATE pages p SET p.order = p.order + 1 WHERE p.order >= '.$id)->execute();
+        }
     }
 }
