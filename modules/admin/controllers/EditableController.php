@@ -10,22 +10,52 @@ namespace app\modules\admin\controllers;
 
 
 use app\models\AboutMe;
+use app\models\Blog;
+use app\models\Contact;
+use app\models\CV;
+use app\modules\admin\models\BackMenu;
+use app\modules\admin\models\FrontMenu;
+use app\modules\admin\models\Pages;
+use kartik\grid\EditableColumnAction;
 use yii\helpers\Html;
 use yii\web\Controller;
 
 class EditableController extends Controller
 {
+    public function actions()
+    {
+        return [
+            'change-about-me-status' => [
+                'class' => EditableColumnAction::classname(),
+                'modelClass' => AboutMe::className(),
+            ],
+            'change-cv-status' => [
+                'class' => EditableColumnAction::classname(),
+                'modelClass' => CV::className(),
+            ],
+            'change-contact-status' => [
+                'class' => EditableColumnAction::classname(),
+                'modelClass' => Contact::className(),
+            ],
+            'change-post-status' => [
+                'class' => EditableColumnAction::classname(),
+                'modelClass' => Blog::className(),
+            ],
+            'change-page-status' => [
+                'class' => EditableColumnAction::classname(),
+                'modelClass' => Pages::className(),
+            ],
+            'change-user-menu-status' => [
+                'class' => EditableColumnAction::classname(),
+                'modelClass' => FrontMenu::className(),
+            ],
+            'change-admin-menu-status' => [
+                'class' => EditableColumnAction::classname(),
+                'modelClass' => BackMenu::className(),
+            ]
 
-    //Todo and editable for settings
-//    public function actions()
-//    {
-//        return [
-//            'change-about-me-status' => [
-//                'class' => EditableColumnAction::classname(),
-//                'modelClass' => AboutMe::className(),
-//            ]
-//        ];
-//    }
+        ];
+    }
 
     public function actionChangeCommentStatus(){
         $id = Html::encode($_GET['id']);

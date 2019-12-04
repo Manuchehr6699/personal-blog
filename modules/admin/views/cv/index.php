@@ -1,8 +1,9 @@
 <?php
 
 use app\modules\admin\models\ModelStatus;
+use kartik\editable\Editable;
 use yii\helpers\Html;
-use yii\grid\GridView;
+use kartik\grid\GridView;
 
 /* @var $this yii\web\View */
 /* @var $searchModel app\modules\admin\models\CVSearch */
@@ -31,7 +32,24 @@ $this->params['breadcrumbs'][] = $this->title;
                     'id',
                     'title',
                     'text:html',
-                    'status',
+                    [
+                        'class' => 'kartik\grid\EditableColumn',
+                        'attribute' => 'status',
+
+                        'editableOptions' => [
+                            'formOptions' => ['action' => ['/admin/editable/change-cv-status']],
+                            'inputType' => Editable::INPUT_DROPDOWN_LIST,
+                            'data' => [1 => 'Active', 0 => 'Inactive'],
+                            'displayValueConfig' => [
+                                '0' => '<span class="glyphicon glyphicon-remove-sign" style="font-size:25px;color:#C9302C"></span>',
+                                '1' => '<span class="glyphicon glyphicon-ok-sign" style="font-size:25px;color:#449D44"></span>',
+                            ],
+                        ],
+                        'hAlign' => 'center',
+                        'vAlign' => 'middle',
+                        'filter' => array(1 => 'Active', 0 => 'Inactive'),
+                        'pageSummary' => true
+                    ],
                     //'order',
                     //'created_at',
                     //'created_by',

@@ -80,6 +80,9 @@ $config = [
             'class' => 'yii2mod\settings\Module',
             'layout' => '@app/modules/admin/views/layouts/main'
         ],
+        'gridview' =>  [
+            'class' => '\kartik\grid\Module'
+        ]
     ],
     'params' => $params,
 ];
