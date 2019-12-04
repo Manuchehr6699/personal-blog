@@ -1,8 +1,9 @@
 <?php
 
 use app\modules\admin\models\ModelStatus;
+use kartik\editable\Editable;
 use yii\helpers\Html;
-use yii\grid\GridView;
+use kartik\grid\GridView;
 
 /* @var $this yii\web\View */
 /* @var $searchModel app\modules\admin\models\FrontMenuSearch */
@@ -27,11 +28,28 @@ $this->params['breadcrumbs'][] = $this->title;
                 'filterModel' => $searchModel,
                 'columns' => [
                     ['class' => 'yii\grid\SerialColumn'],
-                    'nodeid',
+//                    'nodeid',
                     'parentnodeid',
                     'nodeshortname',
                     'nodename',
                     'nodeurl',
+                    [
+                        'class' => 'kartik\grid\EditableColumn',
+                        'attribute' => 'nodeaccess',
+                        'editableOptions' => [
+                            'formOptions' => ['action' => ['/admin/editable/change-user-menu-nodeaccess']],
+                            'inputType' => Editable::INPUT_DROPDOWN_LIST,
+                            'data' => [1 => 'Active', 0 => 'Inactive'],
+                            'displayValueConfig' => [
+                                '0' => '<span class="glyphicon glyphicon-remove-sign" style="font-size:25px;color:#C9302C"></span>',
+                                '1' => '<span class="glyphicon glyphicon-ok-sign" style="font-size:25px;color:#449D44"></span>',
+                            ],
+                        ],
+                        'hAlign' => 'center',
+                        'vAlign' => 'middle',
+                        'filter' => array(1 => 'Active', 0 => 'Inactive'),
+                        'pageSummary' => true
+                    ],
                     ['class' => 'yii\grid\ActionColumn'],
                 ],
             ]); ?>

@@ -1,10 +1,10 @@
 <?php
 
-use yii\grid\GridView;
+use kartik\grid\GridView;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\widgets\Pjax;
-use yii2mod\editable\EditableColumn;
+use kartik\editable\Editable;
 use app\modules\admin\models\enumerables\SettingType;
 use app\modules\admin\models\enumerables\SettingStatus;
 use app\modules\admin\models\SettingModel;
@@ -46,29 +46,30 @@ $this->params['breadcrumbs'][] = $this->title;
                                 return wordwrap($dataProvider->value, 40, '<br>');
                             }
                         ],
-                        [
-                            'class' => EditableColumn::className(),
-                            'attribute' => 'status',
-                            'url' => ['edit-setting'],
-                            'value' => function ($model) {
-                                return SettingStatus::getLabel($model->status);
-                            },
-                            'type' => 'select',
-                            'editableOptions' => function ($model) {
-                                return [
-                                    'source' => SettingStatus::listData(),
-                                    'value' => $model->status,
-                                ];
-                            },
-                            'filter' => SettingStatus::listData(),
-                            'filterInputOptions' => ['prompt' => Yii::t('yii2mod.settings', 'Select Status'), 'class' => 'form-control'],
-                        ],
+
                         [
                             'attribute' => 'description',
                             'format' => 'html',
                             'value' => function ($dataProvider) {
                                 return wordwrap($dataProvider->description, 40, '<br>');
                             }
+                        ],
+                        [
+                            'class' => 'kartik\grid\EditableColumn',
+                            'attribute' => 'status',
+                            'editableOptions' => [
+                                'formOptions' => ['action' => ['/admin/editable/change-setting-status']],
+                                'inputType' => Editable::INPUT_DROPDOWN_LIST,
+                                'data' => SettingStatus::listData(),
+                                'displayValueConfig' => [
+                                    '0' => '<span class="glyphicon glyphicon-remove-sign" style="font-size:25px;color:#C9302C"></span>',
+                                    '1' => '<span class="glyphicon glyphicon-ok-sign" style="font-size:25px;color:#449D44"></span>',
+                                ],
+                            ],
+                            'hAlign' => 'center',
+                            'vAlign' => 'middle',
+                            'filter' => SettingStatus::listData(),
+                            'pageSummary' => true
                         ],
                         [
                             'header' => Yii::t('yii2mod.settings', 'Actions'),

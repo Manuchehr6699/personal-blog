@@ -8,7 +8,7 @@
 use app\assets\DataTableAssets;
 
 $this->title = 'Users Login Details';
-
+$this->params['breadcrumbs'][] = $this->title;
 DataTableAssets::register($this);
 ?>
 <div class="row">

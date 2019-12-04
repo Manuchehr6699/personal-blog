@@ -9,6 +9,7 @@
 namespace app\modules\admin\controllers;
 
 
+
 use app\models\AboutMe;
 use app\models\Blog;
 use app\models\Contact;
@@ -16,6 +17,7 @@ use app\models\CV;
 use app\modules\admin\models\BackMenu;
 use app\modules\admin\models\FrontMenu;
 use app\modules\admin\models\Pages;
+use app\modules\admin\models\SettingModel;
 use kartik\grid\EditableColumnAction;
 use yii\helpers\Html;
 use yii\web\Controller;
@@ -45,15 +47,18 @@ class EditableController extends Controller
                 'class' => EditableColumnAction::classname(),
                 'modelClass' => Pages::className(),
             ],
-            'change-user-menu-status' => [
+            'change-setting-status' => [
+                'class' => EditableColumnAction::classname(),
+                'modelClass' => SettingModel::className(),
+            ],
+            'change-user-menu-nodeaccess' => [
                 'class' => EditableColumnAction::classname(),
                 'modelClass' => FrontMenu::className(),
             ],
-            'change-admin-menu-status' => [
+            'change-admin-menu-nodeaccess' => [
                 'class' => EditableColumnAction::classname(),
                 'modelClass' => BackMenu::className(),
             ]
-
         ];
     }
 

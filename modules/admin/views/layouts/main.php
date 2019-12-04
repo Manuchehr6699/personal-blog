@@ -66,7 +66,6 @@ AdminAsset::register($this);
                             </nav>
                         </div>
                     </div>
-
                 </div>
                 <?= $content ?>
             </div>

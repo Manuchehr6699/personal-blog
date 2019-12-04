@@ -27,7 +27,7 @@ class SettingModel extends ActiveRecord
     /**
      * @inheritdoc
      */
-    public static function tableName(): string
+    public static function tableName()
     {
         return '{{%setting}}';
     }
@@ -35,7 +35,7 @@ class SettingModel extends ActiveRecord
     /**
      * @inheritdoc
      */
-    public function rules(): array
+    public function rules()
     {
         return [
             [['section', 'key', 'value'], 'required'],
@@ -52,7 +52,7 @@ class SettingModel extends ActiveRecord
     /**
      * @inheritdoc
      */
-    public function attributeLabels(): array
+    public function attributeLabels()
     {
         return [
             'id' => Yii::t('yii2mod.settings', 'ID'),
@@ -70,7 +70,7 @@ class SettingModel extends ActiveRecord
     /**
      * @inheritdoc
      */
-    public function behaviors(): array
+    public function behaviors():array
     {
         return [
             TimestampBehavior::className(),
@@ -82,7 +82,7 @@ class SettingModel extends ActiveRecord
      *
      * @return SettingQuery
      */
-    public static function find(): SettingQuery
+    public static function find():SettingQuery
     {
         return new SettingQuery(get_called_class());
     }

@@ -99,6 +99,12 @@ class MainController extends Controller
         return $this->render('user-login-details', ['data' => $data]);
     }
 
+    public function actionProfile(){
+
+
+       return $this->render('profile');
+    }
+
     public function actionError(){
 
 
