@@ -28,27 +28,29 @@ DataTableAssets::register($this);
                         </tr>
                         </thead>
                         <tbody>
-                        <?php if(!empty($userData)): ?>
+                        <?php if (!empty($userData)): ?>
                             <?php foreach ($userData as $data): ?>
-                            <tr>
-                                <td><?= $data['username'] ?></td>
-                                <td><?= $data['email'] ?></td>
-                                <td><?= $data['user_type'] ?></td>
-                                <td>
-                                    <div class="pretty p-switch p-fill">
-                                        <input type="checkbox" />
-                                        <div class="state">
-                                            <label>
-                                                <?php if($data['is_block'] == 0): ?>
-                                                    Active
-                                                <?php else: ?>
-                                                    Blocked (Inactive)
-                                                <?php endif; ?>
-                                            </label>
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
+                                <?php
+                                if ($data['is_block'] == 0) {
+                                    $text = '<i class="fa fa-check"> </i> Active';
+                                    $class = 'label label-md label-success';
+                                    $status = 0;
+                                } else {
+                                    $text = '<i class="fa fa-times"> </i> Blocked';
+                                    $class = 'label label-md label-warning';
+                                    $status = 1;
+                                }
+                                ?>
+                                <tr>
+                                    <td><?= $data['username'] ?></td>
+                                    <td><?= $data['email'] ?></td>
+                                    <td><?= $data['user_type'] ?></td>
+                                    <td>
+                                        <span class="<?= $class ?>" id="status" onclick="changeUserStatus(this)"
+                                              data-id="<?= $data['user_id'] ?>" data-status="<?= $status ?>"><?= $text ?>
+                                        </span>
+                                    </td>
+                                </tr>
                             <?php endforeach; ?>
                         <?php endif; ?>
                         </tbody>
@@ -59,5 +61,5 @@ DataTableAssets::register($this);
     </div>
 </div>
 
-
+<?= $this->registerJsFile('@web/admin_assets/js/custom.js'); ?>
 

@@ -11,13 +11,15 @@ $this->title = 'Comments';
 $this->params['breadcrumbs'][] = $this->title;
 DataTableAssets::register($this);
 ?>
+
 <div class="comment-index">
     <div class="row">
         <div class="col-md-12">
             <div class="card">
                 <div class="card-body">
                     <div class="table-responsive">
-                        <table id="data1" class="display table table-bordered table-striped table-hover" style="width:100%">
+                        <table id="data1" class="display table table-bordered table-striped table-hover"
+                               style="width:100%">
                             <thead>
                             <tr>
                                 <th>Comment</th>
@@ -29,7 +31,17 @@ DataTableAssets::register($this);
                             </tr>
                             </thead>
                             <tbody>
-                            <?php foreach($data as $item): ?>
+                            <?php foreach ($data as $item): ?>
+                                <?php if ($item['is_published'] == 'no') {
+                                    $text = '<i class="fa fa-times"> </i> Unpublished';
+                                    $class = 'label label-md label-warning';
+                                    $status = 0;
+                                } else {
+                                    $text = '<i class="fa fa-check"> </i> Published';
+                                    $class = 'label label-md label-success';
+                                    $status = 1;
+                                }
+                                ?>
                                 <tr>
                                     <td><?= $item['text'] ?></td>
                                     <td><?= $item['title'] ?></td>
@@ -37,18 +49,9 @@ DataTableAssets::register($this);
                                     <td><?= $item['email'] ?></td>
                                     <td><?= $item['created_at'] ?></td>
                                     <td>
-                                        <div class="pretty p-switch p-fill">
-                                            <input type="checkbox" />
-                                            <div class="state">
-                                                <label>
-                                                    <?php if($item['is_published'] == 'no'): ?>
-                                                        Unpublished
-                                                    <?php else: ?>
-                                                        Published
-                                                    <?php endif; ?>
-                                                </label>
-                                            </div>
-                                        </div>
+                                        <span class="<?= $class ?>" id="status" onclick="changeStatus(this)"
+                                              data-id="<?= $item['id'] ?>" data-status="<?= $status ?>"><?= $text ?>
+                                        </span>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>
@@ -60,3 +63,5 @@ DataTableAssets::register($this);
         </div>
     </div>
 </div>
+
+<?= $this->registerJsFile('@web/admin_assets/js/custom.js'); ?>

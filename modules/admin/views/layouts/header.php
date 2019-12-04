@@ -24,8 +24,8 @@
                 <!-- Navbar Menu -->
                 <ul class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center float-right">
                     <!-- Search-->
-                    <li class="nav-item d-flex align-items-center"><a id="searchs" href="#"><i
-                                class="fas fa-search"></i></a></li>
+<!--                    <li class="nav-item d-flex align-items-center"><a id="searchs" href="#"><i-->
+<!--                                class="fas fa-search"></i></a></li>-->
                     <li class="nav-item dropdown d-flex align-items-center mr-3">
                         <a id="messages" rel="nofollow" data-target="#" href="#" data-toggle="dropdown"
                            aria-haspopup="true" aria-expanded="false" class="nav-link"><i
@@ -82,10 +82,9 @@
                                                       class="rounded-circle">
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#"><i class="fas fa-user-circle mr-2"></i>Profile</a></li>
-                            <li><a class="dropdown-item" href="#"><i class="fas fa-cog mr-2"></i> Settings</a></li>
-                            <li><a class="dropdown-item" href="#"><i class="fas fa-unlock-alt mr-2"></i> Lock screen</a></li>
-                            <li><a class="dropdown-item text-danger" href="#"><i class="fas fa-power-off mr-2"></i> Logout</a></li>
+                            <li><a class="dropdown-item" href="/admin/main/profile"><i class="fas fa-user-circle mr-2"></i>Profile</a></li>
+                            <li><a class="dropdown-item" href="/admin/settings"><i class="fas fa-cog mr-2"></i> Settings</a></li>
+                            <li><a class="dropdown-item text-danger" href="/admin/main/logout"><i class="fas fa-power-off mr-2"></i> Logout</a></li>
                         </ul>
                     </li>
                     <li class="visible-xs d-xs-flex toggle-icon">

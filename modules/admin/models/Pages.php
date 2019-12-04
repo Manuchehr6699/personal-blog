@@ -101,9 +101,14 @@ class Pages extends \yii\db\ActiveRecord
             $lastItemOrder = static::find()->max('pages.order');
             $this->order = $lastItemOrder+1;
         }else{
-            $id+=1;
+            $id += 1;
             $this->order = $id;
             Yii::$app->db->createCommand('UPDATE pages p SET p.order = p.order + 1 WHERE p.order >= '.$id)->execute();
         }
+    }
+
+    public function setId(){
+        $id = static::find()->max('id');
+        $this->id = ++$id;
     }
 }

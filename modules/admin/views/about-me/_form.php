@@ -14,7 +14,7 @@ use dosamigos\tinymce\TinyMce;
 <div class="about-me-form">
     <div class="card">
         <div class="card-header">
-            <h2>About Me</h2>
+            <h2>Add about me</h2>
         </div>
         <div class="card-body" style="padding: 40px">
            <?php $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data']]); ?>

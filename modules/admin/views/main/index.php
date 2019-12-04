@@ -6,6 +6,7 @@
  * Time: 17:29
  */
 $this->title = 'Home page';
+
 ?>
 
 <div class="row">

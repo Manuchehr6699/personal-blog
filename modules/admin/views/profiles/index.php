@@ -19,28 +19,29 @@ $this->params['breadcrumbs'][] = $this->title;
     </p>
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
+    <div class="card">
+        <div class="card-body">
+            <?= GridView::widget([
+                'dataProvider' => $dataProvider,
+                'filterModel' => $searchModel,
+                'columns' => [
+                    ['class' => 'yii\grid\SerialColumn'],
 
-    <?= GridView::widget([
-        'dataProvider' => $dataProvider,
-        'filterModel' => $searchModel,
-        'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
+                    'id',
+                    'name',
+                    'link',
+                    'type',
+                    'description:ntext',
+                    //'order',
+                    //'status',
+                    //'created_at',
+                    //'created_by',
+                    //'updated_at',
+                    //'updated_by',
 
-            'id',
-            'name',
-            'link',
-            'type',
-            'description:ntext',
-            //'order',
-            //'status',
-            //'created_at',
-            //'created_by',
-            //'updated_at',
-            //'updated_by',
-
-            ['class' => 'yii\grid\ActionColumn'],
-        ],
-    ]); ?>
-
-
+                    ['class' => 'yii\grid\ActionColumn'],
+                ],
+            ]); ?>
+        </div>
+    </div>
 </div>

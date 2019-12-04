@@ -11,9 +11,8 @@ $this->params['breadcrumbs'][] = ['label' => 'Blogs', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="blog-create">
-
-<!--    <h1>--><?//= Html::encode($this->title) ?><!--</h1>-->
     <?= ModelStatus::getNotify() ?>
+
     <?= $this->render('_form', [
         'model' => $model,
         'blogCategory' => $blogCategory,

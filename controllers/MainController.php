@@ -9,6 +9,7 @@
 namespace app\controllers;
 
 use app\models\AboutMe;
+use app\modules\admin\models\Pages;
 use Yii;
 use app\models\ContactForm;
 use app\models\LoginForm;
@@ -65,6 +66,15 @@ class MainController extends Controller
         $data = AboutMe::find()->where(['status' => 1])->asArray()->all();
 
         return $this->render('about-me', ['data' => $data]);
+    }
+
+    public function actionPage($slug)
+    {
+        $content = Pages::find()->where(['slug' => $slug])->asArray()->all();
+
+        return $this->render('page', [
+            'content' => $content
+        ]);
     }
 
     public function actionError()

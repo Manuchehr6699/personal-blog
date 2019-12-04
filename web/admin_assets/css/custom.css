@@ -11,3 +11,10 @@
 .dropdown-item, .tag{
     font-size: 14px;
 }
+
+#status{
+    cursor: pointer;
+}
+.navbar{
+    border-radius: 0px!important;
+}

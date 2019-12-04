@@ -2,6 +2,7 @@
 
 namespace app\modules\admin\controllers;
 
+use app\modules\admin\models\FrontMenu;
 use app\modules\admin\models\ModelStatus;
 use Cocur\Slugify\Slugify;
 use Yii;
@@ -68,17 +69,31 @@ class PagesController extends Controller
     {
         $model = new Pages();
         $slug = new Slugify();
+        $menu = new FrontMenu();
 
         if ($model->load(Yii::$app->request->post())) {
             ModelStatus::setTimeStampCreate($model);
-            $model->order = $model->setPageOrder($model->order);
+            /*------------------Creating NEW PAGE---------------------------*/
+            $model->setId();
+            $model->setPageOrder($model->order);
             $model->tags = $this->setPageTags($model->tags);
             $model->slug = $slug->slugify($model->title);
             $model->blogs_id = json_encode($model->blogs_id);
             if (empty($model->menu_title)) $model->menu_title = $model->title;
-            if (!empty($model->parent_id)) $model->parent_id = 0;
+            if (empty($model->parent_id)) $model->parent_id = 0;
 
-            if ($model->save()) {
+            /*------------------Creating NEW MENU---------------------------*/
+
+            $menu->setMenuNodeNameByPageTitle($model->title, $model->menu_title);
+            $menu->setUrlBySlug($model->slug);
+            $menu->setMenuParentIdByPageId($model->parent_id);
+            $menu->setMenuOrderByPage($menu->parentnodeid);
+            $menu->nodeaccess = 1;
+            $menu->userstatus = 'ALL';
+
+            if ($model->save()){
+                $menu->page_id = $model->id;
+                $menu->save();
                 ModelStatus::setNotifySuccesSaved();
                 return $this->redirect(['index']);
             } else {
@@ -102,18 +117,31 @@ class PagesController extends Controller
     {
         $model = $this->findModel($id);
         $slug = new Slugify();
-        $tags = unserialize($model->tags);
-        $model->tags = implode(',', $tags);
+        $menu = FrontMenu::findOne(['page_id' => $id]);
+
         if ($model->load(Yii::$app->request->post())) {
             ModelStatus::setTimeStampCreate($model);
-            $model->order = $model->setPageOrder($model->order);
+            /*------------------Creating NEW PAGE---------------------------*/
+            $model->setId();
+            $model->setPageOrder($model->order);
             $model->tags = $this->setPageTags($model->tags);
             $model->slug = $slug->slugify($model->title);
             $model->blogs_id = json_encode($model->blogs_id);
             if (empty($model->menu_title)) $model->menu_title = $model->title;
-            if (!empty($model->parent_id)) $model->parent_id = 0;
+            if (empty($model->parent_id)) $model->parent_id = 0;
 
-            if ($model->save()) {
+            /*------------------Creating NEW MENU---------------------------*/
+
+            $menu->setMenuNodeNameByPageTitle($model->title, $model->menu_title);
+            $menu->setUrlBySlug($model->slug);
+            $menu->setMenuParentIdByPageId($model->parent_id);
+            $menu->setMenuOrderByPage($menu->parentnodeid);
+            $menu->nodeaccess = 1;
+            $menu->userstatus = 'ALL';
+
+            if ($model->save()){
+                $menu->page_id = $model->id;
+                $menu->save();
                 ModelStatus::setNotifySuccesSaved();
                 return $this->redirect(['index']);
             } else {
@@ -136,7 +164,8 @@ class PagesController extends Controller
     public function actionDelete($id)
     {
         $this->findModel($id)->delete();
-
+        FrontMenu::findOne(['page_id' => $id])->delete();
+        ModelStatus::setNotifySuccessDeleted();
         return $this->redirect(['index']);
     }
 

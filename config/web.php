@@ -52,6 +52,7 @@ $config = [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+                'main/page/<slug>' => 'main/page',
             ],
         ],
         'assetManager' => [

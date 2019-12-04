@@ -9,6 +9,7 @@ use Yii;
  *
  * @property int $nodeid
  * @property int $parentnodeid
+ * @property int $page_id
  * @property string $nodeshortname
  * @property string $nodename
  * @property string $nodeurl
@@ -43,7 +44,7 @@ class BackMenu extends \yii\db\ActiveRecord
     {
         return [
             [['nodename', 'nodeurl'], 'required'],
-            [['parentnodeid', 'nodeaccess', 'nodestatus', 'nodeorder'], 'integer'],
+            [['parentnodeid', 'nodeaccess', 'nodestatus', 'nodeorder', 'page_id'], 'integer'],
             [['ishasdivider', 'hasnotify', 'isforguest', 'position'], 'string'],
             [['nodeshortname', 'nodeicon'], 'string', 'max' => 50],
             [['nodename'], 'string', 'max' => 100],
@@ -98,6 +99,17 @@ class BackMenu extends \yii\db\ActiveRecord
             $this->nodeorder = $id;
             Yii::$app->db->createCommand('UPDATE back_menu SET nodeorder = nodeorder + 1 WHERE nodeorder >= '.$id)->execute();
         }
-
+    }
+    public function setMenuParentIdByPageId($pageParentId = 0){
+        if(empty($pageParentId) || $pageParentId == 0){
+            $this->parentnodeid = 0;
+        }else{
+            $data = static::find()->where(['page_id' => $pageParentId])->asArray()->one();
+            $this->parentnodeid = $data['nodeid'];
+        }
+    }
+    public function setUrlBySlug($slug = ''){
+        $url = '/main/page/'.$slug;
+        $this->nodeurl = $url;
     }
 }

@@ -9,6 +9,7 @@ use Yii;
  *
  * @property int $nodeid
  * @property int $parentnodeid
+ * @property int $page_id
  * @property string $nodeshortname
  * @property string $nodename
  * @property string $nodeurl
@@ -41,7 +42,7 @@ class FrontMenu extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['parentnodeid', 'nodeaccess', 'nodestatus', 'nodeorder'], 'integer'],
+            [['parentnodeid', 'nodeaccess', 'nodestatus', 'nodeorder', 'page_id'], 'integer'],
             [['nodename', 'nodeurl'], 'required'],
             [['ishasdivider', 'hasnotify', 'isforguest', 'position'], 'string'],
             [['nodeshortname', 'nodeicon'], 'string', 'max' => 50],
@@ -97,6 +98,37 @@ class FrontMenu extends \yii\db\ActiveRecord
             $this->nodeorder = $id;
             Yii::$app->db->createCommand('UPDATE front_menu SET nodeorder = nodeorder + 1 WHERE nodeorder >= '.$id)->execute();
         }
+    }
 
+    public function setMenuParentIdByPageId($pageParentId = 0){
+        if(empty($pageParentId) || $pageParentId == 0){
+             $this->parentnodeid = 0;
+        }else{
+            $data = static::find()->where(['page_id' => $pageParentId])->asArray()->one();
+            $this->parentnodeid = $data['nodeid'];
+        }
+        return;
+    }
+    public function setUrlBySlug($slug = ''){
+        $url = '/main/page/'.$slug;
+        $this->nodeurl = $url;
+        return;
+    }
+
+    public function setMenuNodeNameByPageTitle($title, $menu_title=''){
+        if(!empty($menu_title)){
+            $this->nodename = $menu_title;
+            $this->nodeshortname = $menu_title;
+        }else{
+            $this->nodename = $title;
+            $this->nodeshortname = $title;
+        }
+        return;
+    }
+
+    public function setMenuOrderByPage($parentId = 0){
+        $data = static::find()->where(['parentnodeid' => $parentId])->orderBy('nodeorder DESC')->asArray()->one();
+        $this->nodeorder = ++$data['nodeorder'];
+        return;
     }
 }

@@ -13,37 +13,39 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="pages-index">
 
-<!--    <h1>--><?//= Html::encode($this->title) ?><!--</h1>-->
+    <!--    <h1>--><? //= Html::encode($this->title) ?><!--</h1>-->
     <?= ModelStatus::getNotify() ?>
     <p>
         <?= Html::a('Create Pages', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
+    <div class="card">
+        <div class="card-body">
+            <?= GridView::widget([
+                'dataProvider' => $dataProvider,
+                'filterModel' => $searchModel,
+                'columns' => [
+                    ['class' => 'yii\grid\SerialColumn'],
 
-    <?= GridView::widget([
-        'dataProvider' => $dataProvider,
-        'filterModel' => $searchModel,
-        'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
+                    'id',
+                    'parent_id',
+                    'title',
+                    'menu_title',
+                    'text:ntext',
+                    //'status',
+                    //'order',
+                    //'blogs_id',
+                    //'slug',
+                    //'created_at',
+                    //'created_by',
+                    //'updated_at',
+                    //'updated_by',
 
-            'id',
-            'parent_id',
-            'title',
-            'menu_title',
-            'text:ntext',
-            //'status',
-            //'order',
-            //'blogs_id',
-            //'slug',
-            //'created_at',
-            //'created_by',
-            //'updated_at',
-            //'updated_by',
-
-            ['class' => 'yii\grid\ActionColumn'],
-        ],
-    ]); ?>
-
+                    ['class' => 'yii\grid\ActionColumn'],
+                ],
+            ]); ?>
+        </div>
+    </div>
 
 </div>

@@ -17,63 +17,68 @@ $this->params['breadcrumbs'][] = $this->title;
 
 <div class="setting-index">
     <p><?php echo Html::a('<i class="fa fa-plus"></i> Add', ['create'], ['class' => 'btn btn-success']); ?></p>
-    <?php Pjax::begin(['timeout' => 10000, 'enablePushState' => false]); ?>
-    <?php echo GridView::widget([
-            'dataProvider' => $dataProvider,
-            'filterModel' => $searchModel,
-            'columns' => [
-                [
-                    'class' => 'yii\grid\SerialColumn',
-                ],
-                [
-                    'attribute' => 'type',
-                    'filter' => SettingType::listData(),
-                    'filterInputOptions' => ['prompt' => Yii::t('yii2mod.settings', 'Select Type'), 'class' => 'form-control'],
-                ],
-                [
-                    'attribute' => 'section',
-                    'filter' => ArrayHelper::map(SettingModel::find()->select('section')->distinct()->all(), 'section', 'section'),
-                    'filterInputOptions' => ['prompt' => Yii::t('yii2mod.settings', 'Select Section'), 'class' => 'form-control'],
-                ],
-                'key',
-                [
-                    'attribute' => 'value',
-                    'format' => 'html',
-                    'value' => function ($dataProvider) {
-                       return wordwrap($dataProvider->value, 40, '<br>');
-                    }
-                ],
-                [
-                    'class' => EditableColumn::className(),
-                    'attribute' => 'status',
-                    'url' => ['edit-setting'],
-                    'value' => function ($model) {
-                        return SettingStatus::getLabel($model->status);
-                    },
-                    'type' => 'select',
-                    'editableOptions' => function ($model) {
-                        return [
-                            'source' => SettingStatus::listData(),
-                            'value' => $model->status,
-                        ];
-                    },
-                    'filter' => SettingStatus::listData(),
-                    'filterInputOptions' => ['prompt' => Yii::t('yii2mod.settings', 'Select Status'), 'class' => 'form-control'],
-                ],
-                [
-                    'attribute' => 'description',
-                    'format' => 'html',
-                    'value' => function ($dataProvider) {
-                       return wordwrap($dataProvider->description, 40, '<br>');
-                    }
-                ],
-                [
-                    'header' => Yii::t('yii2mod.settings', 'Actions'),
-                    'class' => 'yii\grid\ActionColumn',
-                    'template' => '{update}{delete}',
-                ],
-            ],
-        ]
-    ); ?>
-    <?php Pjax::end(); ?>
+    <div class="card">
+        <div class="card-body">
+            <?php Pjax::begin(['timeout' => 10000, 'enablePushState' => false]); ?>
+
+            <?php echo GridView::widget([
+                    'dataProvider' => $dataProvider,
+                    'filterModel' => $searchModel,
+                    'columns' => [
+                        [
+                            'class' => 'yii\grid\SerialColumn',
+                        ],
+                        [
+                            'attribute' => 'type',
+                            'filter' => SettingType::listData(),
+                            'filterInputOptions' => ['prompt' => Yii::t('yii2mod.settings', 'Select Type'), 'class' => 'form-control'],
+                        ],
+                        [
+                            'attribute' => 'section',
+                            'filter' => ArrayHelper::map(SettingModel::find()->select('section')->distinct()->all(), 'section', 'section'),
+                            'filterInputOptions' => ['prompt' => Yii::t('yii2mod.settings', 'Select Section'), 'class' => 'form-control'],
+                        ],
+                        'key',
+                        [
+                            'attribute' => 'value',
+                            'format' => 'html',
+                            'value' => function ($dataProvider) {
+                                return wordwrap($dataProvider->value, 40, '<br>');
+                            }
+                        ],
+                        [
+                            'class' => EditableColumn::className(),
+                            'attribute' => 'status',
+                            'url' => ['edit-setting'],
+                            'value' => function ($model) {
+                                return SettingStatus::getLabel($model->status);
+                            },
+                            'type' => 'select',
+                            'editableOptions' => function ($model) {
+                                return [
+                                    'source' => SettingStatus::listData(),
+                                    'value' => $model->status,
+                                ];
+                            },
+                            'filter' => SettingStatus::listData(),
+                            'filterInputOptions' => ['prompt' => Yii::t('yii2mod.settings', 'Select Status'), 'class' => 'form-control'],
+                        ],
+                        [
+                            'attribute' => 'description',
+                            'format' => 'html',
+                            'value' => function ($dataProvider) {
+                                return wordwrap($dataProvider->description, 40, '<br>');
+                            }
+                        ],
+                        [
+                            'header' => Yii::t('yii2mod.settings', 'Actions'),
+                            'class' => 'yii\grid\ActionColumn',
+                            'template' => '{update}{delete}',
+                        ],
+                    ],
+                ]
+            ); ?>
+            <?php Pjax::end(); ?>
+        </div>
+    </div>
 </div>

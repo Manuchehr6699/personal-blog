@@ -18,20 +18,22 @@ $this->params['breadcrumbs'][] = $this->title;
     <p>
         <?= Html::a('Add new item', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
+    <div class="card">
+        <div class="card-body">
+            <?= GridView::widget([
+                'dataProvider' => $dataProvider,
+                'filterModel' => $searchModel,
+                'columns' => [
+                    ['class' => 'yii\grid\SerialColumn'],
+                    'nodeid',
+                    'parentnodeid',
+                    'nodeshortname',
+                    'nodename',
+                    'nodeurl',
+                    ['class' => 'yii\grid\ActionColumn'],
+                ],
+            ]); ?>
 
-    <?= GridView::widget([
-        'dataProvider' => $dataProvider,
-        'filterModel' => $searchModel,
-        'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
-            'nodeid',
-            'parentnodeid',
-            'nodeshortname',
-            'nodename',
-            'nodeurl',
-            ['class' => 'yii\grid\ActionColumn'],
-        ],
-    ]); ?>
-
-
+        </div>
+    </div>
 </div>
