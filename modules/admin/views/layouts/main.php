@@ -51,7 +51,7 @@ AdminAsset::register($this);
         <!-- main -->
         <main>
             <div class="container-fluid">
-                <?= Alert::widget() ?>
+<!--                --><?//= Alert::widget() ?>
                 <div class="row">
                     <div class="col-md-12">
                         <div class="top-breadcrumb">

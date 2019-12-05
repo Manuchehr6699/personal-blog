@@ -8,6 +8,7 @@ use app\widgets\AdminMenu;
  */
 class AdminModule extends \yii\base\Module
 {
+
     /**
      * {@inheritdoc}
      */

@@ -57,3 +57,59 @@ function changeUserStatus(el) {
         }
     });
 }
+
+function changeAboutMe(el) {
+    var id = $(el).data('id');
+    var status = $(el).data('status');
+    $.ajax({
+        type: "GET",
+        url: '/admin/editable/change-about-me',
+        data: {id: id, status: status},
+        success: function (responese) {
+            var result = JSON.parse(responese);
+            // alert(result['result']);
+            if (result['result'] == 'success') {
+                $(el).data('status', result['status']);
+                if (result['status'] == 1) {
+                    $(el).html('<i class="fa fa-check"> </i> Active');
+                    $(el).removeAttr("class");
+                    $(el).addClass("btn btn-success");
+                }else{
+                    $(el).html('<i class="fa fa-times"> </i> Inactive');
+                    $(el).removeAttr("class");
+                    $(el).addClass("btn btn-danger");
+                }
+            } else {
+                alert('Server can not change status!');
+            }
+        }
+    });
+}
+
+function changeCV(el) {
+    var id = $(el).data('id');
+    var status = $(el).data('status');
+    $.ajax({
+        type: "GET",
+        url: '/admin/editable/change-cv',
+        data: {id: id, status: status},
+        success: function (responese) {
+            var result = JSON.parse(responese);
+            // alert(result['result']);
+            if (result['result'] == 'success') {
+                $(el).data('status', result['status']);
+                if (result['status'] == 1) {
+                    $(el).html('<i class="fa fa-check"> </i> Active');
+                    $(el).removeAttr("class");
+                    $(el).addClass("btn btn-success");
+                }else{
+                    $(el).html('<i class="fa fa-times"> </i> Inactive');
+                    $(el).removeAttr("class");
+                    $(el).addClass("btn btn-danger");
+                }
+            } else {
+                alert('Server can not change status!');
+            }
+        }
+    });
+}

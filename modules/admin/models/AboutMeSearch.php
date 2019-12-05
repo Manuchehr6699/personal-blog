@@ -18,7 +18,7 @@ class AboutMeSearch extends AboutMe
     {
         return [
             [['id', 'status', 'created_at', 'created_by', 'updated_at', 'updated_by'], 'integer'],
-            [['text', 'photo'], 'safe'],
+            [['text', 'photo', 'first_name', 'last_name', 'position'], 'safe'],
         ];
     }
 
@@ -67,6 +67,9 @@ class AboutMeSearch extends AboutMe
         ]);
 
         $query->andFilterWhere(['like', 'text', $this->text])
+            ->andFilterWhere(['like', 'photo', $this->photo])
+            ->andFilterWhere(['like', 'first_name', $this->first_name])
+            ->andFilterWhere(['like', 'last_name', $this->last_name])
             ->andFilterWhere(['like', 'photo', $this->photo]);
 
         return $dataProvider;

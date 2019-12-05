@@ -104,4 +104,42 @@ class EditableController extends Controller
         }
     }
 
+    public function actionChangeAboutMe(){
+        $id = Html::encode($_GET['id']);
+        $status = Html::encode($_GET['status']);
+        if($status==1){
+            $status = 0;
+        }elseif($status == 0){
+            $status = 1;
+        }else{
+            $status = 0;
+        }
+        if(\Yii::$app->db->createCommand('UPDATE about_me u SET u.status ="'.$status.'" WHERE id = '.$id)->execute()){
+            $result = array('result' => 'success', 'status' => $status);
+            return json_encode($result);
+        }else{
+            $result = array('result' => 'error');
+            return json_encode($result);
+        }
+    }
+
+    public function actionChangeCv(){
+        $id = Html::encode($_GET['id']);
+        $status = Html::encode($_GET['status']);
+        if($status==1){
+            $status = 0;
+        }elseif($status == 0){
+            $status = 1;
+        }else{
+            $status = 0;
+        }
+        if(\Yii::$app->db->createCommand('UPDATE cv u SET u.status ="'.$status.'" WHERE id = '.$id)->execute()){
+            $result = array('result' => 'success', 'status' => $status);
+            return json_encode($result);
+        }else{
+            $result = array('result' => 'error');
+            return json_encode($result);
+        }
+    }
+
 }

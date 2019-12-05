@@ -12,7 +12,16 @@
 <div class="main-heading">
     <nav class="top-nav  navbar-collapse collapse" id="top-nav-list">
         <!-- BEGIN: nav-content -->
-        <?php echo $this->params['AdminMenu'] ?>
+        <?php
+        $dependency = [
+            'class' => 'yii\caching\DbDependency',
+            'sql' => 'SELECT COUNT(*) FROM back_menu',
+        ];
+        if($this->beginCache('AdminMenu', ['dependency' => $dependency])){
+            echo $this->params['AdminMenu'];
+            $this->endCache();
+        }
+        ?>
     </nav>
 </div>
 <!-- end navigation -->

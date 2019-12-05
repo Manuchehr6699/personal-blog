@@ -51,10 +51,14 @@ class CvController extends Controller
     * @return mixed
     * @throws NotFoundHttpException if the model cannot be found
     */
-   public function actionView($id)
+   public function actionView()
    {
+       $cv = CV::find()->asArray()->all();
+       if(empty($cv)){
+           return $this->redirect(['create']);
+       }
       return $this->render('view', [
-          'model' => $this->findModel($id),
+          'cv' => $cv,
       ]);
    }
 
@@ -72,7 +76,7 @@ class CvController extends Controller
          ModelStatus::setTimeStampUpdate($model);
          if($model->save()) {
             ModelStatus::setNotifySuccesSaved();
-            return $this->redirect(['index']);
+            return $this->redirect(['view']);
          }else{
             ModelStatus::setNotifyErrorSaved();
          }
@@ -96,7 +100,7 @@ class CvController extends Controller
       $model = $this->findModel($id);
 
       if ($model->load(Yii::$app->request->post()) && $model->save()) {
-         return $this->redirect(['view', 'id' => $model->id]);
+         return $this->redirect(['view']);
       }
 
       return $this->render('update', [
@@ -114,8 +118,8 @@ class CvController extends Controller
    public function actionDelete($id)
    {
       $this->findModel($id)->delete();
-
-      return $this->redirect(['index']);
+      ModelStatus::setNotifySuccessDeleted();
+      return $this->redirect(['view']);
    }
 
    /**
@@ -127,6 +131,7 @@ class CvController extends Controller
     */
    protected function findModel($id)
    {
+
       if (($model = CV::findOne($id)) !== null) {
          return $model;
       }

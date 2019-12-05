@@ -36,17 +36,17 @@ class AboutMeController extends Controller
      * Lists all AboutMe models.
      * @return mixed
      */
-    public function actionIndex()
-    {
-        $searchModel = new AboutMeSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-
-
-        return $this->render('index', [
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
-        ]);
-    }
+//    public function actionIndex()
+//    {
+//        $searchModel = new AboutMeSearch();
+//        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+//
+//
+//        return $this->render('index', [
+//            'searchModel' => $searchModel,
+//            'dataProvider' => $dataProvider,
+//        ]);
+//    }
 
     /**
      * Displays a single AboutMe model.
@@ -54,10 +54,15 @@ class AboutMeController extends Controller
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionView($id)
+    public function actionView()
     {
+        //Todo add contacts
+        $aboutMe = AboutMe::find()->asArray()->one();
+        if(empty($aboutMe)){
+            return $this->redirect(['create']);
+        }
         return $this->render('view', [
-            'model' => $this->findModel($id),
+            'aboutMe' => $aboutMe
         ]);
     }
 
@@ -72,14 +77,18 @@ class AboutMeController extends Controller
         $photo = new UploadForm();
 
         if ($model->load(Yii::$app->request->post())) {
+           Yii::$app->db->createCommand('TRUNCATE TABLE about_me')->execute();
            $photo->imageFile = UploadedFile::getInstance($model, 'photo');
             if(!empty($photo->imageFile) && $photo->upload('avatars')){
                $path = $photo->imageFile->baseName . '.' . $photo->imageFile->extension;
                $model->photo = $path;
             }
+            ModelStatus::setTimeStampCreate($model);
             if($model->save()){
                ModelStatus::setNotifySuccesSaved();
-               return $this->redirect(['index']);
+               return $this->redirect(['view']);
+            }else{
+                ModelStatus::setNotifyErrorSaved();
             }
         }
         return $this->render('create', [
@@ -98,13 +107,27 @@ class AboutMeController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
-
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+        $photo = new UploadForm();
+        $oldPhoto = $model->photo;
+        unset($model->photo);
+        if ($model->load(Yii::$app->request->post())) {
+            $photo->imageFile = UploadedFile::getInstance($model, 'photo');
+            if(empty($photo->imageFile)) $model->photo = $oldPhoto;
+            if(!empty($photo->imageFile) && $photo->upload('avatars')){
+                $path = $photo->imageFile->baseName . '.' . $photo->imageFile->extension;
+                $model->photo = $path;
+            }
+            ModelStatus::setTimeStampUpdate($model);
+            if($model->save()){
+                ModelStatus::setNotifySuccesSaved();
+                return $this->redirect(['view']);
+            }else{
+                ModelStatus::setNotifyErrorSaved();
+            }
         }
-
         return $this->render('update', [
             'model' => $model,
+            'photo' => $photo
         ]);
     }
 

@@ -8,13 +8,16 @@ use Yii;
  * This is the model class for table "about_me".
  *
  * @property int $id
+ * @property string|null $firs_name
+ * @property string|null $last_name
+ * @property string|null $position
  * @property string $text
- * @property string $photo
- * @property int $status
- * @property int $created_at
- * @property int $created_by
- * @property int $updated_at
- * @property int $updated_by
+ * @property string|null $photo
+ * @property int|null $status
+ * @property int|null $created_at
+ * @property int|null $created_by
+ * @property int|null $updated_at
+ * @property int|null $updated_by
  */
 class AboutMe extends \yii\db\ActiveRecord
 {
@@ -35,6 +38,7 @@ class AboutMe extends \yii\db\ActiveRecord
             [['text'], 'required'],
             [['text'], 'string'],
             [['status', 'created_at', 'created_by', 'updated_at', 'updated_by'], 'integer'],
+            [['first_name', 'last_name', 'position'], 'string', 'max' => 255],
             [['photo'], 'string', 'max' => 500],
         ];
     }
@@ -46,6 +50,9 @@ class AboutMe extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
+            'firs_name' => 'Firs Name',
+            'last_name' => 'Last Name',
+            'position' => 'Position',
             'text' => 'Text',
             'photo' => 'Photo',
             'status' => 'Status',

@@ -19,6 +19,19 @@ use dosamigos\tinymce\TinyMce;
         <div class="card-body" style="padding: 40px">
            <?php $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data']]); ?>
             <div class="row">
+                <div class="col-md-6">
+                    <?= $form->field($model, 'first_name')->textInput() ?>
+                </div>
+                <div class="col-md-6">
+                    <?= $form->field($model, 'last_name')->textInput() ?>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <?= $form->field($model, 'position')->textInput() ?>
+                </div>
+            </div>
+            <div class="row">
                 <div class="col-md-12">
                    <?= $form->field($model, 'text')->widget(TinyMce::className(), [
                        'options' => ['rows' => 20],
@@ -38,12 +51,11 @@ use dosamigos\tinymce\TinyMce;
                 <div class="col-md-6">
                    <?= $form->field($model, 'photo')->fileInput() ?>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                   <?= $form->field($model, 'status')->dropDownList(ModelStatus::listData()) ?>
+                <div class="col-md-6">
+                    <?= $form->field($model, 'status')->dropDownList(ModelStatus::listData()) ?>
                 </div>
             </div>
+
             <div class="form-group">
                <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
             </div>
