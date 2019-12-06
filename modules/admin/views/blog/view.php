@@ -26,11 +26,11 @@ $this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['index']];
                 <div class="box-body">
                     <div class="media row d-flex align-items-center">
                         <div class="media-left">
-                            <img src="/upload/blog/<?= $model['photo'] ?>" alt="..." class="img-fluid rounded-circle mr-4 ml-4" style="width: 50px;">
+                            <img src="/upload/blog/<?= $model['photo'] ?>" alt="..." class="mr-4 ml-4" style="width: 250px;">
                         </div>
                         <div class="media-body">
                             <?php //Todo ?>
-                            <span>12:34 AM</span>
+                            <span><?= date('d M Y H:i:s', $model['created_at']) ?></span>
                             <h4><?= $model['username'] ?></h4>
                             <h5><?= $model['email'] ?></h5>
                         </div>

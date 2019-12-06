@@ -22,8 +22,10 @@ DataTableAssets::register($this);
                                style="width:100%">
                             <thead>
                             <tr>
-                                <th>Comment</th>
+
                                 <th>Blog</th>
+                                <th>Comment</th>
+                                <th>Reply</th>
                                 <th>Name</th>
                                 <th>Email</th>
                                 <th>Comment Date</th>
@@ -43,11 +45,12 @@ DataTableAssets::register($this);
                                 }
                                 ?>
                                 <tr>
-                                    <td><?= $item['text'] ?></td>
                                     <td><?= $item['title'] ?></td>
+                                    <td><?= $item['text'] ?></td>
+                                    <td><textarea cols="25"><?= $item['text'] ?></textarea></td>
                                     <td><?= $item['name'] ?></td>
                                     <td><?= $item['email'] ?></td>
-                                    <td><?= $item['created_at'] ?></td>
+                                    <td><?= date('d M Y H:i:s', $item['created_at']) ?></td>
                                     <td>
                                         <span class="<?= $class ?>" id="status" onclick="changeStatus(this)"
                                               data-id="<?= $item['id'] ?>" data-status="<?= $status ?>"><?= $text ?>

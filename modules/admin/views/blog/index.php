@@ -8,7 +8,7 @@ use kartik\grid\GridView;
 /* @var $searchModel app\modules\admin\models\BlogSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Blogs';
+$this->title = 'Posts';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="blog-index">
@@ -16,7 +16,8 @@ $this->params['breadcrumbs'][] = $this->title;
     <!--    <h1>--><? //= Html::encode($this->title) ?><!--</h1>-->
     <?= ModelStatus::getNotify() ?>
     <p>
-        <?= Html::a('Create Blog', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Create New Post', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Show All Posts', ['posts'], ['class' => 'btn btn-primary']) ?>
     </p>
     <div class="card">
         <div class="card-body">
@@ -26,11 +27,20 @@ $this->params['breadcrumbs'][] = $this->title;
                 'columns' => [
                     ['class' => 'yii\grid\SerialColumn'],
 
-                    'id',
-                    'title',
-                    'text:ntext',
-                    'photo',
-                    'alias',
+//                    'id',
+                    [
+                        'attribute' => 'title'
+                    ],
+//                    'text:ntext',
+                    [
+                        'attribute' => 'photo',
+                        'format' => 'html',
+                        'value' => function($dataProvider){
+                            return '<img src="/upload/blog/'.$dataProvider->photo.'" width="250" height="auto">';
+                        },
+                        'hAlign' => 'center',
+                        'vAlign' => 'middle',
+                    ],
                     [
                         'class' => 'kartik\grid\EditableColumn',
                         'attribute' => 'status',

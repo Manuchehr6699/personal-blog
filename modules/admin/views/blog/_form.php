@@ -28,6 +28,14 @@ TextEditorAssets::register($this);
                     <?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
                 </div>
             </div>
+           <?php
+           if(!$model->isNewRecord){
+              if(file_exists(Yii::getAlias('@uploadroot').'/blog/'.$model->photo)){
+                 echo '<center><img src="/upload/blog/'.$model->photo.'" width="300"></center>';
+              }
+           }
+
+           ?>
             <div class="row">
                 <div class="col-md-12">
                     <?= $form->field($model, 'text')->widget(TinyMce::className(), [
