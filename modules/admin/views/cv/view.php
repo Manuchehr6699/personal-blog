@@ -19,10 +19,9 @@ echo ModelStatus::getNotify();
 
 
 <div class="col-lg-12">
-
     <div class="card right-profile-card">
         <div class="card-header alert-default">
-
+            CV
         </div>
         <div class="card-body">
             <div class="tab-content" id="pills-tabContent">

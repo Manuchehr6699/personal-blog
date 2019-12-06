@@ -7,32 +7,50 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model app\models\blog */
 
-$this->title = $model->title;
-$this->params['breadcrumbs'][] = ['label' => 'Blogs', 'url' => ['index']];
-$this->params['breadcrumbs'][] = $this->title;
+$this->title = $model['title'];
+$this->params['breadcrumbs'][] = ['label' => 'Blog', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['index']];
 
 ?>
-<div class="blog-view">
-    <p>
-        <?= Html::a('Update', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Delete', ['delete', 'id' => $model->id], [
-            'class' => 'btn btn-danger',
-            'data' => [
-                'confirm' => 'Are you sure you want to delete this item?',
-                'method' => 'post',
-            ],
-        ]) ?>
-    </p>
-
-    <div class="card">
-        <div class="card-header alert-primary">
-            <h2>Blog: <?= $model->title ?></h2>
-        </div>
-        <div class="card-body">
-            <?php if(file_exists($_SERVER['DOCUMENT_ROOT'].'/upload/blog/'.$model->photo) && !empty($model->photo)): ?>
-                <center><img src="/upload/blog/<?= $model->photo ?>"  style="margin-bottom: 20px" height="250px" width="auto"/></center>
-            <?php endif; ?>
-            <?= $model->text ?>
+<div class="column is-flexible ">
+    <!-- BEGIN: .container-fluid -->
+    <div class="container-fluid">
+        <div class="card">
+            <div class="box">
+                <header class="b-b">
+                    <button class="btn btn-light visible-xs m-r-15" data-toggle="canvas" data-target="#email-left">
+                        <i class="fa fa-fw fa-bars"></i>
+                    </button>
+                    <h4><?= $model['title'] ?></h4>
+                </header>
+                <div class="box-body">
+                    <div class="media row d-flex align-items-center">
+                        <div class="media-left">
+                            <img src="/upload/blog/<?= $model['photo'] ?>" alt="..." class="img-fluid rounded-circle mr-4 ml-4" style="width: 50px;">
+                        </div>
+                        <div class="media-body">
+                            <?php //Todo ?>
+                            <span>12:34 AM</span>
+                            <h4><?= $model['username'] ?></h4>
+                            <h5><?= $model['email'] ?></h5>
+                        </div>
+                    </div>
+                    <hr>
+                    <p class="text-muted">
+                        <?= $model['text'] ?>
+                    </p>
+<!--                    <div class="row">-->
+<!--                        <div class="col-lg-6">-->
+<!--                            <button class="btn btn-light"> <i class="fas fa-reply mr-2"></i>Reply</button>-->
+<!--                            <button class="btn btn-light"><i class="fas fa-arrow-right mr-2"></i>Forward</button>-->
+<!--                        </div>-->
+<!--                        <div class="col-lg-6 text-right">-->
+<!--                            <button class="flat-btn flat-btn-primary"><i class="fas fa-paper-plane mr-2"></i>Send</button>-->
+<!--                        </div>-->
+<!--                    </div>-->
+                </div>
+            </div>
         </div>
     </div>
+    <!-- END: .container-fluid -->
 </div>

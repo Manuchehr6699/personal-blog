@@ -59,8 +59,14 @@ class BlogController extends Controller
      */
     public function actionView($id)
     {
+        $model = Blog::find()
+            ->select('b.*, u.username, u.email, u.user_type')
+            ->from('blog b')
+            ->innerJoin('user u', 'b.created_by = u.user_id')
+            ->asArray()->one();
+
         return $this->render('view', [
-            'model' => $this->findModel($id),
+            'model' => $model,
         ]);
     }
 
@@ -184,6 +190,13 @@ class BlogController extends Controller
         return $this->redirect(['index']);
     }
 
+    public function actionPosts(){
+        $posts = Blog::find()->orderBy('id desc')->asArray()->all();
+
+        return $this->render('posts', [
+            'posts' => $posts
+        ]);
+    }
     /**
      * Finds the blog model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
