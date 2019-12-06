@@ -23,7 +23,7 @@ function changeStatus(el) {
                     showNotification('bg-danger', 'Comment Was Blocked!');
                 }
             } else {
-                alert('Server can not change status!');
+                alert('Something went wrong!');
             }
         }
     });
@@ -52,7 +52,7 @@ function changeUserStatus(el) {
                     $(el).addClass("label label-md label-warning");
                 }
             } else {
-                alert('Server can not change status!');
+                alert('Something went wrong!');
             }
         }
     });
@@ -80,7 +80,7 @@ function changeAboutMe(el) {
                     $(el).addClass("btn btn-danger");
                 }
             } else {
-                alert('Server can not change status!');
+                alert('Something went wrong!');
             }
         }
     });
@@ -108,7 +108,35 @@ function changeCV(el) {
                     $(el).addClass("btn btn-danger");
                 }
             } else {
-                alert('Server can not change status!');
+                alert('Something went wrong!');
+            }
+        }
+    });
+}
+
+function changeContact(el) {
+    var id = $(el).data('id');
+    var status = $(el).data('status');
+    $.ajax({
+        type: "GET",
+        url: '/admin/editable/change-contact',
+        data: {id: id, status: status},
+        success: function (responese) {
+            var result = JSON.parse(responese);
+            // alert(result['result']);
+            if (result['result'] == 'success') {
+                $(el).data('status', result['status']);
+                if (result['status'] == 1) {
+                    $(el).html('<i class="fa fa-check"> </i> Active');
+                    $(el).removeAttr("class");
+                    $(el).addClass("btn btn-success");
+                }else{
+                    $(el).html('<i class="fa fa-times"> </i> Inactive');
+                    $(el).removeAttr("class");
+                    $(el).addClass("btn btn-danger");
+                }
+            } else {
+                alert('Something went wrong!');
             }
         }
     });

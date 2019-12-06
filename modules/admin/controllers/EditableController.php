@@ -14,6 +14,7 @@ use app\models\AboutMe;
 use app\models\Blog;
 use app\models\Contact;
 use app\models\CV;
+use app\models\Profiles;
 use app\modules\admin\models\BackMenu;
 use app\modules\admin\models\FrontMenu;
 use app\modules\admin\models\Pages;
@@ -58,6 +59,10 @@ class EditableController extends Controller
             'change-admin-menu-nodeaccess' => [
                 'class' => EditableColumnAction::classname(),
                 'modelClass' => BackMenu::className(),
+            ],
+            'change-profiles-status' => [
+                'class' => EditableColumnAction::classname(),
+                'modelClass' => Profiles::className(),
             ]
         ];
     }
@@ -141,5 +146,24 @@ class EditableController extends Controller
             return json_encode($result);
         }
     }
+
+   public function actionChangeContact(){
+      $id = Html::encode($_GET['id']);
+      $status = Html::encode($_GET['status']);
+      if($status==1){
+         $status = 0;
+      }elseif($status == 0){
+         $status = 1;
+      }else{
+         $status = 0;
+      }
+      if(\Yii::$app->db->createCommand('UPDATE contact u SET u.status ="'.$status.'" WHERE id = '.$id)->execute()){
+         $result = array('result' => 'success', 'status' => $status);
+         return json_encode($result);
+      }else{
+         $result = array('result' => 'error');
+         return json_encode($result);
+      }
+   }
 
 }
