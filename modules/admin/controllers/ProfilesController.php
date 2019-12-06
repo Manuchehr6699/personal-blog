@@ -51,10 +51,11 @@ class ProfilesController extends Controller
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionView($id)
+    public function actionView()
     {
+       $profiles = Profiles::find()->asArray()->all();
         return $this->render('view', [
-            'model' => $this->findModel($id),
+            'profile' => $profiles,
         ]);
     }
 

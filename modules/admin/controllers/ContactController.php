@@ -2,6 +2,7 @@
 
 namespace app\modules\admin\controllers;
 
+use app\modules\admin\models\ModelStatus;
 use Yii;
 use app\models\Contact;
 use app\modules\admin\models\ContactSearch;
@@ -50,10 +51,12 @@ class ContactController extends Controller
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionView($id)
+    public function actionView()
     {
+       $contact = Contact::find()->asArray()->one();
+
         return $this->render('view', [
-            'model' => $this->findModel($id),
+            'contact' => $contact,
         ]);
     }
 
@@ -66,8 +69,15 @@ class ContactController extends Controller
     {
         $model = new Contact();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+        if ($model->load(Yii::$app->request->post())) {
+            Yii::$app->db->createCommand('TRUNCATE TABLE contact')->execute();
+//            ModelStatus::setTimeStampCreate($model);
+            if($model->save()){
+               ModelStatus::setNotifySuccesSaved();
+            }else{
+               ModelStatus::setNotifyErrorSaved();
+            }
+            return $this->redirect(['view']);
         }
 
         return $this->render('create', [
@@ -86,8 +96,13 @@ class ContactController extends Controller
     {
         $model = $this->findModel($id);
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+        if ($model->load(Yii::$app->request->post())) {
+//            ModelStatus::setTimeStampUpdate($model);
+            if($model->save()){
+               ModelStatus::setNotifySuccesSaved();
+               return $this->redirect(['view']);
+            }
+
         }
 
         return $this->render('update', [

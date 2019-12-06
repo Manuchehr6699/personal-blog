@@ -12,7 +12,7 @@ echo ModelStatus::getNotify();
 ?>
 
 <div class="row">
-    <div class="col-lg-3 ">
+    <div class="col-lg-3">
         <div class="card left-profile-card">
             <div class="card-body">
                 <div class="text-center">

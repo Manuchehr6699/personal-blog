@@ -5,10 +5,9 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\Contact */
 
-$this->title = 'Update Contact: ' . $model->id;
+$this->title = 'Update Contact';
 $this->params['breadcrumbs'][] = ['label' => 'Contacts', 'url' => ['index']];
-$this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
-$this->params['breadcrumbs'][] = 'Update';
+$this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['/admin/contact/update?id='.$model->id]];
 ?>
 <div class="contact-update">
 

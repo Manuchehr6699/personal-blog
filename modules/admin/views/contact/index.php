@@ -21,7 +21,6 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
     <div class="card">
-
         <div class="card-body">
             <?= GridView::widget([
                 'dataProvider' => $dataProvider,
