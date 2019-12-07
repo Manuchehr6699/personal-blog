@@ -9,6 +9,8 @@
 namespace app\modules\admin\controllers;
 
 
+use app\models\AboutMe;
+use app\models\Contact;
 use yii\web\Controller;
 use Yii;
 use yii\db\Expression;
@@ -101,8 +103,15 @@ class MainController extends Controller
 
     public function actionProfile(){
 
+       $profile = User::find()->where(['user_id' => Yii::$app->user->id])->asArray()->one();
+       $about_me = AboutMe::find()->where(['status' => 1])->asArray()->one();
+       $contacts = Contact::find()->where(['status' => 1])->asArray()->one();
 
-       return $this->render('profile');
+       return $this->render('profile', [
+           'profile' => $profile,
+           'about_me' => $about_me,
+           'contacts' => $contacts,
+       ]);
     }
 
     public function actionError(){

@@ -14,9 +14,10 @@ $this->params['breadcrumbs'][] = $this->title;
             <div class="col-md-12">
                 <?php if(!empty($data)): ?>
                     <div class="akea-above-logo" style="float: left; margin: 0px 10px 0px 0px">
-                        <a href="/main/about-me"><img src="/upload/avatars/<?= $data[0]['photo'] ?>"
+                        <a href="/main/about-me">
+                            <img src="/upload/avatars/<?= $data[0]['photo'] ?>"
                                                       alt="my-photo" width="348"  height="252"
-                                                      title="<?= $data[0]['first_name'].' '.$data[0]['last_name'] ?>"></a>
+                                                      title="<?= $data[0]['first_name'].' '.$data[0]['last_name'] ?>" style="border-radius: 150px"></a>
                     </div>
                     <?php foreach ($data as $text): ?>
                         <?= $text['text'] ?>

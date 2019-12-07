@@ -20,6 +20,7 @@ use app\modules\admin\models\FrontMenu;
 use app\modules\admin\models\Pages;
 use app\modules\admin\models\SettingModel;
 use kartik\grid\EditableColumnAction;
+use yii\db\Exception;
 use yii\helpers\Html;
 use yii\web\Controller;
 
@@ -177,7 +178,28 @@ class EditableController extends Controller
             $result = array('result' => 'error');
             return json_encode($result);
         }
+    }
 
+    public function actionChangeText(){
+       $text = Html::encode($_GET['text']);
+       $tbl = Html::encode($_GET['tbl']);
+       $id = explode('-',  Html::encode($_GET['id']));
+       $attribute = Html::encode($_GET['atr']);
+//       if(\Yii::$app->db->createCommand('UPDATE '.$tbl.' SET '.$attribute.' = "'.$text.'" WHERE '.$id[0].' = '.$id[1])->execute()){
+//          $result = array('result' => 'success', 'text' => $text);
+//          return json_encode($result);
+//       }else{
+//          $result = array('result' => 'error');
+//          return json_encode($result);
+//       }
+       try {
+          \Yii::$app->db->createCommand('UPDATE '.$tbl.' SET '.$attribute.' = "'.$text.'" WHERE '.$id[0].' = '.$id[1])->execute();
+          $result = array('result' => 'success', 'text' => $text);
+          return json_encode($result);
+       } catch (Exception $e) {
+          $result = array('result' => 'error', 'text' => $e->errorInfo[1]);
+          return json_encode($result);
+      }
     }
 
 }

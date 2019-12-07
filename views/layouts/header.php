@@ -17,7 +17,7 @@ use app\widgets\SiteMenu;
             <div class="akea-navigation akea-item-pdlr clearfix ">
                 <center>
                     <h3>
-                        Raul Pacheco-Vega, PhD
+                        <?= Yii::$app->settings->get('Site', 'sitename') ?>
                     </h3>
                 </center>
                 <div class=akea-main-menu id=akea-main-menu style="margin-top: 20px">

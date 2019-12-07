@@ -7,7 +7,7 @@ use app\modules\admin\models\ModelStatus;
 /* @var $model app\models\AboutMe */
 
 $this->title = 'About Me';
-$this->params['breadcrumbs'][] = $this->title;
+$this->params['breadcrumbs'][] = ['label' => 'About Me', 'url' => '#'];
 echo ModelStatus::getNotify();
 ?>
 
