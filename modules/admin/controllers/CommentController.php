@@ -5,6 +5,7 @@ namespace app\modules\admin\controllers;
 use Yii;
 use app\models\Comment;
 use app\modules\admin\models\CommentSearch;
+use yii\helpers\Html;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -109,6 +110,19 @@ class CommentController extends Controller
         $this->findModel($id)->delete();
 
         return $this->redirect(['index']);
+    }
+
+    public function actionReply(){
+        $reply = Html::encode($_GET['reply']);
+        $id = Html::encode($_GET['id']);
+        if(\Yii::$app->db->createCommand('UPDATE comment SET reply = "'.$reply.'" WHERE id = '.$id)->execute()){
+            $result = array('result' => 'success');
+            return json_encode($result);
+        }else{
+            $result = array('result' => 'error');
+            return json_encode($result);
+        }
+
     }
 
     /**

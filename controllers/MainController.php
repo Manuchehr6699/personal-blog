@@ -9,6 +9,7 @@
 namespace app\controllers;
 
 use app\models\AboutMe;
+use app\models\CV;
 use app\modules\admin\models\Pages;
 use Yii;
 use app\models\ContactForm;
@@ -66,6 +67,13 @@ class MainController extends Controller
         $data = AboutMe::find()->where(['status' => 1])->asArray()->all();
 
         return $this->render('about-me', ['data' => $data]);
+    }
+
+    public function actionCv()
+    {
+        $data = CV::find()->where(['status' => 1])->asArray()->all();
+
+        return $this->render('cv', ['data' => $data]);
     }
 
     public function actionPage($slug)

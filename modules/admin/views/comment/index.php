@@ -22,7 +22,6 @@ DataTableAssets::register($this);
                                style="width:100%">
                             <thead>
                             <tr>
-
                                 <th>Blog</th>
                                 <th>Comment</th>
                                 <th>Reply</th>
@@ -47,7 +46,10 @@ DataTableAssets::register($this);
                                 <tr>
                                     <td><?= $item['title'] ?></td>
                                     <td><?= $item['text'] ?></td>
-                                    <td><textarea cols="25"><?= $item['text'] ?></textarea></td>
+                                    <td class="text-center">
+                                        <textarea style="width: 100%;" id="comment_<?= $item['id'] ?>"><?= $item['reply'] ?></textarea>
+                                        <button class="btn btn-primary p-2" style="font-size: 12px;" onclick="replyToComment(<?= $item['id'] ?>)"><i class="fa fa-reply"></i> Reply</button>
+                                    </td>
                                     <td><?= $item['name'] ?></td>
                                     <td><?= $item['email'] ?></td>
                                     <td><?= date('d M Y H:i:s', $item['created_at']) ?></td>
@@ -66,5 +68,4 @@ DataTableAssets::register($this);
         </div>
     </div>
 </div>
-
 <?= $this->registerJsFile('@web/admin_assets/js/custom.js'); ?>

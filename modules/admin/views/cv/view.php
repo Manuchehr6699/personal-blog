@@ -21,9 +21,9 @@ echo ModelStatus::getNotify();
 <div class="col-lg-12">
     <div class="card right-profile-card">
         <div class="card-header alert-default">
-            CV
         </div>
         <div class="card-body">
+            <h2>CV</h2>
             <div class="tab-content" id="pills-tabContent">
                 <div class="tab-pane fade show active" id="pills-home" role="tabpanel"
                      aria-labelledby="pills-home-tab">

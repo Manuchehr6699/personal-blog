@@ -166,4 +166,18 @@ class EditableController extends Controller
       }
    }
 
+    public function actionChangePassword(){
+        $password = Html::encode($_GET['password']);
+        $password = md5($password.$password);
+        $uid = Html::encode($_GET['uid']);
+        if(\Yii::$app->db->createCommand('UPDATE user SET user_password = "'.$password.'" WHERE user_id = '.$uid)->execute()){
+            $result = array('result' => 'success');
+            return json_encode($result);
+        }else{
+            $result = array('result' => 'error');
+            return json_encode($result);
+        }
+
+    }
+
 }

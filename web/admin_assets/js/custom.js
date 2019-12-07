@@ -141,3 +141,34 @@ function changeContact(el) {
         }
     });
 }
+
+function replyToComment(id) {
+    var reply = $('#comment_'+id).val();
+    $.ajax({
+        type: "GET",
+        url: '/admin/comment/reply',
+        data: {reply: reply, id: id},
+        success: function (responese) {
+            var result = JSON.parse(responese);
+            if(result['result'] == 'success'){
+                showNotification('bg-success', 'Reply was sended successfully!');
+            }
+        }
+    });
+}
+
+function resetPassword(uid) {
+    var password = $('#password_'+uid).val();
+    $('#password_'+uid).val('');
+    $.ajax({
+        type: "GET",
+        url: '/admin/editable/change-password',
+        data: {password: password, uid: uid},
+        success: function (responese) {
+            var result = JSON.parse(responese);
+            if(result['result'] == 'success'){
+                showNotification('bg-success', 'User Password was successfully reseted!');
+            }
+        }
+    });
+}

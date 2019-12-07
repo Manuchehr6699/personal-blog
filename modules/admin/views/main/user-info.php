@@ -22,7 +22,8 @@ DataTableAssets::register($this);
                         <thead>
                         <tr>
                             <th>Username</th>
-                            <th>User Photo</th>
+<!--                            <th>User Photo</th>-->
+                            <th>User Password</th>
                             <th>Type</th>
                             <th>Status</th>
                         </tr>
@@ -43,6 +44,11 @@ DataTableAssets::register($this);
                                 ?>
                                 <tr>
                                     <td><?= $data['username'] ?></td>
+<!--                                    <td><img src="/upload/avatars/--><?//= $data['photo'] ?><!--"></td>-->
+                                    <td class="text-center">
+                                        <input type="password" id="password_<?= $data['user_id'] ?>">
+                                        <button class="btn btn-primary p-2" style="font-size: 12px;" onclick="resetPassword(<?= $data['user_id'] ?>)"><i class="fa fa-refresh"></i> Reset</button>
+                                    </td>
                                     <td><?= $data['email'] ?></td>
                                     <td><?= $data['user_type'] ?></td>
                                     <td>
