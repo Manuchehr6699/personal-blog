@@ -68,12 +68,16 @@ class ProfilesController extends Controller
     {
         $model = new Profiles();
 
-        if ($model->load(Yii::$app->request->post())) {
+        if ($model->load(Yii::$app->request->post())){
             ModelStatus::setTimeStampCreate($model);
-            $model->save();
-            return $this->redirect(['view', 'id' => $model->id]);
+            $model->setItemOrder($model->order);
+            if($model->save()){
+               ModelStatus::setNotifySuccesSaved();
+               return $this->redirect(['index']);
+            }else{
+               ModelStatus::setNotifyErrorSaved();
+            }
         }
-
         return $this->render('create', [
             'model' => $model,
         ]);
@@ -114,6 +118,9 @@ class ProfilesController extends Controller
 
         return $this->redirect(['index']);
     }
+
+
+
 
     /**
      * Finds the Profiles model based on its primary key value.

@@ -28,11 +28,11 @@ class ModelStatus
    public static $listIcons = [
       'twitter' => 'Twitter',
       'google-plus' => 'GOOGLE PLUS',
-      'email' => 'EMAIL',
+      'envelope' => 'EMAIL',
       'facebook' => 'FACEBOOK',
       'instagram' => 'Instagram',
       'pinterest' => 'Pinterest',
-      'linkedin-in' => 'LinkedIn',
+      'linkedin' => 'LinkedIn',
       'youtube' => 'YouTube',
       'skype' => 'Skype',
       'wechat' => 'Wechat',
@@ -40,6 +40,7 @@ class ModelStatus
       'vk' => 'VK',
       'dribbble' => 'Dribbble'
    ];
+
 
    public static function setNotifySuccesSaved()
    {

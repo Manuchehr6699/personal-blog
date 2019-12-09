@@ -64,4 +64,26 @@ class Profiles extends \yii\db\ActiveRecord
             'updated_by' => 'Updated By',
         ];
     }
+
+   public function setItemOrder($id){
+      //after $id
+      if(empty($id)){
+         $id=-1;
+      }
+      if($id == -2){
+         $this->order = 0;
+         Yii::$app->db->createCommand('UPDATE profiles p SET p.order = p.order + 1')->execute();
+      }elseif($id == -1){
+         $lastItemOrder = $this::find()->max('order');
+         $this->order = $lastItemOrder+1;
+      }else{
+         $id+=1;
+         $this->order = $id;
+         Yii::$app->db->createCommand('UPDATE profiles p SET p.order = p.order + 1 WHERE p.order >= '.$id)->execute();
+      }
+   }
+
+   public static function getItems(){
+       return static::find()->where(['status' => 1])->asArray()->all();
+   }
 }

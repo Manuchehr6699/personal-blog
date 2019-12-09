@@ -1,5 +1,6 @@
 <?php
 
+use app\modules\admin\models\ModelStatus;
 use kartik\editable\Editable;
 use yii\helpers\Html;
 use kartik\grid\GridView;
@@ -18,7 +19,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <p>
         <?= Html::a('Create Profiles', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
-
+    <?= ModelStatus::getNotify() ?>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
     <div class="card">
         <div class="card-body">

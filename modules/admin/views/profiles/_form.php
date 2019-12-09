@@ -1,6 +1,8 @@
 <?php
 
+use app\models\Profiles;
 use app\modules\admin\models\ModelStatus;
+use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
@@ -31,7 +33,11 @@ use yii\widgets\ActiveForm;
                            <?= $form->field($model, 'type')->dropDownList(['social' => 'Social', 'publication' => 'Publication'], ['prompt' => '---Select Profile Type---']) ?>
                         </div>
                         <div class="col-md-6">
-                           <?= $form->field($model, 'order')->textInput() ?>
+                           <?= $form->field($model, 'order')->dropDownList(ArrayHelper::map(Profiles::getItems(), 'id', function ($item) {
+                                  return 'After -> ' . $item['icon'].' '.$item['name'];
+                               }) + ['-2' => "It's first Item", '-1' => "It's last Item"],
+                               ['prompt' => '----Select Order---'])
+                           ?>
                         </div>
                     </div>
                     <div class="row">

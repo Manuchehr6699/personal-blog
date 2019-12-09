@@ -27,8 +27,8 @@ use yii\widgets\ActiveForm;
             </div>
             <?php if(!empty($text)): ?>
             <div class="gdlr-core-social-network-item gdlr-core-item-pdb gdlr-core-none-align" id="div_2207_12">
-                <?php foreach($text as $item): if($item['icon'] == 'email') $item['icon'] = 'envelope'; ?>
-                <a href='/' target=_blank class=gdlr-core-social-network-icon title='<?= $item['icon'] ?>' id="a_2207_11" rel="noopener noreferrer">
+                <?php foreach($text as $item): ?>
+                <a href='<?= $item['link'] ?>' target=_blank class=gdlr-core-social-network-icon title='<?= $item['name'] ?>' id="a_2207_11" rel="noopener noreferrer">
                     <i class="fa fa-<?= $item['icon'] ?>"></i>
                 </a>
                 <?php endforeach; ?>

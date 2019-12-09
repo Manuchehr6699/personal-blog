@@ -17,7 +17,7 @@ use yii\helpers\Html;
         <div class="background-01" style="background-image: linear-gradient(150deg, rgba(128, 24, 102, 0.8)15%, rgba(231, 124, 200, 0.8)70%, rgba(253, 162, 251, 0.8)94%), url(/admin_assets/img/login-bg.jpg );background-size: cover;">
             <div class="authentication-col-content mx-auto">
                 <h1 class="gradient-text-01 text-center">
-                    Welcome! <?= Yii::$app->settings->get('Site', 'sitename') ?>
+                    Welcome! <br> <?= Yii::$app->settings->get('Site', 'sitename') ?>
                 </h1>
                 <p>
                     <?= Yii::$app->settings->get('Site', 'description') ?>

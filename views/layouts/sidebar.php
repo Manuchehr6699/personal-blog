@@ -19,7 +19,6 @@ use app\components\Tags;
      data-skin="Blog List" id="div_2207_9">
     <div class="gdlr-core-sidebar-item gdlr-core-item-pdlr">
         <?php if (Yii::$app->controller->action->id != 'about-me' && Yii::$app->controller->action->id != 'cv'): ?>
-
             <?php
             $dependency = [
                 'class' => 'yii\caching\DbDependency',
@@ -41,7 +40,7 @@ use app\components\Tags;
             'class' => 'yii\caching\DbDependency',
             'sql' => 'SELECT COUNT(*) FROM blog',
         ];
-        if ($this->beginCache('PopularPosts', ['dependency' => $dependency])) {
+        if($this->beginCache('PopularPosts', ['dependency' => $dependency])) {
             echo PopularPost::widget();
             $this->endCache();
         }
@@ -51,7 +50,7 @@ use app\components\Tags;
             'sql' => 'SELECT COUNT(*) FROM blog_category',
         ];
 
-        if ($this->beginCache('Categories', ['dependency' => $dependency])) {
+        if($this->beginCache('Categories', ['dependency' => $dependency])) {
             echo Categories::widget();
             $this->endCache();
         }
@@ -60,17 +59,12 @@ use app\components\Tags;
             'sql' => 'SELECT COUNT(*) FROM blog_category',
         ];
 
-        if ($this->beginCache('Categories', ['dependency' => $dependency])) {
-            echo Categories::widget();
-            $this->endCache();
-        }
-
         $dependency = [
             'class' => 'yii\caching\DbDependency',
             'sql' => 'SELECT COUNT(*) FROM blog',
         ];
 
-        if ($this->beginCache('Tags', ['dependency' => $dependency])) {
+        if($this->beginCache('Tags', ['dependency' => $dependency])) {
             echo Tags::widget();
             $this->endCache();
         }
@@ -80,7 +74,7 @@ use app\components\Tags;
             'sql' => 'SELECT COUNT(*) FROM my_books',
         ];
 
-        if ($this->beginCache('MyBooks', ['dependency' => $dependency])) {
+        if($this->beginCache('MyBooks', ['dependency' => $dependency])) {
             echo MyBooks::widget();
             $this->endCache();
         }

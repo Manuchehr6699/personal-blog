@@ -53,7 +53,7 @@ $config = [
             'showScriptName' => false,
             'rules' => [
                 'main/page/<slug>' => 'main/page',
-                '/blog/post/<alias>' => 'blog/post',
+                'blog/post/<alias>' => 'blog/post',
             ],
         ],
         'assetManager' => [
