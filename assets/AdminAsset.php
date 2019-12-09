@@ -26,6 +26,7 @@ class AdminAsset extends AssetBundle
         'admin_assets/plugins/notifications/notifications.js',
         'admin_assets/plugins/slimscroll/slimscroll.js',
         'admin_assets/plugins/apex-charts/js/apexcharts.js',
+        'admin_assets/js/tooltip-init.js',
         'admin_assets/js/main.js',
     ];
 

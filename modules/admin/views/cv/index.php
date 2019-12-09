@@ -29,7 +29,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'columns' => [
                     ['class' => 'yii\grid\SerialColumn'],
 
-                    'id',
+//                    'id',
                     'title',
                     'text:html',
                     [
@@ -56,7 +56,10 @@ $this->params['breadcrumbs'][] = $this->title;
                     //'updated_at',
                     //'upadted_by',
 
-                    ['class' => 'yii\grid\ActionColumn'],
+                    [
+                        'class' => 'yii\grid\ActionColumn',
+                        'template' => '{update}{view}',
+                    ],
                 ],
             ]); ?>
         </div>

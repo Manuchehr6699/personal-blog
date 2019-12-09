@@ -26,13 +26,19 @@ class ModelStatus
    ];
 
    public static $listIcons = [
-      'fa fa-twitter' => 'Twitter',
-      'fa fa-google-plus' => 'GOOGLE PLUS',
-      'fa fa-edge' => 'EMAIL',
-      'fa fa-facebook' => 'FACEBOOK',
-      'fa fa-instagram' => 'Instagram',
-      'fa fa-pinterest-square' => 'Pinterest',
-      'fa fa-linkedin-in' => 'LinkedIn',
+      'twitter' => 'Twitter',
+      'google-plus' => 'GOOGLE PLUS',
+      'email' => 'EMAIL',
+      'facebook' => 'FACEBOOK',
+      'instagram' => 'Instagram',
+      'pinterest' => 'Pinterest',
+      'linkedin-in' => 'LinkedIn',
+      'youtube' => 'YouTube',
+      'skype' => 'Skype',
+      'wechat' => 'Wechat',
+      'vimeo' => 'Vimeo',
+      'vk' => 'VK',
+      'dribbble' => 'Dribbble'
    ];
 
    public static function setNotifySuccesSaved()

@@ -83,6 +83,11 @@ class BackMenu extends \yii\db\ActiveRecord
         $items = BackMenu::find()->where(['nodeaccess' => 1, 'parentnodeid' => 0])->asArray()->all();
         return $items;
     }
+
+    public static function getAllItems(){
+        $items = BackMenu::find()->where(['nodeaccess' => 1])->asArray()->all();
+        return $items;
+    }
     public function setItemOrder($id){
         //after $id
         if(empty($id)){

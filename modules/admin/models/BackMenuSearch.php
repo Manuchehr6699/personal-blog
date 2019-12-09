@@ -11,6 +11,7 @@ use app\modules\admin\models\BackMenu;
  */
 class BackMenuSearch extends BackMenu
 {
+
     /**
      * {@inheritdoc}
      */

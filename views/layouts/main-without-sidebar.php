@@ -8,7 +8,6 @@ use app\widgets\Alert;
 use yii\helpers\Html;
 use yii\widgets\Breadcrumbs;
 use app\assets\MainAsset;
-$this->title='Home | ...';
 MainAsset::register($this);
 ?>
 <?php $this->beginPage() ?>

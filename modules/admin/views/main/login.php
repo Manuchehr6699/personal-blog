@@ -16,11 +16,12 @@ use yii\helpers\Html;
     <div class="col-lg-7 no-padding">
         <div class="background-01" style="background-image: linear-gradient(150deg, rgba(128, 24, 102, 0.8)15%, rgba(231, 124, 200, 0.8)70%, rgba(253, 162, 251, 0.8)94%), url(/admin_assets/img/login-bg.jpg );background-size: cover;">
             <div class="authentication-col-content mx-auto">
-                <h1 class="gradient-text-01">
-                    Welcome To Divine!
+                <h1 class="gradient-text-01 text-center">
+                    Welcome! <?= Yii::$app->settings->get('Site', 'sitename') ?>
                 </h1>
-                <p>Lorem ipsum Consectetur voluptate Excepteur amet Ut laboris incididunt ea sit culpa aute minim
-                    reprehenderit labore mollit mollit in voluptate aute elit ut sed mollit quis irure veniam.</p>
+                <p>
+                    <?= Yii::$app->settings->get('Site', 'description') ?>
+                </p>
             </div>
         </div>
     </div>
@@ -30,19 +31,21 @@ use yii\helpers\Html;
         <!-- Begin Form -->
         <div class="authentication-form mx-auto">
 
-            <h3 class="mb-3">Log in to Divine</h3>
-            <p>Lorem ipsum Exercitation incididunt sed exercitation sit minim non irure consectetur.</p>
+            <h3 class="mb-3">Login to Admin Page</h3>
 
             <?php $form = ActiveForm::begin(['id' => 'login-form']); ?>
 
             <?= $form->field($model, 'username')->textInput(['autofocus' => true])->label('Username or Email address') ?>
             <?= $form->field($model, 'password')->passwordInput()->label('Password') ?>
+            <div class="text-left">
+                <a href="/"><i class="fa fa-angle-left"></i> Back to <?= Yii::$app->settings->get('Site', 'sitename') ?></a>
+            </div>
             <div class="row mb-4">
-
                 <div class="col-6 text-left">
-                    <a href="pages-forgot-password.html">Forgot Password ?</a>
+                    <a href="/admin/main/forgot-password">Lost your password?</a>
                 </div>
             </div>
+
             <?= Html::submitButton('Sign in', ['class' => 'btn-theme btn-theme-primary mb-4', 'name' => 'login-button']) ?>
             <?php ActiveForm::end(); ?>
         </div>

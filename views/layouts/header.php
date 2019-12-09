@@ -21,7 +21,16 @@ use app\widgets\SiteMenu;
                     </h3>
                 </center>
                 <div class=akea-main-menu id=akea-main-menu style="margin-top: 20px">
-                    <?php echo SiteMenu::getMenu() ?>
+                    <?php
+                    $dependency = [
+                        'class' => 'yii\caching\DbDependency',
+                        'sql' => 'SELECT COUNT(*) FROM front_menu',
+                    ];
+                    if ($this->beginCache('FrontMenu')) {
+                        echo SiteMenu::getMenu();
+                        $this->endCache();
+                    }
+                    ?>
                     <div class=akea-navigation-slide-bar id=akea-navigation-slide-bar></div>
                 </div>
 
@@ -35,24 +44,17 @@ use app\widgets\SiteMenu;
                             <div class=akea-overlay-menu-close></div>
                             <div class=akea-overlay-menu-row>
                                 <div class=akea-overlay-menu-cell>
-                                    <?= SiteMenu::getMobileMenu() ?>
+                                    <?php
+                                    $dependency = [
+                                        'class' => 'yii\caching\DbDependency',
+                                        'sql' => 'SELECT COUNT(*) FROM front_menu',
+                                    ];
+                                    if ($this->beginCache('FrontMenuMobile')) {
+                                        echo SiteMenu::getMobileMenu();
+                                        $this->endCache();
+                                    }
+                                    ?>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class=akea-main-menu-search id=akea-top-search><i class="fa fa-search"></i></div>
-                    <div class=akea-top-search-wrap>
-                        <div class=akea-top-search-close></div>
-                        <div class=akea-top-search-row>
-                            <div class=akea-top-search-cell>
-                                <form role=search method=get class=search-form action=#>
-                                    <input type=text class="search-field akea-title-font" placeholder=Search...
-                                           value name=s>
-                                    <div class=akea-top-search-submit><i class="fa fa-search"></i></div>
-                                    <input type=submit class=search-submit value=Search>
-                                    <div class=akea-top-search-close><i class=icon_close></i></div>
-                                </form>
                             </div>
                         </div>
                     </div>

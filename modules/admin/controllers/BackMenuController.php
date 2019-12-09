@@ -4,6 +4,7 @@ namespace app\modules\admin\controllers;
 
 use Yii;
 
+use yii\helpers\ArrayHelper;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -37,6 +38,7 @@ class BackMenuController extends Controller
     {
         $searchModel = new BackMenuSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+
 
         return $this->render('index', [
             'searchModel' => $searchModel,

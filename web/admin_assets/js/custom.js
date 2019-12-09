@@ -175,23 +175,24 @@ function resetPassword(uid) {
 function myTrim(x) {
     return x.replace(/^\s+|\s+$/gm,'');
 }
-function changeText(el) {
+function changeText(el, id) {
     var text = myTrim($(el).text());
+
     if(text !== ""){
         $(el).removeAttr('onclick');
-        $(el).html('<input type="text" id="editable_text" value="'+text+'"></input> <i class="fa fa-pen" onclick="saveText()"></i>');
+        $(el).html('<input type="text" id="txt'+id+'" value="'+text+'"></input><i class="fa fa-pen" onclick="saveText(\''+id+'\')"></i>');
     }
 }
 
 
-function saveText() {
-    var text = $('#editable_text').val();
+function saveText(_id) {
+    var text = $('#txt'+_id).val();
     var tbl;
     var atr;
     if(text !== ""){
-        tbl = $('#text').data('tbl');
-        atr = $('#text').data('atr');
-        id = $('#text').data('id');
+        tbl = $("#"+_id).data('tbl');
+        atr = $("#"+_id).data('atr');
+        id = $("#"+_id).data('id');
         $.ajax({
             type: "GET",
             url: '/admin/editable/change-text',
@@ -201,12 +202,13 @@ function saveText() {
                 if(result['result'] == 'success'){
                     showNotification('bg-success', 'Data was successfully saved!');
                     $('#editable_text').remove();
-                    $('#text').text(result['text']);
-                    $('#text').attr('onClick', 'changeText(this)');
+                    $('#'+_id).text(result['text']);
+                    $('#'+_id).attr('onClick', "changeText(this, '"+_id+"')");
                 }else{
                     if(result['text'] == 1062){
                         showNotification('bg-danger', 'This Username already exists!');
                     }else{
+                        alert(result['text']);
                         showNotification('bg-danger', 'Something went wrong!');
                     }
                 }
@@ -214,3 +216,8 @@ function saveText() {
         });
     }
 }
+
+
+// function showBtn() {
+//     $('#exampleModalCenter').modal();
+// }

@@ -55,7 +55,8 @@ $this->params['breadcrumbs'][] = $this->title;
                 'filter' => array(1 => 'Active', 0 => 'Inactive'),
                 'pageSummary' => true
             ],
-            ['class' => 'yii\grid\ActionColumn'],
+            'class' => 'yii\grid\ActionColumn',
+            'template' => '{update}{view}',
         ],
     ]); ?>
         </div>

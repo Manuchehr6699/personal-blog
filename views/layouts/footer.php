@@ -15,12 +15,12 @@
                 <div id=text-2 class="widget widget_text akea-widget">
                     <h3 class="akea-widget-title"><span class=akea-widget-head-text>Akea, blogger</span><span
                             class=akea-widget-head-divider></span></h3><span class=clear></span>
-                    <div class=textwidget>
-                        <p>23 King Street, 5th Avenue, New York
+                    <div class='textwidget'>
+                        <span>23 King Street, 5th Avenue, New York</span>
                             <br> <span class=gdlr-core-space-shortcode id="span_2207_6"></span>
                             <br> +1-2355-3345-5
                             <br> <span class=gdlr-core-space-shortcode id="span_2207_7"></span>
-                            <br> <a href=mailto:call@akeablog.co class="contact_email">call@akeablog.co</a></p>
+                            <br> <a href=mailto:call@akeablog.co class="contact_email">call@akeablog.co</a>
                     </div>
                 </div>
             </div>

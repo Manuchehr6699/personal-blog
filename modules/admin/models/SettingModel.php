@@ -44,7 +44,7 @@ class SettingModel extends ActiveRecord
             [['section', 'key', 'description'], 'string', 'max' => 255],
             [['status'], 'integer'],
             ['status', 'default', 'value' => SettingStatus::ACTIVE],
-            ['status', 'in', 'range' => SettingStatus::getConstantsByName()],
+            //['status', 'in', 'range' => SettingStatus::getConstantsByName()],
             [['type'], 'safe'],
         ];
     }

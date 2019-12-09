@@ -10,10 +10,13 @@ use app\modules\admin\models\enumerables\SettingType;
 ?>
 
 <div class="setting-form">
-    <div class="card-box">
-        <div class="card-head">
-        </div>
-        <div class="card-body">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <h2>Add Setting</h2>
+                </div>
+                <div class="card-body">
            <?php $form = ActiveForm::begin(); ?>
             <div class="row">
             <div class="col-lg-6">

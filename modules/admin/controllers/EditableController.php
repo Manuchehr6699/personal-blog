@@ -10,14 +10,18 @@ namespace app\modules\admin\controllers;
 
 
 
+use app\components\Settings;
 use app\models\AboutMe;
 use app\models\Blog;
+use app\models\Category;
 use app\models\Contact;
 use app\models\CV;
 use app\models\Profiles;
+use app\models\Setting;
 use app\modules\admin\models\BackMenu;
 use app\modules\admin\models\FrontMenu;
 use app\modules\admin\models\Pages;
+use app\modules\admin\models\search\SettingSearch;
 use app\modules\admin\models\SettingModel;
 use kartik\grid\EditableColumnAction;
 use yii\db\Exception;
@@ -51,7 +55,7 @@ class EditableController extends Controller
             ],
             'change-setting-status' => [
                 'class' => EditableColumnAction::classname(),
-                'modelClass' => SettingModel::className(),
+                'modelClass' => SettingSearch::className(),
             ],
             'change-user-menu-nodeaccess' => [
                 'class' => EditableColumnAction::classname(),
@@ -64,6 +68,10 @@ class EditableController extends Controller
             'change-profiles-status' => [
                 'class' => EditableColumnAction::classname(),
                 'modelClass' => Profiles::className(),
+            ],
+            'change-category-status' => [
+                'class' => EditableColumnAction::classname(),
+                'modelClass' => Category::className(),
             ]
         ];
     }
@@ -200,6 +208,21 @@ class EditableController extends Controller
           $result = array('result' => 'error', 'text' => $e->errorInfo[1]);
           return json_encode($result);
       }
+    }
+
+    public function actionChangePhoto(){
+        if(\Yii::$app->request->post()){
+            if(!empty($_FILES['User']['tmp_name']['avatar'])) {
+                $filePath = \Yii::getAlias('@webroot') . '/upload/avatars/';
+                $uploadfile = $filePath . basename($_FILES['User']['name']['avatar']);
+                move_uploaded_file($_FILES['User']['tmp_name']['avatar'], $uploadfile);
+                $filename = basename($_FILES['User']['name']['avatar']);
+                \Yii::$app->db->createCommand('UPDATE user SET avatar = "'.$filename.'" WHERE user_id = '.\Yii::$app->user->id)->execute();
+                return $this->redirect(['/admin/main/profile']);
+            }
+
+        }
+        debug($_FILES);
     }
 
 }

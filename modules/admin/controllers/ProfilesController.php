@@ -53,9 +53,9 @@ class ProfilesController extends Controller
      */
     public function actionView()
     {
-       $profiles = Profiles::find()->asArray()->all();
+       $profiles = Profiles::find()->where(['status' => 1])->asArray()->all();
         return $this->render('view', [
-            'profile' => $profiles,
+            'profiles' => $profiles,
         ]);
     }
 

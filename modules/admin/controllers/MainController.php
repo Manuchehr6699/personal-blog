@@ -11,6 +11,11 @@ namespace app\modules\admin\controllers;
 
 use app\models\AboutMe;
 use app\models\Contact;
+use app\models\Profiles;
+use app\models\ResetPasswordForm;
+use app\models\SendEmailForm;
+use yii\base\InvalidParamException;
+use yii\web\BadRequestHttpException;
 use yii\web\Controller;
 use Yii;
 use yii\db\Expression;
@@ -103,19 +108,64 @@ class MainController extends Controller
 
     public function actionProfile(){
 
+       $model = new User();
        $profile = User::find()->where(['user_id' => Yii::$app->user->id])->asArray()->one();
        $about_me = AboutMe::find()->where(['status' => 1])->asArray()->one();
        $contacts = Contact::find()->where(['status' => 1])->asArray()->one();
+       $socials = Profiles::find()->where(['status' => 1])->asArray()->all();
 
        return $this->render('profile', [
            'profile' => $profile,
            'about_me' => $about_me,
            'contacts' => $contacts,
+           'model' => $model,
+           'socials' => $socials
        ]);
     }
 
-    public function actionError(){
+    public function actionForgotPassword(){
+        $this->layout = 'main-login';
+        if (!\Yii::$app->user->isGuest) {
+            return $this->redirect('/admin/main/index');
+        }
+        $model = new SendEmailForm();
+        if ($model->load(Yii::$app->request->post())) {
+            if ($model->validate()) {
+                if($model->sendMail()):
+                    Yii::$app->session->setFlash('succes', 'Check your Email please!');
+                    return $this->redirect('forgot-password');
+                else:
+                    Yii::$app->session->setFlash('error', "You can't permission to change Admin password!");
+                endif;
+            }
+        }
+        return $this->render('forgot-password', [
+            'model' => $model,
+        ]);
+    }
 
+    public function actionResetPassword($key)
+    {
+        try {
+            $model = new ResetPasswordForm($key);
+        }
+        catch (InvalidParamException $e) {
+            throw new BadRequestHttpException($e->getMessage());
+        }
+
+        if ($model->load(Yii::$app->request->post())) {
+            if ($model->validate() && $model->resetPassword()) {
+                Yii::$app->session->setFlash('success', 'Password was successfully changed!');
+                return $this->redirect(['/admin/main/login']);
+            }
+        }
+
+        return $this->render('reset-password', [
+            'model' => $model,
+        ]);
+    }
+
+    public function actionError(){
 
         return $this->render('error');
     }

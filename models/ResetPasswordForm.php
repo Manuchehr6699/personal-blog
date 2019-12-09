@@ -27,17 +27,17 @@ class ResetPasswordForm extends Model
     public function attributeLabels()
     {
         return [
-            'password' => 'Пароль'
+            'password' => 'Password'
         ];
     }
 
     public function __construct($key, $config = [])
     {
         if(empty($key) || !is_string($key))
-            throw new InvalidParamException('Ключ не может быть пустым.');
+            throw new InvalidParamException('Key can not be empty!');
         $this->_user = User::findBySecretKey($key);
         if(!$this->_user)
-            throw new InvalidParamException('Не верный ключ.');
+            throw new InvalidParamException('Invalid key!');
         parent::__construct($config);
     }
 

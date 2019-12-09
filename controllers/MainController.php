@@ -10,10 +10,15 @@ namespace app\controllers;
 
 use app\models\AboutMe;
 use app\models\CV;
+use app\models\Subcribers;
+use app\modules\admin\models\ModelStatus;
 use app\modules\admin\models\Pages;
 use Yii;
 use app\models\ContactForm;
 use app\models\LoginForm;
+use yii\db\Expression;
+use yii\filters\AccessControl;
+use yii\helpers\Html;
 use yii\web\Controller;
 
 class MainController extends Controller
@@ -83,6 +88,24 @@ class MainController extends Controller
         return $this->render('page', [
             'content' => $content
         ]);
+    }
+
+    public function actionSubcribe(){
+
+        $model = new Subcribers();
+        if($model->load(Yii::$app->request->post())){
+            $model->created_at = time();
+            $model->status = 2;
+
+            try{
+                $model->save();
+                Yii::$app->session->setFlash('saved', 'Email successfully send!');
+            }catch (\Exception $e){
+                Yii::$app->session->setFlash('saved', 'Your Email already exists in subcribers list!');
+            }
+        }
+
+        return $this->redirect(['/main/index']);
     }
 
     public function actionError()

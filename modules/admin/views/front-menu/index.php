@@ -1,7 +1,9 @@
 <?php
 
+use app\modules\admin\models\FrontMenu;
 use app\modules\admin\models\ModelStatus;
 use kartik\editable\Editable;
+use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use kartik\grid\GridView;
 
@@ -29,7 +31,19 @@ $this->params['breadcrumbs'][] = $this->title;
                 'columns' => [
                     ['class' => 'yii\grid\SerialColumn'],
 //                    'nodeid',
-                    'parentnodeid',
+                    [
+                        'attribute' => 'parentnodeid',
+                        'format' => 'html',
+                        'filter' => ArrayHelper::map(FrontMenu::getItems(), 'nodeid', 'nodename'),
+                        'value' => function($model){
+                            $value = FrontMenu::find()->where(['nodeid' => $model->parentnodeid])->asArray()->one();
+
+                            if(empty($value['nodename'])){
+                                $value['nodename'] = '-';
+                            }
+                            return $value['nodename'];
+                        }
+                    ],
                     'nodeshortname',
                     'nodename',
                     'nodeurl',
@@ -50,7 +64,10 @@ $this->params['breadcrumbs'][] = $this->title;
                         'filter' => array(1 => 'Active', 0 => 'Inactive'),
                         'pageSummary' => true
                     ],
-                    ['class' => 'yii\grid\ActionColumn'],
+                    [
+                        'class' => 'yii\grid\ActionColumn',
+                        'template' => '{update}{view}',
+                    ],
                 ],
             ]); ?>
 

@@ -26,9 +26,9 @@ class SettingType extends BaseEnum
      * @var array
      */
     public static $list = [
-        self::STRING_TYPE => 'String',
-        self::INTEGER_TYPE => 'Integer',
-        self::BOOLEAN_TYPE => 'Boolean',
+        self::STRING_TYPE => 'Text',
+        self::INTEGER_TYPE => 'Number',
+        self::BOOLEAN_TYPE => 'True or False',
         self::FLOAT_TYPE => 'Float',
         self::NULL_TYPE => 'Null',
     ];

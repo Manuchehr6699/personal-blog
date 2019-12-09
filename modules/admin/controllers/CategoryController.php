@@ -2,6 +2,7 @@
 
 namespace app\modules\admin\controllers;
 
+use app\modules\admin\models\ModelStatus;
 use Yii;
 use app\models\Category;
 use app\modules\admin\models\CategorySearch;
@@ -66,8 +67,12 @@ class CategoryController extends Controller
     {
         $model = new Category();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+        if ($model->load(Yii::$app->request->post())) {
+            ModelStatus::setTimeStampCreate($model);
+            if($model->save()){
+                ModelStatus::setNotifySuccesSaved();
+                return $this->redirect(['index']);
+            }
         }
 
         return $this->render('create', [
@@ -86,8 +91,14 @@ class CategoryController extends Controller
     {
         $model = $this->findModel($id);
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+        if ($model->load(Yii::$app->request->post())) {
+            ModelStatus::setTimeStampUpdate($model);
+            if($model->save()){
+                ModelStatus::setNotifyErrorSaved();
+                return $this->redirect(['index']);
+            }else{
+                ModelStatus::setNotifyErrorSaved();
+            }
         }
 
         return $this->render('update', [

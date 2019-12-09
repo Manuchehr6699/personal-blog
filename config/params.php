@@ -1,7 +1,8 @@
 <?php
 
 return [
-    'adminEmail' => 'admin@example.com',
-    'senderEmail' => 'noreply@example.com',
-    'senderName' => 'Example.com mailer',
+    'adminEmail' => 'muzafarov7001911@yandex.ru',
+    'secrecKeyExpire' => 60 * 60 * 60,
+    'emailActivation' => false,
+    'loginWithEmail' => true,
 ];
