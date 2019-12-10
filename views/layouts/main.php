@@ -50,7 +50,7 @@ MainAsset::register($this);
 
 <script>
     var zilla_likes = {
-        "ajaxurl": ""
+        "ajaxurl": "/blog/like"
     };
 </script>
 <script>

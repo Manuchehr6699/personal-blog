@@ -8,21 +8,19 @@ jQuery(function($) {
         postfix = link.find('.zilla-likes-postfix').text();
 
     $.ajax({
-      type: 'POST',
+      type: 'GET',
       url: zilla_likes.ajaxurl,
-      data: {
-        action: 'zilla-likes', 
-        likes_id: id, 
-        postfix: postfix, 
+      data:{
+        id: id
       },
       xhrFields: { 
         withCredentials: true, 
       },
-      success: function(data) {
-        link.html(data).addClass('active').attr('title','You already like this');
+      success:function(data){
+        var res = JSON.parse(data);
+        link.html(res['like_count']).addClass('active').attr('title','You already like this');
       },
     });
-
     return false;
   });
 

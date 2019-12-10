@@ -667,4 +667,11 @@ span.woocommerce-Price-amount.amount{ color: #990066; }
 .contact_email{color: #FFFFFF;}
 .contact_email:hover{background-color: #990066}
 body p{color: black;}
+#paginate li{
+	display: inline;
+}
 
+#paginate .active a{
+	background-color: #CC33CC!important;
+	color: #FFFFFF;
+}

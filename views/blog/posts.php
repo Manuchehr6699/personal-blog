@@ -9,6 +9,8 @@
 use yii\widgets\LinkPager;
 
 $this->title = 'Posts';
+
+
 ?>
 <div class="gdlr-core-pbf-sidebar-content  gdlr-core-column-40 gdlr-core-pbf-sidebar-padding gdlr-core-line-height gdlr-core-column-extend-left"
      id="div_2207_2">
@@ -26,9 +28,9 @@ $this->title = 'Posts';
                             </a>
                         </div>
                         <?php endif; ?>
-                        <a href='' class=zilla-likes id=zilla-likes-6611 title="Like this">
-                            <span class=zilla-likes-count><?= $post['like_count']+0 ?></span>
-                            <span class=zilla-likes-postfix></span>
+                        <a href='' class='zilla-likes' id='<?= $post['id'] ?>' title="Like this">
+                            <span class='zilla-likes-count'><?= $post['like_count']+0 ?></span>
+                            <span class='zilla-likes-postfix'></span>
                         </a>
                     </div>
                     <div class=gdlr-core-blog-full-content-wrap>
@@ -39,14 +41,19 @@ $this->title = 'Posts';
                                 </h3>
                                 <div class="gdlr-core-blog-info-wrapper gdlr-core-skin-divider">
                                     <span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-author">
-                                            <a href="#" title="Posts by Janet Jones" rel="author">Janet Jones</a>
+                                            <a href="#" title="Posts by Janet Jones" rel="author"><?//= $post['avatar'] ?></a>
                                     </span>
                                     <span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-date">
                                         <a href="#"><?= date('M d Y', $post['created_at']) ?></a>
                                     </span>
+                                    <?php
+                                        $tags = unserialize($post['tags']);
+                                        foreach ($tags as $tag){
+                                    ?>
                                     <span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-category">
-                                        <a href="#" rel="tag">Travel</a>
+                                        <a href="/blog/posts-by-tags/<?= $tag ?>" rel="tag"><?= $tag ?></a>
                                     </span>
+                                    <?php } ?>
                                 </div>
                             </div>
                         </div>
@@ -64,9 +71,6 @@ $this->title = 'Posts';
                                 <a class="gdlr-core-social-share-pinterest" href="#" target=_blank >
                                     <i class="fa fa-pinterest-p" ></i>
                                 </a>
-                                <a class="gdlr-core-social-share-stumbleupon" href="#" target=_blank >
-                                    <i class="fa fa-stumbleupon" ></i>
-                                </a>
                                 <a class="gdlr-core-social-share-twitter" href="#" target=_blank   id="a_2207_5"  >
                                     <i class="fa fa-twitter" ></i>
                                 </a>
@@ -74,14 +78,23 @@ $this->title = 'Posts';
                         </div>
                     </div>
                 </div>
-                    <?php endforeach; ?>
-<!--                    --><?php //echo LinkPager::widget([
-//                        'pagination' => $pages,
-//                    ])
-//                    ?>
-<!--                <div class="gdlr-core-pagination  gdlr-core-style-circle gdlr-core-left-align gdlr-core-item-pdlr"><span aria-current="page" class="page-numbers current">1</span> <a class="page-numbers" href="page/2/index.html">2</a> <a class="page-numbers" href="page/3/index.html">3</a> <span class="page-numbers dots">…</span> <a class="page-numbers" href="page/8/index.html">8</a>-->
-<!--                    <a class="next page-numbers" href="page/2/index.html"></a>-->
-<!--                </div>-->
+                    <?php endforeach;  ?>
+
+                   <?php
+                        echo LinkPager::widget([
+                        'pagination' => $pages,
+                        'options' => [
+                            'tag' => 'div',
+                            'class' => 'gdlr-core-pagination  gdlr-core-style-circle gdlr-core-left-align gdlr-core-item-pdlrr',
+                            'style' => 'margin-bottom: 50px',
+                            'id' => 'paginate'
+
+                        ],
+                        'linkOptions' => ['class' => 'page-numbers'],
+                        'activePageCssClass' => 'active',
+//                        'disabledPageCssClass' => 'page-numbers',
+                   ])
+                   ?>
             </div>
             <?php else: ?>
                 <h2>Here posts not found...</h2>
