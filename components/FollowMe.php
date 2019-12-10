@@ -22,7 +22,7 @@ class FollowMe extends Widget
     {
         parent::init();
 
-        $this->text = Profiles::find()->where(['status' => 1])->orderBy('order')->asArray()->all();
+        $this->text = \Yii::$app->params['profiles'];
     }
 
     public function run()

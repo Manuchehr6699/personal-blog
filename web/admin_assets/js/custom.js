@@ -151,7 +151,7 @@ function replyToComment(id) {
         success: function (responese) {
             var result = JSON.parse(responese);
             if(result['result'] == 'success'){
-                showNotification('bg-success', 'Reply was sended successfully!');
+                showNotification('bg-success', 'Reply was sent successfully!');
             }
         }
     });
@@ -218,6 +218,46 @@ function saveText(_id) {
 }
 
 
-// function showBtn() {
-//     $('#exampleModalCenter').modal();
-// }
+function answerToMessage(id) {
+    var reply = $('#message_'+id).val();
+    $.ajax({
+        type: "GET",
+        url: '/admin/comment/answer',
+        data: {answer: reply, id: id},
+        success: function (responese) {
+            var result = JSON.parse(responese);
+            if(result['result'] == 'success'){
+                showNotification('bg-success', 'Answer was sent successfully!');
+            }
+        }
+    });
+}
+
+function changeSubcriberStatus(el) {
+    var id = $(el).data('id');
+    var status = $(el).data('status');
+    $.ajax({
+        type: "GET",
+        url: '/admin/editable/change-subcriber-status',
+        data: {id: id, status: status},
+        success: function (responese) {
+            var result = JSON.parse(responese);
+
+            if (result['result'] == 'success') {
+                $(el).data('status', result['status']);
+                if (result['status'] == 1) {
+                    $(el).html('<i class="fa fa-check"> </i> Active');
+                    $(el).removeAttr("class");
+                    $(el).addClass("label label-md label-success");
+                    showNotification('bg-success', 'Success!');
+                }else{
+                    $(el).html('<i class="fa fa-times"> </i> Inactive');
+                    $(el).removeAttr("class");
+                    $(el).addClass("label label-md label-warning");
+                }
+            } else {
+                alert('Something went wrong!');
+            }
+        }
+    });
+}

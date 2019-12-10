@@ -10,6 +10,7 @@ namespace app\controllers;
 
 
 use app\models\Blog;
+use yii\data\Pagination;
 use yii\helpers\Html;
 use yii\web\Controller;
 
@@ -18,9 +19,24 @@ class BlogController extends Controller
 
     public function actionPosts(){
 
-        $posts = Blog::find()->where(['status' => 1])->asArray()->all();
+
+        $query = Blog::find()
+            ->select([
+                'b.id', 'b.title', 'b.text', 'b.photo', 'b.alias', 'b.tags',
+                'b.like_count', 'b.created_at', 'b.created_by', 'u.username'])
+            ->from('blog b')
+            ->leftJoin( 'user u', 'b.created_by = u.user_id')
+            ->where(['b.status' => 1])->orderBy('b.id DESC');
+
+        $pages = new Pagination(['totalCount' => $query->count(),
+            'pageSize' => 8,
+            'forcePageParam' => false,
+            'pageSizeParam' => false
+        ]);
+        $posts = $query->offset($pages->offset)->limit($pages->limit)->all();
         return $this->render('posts', [
-            'posts' => $posts
+            'posts' => $posts,
+            'pages' => $pages
         ]);
     }
 

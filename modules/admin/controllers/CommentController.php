@@ -2,6 +2,7 @@
 
 namespace app\modules\admin\controllers;
 
+use app\models\UserMessage;
 use Yii;
 use app\models\Comment;
 use app\modules\admin\models\CommentSearch;
@@ -98,6 +99,7 @@ class CommentController extends Controller
         ]);
     }
 
+
     /**
      * Deletes an existing Comment model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
@@ -123,6 +125,30 @@ class CommentController extends Controller
             return json_encode($result);
         }
 
+    }
+
+    public function actionAnswer(){
+        $reply = Html::encode($_GET['answer']);
+        $id = Html::encode($_GET['id']);
+        if(\Yii::$app->db->createCommand('UPDATE user_message SET reply = "'.$reply.'", status = 1 WHERE id = '.$id)->execute()){
+            $result = array('result' => 'success');
+            return json_encode($result);
+        }else{
+            $result = array('result' => 'error');
+            return json_encode($result);
+        }
+
+    }
+
+
+
+    public function actionMessages(){
+
+        $messages = UserMessage::find()->asArray()->all();
+
+        return $this->render('messages', [
+           'messages' => $messages
+        ]);
     }
 
     /**

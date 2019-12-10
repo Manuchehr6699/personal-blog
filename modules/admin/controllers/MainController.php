@@ -14,6 +14,7 @@ use app\models\Contact;
 use app\models\Profiles;
 use app\models\ResetPasswordForm;
 use app\models\SendEmailForm;
+use app\models\Subcribers;
 use yii\base\InvalidParamException;
 use yii\web\BadRequestHttpException;
 use yii\web\Controller;
@@ -162,6 +163,14 @@ class MainController extends Controller
 
         return $this->render('reset-password', [
             'model' => $model,
+        ]);
+    }
+
+    public function actionSubcribers(){
+
+        $data = Subcribers::find()->asArray()->all();
+        return $this->render('subcribers', [
+            'data' => $data
         ]);
     }
 

@@ -225,4 +225,24 @@ class EditableController extends Controller
         debug($_FILES);
     }
 
+    public function actionChangeSubcriberStatus(){
+        $id = Html::encode($_GET['id']);
+        $status = Html::encode($_GET['status']);
+        if($status==1){
+            $status = 0;
+        }elseif($status == 0){
+            $status = 1;
+        }else{
+            $status = 0;
+        }
+       try{
+           \Yii::$app->db->createCommand('UPDATE subcribers u SET u.status ="'.$status.'" WHERE u.id = '.$id)->execute();
+            $result = array('result' => 'success', 'status' => $status);
+            return json_encode($result);
+        }catch (\Exception $e){
+            $result = array('result' => 'error');
+            return json_encode($result);
+        }
+    }
+
 }

@@ -9,7 +9,7 @@ use kartik\grid\GridView;
 /* @var $searchModel app\modules\admin\models\CVSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Curriculum Vitae Sections';
+$this->title = 'CV Sections';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="cv-index">

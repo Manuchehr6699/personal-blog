@@ -61,21 +61,11 @@ use app\widgets\SiteMenu;
                 </div>
 
                 <div class="akea-main-menu-left-wrap akea-main-menu-left-social clearfix akea-item-pdlr akea-navigation-top">
-                    <a href=# target=_blank class=akea-top-bar-social-icon title=facebook>
-                        <i class="fa fa-facebook"></i>
-                    </a>
-                    <a href=# target=_blank class=akea-top-bar-social-icon title=google-plus>
-                        <i class="fa fa-google-plus"></i>
-                    </a>
-                    <a href=# target=_blank class=akea-top-bar-social-icon title=pinterest>
-                        <i class="fa fa-pinterest-p"></i>
-                    </a>
-                    <a href=# target=_blank class=akea-top-bar-social-icon title=twitter>
-                        <i class="fa fa-twitter"></i>
-                    </a>
-                    <a href=# target=_blank class=akea-top-bar-social-icon title=vimeo>
-                        <i class="fa fa-vimeo"></i>
-                    </a>
+                    <?php foreach (Yii::$app->params['profiles'] as $item): $item['link'] = ($item['icon'] == 'envelope') ? $item['link'] = 'mailto:'.$item['name'] : $item['link']; ?>
+                        <a href='<?= $item['link'] ?>' target='_blank' class=akea-top-bar-social-icon title='<?= $item['icon'] ?>'>
+                            <i class="fa fa-<?= $item['icon'] ?>"></i>
+                        </a>
+                    <?php endforeach; ?>
                 </div>
             </div>
         </div>

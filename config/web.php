@@ -7,12 +7,15 @@ $config = [
     'id' => 'Blog',
     'basePath' => dirname(__DIR__),
     'defaultRoute' => '/main/about-me/',
-    'bootstrap' => ['log'],
+    'bootstrap' => [
+        'log',
+        'app\models\SocialProfiles',
+    ],
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
-        '@npm'   => '@vendor/npm-asset',
+        '@npm' => '@vendor/npm-asset',
         '@uploads' => '/uploads',
-        '@uploadroot' => $_SERVER['DOCUMENT_ROOT'].'/upload',
+        '@uploadroot' => $_SERVER['DOCUMENT_ROOT'] . '/upload',
     ],
     'components' => [
         'request' => [
@@ -31,8 +34,20 @@ $config = [
         ],
         'mailer' => [
             'class' => 'yii\swiftmailer\Mailer',
-            'useFileTransport' => true,
+            // send all mails to a file by default. You have to set
+            // 'useFileTransport' to false and configure a transport
+            // for the mailer to send real emails.
+            'useFileTransport' => false,
+            'transport' => [
+                'class' => 'Swift_SmtpTransport',
+                'host' => 'smtp.yandex.ru',
+                'username' => 'muzafarov7001911@yandex.ru',
+                'password' => 'm7001911',
+                'port' => '465',
+                'encryption' => 'ssl',
+            ],
         ],
+
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
             'targets' => [
@@ -81,7 +96,7 @@ $config = [
             'class' => 'yii2mod\settings\Module',
             'layout' => '@app/modules/admin/views/layouts/main'
         ],
-        'gridview' =>  [
+        'gridview' => [
             'class' => '\kartik\grid\Module'
         ]
     ],
