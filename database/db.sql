@@ -69,16 +69,16 @@ CREATE TABLE `back_menu` (
   `arrow_tag` varchar(255) DEFAULT NULL,
   `position` enum('left','right','top') DEFAULT NULL,
   PRIMARY KEY (`nodeid`)
-) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8;
 
 /*Data for the table `back_menu` */
 
 insert  into `back_menu`(`nodeid`,`parentnodeid`,`page_id`,`nodeshortname`,`nodename`,`nodeurl`,`userstatus`,`nodeaccess`,`nodestatus`,`nodeorder`,`nodefile`,`nodeicon`,`ishasdivider`,`hasnotify`,`notifyscript`,`isforguest`,`arrow_tag`,`position`) values 
 (1,0,NULL,'Dashboard','Dashboard','#','ALL',1,NULL,7,NULL,'fa fa-file','no','no','','yes',NULL,NULL),
 (2,1,NULL,'Dashboard','Dashboard','/admin','ALL',1,NULL,5,NULL,'','no','no','','yes',NULL,NULL),
-(3,0,NULL,'Manage Pages','Manage Pages','#','ALL',1,NULL,30,NULL,'fa fa-file','no','no','','yes',NULL,NULL),
-(4,17,NULL,'Site Menu Items','Site Menu Items','/admin/front-menu/index','ALL',1,NULL,35,NULL,'fa fa-list','no','no','','yes',NULL,NULL),
-(5,17,NULL,'Admin Menu Items','Admin Menu Items','/admin/back-menu/index','ALL',1,NULL,36,NULL,'fa fa-list','no','no','','yes',NULL,NULL),
+(3,0,NULL,'Manage Pages','Manage Pages','#','ALL',1,NULL,31,NULL,'fa fa-file','no','no','','yes',NULL,NULL),
+(4,17,NULL,'Site Menu Items','Site Menu Items','/admin/front-menu/index','ALL',1,NULL,36,NULL,'fa fa-list','no','no','','yes',NULL,NULL),
+(5,17,NULL,'Admin Menu Items','Admin Menu Items','/admin/back-menu/index','ALL',1,NULL,37,NULL,'fa fa-list','no','no','','yes',NULL,NULL),
 (6,0,NULL,'About Me','About Me','#','ALL',1,NULL,18,NULL,'fa fa-user','no','no','','yes',NULL,NULL),
 (7,6,NULL,'About Me','About Me','/admin/about-me/view','ALL',1,NULL,0,NULL,'','no','no','','yes',NULL,NULL),
 (8,6,NULL,'CV','CV','/admin/cv/view','ALL',1,NULL,22,NULL,'','no','no','','yes',NULL,NULL),
@@ -87,19 +87,21 @@ insert  into `back_menu`(`nodeid`,`parentnodeid`,`page_id`,`nodeshortname`,`node
 (11,10,NULL,'My Posts','My Posts','/admin/blog/index','ALL',1,NULL,26,NULL,'','no','no','','yes',NULL,NULL),
 (12,10,NULL,'Add new post','Add new post','/admin/blog/create','ALL',1,NULL,27,NULL,'','no','no','','yes',NULL,NULL),
 (13,0,NULL,'Users','Users','/admin/users/comments','ALL',1,NULL,29,NULL,'fa fa-users','no','no','','yes',NULL,NULL),
-(14,13,NULL,'Users Info','Users Info','/admin/main/user-info','ALL',1,NULL,32,NULL,'','no','no','','yes',NULL,NULL),
-(15,13,NULL,'Login Details','Login Details','/admin/main/login-details','ALL',1,NULL,33,NULL,'','no','no','','yes',NULL,NULL),
+(14,13,NULL,'Users Info','Users Info','/admin/main/user-info','ALL',1,NULL,33,NULL,'','no','no','','yes',NULL,NULL),
+(15,13,NULL,'Login Details','Login Details','/admin/main/login-details','ALL',1,NULL,34,NULL,'','no','no','','yes',NULL,NULL),
 (16,13,NULL,'Comments','Comments','/admin/comment/index','ALL',1,NULL,2,NULL,'fa fa-comments','no','no','','yes',NULL,NULL),
-(17,0,NULL,'Menu','Manage Menu','#','ALL',1,NULL,34,NULL,'fa fa-list','no','no','','yes',NULL,NULL),
-(18,3,NULL,'New page','Create new page','/admin/pages/create','ALL',1,NULL,38,NULL,'','no','no','','yes',NULL,NULL),
-(19,0,NULL,'Web-site settings','Web-site settings','/admin/settings','ALL',1,NULL,39,NULL,'fa fa-cogs','no','no','','yes',NULL,NULL),
-(20,19,NULL,'Settings','Settings','/admin/settings','ALL',1,NULL,40,NULL,'','no','no','','yes',NULL,NULL),
-(21,3,NULL,'Pages','Pages','/admin/pages','ALL',1,NULL,41,NULL,'','no','no','','yes',NULL,NULL),
+(17,0,NULL,'Menu','Manage Menu','#','ALL',1,NULL,35,NULL,'fa fa-list','no','no','','yes',NULL,NULL),
+(18,3,NULL,'New page','Create new page','/admin/pages/create','ALL',1,NULL,39,NULL,'','no','no','','yes',NULL,NULL),
+(19,0,NULL,'Web-site settings','Web-site settings','/admin/settings','ALL',1,NULL,40,NULL,'fa fa-cogs','no','no','','yes',NULL,NULL),
+(20,19,NULL,'Settings','Settings','/admin/settings','ALL',1,NULL,41,NULL,'','no','no','','yes',NULL,NULL),
+(21,3,NULL,'Pages','Pages','/admin/pages','ALL',1,NULL,42,NULL,'','no','no','','yes',NULL,NULL),
 (22,17,0,'Add new Admin Menu Item','Add new Admin Menu Item','/admin/back-menu/create','ALL',1,NULL,1,NULL,'','no','no','','yes',NULL,NULL),
 (23,17,0,'Add new UserMenu Item','Add new UserMenu Item','/admin/front-menu/create','ALL',1,NULL,2,NULL,'','no','no','','yes',NULL,NULL),
-(24,6,0,'Profiles','Profiles','/admin/profiles','ALL',1,NULL,42,NULL,'','no','no','','yes',NULL,NULL),
-(25,10,0,'Show All Posts','Show All Posts','/admin/blog/posts','ALL',1,NULL,43,NULL,'','no','no','','yes',NULL,NULL),
-(26,10,0,'Blog Categories','Blog Categories','/admin/category/index','ALL',1,NULL,44,NULL,'','no','no','','yes',NULL,NULL);
+(24,6,0,'Profiles','Profiles','/admin/profiles','ALL',1,NULL,43,NULL,'','no','no','','yes',NULL,NULL),
+(25,10,0,'Show All Posts','Show All Posts','/admin/blog/posts','ALL',1,NULL,44,NULL,'','no','no','','yes',NULL,NULL),
+(26,10,0,'Blog Categories','Blog Categories','/admin/category/index','ALL',1,NULL,45,NULL,'','no','no','','yes',NULL,NULL),
+(27,13,0,'User messages','User Messages','/admin/comment/messages','ALL',1,NULL,30,NULL,'','no','no','','yes',NULL,NULL),
+(28,13,0,'Subcribers','Subcribers','/admin/main/subcribers','ALL',1,NULL,46,NULL,'','no','no','','yes',NULL,NULL);
 
 /*Table structure for table `blog` */
 
@@ -292,7 +294,7 @@ insert  into `front_menu`(`nodeid`,`parentnodeid`,`page_id`,`nodeshortname`,`nod
 (1,0,0,'About me','About me','/main/about-me/','ALL',1,NULL,0,NULL,'','no','no','','yes',NULL,NULL),
 (2,1,0,'CV','CV','/main/cv/','ALL',1,NULL,4,NULL,'','no','no','','yes',NULL,NULL),
 (3,0,0,'Blog','Blog','/blog/posts','ALL',1,NULL,6,NULL,'','no','no','','yes',NULL,NULL),
-(4,0,0,'Contact','Contact','/contact/','ALL',1,NULL,8,NULL,'','no','no','','yes',NULL,NULL);
+(4,0,0,'Contact','Contact','/main/contact/','ALL',1,NULL,9,NULL,'','no','no','','yes',NULL,NULL);
 
 /*Table structure for table `in_the_press` */
 
@@ -479,7 +481,7 @@ CREATE TABLE `profiles` (
 /*Data for the table `profiles` */
 
 insert  into `profiles`(`id`,`name`,`link`,`type`,`description`,`order`,`icon`,`status`,`created_at`,`created_by`,`updated_at`,`updated_by`) values 
-(1,'abel.polese@tlu.ee','abel.polese@tlu.ee','social','It\'s my Email',NULL,'email',1,1575795227,1,NULL,NULL),
+(1,'abel.polese@tlu.ee','abel.polese@tlu.ee','social','It\'s my Email',NULL,'envelope',1,1575795227,1,NULL,NULL),
 (2,'@abiquitous','https://twitter.com/abiquitous','social','It\'s my Tweetter profile.',NULL,'twitter',1,1575796372,1,1575796399,1);
 
 /*Table structure for table `publication` */
@@ -537,15 +539,21 @@ CREATE TABLE `setting` (
   `created_at` int(11) NOT NULL,
   `updated_at` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 /*Data for the table `setting` */
 
 insert  into `setting`(`id`,`type`,`section`,`key`,`value`,`status`,`description`,`created_at`,`updated_at`) values 
 (1,'string','Site','sitename','Abel Polese, PhD',1,'It\'s site name and used like Title in home page',1575215973,1575791729),
 (2,'string','Site','description','Senior Research Fellow with DCU Institute for International Conflict Resolution and Reconstruction',1,'Describe site',1575216197,1575790053),
-(3,'string','test','test','test',1,'test',1575373966,1575373966),
-(4,'string','Site','empty_result','Here is not any data yet!',1,'if page have not any data',1575808004,1575808004);
+(3,'string','test','test','test',0,'test',1575373966,1575904046),
+(4,'string','Site','empty_result','Here is not any data yet!',1,'if page have not any data',1575808004,1575808004),
+(5,'string','Descriptons','email_contact','Lorem ipsum dolor',1,'its for contact',1575904089,1575904232),
+(6,'string','Descriptons','phone_number_contact','Lorem ipsum dolor',1,'its for contact page',1575904143,1575904165),
+(7,'string','Descriptons','location_contact','Lorem ipsum dolor',1,'its for contact',1575904199,1575904215),
+(8,'string','Contact','contact_form_title','Leave us your info',1,'',1575905501,1575905501),
+(9,'string','Contact','contact_form_title2','and we will get back to you.',1,'',1575905536,1575905536),
+(10,'string','Contact','contact_form_description','Lorem ipsum dolor',1,'Contact form description',1575905789,1575905789);
 
 /*Table structure for table `subcribers` */
 
@@ -565,9 +573,9 @@ CREATE TABLE `subcribers` (
 /*Data for the table `subcribers` */
 
 insert  into `subcribers`(`id`,`email`,`status`,`created_at`,`updated_at`,`updated_by`) values 
-(1,'manu6699@mail.ru',2,1575823844,NULL,NULL),
-(5,'manu66929@mail.ru',2,1575824533,NULL,NULL),
-(6,'manu669ee9@mail.ru',2,1575824879,NULL,NULL);
+(1,'manu6699@mail.ru',1,1575823844,NULL,NULL),
+(5,'manu66929@mail.ru',1,1575824533,NULL,NULL),
+(6,'manu669ee9@mail.ru',1,1575824879,NULL,NULL);
 
 /*Table structure for table `talks` */
 
@@ -642,6 +650,37 @@ insert  into `user`(`user_id`,`username`,`user_password`,`email`,`user_type`,`is
 (23,'admin3','7169390683d2b222ba778ca6374b59d3',NULL,'A',0,'std7.jpg','2019-10-12 13:52:10',1,NULL,NULL,NULL,NULL,'ak5h7tnec99b69cipd80ralc0p2fa23l'),
 (25,'admin4','dfa5f43cb476ef890a83010f0da7c6b0',NULL,'A',0,'std3.jpg','2019-10-12 13:57:57',1,NULL,NULL,NULL,NULL,'2pqp9rissts870sj830jkor0jntj15h9'),
 (26,'admin6','b48d62f30f50c2c191ab949186c532d3',NULL,'A',0,'std6.jpg','2019-10-12 14:05:01',1,NULL,NULL,NULL,NULL,'90c8pfqa6cchpcofouj9qsl1hvngu3f3');
+
+/*Table structure for table `user_message` */
+
+DROP TABLE IF EXISTS `user_message`;
+
+CREATE TABLE `user_message` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(200) NOT NULL,
+  `email` varchar(500) NOT NULL,
+  `message` text NOT NULL,
+  `reply` text,
+  `status` int(2) DEFAULT NULL,
+  `created_at` int(11) DEFAULT NULL,
+  `updated_at` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
+
+/*Data for the table `user_message` */
+
+insert  into `user_message`(`id`,`name`,`email`,`message`,`reply`,`status`,`created_at`,`updated_at`) values 
+(1,'adaw','awdaw','adwdawd','www',1,1575907557,NULL),
+(2,'adaw','awdaw','adwdawd','www',1,1575907650,NULL),
+(3,'adaw','awdaw','adwdawd','ww',1,1575907653,NULL),
+(4,'w','manu6699@mail.ru','awdawdadawda',NULL,0,1575907839,NULL),
+(5,'w','manu6699@mail.ru','awdawdadawda',NULL,0,1575907980,NULL),
+(6,'w','manu6699@mail.ru','awdawdadawda',NULL,0,1575907984,NULL),
+(7,'w','manu6699@mail.ru','awdawdadawda',NULL,0,1575908063,NULL),
+(8,'w','manu6699@mail.ru','awdawdadawda',NULL,0,1575908088,NULL),
+(9,'dawda','manu6699@mail.ru','awdawdawdawdawdadawdadawdawdawdawdada',NULL,0,1575908216,NULL),
+(10,'dawda','manu6699@mail.ru','daw',NULL,0,1575908236,NULL),
+(11,'dawda','manu6699@mail.ru','awdawda',NULL,0,1575908267,NULL);
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
