@@ -25,12 +25,15 @@
                             <br> <span class=gdlr-core-space-shortcode id="span_2207_6"></span>
                             <br> <?= Yii::$app->params['contact']['phone_number'] ?>
                             <br> <span class=gdlr-core-space-shortcode id="span_2207_7"></span>
+
                             <?php
-                                foreach (Yii::$app->params['profiles'] as $item){
-                                    if($item['icon'] == 'envelope'){
-                                        echo '<br> <a href="mailto:'.$item['name'].'" class="contact_email">'.$item['name'].'</a>';
-                                    }
-                                }
+                            if(!empty(Yii::$app->params['profiles'])) {
+                               foreach (Yii::$app->params['profiles'] as $item) {
+                                  if ($item['icon'] == 'envelope') {
+                                     echo '<br> <a href="mailto:' . $item['name'] . '" class="contact_email">' . $item['name'] . '</a>';
+                                  }
+                               }
+                            }
                              ?>
                     </div>
                 </div>
@@ -42,9 +45,13 @@
                             class=akea-widget-head-divider></span></h3><span class=clear></span>
                     <div class=menu-category-container>
                         <ul id=menu-category class="gdlr-core-custom-menu-widget gdlr-core-menu-style-half">
-                            <?php foreach(Yii::$app->params['category'] as $category): ?>
-                                <li class="menu-item"><a href='<?= $category['id'] ?>'><?= $category['name'] ?></a></li>
-                            <?php endforeach; ?>
+                            <?php if(!empty(Yii::$app->params['category']))
+                            {
+                                foreach(Yii::$app->params['category'] as $category): ?>
+                                   <li class="menu-item"><a href='admin/posts/<?= $category['name'] ?>'><?= $category['name'] ?></a></li>
+                               <?php endforeach;
+                            }
+                            ?>
                         </ul>
                     </div>
                 </div>

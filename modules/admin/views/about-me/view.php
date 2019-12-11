@@ -1,6 +1,7 @@
 <?php
 
 use app\modules\admin\models\ModelStatus;
+use yii\widgets\ActiveForm;
 
 
 /* @var $this yii\web\View */
@@ -16,18 +17,89 @@ echo ModelStatus::getNotify();
         <div class="card left-profile-card">
             <div class="card-body">
                 <div class="text-center">
-                    <img src="/upload/avatars/<?= $aboutMe['photo'] ?>" alt="" class="user-profile">
-                    <h3><?= $aboutMe['first_name'].' '.$aboutMe['last_name'] ?></h3>
-                    <p><?= $aboutMe['position'] ?></p>
+                    <img src="/upload/avatars/<?= $profile['avatar'] ?>" alt="" class="user-profile">
+                    <h3>
+                       <span onclick="changeText(this, 'id-<?= $aboutMe['first_name'] ?>')" data-tbl="about_me"
+                             data-atr="first_name" data-id="id-<?= $aboutMe['id'] ?>"
+                             title="Click here for change" id="id-<?= $aboutMe['first_name'] ?>"
+                             style="cursor: pointer">
+                              <?= (!empty($aboutMe['first_name'])) ? $aboutMe['first_name'] : 'Your first name is empty.' ?>
+                       </span>
+                        <span onclick="changeText(this, 'id-<?= $aboutMe['last_name'] ?>')" data-tbl="about_me"
+                              data-atr="last_name" data-id="id-<?= $aboutMe['id'] ?>"
+                              title="Click here for change" id="id-<?= $aboutMe['last_name'] ?>"
+                              style="cursor: pointer">
+                              <?= (!empty($aboutMe['last_name'])) ? $aboutMe['last_name'] : 'Your last name is empty.' ?>
+                       </span>
+                    </h3>
+                   <?php if ($profile['user_type'] == 'A') {
+                      echo '<p>Administrator</p>';
+                   } else {
+                      echo '<p>User</p>';
+                   }
+
+                   ?>
                 </div>
                 <div class="personal-info">
                     <h3>Personal Information</h3>
                     <ul class="personal-list">
-                        <li><i class="fas fa-briefcase "></i><span><?= $aboutMe['position'] ?></span></li>
-                        <li><i class="fas fa-map-marker-alt "></i><span> New York</span></li>
-                        <li><i class="far fa-envelope "></i><span>like @example.com</span></li>
-                        <li><i class="fas fa-mobile "></i><span>1234564343</span></li>
+                        <li><i class="fas fa-user"></i>
+                            <span onclick="changeText(this, 'user_id-<?= $profile['user_id'] ?>')" data-tbl="user"
+                                  data-atr="username" data-id="user_id-<?= $profile['user_id'] ?>"
+                                  title="Click here for change" id="user_id-<?= $profile['user_id'] ?>"
+                                  style="cursor: pointer">
+                              <?= (!empty($profile['username'])) ? $profile['username'] : 'Your username is empty.' ?>
+                            </span>
+                        </li>
+                        <li><i class="fas fa-briefcase "></i>
+                            <span onclick='changeText(this, "id-<?= $aboutMe['id'] ?>")' data-tbl="about_me"
+                                  data-atr="position" data-id="id-<?= $aboutMe['id'] ?>"
+                                  title="Click here for change" id="id-<?= $aboutMe['id'] ?>"
+                                  style="cursor: pointer">
+                              <?= (!empty($aboutMe['position'])) ? $aboutMe['position'] : 'Your position is empty.' ?>
+                            </span>
+                        </li>
+                        <li><i class="fas fa-envelope "></i>
+                            <span onclick='changeText(this, "uid-<?= $profile['user_id'] ?>")' data-tbl="user"
+                                  data-atr="email" data-id="user_id-<?= $profile['user_id'] ?>"
+                                  title="Click here for change" id="uid-<?= $profile['user_id'] ?>"
+                                  style="cursor: pointer">
+                              <?= (!empty($profile['email'])) ? $profile['email'] : 'Your email is empty.' ?>
+                            </span>
+                        </li>
+                        <li>
+                            <i class="fas fa-map-marker-alt "></i>
+                            <span onclick='changeText(this, "country-<?= $contacts['id'] ?>")' data-tbl="contact"
+                                  data-atr="country" data-id="id-<?= $contacts['id'] ?>"
+                                  title="Click here for change" id="country-<?= $contacts['id'] ?>"
+                                  style="cursor: pointer">
+                              <?= (!empty($contacts['country'])) ? $contacts['country'] : 'Your country is empty.' ?>
+                            </span>
+                        </li>
+                        <li>
+                            <i class="fas fa-city"></i>
+                            <span onclick='changeText(this, "city-<?= $contacts['id'] ?>")' data-tbl="contact"
+                                  data-atr="city" data-id="id-<?= $contacts['id'] ?>"
+                                  title="Click here for change" id="city-<?= $contacts['id'] ?>"
+                                  style="cursor: pointer">
+                              <?= (!empty($contacts['city'])) ? $contacts['city'] : 'Your city is empty.' ?>
+                            </span>
+                        </li>
+
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <span onclick='changeText(this, "phone_number-<?= $contacts['id'] ?>")'
+                                  data-tbl="contact" data-atr="phone_number" data-id="id-<?= $contacts['id'] ?>"
+                                  title="Click here for change" id="phone_number-<?= $contacts['id'] ?>"
+                                  style="cursor: pointer">
+                              <?= (!empty($contacts['phone_number'])) ? $contacts['phone_number'] : 'Your phone number is empty.' ?>
+                            </span>
+                        </li>
                     </ul>
+                   <?php $form = ActiveForm::begin(['action' => '/admin/editable/change-photo']) ?>
+                   <?= $form->field($model, 'avatar')->fileInput() ?>
+                    <button type="submit" class="btn btn-success p-1">Change</button>
+                   <?php ActiveForm::end() ?>
                 </div>
             </div>
         </div>

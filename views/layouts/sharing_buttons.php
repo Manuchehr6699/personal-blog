@@ -9,13 +9,12 @@ $link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "htt
 ?>
 <span style="color: #990066!important;">
 <?= Yii::$app->settings->get('Site', 'share_post') ?>
+   <?php if(Yii::$app->controller->action->id == 'cv'): ?>
+       <span>You can download PDF versions of my CV here.</span>
+       <a href="/main/print-to-pdf?type=cv" title="Get PDF file"><i class="fa fa-file"></i></a>
+   <?php endif; ?>
 <h3 id="social_buttons">
-    <?php if(Yii::$app->controller->action->id == 'cv'): ?>
-    <a href="/main/print-to-pdf?type=cv"><i class="fa fa-print"></i></a>
-    <?php endif; ?>
-    <?php if(Yii::$app->controller->action->id == 'about-me'): ?>
-        <a href="/main/print-to-pd?type=about-me"><i class="fa fa-print"></i></a>
-    <?php endif; ?>
+    <a href="#" onclick="window.print();"><i class="fa fa-print"></i></a>
     <a class="gdlr-core-social-share-facebook"
        href="https://www.facebook.com/dialog/share?app_id=145634995501895&display=popup&href=<?= $link ?>redirect_uri=<?= urlencode($link)?>" target=_blank >
     <i class="fa fa-facebook"></i>

@@ -87,7 +87,7 @@ class MainController extends Controller
         $this->layout = 'main-without-sidebar';
         $model = new UserMessage();
         if ($model->load(Yii::$app->request->post())) {
-            Yii::$app->session->setFlash('contactFormSubmitted', 'Message send successfully!');
+            Yii::$app->session->setFlash('contactFormSubmitted', 'Your message sent successfully!');
             $model->created_at = time();
             $model->status = 0;
 //            $model->contact(Yii::$app->params['adminEmail']);
@@ -109,7 +109,7 @@ class MainController extends Controller
 
     public function actionCv()
     {
-        $data = CV::find()->where(['status' => 1])->asArray()->all();
+        $data = CV::find()->where(['status' => 1])->orderBy('order')->asArray()->all();
 
         return $this->render('cv', ['data' => $data]);
     }

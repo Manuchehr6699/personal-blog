@@ -102,7 +102,8 @@ $this->title = 'Posts by tag | '.$tag;
                    ])
                    ?>
             </div>
-            <?php else: ?>
+                <?php else: ?>
+            </div>
                 <h2>Here posts not found...</h2>
             <?php endif; ?>
         </div>

@@ -2,6 +2,9 @@
 
 namespace app\modules\admin\controllers;
 
+use app\models\Contact;
+use app\models\Profiles;
+use app\models\User;
 use app\modules\admin\models\ModelStatus;
 use app\modules\admin\models\UploadForm;
 use Yii;
@@ -56,13 +59,25 @@ class AboutMeController extends Controller
      */
     public function actionView()
     {
-        //Todo add contacts
-        $aboutMe = AboutMe::find()->asArray()->one();
+
+       $aboutMe = AboutMe::find()->asArray()->one();
+
+
         if(empty($aboutMe)){
             return $this->redirect(['create']);
         }
+
+       $model = new User();
+       $profile = User::find()->where(['user_id' => Yii::$app->user->id])->asArray()->one();
+       $contacts = Contact::find()->where(['status' => 1])->asArray()->one();
+       $socials = Profiles::find()->where(['status' => 1])->asArray()->all();
+
         return $this->render('view', [
-            'aboutMe' => $aboutMe
+            'aboutMe' => $aboutMe,
+            'profile' => $profile,
+            'contacts' => $contacts,
+            'socials' => $socials,
+            'model' => $model,
         ]);
     }
 

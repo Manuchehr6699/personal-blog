@@ -103,9 +103,11 @@ $this->title = 'Posts by category | '.$category;
                    ])
                    ?>
             </div>
-            <?php else: ?>
+                <?php else: ?>
+            </div>
                 <h2>Here posts not found...</h2>
             <?php endif; ?>
         </div>
+
     </div>
 </div>

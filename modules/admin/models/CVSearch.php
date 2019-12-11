@@ -18,7 +18,7 @@ class CVSearch extends CV
     {
         return [
             [['id', 'status', 'order', 'created_at', 'created_by', 'updated_at', 'updated_by'], 'integer'],
-            [['title', 'text'], 'safe'],
+            [['title', 'text', 'cv_file'], 'safe'],
         ];
     }
 

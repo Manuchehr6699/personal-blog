@@ -14,7 +14,7 @@
         <div class="akea-recent-post-bar-wrap clearfix">
             <div class=akea-recent-post-bar-item>
                 <div class=akea-recent-post-bar-shadow></div>
-                <a href=#><img src='/upload/book_cover/Informal-Post-Socialist-Economy-livelihoods-Contemporary-ebook.jpg' alt width=150 height=150 title=post-vr></a>
+                <a href=><img src='/upload/book_cover/Informal-Post-Socialist-Economy-livelihoods-Contemporary-ebook.jpg' alt width=150 height=150 title=post-vr></a>
             </div>
         </div>
     </div>

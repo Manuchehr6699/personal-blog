@@ -37,7 +37,7 @@ class Settings extends Component
     /**
      * @var string the key used to store settings data in cache
      */
-    public $cacheKey = 'settings-key';
+    public $cacheKey = 's-key';
 
 
     protected $model;
