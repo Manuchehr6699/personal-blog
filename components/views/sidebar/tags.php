@@ -16,9 +16,10 @@
     <span class=clear></span>
     <div class=tagcloud>
         <?php foreach ($data as $item): ?>
-        <a href="#" class="tag-cloud-link tag-link-117 tag-link-position-1" id="a_2207_16"
+        <?php $item = $str = trim($item, '"'); ?>
+        <a href="/blog/posts-by-tag/<?= $item ?>" class="tag-cloud-link tag-link-117 tag-link-position-1" id="a_2207_16"
            aria-label="<?= $item ?>"><?= $item ?></a>
-        <?php endforeach; ?>
+        <?php  endforeach;  ?>
     </div>
 </div>
 <?php endif; ?>

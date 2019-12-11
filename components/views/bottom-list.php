@@ -17,7 +17,7 @@
             <?php foreach ($data as $item): ?>
             <div class=akea-recent-post-bar-item>
                 <div class=akea-recent-post-bar-shadow></div>
-                <a href='#'><img src='/upload/book_cover/<?= $item['photo'] ?>' alt width=150 height=150 title=post-vr></a>
+                <a href='/books/details?id=<?= $item['id'] ?>' target="_blank"><img src='/upload/book_cover/<?= $item['photo'] ?>' alt width=150 height=150 title=post-vr></a>
             </div>
             <?php endforeach; ?>
         </div>

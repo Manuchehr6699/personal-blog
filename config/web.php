@@ -93,10 +93,7 @@ $config = [
                     'basePath' => '@yii2mod/rbac/messages',
                 ],
             ],
-        ],
-        'pdf'=>[
-            'class'=>'app\components\ExportToPdf',
-        ],
+        ]
     ],
     'modules' => [
         'admin' => [

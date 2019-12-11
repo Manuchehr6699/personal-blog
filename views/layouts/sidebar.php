@@ -71,8 +71,6 @@ use app\components\Tags;
             'sql' => 'SELECT COUNT(*) FROM my_books',
         ];
 
-
-
         if($this->beginCache('MyBooks', ['dependency' => $dependency])) {
             echo MyBooks::widget();
             $this->endCache();

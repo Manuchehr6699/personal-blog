@@ -84,6 +84,7 @@ class MyBooksController extends Controller
                 move_uploaded_file($_FILES['MyBooks']['tmp_name']['ebook_file'], $uploadfile);
                 $filename = basename($_FILES['MyBooks']['name']['ebook_file']);
                 $model->ebook_file = $filename;
+
             }
             ModelStatus::setTimeStampCreate($model);
             if($model->save()){

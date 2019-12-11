@@ -74,7 +74,7 @@ $this->params['breadcrumbs'][] = $this->title;
                         [
                             'header' => Yii::t('yii2mod.settings', 'Actions'),
                             'class' => 'yii\grid\ActionColumn',
-                            'template' => '{update}{view}',
+                            'template' => '{update}',
 
                         ],
 //

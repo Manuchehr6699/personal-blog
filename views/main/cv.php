@@ -13,7 +13,12 @@ $this->title = 'CV';
         <div class="row">
             <div class="col-md-12">
                 <?php if(!empty($data)): ?>
-
+                   <?php if(Yii::$app->controller->action->id == 'cv'): ?>
+                        <span style="font-size: 16px;">You can download PDF versions of my CV here.<br>
+                                <a download="Complete_CV" title="Get PDF file" href="/upload/files/<?= $data[0]['cv_file'] ?>"><i class="fa fa-file"></i> Download</a>
+                            </span>
+                        <hr>
+                   <?php endif; ?>
                     <h3>CV</h3>
 
                     <?php foreach ($data as $text): ?>

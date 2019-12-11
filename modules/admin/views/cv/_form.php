@@ -1,5 +1,6 @@
 <?php
 
+use app\models\CV;
 use app\modules\admin\models\ModelStatus;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
@@ -38,7 +39,16 @@ use dosamigos\tinymce\TinyMce;
                     <?= $form->field($model, 'status')->dropDownList(ModelStatus::listData()) ?>
                 </div>
                 <div class="col-md-6">
-                    <?= $form->field($model, 'order')->textInput() ?>
+                    <?= $form->field($model, 'order')->dropDownList(\yii\helpers\ArrayHelper::map(CV::getItems(), 'order', function ($item) {
+                           return 'After -> ' . $item['title'];
+                        }) + ['-2' => "It's first Item", '-1' => "It's last Item"],
+                        ['prompt' => '----Select Order---'])
+                    ?>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <?= $form->field($model, 'cv_file')->fileInput()->label('Choose complete CV file') ?>
                 </div>
             </div>
 

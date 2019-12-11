@@ -53,7 +53,7 @@ class CvController extends Controller
     */
    public function actionView()
    {
-       $cv = CV::find()->asArray()->all();
+       $cv = CV::find()->asArray()->orderBy('order')->all();
        if(empty($cv)){
            return $this->redirect(['create']);
        }
@@ -74,6 +74,17 @@ class CvController extends Controller
       if ($model->load(Yii::$app->request->post())) {
          ModelStatus::setTimeStampCreate($model);
          ModelStatus::setTimeStampUpdate($model);
+         $model->setItemOrder($model->id);
+         if(!empty($_FILES['CV']['tmp_name']['cv_file'])) {
+            $filePath = \Yii::getAlias('@webroot') . '/upload/files/';
+            $uploadfile = $filePath . basename($_FILES['CV']['name']['cv_file']);
+            move_uploaded_file($_FILES['CV']['tmp_name']['cv_file'], $uploadfile);
+            $filename = basename($_FILES['CV']['name']['cv_file']);
+            $model->cv_file = $filename;
+            if(!empty($filename)){
+               Yii::$app->db->createCommand('UPDATE cv set cv_file = "'.$filename.'"')->execute();
+            }
+         }
          if($model->save()) {
             ModelStatus::setNotifySuccesSaved();
             return $this->redirect(['view']);
@@ -98,8 +109,29 @@ class CvController extends Controller
    public function actionUpdate($id)
    {
       $model = $this->findModel($id);
-
-      if ($model->load(Yii::$app->request->post()) && $model->save()) {
+      $oldFile = $model->cv_file;
+      if ($model->load(Yii::$app->request->post())) {
+         ModelStatus::setTimeStampUpdate($model);
+         $model->setItemOrder($model->order);
+         if(!empty($_FILES['CV']['tmp_name']['cv_file'])) {
+            $filePath = \Yii::getAlias('@webroot') . '/upload/files/';
+            $uploadfile = $filePath . basename($_FILES['CV']['name']['cv_file']);
+            move_uploaded_file($_FILES['CV']['tmp_name']['cv_file'], $uploadfile);
+            $filename = basename($_FILES['CV']['name']['cv_file']);
+            $model->cv_file = $filename;
+            if(!empty($filename)){
+               Yii::$app->db->createCommand('UPDATE cv set cv_file = "'.$filename.'"')->execute();
+            }
+         }else{
+            $model->cv_file = $oldFile;
+            Yii::$app->db->createCommand('UPDATE cv set cv_file = "'.$oldFile.'"')->execute();
+         }
+         if($model->save()) {
+            ModelStatus::setNotifySuccesSaved();
+            return $this->redirect(['view']);
+         }else{
+            ModelStatus::setNotifyErrorSaved();
+         }
          return $this->redirect(['view']);
       }
 

@@ -12,6 +12,7 @@ use app\models\AboutMe;
 use app\models\Blog;
 use app\models\Profiles;
 use yii\base\Widget;
+use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 
 
@@ -24,13 +25,17 @@ class Tags extends Widget
         parent::init();
 
         $this->data = Blog::find()->select(['GROUP_CONCAT(tags) as tags'])->where(['status' => 1])->asArray()->one();
-        $this->data = unserialize($this->data['tags']);
+
+       preg_match_all('/\"(.+)\"/U', $this->data['tags'], $matches);
+       $this->data = $matches;
+       $this->data = array_unique($this->data);
+
     }
 
     public function run()
     {
         return $this->render('sidebar/tags', [
-            'data' => $this->data
+            'data' => $this->data[0]
         ]);
     }
 }
