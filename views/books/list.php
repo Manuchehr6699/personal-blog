@@ -5,7 +5,7 @@
  * Date: 10.12.2019
  * Time: 23:31
  */
-
+$this->title = 'Books List';
 if(!empty($data)):
 ?>
 
@@ -19,7 +19,7 @@ if(!empty($data)):
                         <div class="gdlr-core-item-list  gdlr-core-item-pdlr gdlr-core-item-mgb gdlr-core-column-20 ">
                             <div class="gdlr-core-blog-modern  gdlr-core-with-image gdlr-core-hover-overlay-content gdlr-core-opacity-on-hover gdlr-core-zoom-on-hover">
                                 <div class="gdlr-core-blog-modern-inner">
-                                    <div class="gdlr-core-blog-thumbnail gdlr-core-media-image"><img src="/upload/book_cover/<?= $item['photo'] ?>" alt="" width="700" height="940" title="juja-han-456323-unsplash"></div>
+                                    <div class="gdlr-core-blog-thumbnail gdlr-core-media-image"><img src="/upload/book_cover/<?= $item['photo'] ?>" alt="" width="400" height="640" title="juja-han-456323-unsplash"></div>
                                     <div class="gdlr-core-blog-modern-content  gdlr-core-center-align" id="div_8565_1">
                                         <h3 class="gdlr-core-blog-title gdlr-core-skin-title" id="h3_8565_0">
                                             <a href="/books/details?id=<?= $item['id'] ?>" target="_blank">

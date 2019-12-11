@@ -77,6 +77,10 @@ $config = [
         'assetManager' => [
             'appendTimestamp' => true,
         ],
+        'authManager' => [
+            'class' => 'yii\rbac\DbManager',
+            'defaultRoles' => ['guest', 'user'],
+        ],
         'i18n' => [
             'translations' => [
                 'yii2mod.settings' => [
@@ -104,7 +108,10 @@ $config = [
         ],
         'gridview' => [
             'class' => '\kartik\grid\Module'
-        ]
+        ],
+        'rbac' => [
+            'class' => 'yii2mod\rbac\Module',
+        ],
     ],
     'params' => $params,
 ];

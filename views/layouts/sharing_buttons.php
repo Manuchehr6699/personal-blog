@@ -5,7 +5,7 @@
  * Date: 10.12.2019
  * Time: 22:12
  */
-
+$link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 ?>
 <span style="color: #990066!important;">
 <?= Yii::$app->settings->get('Site', 'share_post') ?>
@@ -14,7 +14,7 @@
     <a href="/main/print-to-pdf?type=cv"><i class="fa fa-print"></i></a>
     <?php endif; ?>
     <?php if(Yii::$app->controller->action->id == 'about-me'): ?>
-        <a href="/main/print-to-pd?type=about-mef"><i class="fa fa-print"></i></a>
+        <a href="/main/print-to-pd?type=about-me"><i class="fa fa-print"></i></a>
     <?php endif; ?>
     <a class="gdlr-core-social-share-facebook"
        href="https://www.facebook.com/dialog/share?app_id=145634995501895&display=popup&href=<?= $link ?>redirect_uri=<?= urlencode($link)?>" target=_blank >

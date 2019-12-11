@@ -10,8 +10,10 @@ namespace app\controllers;
 
 
 use app\models\Blog;
+use app\models\Comment;
 use yii\data\Pagination;
 use yii\db\Exception;
+use yii\db\Expression;
 use yii\helpers\Html;
 use yii\web\Controller;
 use yii\web\Cookie;
@@ -47,9 +49,30 @@ class BlogController extends Controller
 
         $alias = Html::encode($alias);
         $post = Blog::find()->where(['alias' => $alias])->asArray()->one();
+        $commentModel = new Comment();
+
+        if($commentModel->load(\Yii::$app->request->post())){
+           $commentModel->is_published = 'no';
+           $commentModel->status=1;
+           $commentModel->created_at = time();
+           if(empty($commentModel->blog_id)) $commentModel->blog_id = $post['id'];
+           if($commentModel->save()){
+              \Yii::$app->session->setFlash('success_saved', 'Your comment was sent successfully!');
+           }else{
+              \Yii::$app->session->setFlash('error_saved', 'Somethink went wrong!');
+           }
+           return $this->redirect(['/blog/post/'.$post['alias']]);
+        }
+
+        $comments_list = Comment::find()->select(['comment.*', 'username'])
+            ->leftJoin('user u', 'u.user_id = comment.updated_by')
+            ->where(['comment.is_published' => 'yes'])->andWhere(['comment.blog_id' => $post['id']])
+            ->asArray()->all();
 
         return $this->render('post', [
-            'post' => $post
+            'post' => $post,
+            'commentModel' => $commentModel,
+            'comments_list' => $comments_list
         ]);
     }
 

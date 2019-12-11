@@ -7,6 +7,7 @@
  */
 $this->title = 'Book Details | '.$data['name'];
 if(!empty($data)):
+$link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 ?>
 
 
@@ -44,7 +45,9 @@ if(!empty($data)):
                                     Publish Year: <?= $data['publish_year'] ?></br>
                                     Author: <?= $data['author'] ?></br>
                                     Language: <?= $data['language'] ?></br>
-
+                                    <hr>
+                                    <a class="akea-button" style="background-color: #7E3374; color: white; cursor: pointer;" href="<?= $data['link_to_buy'] ?>" target="_blank">Buy this book</a>
+                                    <hr>
                                 </div>
                                 <div class="gdlr-core-social-share-item gdlr-core-item-pdb  gdlr-core-left-align gdlr-core-social-share-left-text gdlr-core-style-plain" id="div_6ed7_4">
                                     <a class="gdlr-core-social-share-facebook"
