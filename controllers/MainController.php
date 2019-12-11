@@ -142,6 +142,20 @@ class MainController extends Controller
         return $this->redirect(['/']);
     }
 
+    public function actionExportToPdf($model)
+    {
+        $data = $model::getExportData();
+        //print_r($data); exit;
+        $type = 'Pdf';
+
+        $html = $this->renderPartial($data['exportFile'],
+            ['model' => $data['data'], 'type' => $type,
+            ]);
+
+        return Yii::$app->pdf->exportData($data['title'], $data['fileName'], $html);
+
+    }
+
     public function actionError()
     {
         $this->layout = 'main-without-sidebar';
