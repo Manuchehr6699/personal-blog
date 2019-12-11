@@ -28,24 +28,43 @@ $this->params['breadcrumbs'][] = $this->title;
                 'columns' => [
                     ['class' => 'yii\grid\SerialColumn'],
 
-//                    'id',
+                    [
+                      'attribute' => 'photo',
+                       'format' => 'html',
+                        'value' => function($model){
+                            return '<img src="/upload/book_cover/'.$model->photo.'" width=150>';
+                        },
+                        'hAlign' => 'center',
+                        'vAlign' => 'middle',
+
+
+                    ],
                     'name',
                     'author',
                     'publisher',
                     'publish_year',
-                    //'isbn',
-                    //'page_count',
-                    //'language',
-                    //'category',
-                    //'description:ntext',
-                    //'photo',
-                    //'ebook_file',
-                    //'created_at',
-                    //'created_by',
-                    //'updated_at',
-                    //'updated_by',
+                    [
+                        'class' => 'kartik\grid\EditableColumn',
+                        'attribute' => 'status',
+                        'editableOptions' => [
+                            'formOptions' => ['action' => ['/admin/editable/change-book-status']],
+                            'inputType' => \kartik\editable\Editable::INPUT_DROPDOWN_LIST,
+                            'data' => [1 => 'Active', 0 => 'Inactive'],
+                            'displayValueConfig' => [
+                                '0' => '<span class="glyphicon glyphicon-remove-sign" style="font-size:25px;color:#C9302C"></span>',
+                                '1' => '<span class="glyphicon glyphicon-ok-sign" style="font-size:25px;color:#449D44"></span>',
+                            ],
+                        ],
+                        'hAlign' => 'center',
+                        'vAlign' => 'middle',
+                        'filter' => array(1 => 'Active', 0 => 'Inactive'),
+                        'pageSummary' => true
+                    ],
+                    [
+                        'class' => 'yii\grid\ActionColumn',
+                        'template' => '{update}{view}',
 
-                    ['class' => 'yii\grid\ActionColumn'],
+                    ],
                 ],
             ]); ?>
         </div>

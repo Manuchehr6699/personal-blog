@@ -48,6 +48,7 @@ class MainController extends Controller
         return [
             'error' => [
                 'class' => 'yii\web\ErrorAction',
+                'layout' => 'main-without-sidebar',
             ],
             'captcha' => [
                 'class' => 'yii\captcha\CaptchaAction',
@@ -130,14 +131,15 @@ class MainController extends Controller
             $model->status = 0;
 
             try{
-                $model->save();
-                Yii::$app->session->setFlash('saved', 'Email successfully send!');
+                if($model->save()){
+                    Yii::$app->session->setFlash('saved', 'Email successfully sent!');
+                }
             }catch (\Exception $e){
                 Yii::$app->session->setFlash('saved', 'Your Email already exists in subcribers list!');
             }
         }
 
-        return $this->redirect(['/main/index']);
+        return $this->redirect(['/']);
     }
 
     public function actionError()

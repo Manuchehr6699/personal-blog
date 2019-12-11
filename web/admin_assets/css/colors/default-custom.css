@@ -1,6 +1,6 @@
 @charset "UTF-8";
 :root {
-    --main-color: #CC3399;
+    --main-color: #7E3374;
 }
 
 
@@ -1220,7 +1220,7 @@ a.btn-social,
     margin: -75px 0 0 -75px;
     border-radius: 50%;
     border: 3px solid transparent;
-    border-top-color: #990066;
+    border-top-color: #7E3374;
     -webkit-animation: spin 1s linear infinite;
     /* Chrome, Opera 15+, Safari 5+ */
     animation: spin 1s linear infinite;
@@ -1237,7 +1237,7 @@ a.btn-social,
     bottom: 5px;
     border-radius: 50%;
     border: 3px solid transparent;
-    border-top-color: #990066;
+    border-top-color: #7E3374;
     -webkit-animation: spin 1s linear infinite;
     /* Chrome, Opera 15+, Safari 5+ */
     animation: spin 3s linear infinite;
@@ -1253,7 +1253,7 @@ a.btn-social,
     bottom: 15px;
     border-radius: 50%;
     border: 3px solid transparent;
-    border-top-color: #990066;
+    border-top-color: #7E3374;
     -webkit-animation: spin 1s linear infinite;
     /* Chrome, Opera 15+, Safari 5+ */
     animation: spin 1.5s linear infinite;
@@ -1557,7 +1557,7 @@ main {
 /*headertop*/
 
 .header-top {
-    background: #990066;
+    background: #7E3374;
     padding: 10px 0;
 }
 

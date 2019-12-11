@@ -71,7 +71,7 @@
     </div>
     <div class=akea-copyright-wrapper>
         <div class="akea-copyright-container akea-container clearfix">
-            <div class="akea-copyright-left akea-item-pdlr">Copyright <?= date('Y').' '.Yii::$app->settings->get('Site', 'sitename') ?>, All Right Reserved</div>
+            <div class="akea-copyright-left akea-item-pdlr">Copyright <?= date('Y').' '.Yii::$app->settings->get('Site', 'sitename') ?>, All Right Reserved.</div>
             <div class="akea-copyright-right akea-item-pdlr">
                 <a href='/'>Home</a>
                 <a href='/blog/posts'>Posts</a>

@@ -329,9 +329,9 @@ body.single-post .akea-sidebar-style-none, body.blog .akea-sidebar-style-none, .
 .akea-top-bar{ color: #ffffff; } 
 .akea-body .akea-top-bar a{ color: #ffffff; } 
 .akea-body .akea-top-bar a:hover{ color: #ffffff; } 
-.akea-header-side-nav.akea-style-side .akea-header-social-dividier{ border-left-color: #990066; } 
+.akea-header-side-nav.akea-style-side .akea-header-social-dividier{ border-left-color: #7E3374; } 
 .akea-top-bar .akea-top-bar-right-social a, .akea-navigation .akea-main-menu-left-social a, .akea-navigation .akea-center-menu-right-social a, .akea-header-side-nav .akea-header-social a{ color: #242424; } 
-.akea-top-bar .akea-top-bar-right-social a:hover, .akea-navigation .akea-main-menu-left-social a:hover, .akea-navigation .akea-center-menu-right-social a:hover, .akea-header-side-nav .akea-header-social a:hover{ color: #990066; } 
+.akea-top-bar .akea-top-bar-right-social a:hover, .akea-navigation .akea-main-menu-left-social a:hover, .akea-navigation .akea-center-menu-right-social a:hover, .akea-header-side-nav .akea-header-social a:hover{ color: #7E3374; } 
 .akea-header-background, .akea-sticky-menu-placeholder, .akea-header-style-boxed.akea-fixed-navigation{ background-color: #ffffff; } 
 .akea-header-wrap.akea-header-style-plain{ border-color: #e8e8e8; } 
 .akea-header-side-nav.akea-style-side-toggle .akea-logo{ background-color: #ffffff; } 
@@ -341,18 +341,18 @@ body.single-post .akea-sidebar-style-none, body.blog .akea-sidebar-style-none, .
 .akea-top-cart-content-wrap .akea-top-cart-content{ background-color: #303030; } 
 .akea-top-cart-content-wrap .akea-top-cart-content span, .akea-top-cart-content-wrap .akea-top-cart-content span.woocommerce-Price-amount.amount{ color: #b5b5b5; } 
 .akea-top-cart-content-wrap .akea-top-cart-button,.akea-top-cart-content-wrap .akea-top-cart-button:hover{ color: #ffffff; } 
-.akea-top-cart-content-wrap .akea-top-cart-checkout-button, .akea-top-cart-content-wrap .akea-top-cart-checkout-button:hover{ color: #990066; } 
+.akea-top-cart-content-wrap .akea-top-cart-checkout-button, .akea-top-cart-content-wrap .akea-top-cart-checkout-button:hover{ color: #7E3374; } 
 .akea-body .akea-breadcrumbs, .akea-body .akea-breadcrumbs a span, .gdlr-core-breadcrumbs-item, .gdlr-core-breadcrumbs-item a span{ color: #919191; } 
 .akea-body .akea-breadcrumbs span, .akea-body .akea-breadcrumbs a:hover span, .gdlr-core-breadcrumbs-item span, .gdlr-core-breadcrumbs-item a:hover span{ color: #565656; } 
 .akea-navigation-background{ background-color: #f4f4f4; } 
 .akea-navigation-bar-wrap{ border-color: #e8e8e8; } 
-.akea-navigation .akea-navigation-slide-bar{ border-color: #990066; }.akea-navigation .akea-navigation-slide-bar:before{ border-bottom-color: #990066; } 
+.akea-navigation .akea-navigation-slide-bar{ border-color: #7E3374; }.akea-navigation .akea-navigation-slide-bar:before{ border-bottom-color: #7E3374; } 
 .sf-menu > li > a, .sf-vertical > li > a{ color: #999999; } 
-.sf-menu > li > a:hover, .sf-menu > li.current-menu-item > a, .sf-menu > li.current-menu-ancestor > a, .sf-vertical > li > a:hover, .sf-vertical > li.current-menu-item > a, .sf-vertical > li.current-menu-ancestor > a{ color: #990066; }
-.sf-menu > .akea-normal-menu li, .sf-menu > .akea-mega-menu > .sf-mega, .sf-vertical ul.sub-menu li, ul.sf-menu > .menu-item-language li{ background-color: #990066; } 
+.sf-menu > li > a:hover, .sf-menu > li.current-menu-item > a, .sf-menu > li.current-menu-ancestor > a, .sf-vertical > li > a:hover, .sf-vertical > li.current-menu-item > a, .sf-vertical > li.current-menu-ancestor > a{ color: #7E3374; }
+.sf-menu > .akea-normal-menu li, .sf-menu > .akea-mega-menu > .sf-mega, .sf-vertical ul.sub-menu li, ul.sf-menu > .menu-item-language li{ background-color: #7E3374; } 
 .sf-menu > li > .sub-menu a, .sf-menu > .akea-mega-menu > .sf-mega a, .sf-vertical ul.sub-menu li a{ color: #bebebe; } 
 .sf-menu > li > .sub-menu a:hover, .sf-menu > li > .sub-menu .current-menu-item > a, .sf-menu > li > .sub-menu .current-menu-ancestor > a, .sf-menu > .akea-mega-menu > .sf-mega a:hover, .sf-menu > .akea-mega-menu > .sf-mega .current-menu-item > a, .sf-vertical > li > .sub-menu a:hover, .sf-vertical > li > .sub-menu .current-menu-item > a, .sf-vertical > li > .sub-menu .current-menu-ancestor > a{ color: #ffffff; } 
-.sf-menu > li > .sub-menu a:hover, .sf-menu > li > .sub-menu .current-menu-item > a, .sf-menu > li > .sub-menu .current-menu-ancestor > a, .sf-menu > .akea-mega-menu > .sf-mega a:hover, .sf-menu > .akea-mega-menu > .sf-mega .current-menu-item > a, .sf-vertical > li > .sub-menu a:hover, .sf-vertical > li > .sub-menu .current-menu-item > a, .sf-vertical > li > .sub-menu .current-menu-ancestor > a{ background-color: #990066; } 
+.sf-menu > li > .sub-menu a:hover, .sf-menu > li > .sub-menu .current-menu-item > a, .sf-menu > li > .sub-menu .current-menu-ancestor > a, .sf-menu > .akea-mega-menu > .sf-mega a:hover, .sf-menu > .akea-mega-menu > .sf-mega .current-menu-item > a, .sf-vertical > li > .sub-menu a:hover, .sf-vertical > li > .sub-menu .current-menu-item > a, .sf-vertical > li > .sub-menu .current-menu-ancestor > a{ background-color: #7E3374; } 
 .akea-navigation .sf-menu > .akea-mega-menu .sf-mega-section-inner > a{ color: #ffffff; } 
 .akea-navigation .sf-menu > .akea-mega-menu .sf-mega-section{ border-color: #424242; } 
 .mm-navbar .mm-title, .mm-navbar .mm-btn, ul.mm-listview li > a, ul.mm-listview li > span{ color: #979797; }ul.mm-listview li a{ border-color: #979797; }.mm-arrow:after, .mm-next:after, .mm-prev:before{ border-color: #979797; } 
@@ -366,7 +366,7 @@ ul.mm-listview li{ border-color: #626262; }
 .akea-bullet-anchor a:before{ background-color: #777777; } 
 .akea-bullet-anchor a:hover, .akea-bullet-anchor a.current-menu-item{ border-color: #ffffff; }.akea-bullet-anchor a:hover:before, .akea-bullet-anchor a.current-menu-item:before{ background: #ffffff; } 
 .akea-main-menu-search i, .akea-main-menu-cart i{ color: #383838; } 
-.akea-main-menu-cart > .akea-top-cart-count{ background-color: #990066; } 
+.akea-main-menu-cart > .akea-top-cart-count{ background-color: #7E3374; } 
 .akea-main-menu-cart > .akea-top-cart-count{ color: #ffffff; } 
 .akea-body .akea-main-menu-right-button{ color: #333333; } 
 .akea-body .akea-main-menu-right-button:hover{ color: #555555; } 
@@ -379,16 +379,16 @@ body.akea-boxed .akea-body-wrapper, .gdlr-core-page-builder .gdlr-core-page-buil
 .akea-page-title-wrap .akea-page-caption{ color: #ffffff; }.akea-page-title-wrap .akea-page-caption .woocommerce-breadcrumb, .akea-page-title-wrap .akea-page-caption .woocommerce-breadcrumb a{ color: #ffffff; } 
 .akea-page-title-wrap .akea-page-title-overlay{ background-color: #000000; } 
 .akea-page-title-wrap .akea-page-title-top-gradient{ background: -webkit-linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1)); background: -o-linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1)); background: -moz-linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1)); background: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1)); }.akea-page-title-wrap .akea-page-title-bottom-gradient{ background: -webkit-linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1)); background: -o-linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1)); background: -moz-linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1)); background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1)); } 
-.akea-body, .akea-body span.wpcf7-not-valid-tip{ color: #990066; } 
+.akea-body, .akea-body span.wpcf7-not-valid-tip{ color: #7E3374; } 
 .akea-body h1, .akea-body h2, .akea-body h3, .akea-body h4, .akea-body h5, .akea-body h6{ color: #383838; }.woocommerce table.shop_attributes th, .woocommerce table.shop_table th, .single-product.woocommerce div.product .product_meta .akea-head{ color: #383838; } 
-.akea-body a{ color: #990066; } 
-.akea-body a:hover{ color: #ed9468; } 
+.akea-body a{ color: #7E3374; } 
+.akea-body a:hover{ color: #990099; }
 .akea-body *{ border-color: #e6e6e6; }.akea-body .gdlr-core-portfolio-single-nav-wrap{ border-color: #e6e6e6; }.gdlr-core-columnize-item .gdlr-core-columnize-item-content{ column-rule-color: #e6e6e6; -moz-column-rule-color: #e6e6e6; -webkit-column-rule-color: #e6e6e6; } 
 .akea-body input, .akea-body textarea{ background-color: #ffffff; } 
 .akea-body input, .akea-body textarea{ border-color: #d7d7d7; } 
 .akea-body input, .akea-body textarea{ color: #767676; } 
 .akea-body ::-webkit-input-placeholder{  color: #4e4e4e; }.akea-body ::-moz-placeholder{  color: #4e4e4e; }.akea-body :-ms-input-placeholder{  color: #4e4e4e; }.akea-body :-moz-placeholder{  color: #4e4e4e; } 
-.akea-not-found-wrap{ background-color: #990066; }
+.akea-not-found-wrap{ background-color: #7E3374; }
 .akea-not-found-wrap .akea-not-found-head{ color: #ffffff; } 
 .akea-not-found-wrap .akea-not-found-title{ color: #ffffff; } 
 .akea-not-found-wrap .akea-not-found-caption{ color: #c3e7ff; } 
@@ -396,9 +396,9 @@ body.akea-boxed .akea-body-wrapper, .gdlr-core-page-builder .gdlr-core-page-buil
 .akea-not-found-wrap form.search-form input.search-field, .akea-not-found-wrap .akea-top-search-submit{ color: #ffffff; } .akea-not-found-wrap input::-webkit-input-placeholder { color: #ffffff; } .akea-not-found-wrap input:-moz-placeholder{ color: #ffffff; } .akea-not-found-wrap input::-moz-placeholder{ color: #ffffff; } .akea-not-found-wrap input:-ms-input-placeholder{ color: #ffffff; } 
 .akea-not-found-wrap .akea-not-found-back-to-home a, .akea-not-found-wrap .akea-not-found-back-to-home a:hover{ color: #ffffff; } 
 .akea-sidebar-area .akea-widget-title{ color: #383838; } 
-.akea-sidebar-area .akea-widget-head-divider{ border-color: #990066; } 
+.akea-sidebar-area .akea-widget-head-divider{ border-color: #7E3374; } 
 .akea-sidebar-area a{ color: #4c4c4c; }.widget_recent_entries ul li:before, .widget_recent_comments ul li:before, .widget_pages ul li:before, .widget_rss ul li:before, .widget_archive ul li:before, .widget_categories ul li:before, .widget_nav_menu ul li:before, .widget_meta ul li:before{ color: #4c4c4c; } 
-.akea-sidebar-area a:hover, .akea-sidebar-area .current-menu-item > a{ color: #990066; } 
+.akea-sidebar-area a:hover, .akea-sidebar-area .current-menu-item > a{ color: #7E3374; } 
 .gdlr-core-recent-post-widget .gdlr-core-blog-info i{ color: #9c9c9c; } 
 .gdlr-core-recent-post-widget .gdlr-core-blog-info, .gdlr-core-recent-post-widget .gdlr-core-blog-info a, .gdlr-core-recent-post-widget .gdlr-core-blog-info a:hover{ color: #a0a0a0; } 
 .gdlr-core-post-slider-widget-overlay .gdlr-core-post-slider-widget-title{ color: #ffffff; } 
@@ -412,7 +412,7 @@ body.akea-boxed .akea-body-wrapper, .gdlr-core-page-builder .gdlr-core-page-buil
 ul.gdlr-core-twitter-widget-wrap li:before{ color: #303030; } 
 ul.gdlr-core-twitter-widget-wrap li .gdlr-core-twitter-widget-date a, ul.gdlr-core-twitter-widget-wrap li .gdlr-core-twitter-widget-date a:hover{ color: #b5b5b5; } 
 ul.gdlr-core-custom-menu-widget.gdlr-core-menu-style-list li a{ color: #ed996f; } 
-ul.gdlr-core-custom-menu-widget.gdlr-core-menu-style-list li a:hover,ul.gdlr-core-custom-menu-widget.gdlr-core-menu-style-list li.current-menu-item a,ul.gdlr-core-custom-menu-widget.gdlr-core-menu-style-list li.current-menu-ancestor a{ color: #990066; } 
+ul.gdlr-core-custom-menu-widget.gdlr-core-menu-style-list li a:hover,ul.gdlr-core-custom-menu-widget.gdlr-core-menu-style-list li.current-menu-item a,ul.gdlr-core-custom-menu-widget.gdlr-core-menu-style-list li.current-menu-ancestor a{ color: #7E3374; } 
 ul.gdlr-core-custom-menu-widget.gdlr-core-menu-style-list li a{ border-color: #e06528; }ul.gdlr-core-custom-menu-widget.gdlr-core-menu-style-list li a:before{ color: #e06528; } 
 .akea-footer-wrapper{ background-color: #1c2433; } 
 .akea-footer-wrapper .akea-widget-title{ color: #ffffff; }.akea-footer-wrapper h1, .akea-footer-wrapper h3, .akea-footer-wrapper h3, .akea-footer-wrapper h4, .akea-footer-wrapper h5, .akea-footer-wrapper h6{ color: #ffffff; }  
@@ -424,7 +424,7 @@ ul.gdlr-core-custom-menu-widget.gdlr-core-menu-style-list li a{ border-color: #e
 .akea-copyright-wrapper{ color: #98a5b9; } 
 .akea-copyright-wrapper a{ color: #98a5b9; } 
 .akea-copyright-wrapper a:hover{ color: #ffffff; } 
-.akea-footer-back-to-top-button, .akea-footer-recent-post-button{ background-color: #990066; }
+.akea-footer-back-to-top-button, .akea-footer-recent-post-button{ background-color: #7E3374; }
 .akea-body .akea-footer-back-to-top-button, .akea-body .akea-footer-back-to-top-button:hover, .akea-body .akea-footer-recent-post-button{ color: #ffffff; }
 .akea-body .akea-blog-title-wrap .akea-single-article-title{ color: #ffffff; } 
 .akea-blog-title-wrap .akea-blog-info-wrapper, .akea-blog-title-wrap .akea-blog-info-wrapper a, .akea-blog-title-wrap .akea-blog-info-wrapper a:hover, .akea-blog-title-wrap .akea-blog-info-wrapper i{ color: #ffffff; } 
@@ -436,10 +436,10 @@ ul.gdlr-core-custom-menu-widget.gdlr-core-menu-style-list li a{ border-color: #e
 .akea-single-article{ color: #545454; } 
 .akea-single-author .akea-single-author-title a, .akea-single-author .akea-single-author-title a:hover{ color: #1d1d1d; } 
 .akea-single-author .akea-single-author-caption, .akea-single-author .akea-single-author-description, .comment-form-cookies-consent{ color: #8b8b8b; } 
-.akea-single-author-tags a, .akea-single-author-tags a:hover{ color: #990066; border-color: #990066; } 
+.akea-single-author-tags a, .akea-single-author-tags a:hover{ color: #7E3374; border-color: #7E3374; } 
 .akea-single-nav a, .akea-single-nav a:hover, .akea-blog-style-1 .akea-single-nav .akea-text{ color: #1a1a1a; } 
-.akea-blog-style-2 .akea-single-nav-area-left .akea-single-nav-area-overlay{ background-color: #990066; } 
-.akea-blog-style-2 .akea-single-nav-area-right .akea-single-nav-area-overlay{ background-color: #990066; } 
+.akea-blog-style-2 .akea-single-nav-area-left .akea-single-nav-area-overlay{ background-color: #7E3374; } 
+.akea-blog-style-2 .akea-single-nav-area-right .akea-single-nav-area-overlay{ background-color: #7E3374; } 
 .akea-blog-style-2 .akea-single-related-post-wrap{ background-color: #f5f5f5; } 
 .akea-single-magazine-author-tags a, .akea-single-magazine-author-tags a:hover{ color: #626262; } 
 .akea-single-magazine-author-tags a{ background-color: #f2f2f2; } 
@@ -449,23 +449,22 @@ ul.gdlr-core-custom-menu-widget.gdlr-core-menu-style-list li a{ border-color: #e
 .akea-comments-area .comment-reply a, .akea-comments-area .comment-reply a:hover{ color: #bcbcbc; } 
 .akea-comments-area .comment-time a, .akea-comments-area .comment-time a:hover{ color: #b1b1b1; } 
 .gdlr-core-blog-title a, .akea-body .akea-single-article-title, .akea-body .akea-single-article-title a{ color: #343434; } 
-.gdlr-core-blog-title a:hover, .akea-body .akea-single-article-title a:hover{ color: #990066; } 
-.gdlr-core-sticky-banner, .akea-sticky-banner, body .zilla-likes, body .zilla-likes:hover, body .zilla-likes.active{ color: #444444; } 
+.gdlr-core-blog-title a:hover, .akea-body .akea-single-article-title a:hover{ color: #7E3374; }
 .gdlr-core-sticky-banner, .akea-sticky-banner, body .zilla-likes, body .zilla-likes:hover, body .zilla-likes.active{ background-color: #ffffff; } 
 .akea-single-article .akea-blog-info-wrapper, .akea-single-article .akea-blog-info-wrapper a, .akea-single-article .akea-blog-info-wrapper a:hover, .akea-single-article .akea-blog-info-wrapper i, .gdlr-core-blog-info-wrapper, .gdlr-core-blog-info-wrapper a, .gdlr-core-blog-info-wrapper a:hover, .gdlr-core-blog-info-wrapper i, .gdlr-core-blog-grid .gdlr-core-blog-info-date a{ color: #959595; }.gdlr-core-blog-full .gdlr-core-blog-full-comment i, .gdlr-core-blog-full .gdlr-core-blog-full-comment a{ color: #959595; } 
-.gdlr-core-blog-info-wrapper .gdlr-core-blog-info:after, .akea-single-article .akea-blog-info-wrapper .akea-blog-info:after{ border-color: #990066; } 
+.gdlr-core-blog-info-wrapper .gdlr-core-blog-info:after, .akea-single-article .akea-blog-info-wrapper .akea-blog-info:after{ border-color: #7E3374; } 
 .gdlr-core-blog-date-wrapper .gdlr-core-blog-date-day, .akea-single-article .akea-single-article-date-day{ color: #353535; } 
 .gdlr-core-blog-date-wrapper .gdlr-core-blog-date-month, .akea-single-article .akea-single-article-date-month{ color: #8a8a8a; } 
 .gdlr-core-blog-grid.gdlr-core-blog-grid-with-frame, .gdlr-core-blog-full-frame, .gdlr-core-blog-list-frame, .gdlr-core-blog-link-format{ background-color: #ffffff; } 
-.gdlr-core-blog-grid .gdlr-core-blog-grid-category a, .gdlr-core-blog-grid .gdlr-core-blog-grid-category a:hover, .gdlr-core-blog-widget .gdlr-core-blog-widget-category a, .gdlr-core-blog-widget .gdlr-core-blog-widget-category a:hover{ color: #990066; } 
+.gdlr-core-blog-grid .gdlr-core-blog-grid-category a, .gdlr-core-blog-grid .gdlr-core-blog-grid-category a:hover, .gdlr-core-blog-widget .gdlr-core-blog-widget-category a, .gdlr-core-blog-widget .gdlr-core-blog-widget-category a:hover{ color: #7E3374; } 
 .gdlr-core-opacity-on-hover{ background: #000; } 
-.gdlr-core-blog-thumbnail-wrap .gdlr-core-blog-thumbnail-category{ background: #990066; }.gdlr-core-style-2 .gdlr-core-blog-thumbnail .gdlr-core-blog-info-category{ background: #990066; }.gdlr-core-blog-feature .gdlr-core-blog-info-category{ background: #990066; }.gdlr-core-recent-post-widget-thumbnail .gdlr-core-blog-info-category{ background: #990066; } 
+.gdlr-core-blog-thumbnail-wrap .gdlr-core-blog-thumbnail-category{ background: #7E3374; }.gdlr-core-style-2 .gdlr-core-blog-thumbnail .gdlr-core-blog-info-category{ background: #7E3374; }.gdlr-core-blog-feature .gdlr-core-blog-info-category{ background: #7E3374; }.gdlr-core-recent-post-widget-thumbnail .gdlr-core-blog-info-category{ background: #7E3374; } 
 .gdlr-core-blog-modern.gdlr-core-with-image .gdlr-core-blog-info-wrapper, .gdlr-core-blog-modern.gdlr-core-with-image .gdlr-core-blog-info-wrapper a, .gdlr-core-blog-modern.gdlr-core-with-image .gdlr-core-blog-info-wrapper i, .gdlr-core-blog-modern.gdlr-core-with-image .gdlr-core-blog-title a{ color: #ffffff; } .gdlr-core-blog-modern.gdlr-core-with-image .gdlr-core-blog-content{ color: #ffffff; }.gdlr-core-blog-metro.gdlr-core-with-image .gdlr-core-blog-info-wrapper, .gdlr-core-blog-metro.gdlr-core-with-image .gdlr-core-blog-info-wrapper a, .gdlr-core-blog-metro.gdlr-core-with-image .gdlr-core-blog-info-wrapper i, .gdlr-core-blog-metro.gdlr-core-with-image .gdlr-core-blog-title a{ color: #ffffff; } 
-.akea-blog-aside-format .akea-single-article-content, .gdlr-core-blog-aside-format{ background-color: #990066; }.akea-blog-quote-format .akea-single-article-content, .gdlr-core-blog-quote-format{ background-color: #990066; } 
+.akea-blog-aside-format .akea-single-article-content, .gdlr-core-blog-aside-format{ background-color: #7E3374; }.akea-blog-quote-format .akea-single-article-content, .gdlr-core-blog-quote-format{ background-color: #7E3374; } 
 .akea-blog-aside-format .akea-single-article-content, .gdlr-core-blog-aside-format .gdlr-core-blog-content{ color: #ffffff; }.akea-blog-quote-format .akea-single-article-content blockquote, .akea-blog-quote-format .akea-single-article-content q, .akea-blog-quote-format .akea-single-article-content, .gdlr-core-blog-quote-format .gdlr-core-blog-content blockquote,.gdlr-core-blog-quote-format .gdlr-core-blog-content q,.gdlr-core-blog-quote-format .gdlr-core-blog-content{ color: #ffffff; } 
 .gdlr-core-pagination a{ background-color: #f0f0f0; }body .page-links > a, body .nav-links > a, body .nav-links > span.dots{ background-color: #f0f0f0; } 
 .gdlr-core-pagination a{ color: #929292; }body .page-links > a, body .nav-links > a, body .nav-links > span.dots{ color: #929292; } 
-.gdlr-core-pagination a:hover, .gdlr-core-pagination a.gdlr-core-active, .gdlr-core-pagination span{ background-color: #990066; }body .page-links > span, body .page-links > a:hover, body .nav-links > span.current, body .nav-links > a:hover{ background-color: #990066; } 
+.gdlr-core-pagination a:hover, .gdlr-core-pagination a.gdlr-core-active, .gdlr-core-pagination span{ background-color: #7E3374; }body .page-links > span, body .page-links > a:hover, body .nav-links > span.current, body .nav-links > a:hover{ background-color: #7E3374; } 
 .gdlr-core-pagination a:hover, .gdlr-core-pagination a.gdlr-core-active, .gdlr-core-pagination span{ color: #ffffff; }body .page-links > span, body .page-links > a:hover, body .nav-links > span.current, body .nav-links > a:hover{ color: #ffffff; } 
 .gdlr-core-pagination.gdlr-core-with-border a{ color: #b4b4b4; border-color: #b4b4b4; }.gdlr-core-pagination.gdlr-core-style-plain a, .gdlr-core-pagination.gdlr-core-style-plain a:before, .gdlr-core-pagination.gdlr-core-style-plain span:before{ color: #b4b4b4; } 
 .gdlr-core-pagination.gdlr-core-with-border a:hover, .gdlr-core-pagination.gdlr-core-with-border a.gdlr-core-active, .gdlr-core-pagination.gdlr-core-with-border span{ color: #424242; border-color: #424242; }.gdlr-core-pagination.gdlr-core-style-plain a:hover, .gdlr-core-pagination.gdlr-core-style-plain a.gdlr-core-active, .gdlr-core-pagination.gdlr-core-style-plain span{ color: #424242; } 
@@ -474,9 +473,9 @@ ul.gdlr-core-custom-menu-widget.gdlr-core-menu-style-list li a{ border-color: #e
 .gdlr-core-portfolio-content-wrap .gdlr-core-portfolio-title a{ color: #191919; } 
 .gdlr-core-port-info-item .gdlr-core-port-info-key, .gdlr-core-port-info2 .gdlr-core-port-info2-key{ color: #343434; } 
 .gdlr-core-portfolio-content-wrap .gdlr-core-portfolio-info, .gdlr-core-portfolio-content-wrap .gdlr-core-portfolio-info a, .gdlr-core-portfolio-content-wrap .gdlr-core-portfolio-info a:hover{ color: #b1b1b1; } 
-.gdlr-core-portfolio-grid2 .gdlr-core-portfolio-content-wrap .gdlr-core-portfolio-info{ background-color: #990066; } 
+.gdlr-core-portfolio-grid2 .gdlr-core-portfolio-content-wrap .gdlr-core-portfolio-info{ background-color: #7E3374; } 
 .gdlr-core-portfolio-badge{ color: #ffffff; } 
-.gdlr-core-portfolio-badge{ background-color: #990066; } 
+.gdlr-core-portfolio-badge{ background-color: #7E3374; } 
 .gdlr-core-portfolio-thumbnail .gdlr-core-portfolio-icon, .gdlr-core-portfolio-thumbnail .gdlr-core-portfolio-title a, .gdlr-core-portfolio-thumbnail .gdlr-core-portfolio-title a:hover{ color: #ffffff; } 
 .gdlr-core-portfolio-thumbnail .gdlr-core-portfolio-info, .gdlr-core-portfolio-thumbnail .gdlr-core-portfolio-info a, .gdlr-core-portfolio-thumbnail .gdlr-core-portfolio-info a:hover{ color: #cecece; } 
 .gdlr-core-filterer-wrap.gdlr-core-style-text a{ color: #aaaaaa; } 
@@ -484,7 +483,7 @@ ul.gdlr-core-custom-menu-widget.gdlr-core-menu-style-list li a{ border-color: #e
 .gdlr-core-filterer-wrap.gdlr-core-style-button a{ color: #838383; } 
 .gdlr-core-filterer-wrap.gdlr-core-style-button a{ background-color: #f1f1f1; } 
 .gdlr-core-filterer-wrap.gdlr-core-style-button a:hover, .gdlr-core-filterer-wrap.gdlr-core-style-button a.gdlr-core-active{ color: #ffffff; } 
-.gdlr-core-filterer-wrap.gdlr-core-style-button a:hover, .gdlr-core-filterer-wrap.gdlr-core-style-button a.gdlr-core-active{ background-color: #990066; } 
+.gdlr-core-filterer-wrap.gdlr-core-style-button a:hover, .gdlr-core-filterer-wrap.gdlr-core-style-button a.gdlr-core-active{ background-color: #7E3374; } 
 .gdlr-core-price-table-item .gdlr-core-price-table{ background-color: #f8f8f8; } 
 .gdlr-core-price-table .gdlr-core-price-table-head{ background-color: #3e3e3e; background: -webkit-linear-gradient(#525252, #3e3e3e); background: -o-linear-gradient(#525252, #3e3e3e); background: -moz-linear-gradient(#525252, #3e3e3e); background: linear-gradient(#525252, #3e3e3e); } 
 .gdlr-core-price-table .gdlr-core-price-table-icon{ color: #ffffff; } 
@@ -496,7 +495,7 @@ ul.gdlr-core-custom-menu-widget.gdlr-core-menu-style-list li a{ border-color: #e
 body .gdlr-core-price-table .gdlr-core-price-table-button, body .gdlr-core-price-table .gdlr-core-price-table-button:hover{ color: #ffffff; } 
 body .gdlr-core-price-table .gdlr-core-price-table-button, body .gdlr-core-price-table .gdlr-core-price-table-button:hover{ background-color: #575757; background: -webkit-linear-gradient(#414141, #575757); background: -o-linear-gradient(#414141, #575757); background: -moz-linear-gradient(#414141, #575757); background: linear-gradient(#414141, #575757); } 
 .gdlr-core-price-table .gdlr-core-price-table-content *{ border-color: #e5e5e5; } 
-.gdlr-core-price-table.gdlr-core-active .gdlr-core-price-table-head{ background-color: #990066; background: -webkit-linear-gradient(#ed783d, #990066); background: -o-linear-gradient(#ed783d, #990066); background: -moz-linear-gradient(#ed783d, #990066); background: linear-gradient(#ed783d, #990066); } 
+.gdlr-core-price-table.gdlr-core-active .gdlr-core-price-table-head{ background-color: #7E3374; background: -webkit-linear-gradient(#ed783d, #7E3374); background: -o-linear-gradient(#ed783d, #7E3374); background: -moz-linear-gradient(#ed783d, #7E3374); background: linear-gradient(#ed783d, #7E3374); } 
 .gdlr-core-price-table.gdlr-core-active .gdlr-core-price-table-icon{ color: #ffffff; } 
 .gdlr-core-price-table.gdlr-core-active .gdlr-core-price-table-title{ color: #ffffff; } 
 .gdlr-core-price-table.gdlr-core-active .gdlr-core-price-table-caption{ color: #ed996f; } 
@@ -504,7 +503,7 @@ body .gdlr-core-price-table .gdlr-core-price-table-button, body .gdlr-core-price
 .gdlr-core-price-table.gdlr-core-active .gdlr-core-price-table-price-number, .gdlr-core-price-table .gdlr-core-price-prefix{ color: #323232; } 
 .gdlr-core-price-table.gdlr-core-active .gdlr-core-price-suffix{ color: #acacac; } 
 body .gdlr-core-price-table.gdlr-core-active .gdlr-core-price-table-button, body .gdlr-core-price-table .gdlr-core-price-table-button:hover{ color: #ffffff; } 
-body .gdlr-core-price-table.gdlr-core-active .gdlr-core-price-table-button, body .gdlr-core-price-table .gdlr-core-price-table-button:hover{ background-color: #990066; background: -webkit-linear-gradient(#ed7e47, #990066); background: -o-linear-gradient(#ed7e47, #990066); background: -moz-linear-gradient(#ed7e47, #990066); background: linear-gradient(#ed7e47, #990066); } 
+body .gdlr-core-price-table.gdlr-core-active .gdlr-core-price-table-button, body .gdlr-core-price-table .gdlr-core-price-table-button:hover{ background-color: #7E3374; background: -webkit-linear-gradient(#ed7e47, #7E3374); background: -o-linear-gradient(#ed7e47, #7E3374); background: -moz-linear-gradient(#ed7e47, #7E3374); background: linear-gradient(#ed7e47, #7E3374); } 
 .gdlr-core-accordion-style-icon .gdlr-core-accordion-item-icon, .gdlr-core-accordion-style-box-icon .gdlr-core-accordion-item-icon, .gdlr-core-toggle-box-style-icon .gdlr-core-toggle-box-item-icon, .gdlr-core-toggle-box-style-box-icon .gdlr-core-toggle-box-item-icon{ color: #191919; } 
 .gdlr-core-accordion-style-icon .gdlr-core-accordion-item-title .gdlr-core-head, .gdlr-core-accordion-style-box-icon .gdlr-core-accordion-item-title .gdlr-core-head, .gdlr-core-toggle-box-style-icon .gdlr-core-toggle-box-item-title .gdlr-core-head, .gdlr-core-toggle-box-style-box-icon .gdlr-core-toggle-box-item-title .gdlr-core-head{ color: #191919; } 
 .gdlr-core-accordion-style-icon .gdlr-core-accordion-item-title, .gdlr-core-accordion-style-box-icon .gdlr-core-accordion-item-title, .gdlr-core-toggle-box-style-icon .gdlr-core-toggle-box-item-title, .gdlr-core-toggle-box-style-box-icon .gdlr-core-toggle-box-item-title{ color: #191919; } 
@@ -519,12 +518,12 @@ body .gdlr-core-price-table.gdlr-core-active .gdlr-core-price-table-button, body
 .gdlr-core-audio, .gdlr-core-audio .mejs-container .mejs-controls{ background-color: #e7e7e7; } 
 .gdlr-core-audio .mejs-container .mejs-controls .mejs-volume-button:before, .gdlr-core-audio .mejs-container .mejs-controls .mejs-playpause-button:before, .gdlr-core-audio .mejs-container .mejs-controls .mejs-time{ color: #202020; } 
 .gdlr-core-audio .mejs-controls .mejs-time-rail .mejs-time-total, .gdlr-core-audio .mejs-controls .mejs-time-rail .mejs-time-loaded{ background-color: #ffffff; } 
-.gdlr-core-audio .mejs-controls .mejs-time-rail .mejs-time-current{ background-color: #990066; } 
+.gdlr-core-audio .mejs-controls .mejs-time-rail .mejs-time-current{ background-color: #7E3374; } 
 .gdlr-core-audio .mejs-controls .mejs-horizontal-volume-slider .mejs-horizontal-volume-total{ background-color: #ffffff; } 
 .gdlr-core-audio .mejs-controls .mejs-horizontal-volume-slider .mejs-horizontal-volume-current{ background-color: #646464; } 
 .gdlr-core-body .gdlr-core-author-item .gdlr-core-author-list-title{ color: #1d1d1d; } 
-.gdlr-core-body .gdlr-core-author-item .gdlr-core-author-list-position{ color: #990066; } 
-.gdlr-core-body .gdlr-core-author-item .gdlr-core-author-list-url a{ color: #990066; }.gdlr-core-body .gdlr-core-author-item .gdlr-core-author-list-url{ border-color: #990066; } 
+.gdlr-core-body .gdlr-core-author-item .gdlr-core-author-list-position{ color: #7E3374; } 
+.gdlr-core-body .gdlr-core-author-item .gdlr-core-author-list-url a{ color: #7E3374; }.gdlr-core-body .gdlr-core-author-item .gdlr-core-author-list-url{ border-color: #7E3374; } 
 .gdlr-core-alert-box-item .gdlr-core-alert-box-item-inner{ background-color: #ef5e68; } 
 .gdlr-core-alert-box-item .gdlr-core-alert-box-item-inner{ border-color: #cd515a; } 
 .gdlr-core-alert-box-item .gdlr-core-alert-box-item-inner{ color: #ffffff; } 
@@ -537,10 +536,10 @@ blockquote:before, q:before{ color: #ebebeb; }
 .gdlr-core-body .gdlr-core-load-more, .gdlr-core-body .gdlr-core-button, .akea-body .akea-button, .akea-body input[type="button"], .akea-body input[type="submit"]{ color: #ffffff; } 
 .gdlr-core-body .gdlr-core-load-more:hover, .gdlr-core-body .gdlr-core-button:hover{ color: #ffffff; } 
 .gdlr-core-body .gdlr-core-load-more, .gdlr-core-body .gdlr-core-button, .akea-body .akea-button, .akea-body input[type="button"], .akea-body input[type="submit"]{ background-color: #2F2F2F; } 
-.gdlr-core-body .gdlr-core-load-more:hover, .gdlr-core-body .gdlr-core-button:hover{ background-color: #990066; } 
+.gdlr-core-body .gdlr-core-load-more:hover, .gdlr-core-body .gdlr-core-button:hover{ background-color: #7E3374; } 
 .gdlr-core-body .gdlr-core-button-with-border{ border-color: #383838; } .gdlr-core-body .gdlr-core-button-with-border.gdlr-core-button-transparent{ color: #383838; } 
 .gdlr-core-body .gdlr-core-button-with-border:hover{ border-color: #ffffff; }.gdlr-core-body .gdlr-core-button-with-border.gdlr-core-button-transparent:hover{ color: #ffffff; } 
-.gdlr-core-body .gdlr-core-button.gdlr-core-button-gradient{ background-color: #990066; background: -webkit-linear-gradient(#ed7940, #990066); background: -o-linear-gradient(#ed7940, #990066); background: -moz-linear-gradient(#ed7940, #990066); background: linear-gradient(#ed7940, #990066); }.gdlr-core-body .gdlr-core-button.gdlr-core-button-gradient-v{ background-color: #990066; background: -webkit-linear-gradient(to right, #ed7940, #990066); background: -o-linear-gradient(to right, #ed7940, #990066); background: -moz-linear-gradient(to right, #ed7940, #990066); background: linear-gradient(to right, #ed7940, #990066); } 
+.gdlr-core-body .gdlr-core-button.gdlr-core-button-gradient{ background-color: #7E3374; background: -webkit-linear-gradient(#ed7940, #7E3374); background: -o-linear-gradient(#ed7940, #7E3374); background: -moz-linear-gradient(#ed7940, #7E3374); background: linear-gradient(#ed7940, #7E3374); }.gdlr-core-body .gdlr-core-button.gdlr-core-button-gradient-v{ background-color: #7E3374; background: -webkit-linear-gradient(to right, #ed7940, #7E3374); background: -o-linear-gradient(to right, #ed7940, #7E3374); background: -moz-linear-gradient(to right, #ed7940, #7E3374); background: linear-gradient(to right, #ed7940, #7E3374); } 
 .gdlr-core-call-to-action-item-title{ color: #2c2c2c; } 
 .gdlr-core-call-to-action-item-caption{ color: #535353; } 
 .gdlr-core-counter-item-top-text{ color: #828282; } 
@@ -554,7 +553,7 @@ blockquote:before, q:before{ color: #ebebeb; }
 .gdlr-core-column-service-item .gdlr-core-column-service-caption{ color: #747474; } 
 .gdlr-core-dropdown-tab .gdlr-core-dropdown-tab-title, .gdlr-core-dropdown-tab .gdlr-core-dropdown-tab-head-wrap{ background-color: #f7c02e; } 
 .gdlr-core-dropdown-tab .gdlr-core-dropdown-tab-title{ color: #252525; } 
-.gdlr-core-flipbox-item .gdlr-core-flipbox-front, .gdlr-core-flipbox-item .gdlr-core-flipbox-back, .gdlr-core-feature-box-item .gdlr-core-feature-box{ background-color: #990066; } 
+.gdlr-core-flipbox-item .gdlr-core-flipbox-front, .gdlr-core-flipbox-item .gdlr-core-flipbox-back, .gdlr-core-feature-box-item .gdlr-core-feature-box{ background-color: #7E3374; } 
 .gdlr-core-flipbox-item .gdlr-core-flipbox-front, .gdlr-core-flipbox-item .gdlr-core-flipbox-back, .gdlr-core-flipbox-item .gdlr-core-flipbox-frame, .gdlr-core-feature-box-item .gdlr-core-feature-box, .gdlr-core-feature-box-item .gdlr-core-feature-box-frame{ border-color: #dd6a27; } 
 .gdlr-core-flipbox-item .gdlr-core-flipbox-item-icon, .gdlr-core-feature-box-item .gdlr-core-feature-box-item-icon{ color: #ffffff; } 
 .gdlr-core-flipbox-item .gdlr-core-flipbox-item-title, .gdlr-core-feature-box-item .gdlr-core-feature-box-item-title{ color: #ffffff; } 
@@ -600,7 +599,7 @@ blockquote:before, q:before{ color: #ebebeb; }
 .gdlr-core-skill-bar-item .gdlr-core-skill-bar-title, .gdlr-core-skill-bar-item .gdlr-core-skill-bar-right{ color: #505050; } 
 .gdlr-core-skill-bar-item .gdlr-core-skill-bar-icon{ color: #616161; } 
 .gdlr-core-skill-bar-item .gdlr-core-skill-bar-progress{ background-color: #f3f3f3; } 
-.gdlr-core-skill-bar-item .gdlr-core-skill-bar-filled{ background-color: #990066; } 
+.gdlr-core-skill-bar-item .gdlr-core-skill-bar-filled{ background-color: #7E3374; } 
 .gdlr-core-flexslider-nav .flex-direction-nav li a, .gdlr-core-flexslider.gdlr-core-nav-style-middle-large .flex-direction-nav li a{ color: #a7a7a7; border-color: #a7a7a7; } 
 .gdlr-core-flexslider-nav.gdlr-core-round-style li a, .gdlr-core-flexslider-nav.gdlr-core-rectangle-style li a{ background-color: #f1f1f1; } 
 .gdlr-core-flexslider .flex-control-nav li a{ border-color: #8a8a8a; }.gdlr-core-flexslider .flex-control-nav li a.flex-active{ background-color: #8a8a8a; }.gdlr-core-flexslider.gdlr-core-bullet-style-cylinder .flex-control-nav li a.flex-active{ background-color: #8a8a8a; } 
@@ -613,10 +612,10 @@ blockquote:before, q:before{ color: #ebebeb; }
 .gdlr-core-tab-item-title{ color: #8d8d8d; } 
 .gdlr-core-tab-style1-horizontal .gdlr-core-tab-item-title, .gdlr-core-tab-style1-vertical .gdlr-core-tab-item-title{ background-color: #f7f7f7; } 
 .gdlr-core-tab-item-title-wrap, .gdlr-core-tab-item-content-wrap, .gdlr-core-tab-item-title{ border-color: #ebebeb; } 
-.gdlr-core-tab-item-title-line{ border-color: #990066; } 
+.gdlr-core-tab-item-title-line{ border-color: #7E3374; } 
 .gdlr-core-tab-item-title.gdlr-core-active{ color: #464646; } 
 .gdlr-core-tab-style1-horizontal .gdlr-core-tab-item-title.gdlr-core-active, .gdlr-core-tab-style1-vertical .gdlr-core-tab-item-title.gdlr-core-active{ background-color: #ffffff; } 
-table tr th{ background-color: #ed7c44; } 
+table tr th{ background-color: #7E3374; color: white}
 table tr th, .akea-body table tr th a, .akea-body table tr th a:hover{ color: #ffffff; } 
 table tr:nth-child(odd){ background-color: #f9f9f9; } 
 table tr:nth-child(odd){ color: #949494; } 
@@ -630,8 +629,8 @@ table tr:nth-child(even){ color: #949494; }
 .gdlr-core-testimonial-item .gdlr-core-testimonial-quote{ color: #282828; } 
 .gdlr-core-title-item .gdlr-core-title-item-title, .gdlr-core-title-item .gdlr-core-title-item-title a{ color: #383838; } 
 .gdlr-core-title-item .gdlr-core-title-item-caption{ color: #747474; } 
-.woocommerce .star-rating span, .single-product.woocommerce #review_form #respond p.stars a, .single-product.woocommerce div.product .product_meta, .single-product.woocommerce div.product .product_meta a{ color: #990066; }.woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt, .woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, html .woocommerce input.button, html .woocommerce span.onsale{ background-color: #990066; } 
-span.woocommerce-Price-amount.amount{ color: #990066; } 
+.woocommerce .star-rating span, .single-product.woocommerce #review_form #respond p.stars a, .single-product.woocommerce div.product .product_meta, .single-product.woocommerce div.product .product_meta a{ color: #7E3374; }.woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt, .woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, html .woocommerce input.button, html .woocommerce span.onsale{ background-color: #7E3374; } 
+span.woocommerce-Price-amount.amount{ color: #7E3374; } 
 .woocommerce .price del, .gdlr-core-product-price del, del span.woocommerce-Price-amount.amount{ color: #949494; } 
 .woocommerce #respond input#submit.alt:hover, .woocommerce a.button.alt:hover, .woocommerce button.button.alt:hover, .woocommerce input.button.alt:hover, .woocommerce #respond input#submit:hover, .woocommerce a.button:hover, .woocommerce button.button:hover, .woocommerce input.button:hover{ background-color: #ed8957; } 
 .woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt, .woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button, .woocommerce #respond input#submit.disabled, .woocommerce #respond input#submit:disabled, .woocommerce #respond input#submit:disabled[disabled], .woocommerce a.button.disabled, .woocommerce a.button:disabled, .woocommerce a.button:disabled[disabled], .woocommerce button.button.disabled, .woocommerce button.button:disabled, .woocommerce button.button:disabled[disabled], .woocommerce input.button.disabled, .woocommerce input.button:disabled, .woocommerce input.button:disabled[disabled]{ color: #ffffff; } 
@@ -642,7 +641,7 @@ span.woocommerce-Price-amount.amount{ color: #990066; }
 .gdlr-core-product-thumbnail .gdlr-core-product-view-detail, .gdlr-core-product-thumbnail .gdlr-core-product-view-detail:hover{ color: #ffffff; } 
 .gdlr-core-product-thumbnail .gdlr-core-product-view-detail{ background-color: #000000; background-color: rgba(0, 0, 0, 0.9); } 
 .gdlr-core-product-thumbnail .added_to_cart, .gdlr-core-product-thumbnail .added_to_cart:hover, .gdlr-core-product-thumbnail .gdlr-core-product-add-to-cart, .gdlr-core-product-thumbnail .gdlr-core-product-add-to-cart:hover{ color: #ffffff; } 
-.gdlr-core-product-thumbnail .added_to_cart, .gdlr-core-product-thumbnail .gdlr-core-product-add-to-cart{ background-color: #990066; background-color: rgba(236, 106, 42, 0.9); } 
+.gdlr-core-product-thumbnail .added_to_cart, .gdlr-core-product-thumbnail .gdlr-core-product-add-to-cart{ background-color: #7E3374; background-color: rgba(236, 106, 42, 0.9); } 
 .woocommerce .widget_price_filter .price_slider_wrapper .ui-widget-content{ background-color: #e6e6e6; } 
 .woocommerce .widget_price_filter .ui-slider .ui-slider-range{ background-color: #d15925; } 
 .woocommerce .widget_price_filter .ui-slider .ui-slider-handle{ background-color: #e0773a; } 
@@ -665,7 +664,7 @@ span.woocommerce-Price-amount.amount{ color: #990066; }
 .akea-item-mgb, .gdlr-core-item-mgb{ margin-bottom: 40px; }
 /*.akea-header-style-plain.akea-style-splitted-menu .akea-main-menu {margin-top: -120px;}*/
 .contact_email{color: #FFFFFF;}
-.contact_email:hover{background-color: #990066}
+.contact_email:hover{background-color: #7E3374}
 body p{color: black;}
 #paginate li{
 	display: inline;
@@ -674,4 +673,7 @@ body p{color: black;}
 #paginate .active a{
 	background-color: #CC33CC!important;
 	color: #FFFFFF;
+}
+#social_buttons a{
+	margin-right: 2%;
 }

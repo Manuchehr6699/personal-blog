@@ -2,7 +2,7 @@ jQuery(function($) {
 
   $('.zilla-likes').on('click', function() {
     var link = $(this);
-    if (link.hasClass('active')) return false;
+    if(link.hasClass('active')) return false;
 
     var id = $(this).attr('id'),
         postfix = link.find('.zilla-likes-postfix').text();
@@ -16,9 +16,9 @@ jQuery(function($) {
       xhrFields: { 
         withCredentials: true, 
       },
-      success:function(data){
-        var res = JSON.parse(data);
-        link.html(res['like_count']).addClass('active').attr('title','You already like this');
+      success:function(response){
+          var result = JSON.parse(response);
+          link.html(result['like_count']).addClass('active').attr('title','You already like this');
       },
     });
     return false;

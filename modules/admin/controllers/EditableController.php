@@ -16,6 +16,7 @@ use app\models\Blog;
 use app\models\Category;
 use app\models\Contact;
 use app\models\CV;
+use app\models\MyBooks;
 use app\models\Profiles;
 use app\models\Setting;
 use app\modules\admin\models\BackMenu;
@@ -72,6 +73,10 @@ class EditableController extends Controller
             'change-category-status' => [
                 'class' => EditableColumnAction::classname(),
                 'modelClass' => Category::className(),
+            ],
+            'change-book-status' => [
+                'class' => EditableColumnAction::classname(),
+                'modelClass' => MyBooks::className(),
             ]
         ];
     }

@@ -31,6 +31,7 @@ $config = [
         ],
         'errorHandler' => [
             'errorAction' => 'main/error',
+            //'layout' => 'main'
         ],
         'mailer' => [
             'class' => 'yii\swiftmailer\Mailer',
@@ -69,6 +70,8 @@ $config = [
             'rules' => [
                 'main/page/<slug>' => 'main/page',
                 'blog/post/<alias>' => 'blog/post',
+                'blog/posts/<page>' => 'blog/posts/',
+                'blog/posts-by-tag/<tag>' => 'blog/posts-by-tag',
             ],
         ],
         'assetManager' => [
@@ -86,6 +89,9 @@ $config = [
                     'basePath' => '@yii2mod/rbac/messages',
                 ],
             ],
+        ],
+        'pdf'=>[
+            'class'=>'app\components\ExportToPdf',
         ],
     ],
     'modules' => [

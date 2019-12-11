@@ -8,7 +8,8 @@ use yii\helpers\Html;
 
 $this->title = 'Add new Menu item for Admin';
 $this->params['breadcrumbs'][] = ['label' => 'Admin SiteMenu items', 'url' => ['index']];
-$this->params['breadcrumbs'][] = $this->title;
+$this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['']];
+
 ?>
 <div class="back-menu-create">
     <?= ModelStatus::getNotify() ?>

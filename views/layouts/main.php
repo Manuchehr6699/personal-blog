@@ -4,6 +4,7 @@
 
 /* @var $content string */
 
+use app\components\BottomList;
 use app\widgets\Alert;
 use yii\helpers\Html;
 use yii\widgets\Breadcrumbs;
@@ -18,6 +19,9 @@ MainAsset::register($this);
     <meta charset="<?= Yii::$app->charset ?>">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:type" content="article"/>
+    <meta property="og:title" content="Abel Polese, Phd" />
+    <meta property="og:description" content="Abel Polese | PhD | Senior Research Fellow with DCU Institute for International Conflict Resolution and Reconstruction" />
     <?php $this->registerCsrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
    <?php $this->head() ?>
@@ -34,7 +38,9 @@ MainAsset::register($this);
             <div class="gdlr-core-pbf-sidebar-wrapper ">
                 <div class="gdlr-core-pbf-sidebar-container gdlr-core-line-height-0 clearfix gdlr-core-js gdlr-core-container">
                     <?= $content ?>
+
                     <?= $this->render('sidebar') ?>
+
                 </div>
             </div>
             </div>
@@ -46,7 +52,7 @@ MainAsset::register($this);
     <i class="fa fa-angle-up"></i>
 </a>
 <div class="akea-footer-recent-post-button" id=akea-footer-recent-post-button><i class=icon_plus></i></div>
-<?= $this->render('new-stories') ?>
+<?= BottomList::widget() ?>
 
 <script>
     var zilla_likes = {

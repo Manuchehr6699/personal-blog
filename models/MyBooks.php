@@ -18,7 +18,9 @@ use Yii;
  * @property string|null $category
  * @property string|null $description
  * @property string $photo
+ * @property string $link_to_buy
  * @property string|null $ebook_file
+ * @property int|null $status
  * @property int|null $created_at
  * @property int|null $created_by
  * @property int|null $updated_at
@@ -26,6 +28,7 @@ use Yii;
  */
 class MyBooks extends \yii\db\ActiveRecord
 {
+    const SCENARIO_MYSPECIAL = 'onUpdate';
     /**
      * {@inheritdoc}
      */
@@ -40,9 +43,11 @@ class MyBooks extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name', 'photo'], 'required'],
+            [['name'], 'required'],
+            [['photo'], 'required', 'on' => self::SCENARIO_DEFAULT],
+            [['photo'], 'safe', 'on' => self::SCENARIO_MYSPECIAL],
             [['page_count', 'created_at', 'created_by', 'updated_at', 'updated_by'], 'integer'],
-            [['description'], 'string'],
+            [['description', 'link_to_buy'], 'string'],
             [['name'], 'string', 'max' => 500],
             [['author', 'publisher', 'category'], 'string', 'max' => 250],
             [['publish_year'], 'string', 'max' => 5],
@@ -70,7 +75,9 @@ class MyBooks extends \yii\db\ActiveRecord
             'category' => 'Category',
             'description' => 'Description',
             'photo' => 'Photo',
+            'link_to_buy' => 'Link to buy',
             'ebook_file' => 'Ebook File',
+            'Status' => 'Status',
             'created_at' => 'Created At',
             'created_by' => 'Created By',
             'updated_at' => 'Updated At',

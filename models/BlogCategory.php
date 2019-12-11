@@ -35,7 +35,7 @@ class BlogCategory extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['blog_id', 'category_id'], 'required'],
+            [['blog_id'], 'required'],
             [['blog_id', 'category_id', 'status', 'created_at', 'created_by', 'updated_at', 'updated_by'], 'integer'],
             [['blog_id'], 'exist', 'skipOnError' => true, 'targetClass' => Blog::className(), 'targetAttribute' => ['blog_id' => 'id']],
             [['category_id'], 'exist', 'skipOnError' => true, 'targetClass' => Category::className(), 'targetAttribute' => ['category_id' => 'id']],

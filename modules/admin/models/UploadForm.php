@@ -19,13 +19,12 @@ class UploadForm extends Model
     * @var UploadedFile
     */
    public $imageFile;
-   public $ebookFile;
+
 
    public function rules()
    {
       return [
-          [['imageFile'], 'file', 'skipOnEmpty' => false, 'extensions' => 'png, jpg'],
-          [['ebookFile'], 'file', 'skipOnEmpty' => false, 'extensions' => 'pdf, djvu, txt, doc, docx, rtf']
+          [['imageFile'], 'file', 'skipOnEmpty' => false, 'extensions' => 'png, jpg']
       ];
    }
 
@@ -38,14 +37,4 @@ class UploadForm extends Model
          return false;
       }
    }
-
-//    public function uploadEbook($path_category)
-//    {
-//        if($this->validate()){
-//            $this->ebookFile->saveAs( \Yii::getAlias('@uploadroot').'/'.$path_category.'/' . $this->ebookFile->baseName . '.' . $this->ebookFile->extension);
-//            return true;
-//        }else{
-//            return false;
-//        }
-//    }
 }

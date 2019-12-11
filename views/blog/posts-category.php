@@ -8,7 +8,7 @@
 
 use yii\widgets\LinkPager;
 
-$this->title = 'Posts';
+$this->title = 'Posts by category | '.$category;
 
 
 ?>
@@ -18,6 +18,7 @@ $this->title = 'Posts';
         <div class="row">
             <div class="col-md-12">
                 <?php if(!empty($posts)): ?>
+                    <h5>Category: <?= $category ?></h5>
                     <?php foreach ($posts as $post): ?>
                     <div class="gdlr-core-item-list gdlr-core-blog-full  gdlr-core-item-mglr gdlr-core-style-left">
 
@@ -71,9 +72,9 @@ $this->title = 'Posts';
                                 <a class="gdlr-core-social-share-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=<?= urlencode($link) ?>&title=<?= $post['title'] ?>" target=_blank >
                                     <i class="fa fa-linkedin" ></i>
                                 </a>
-<!--                                <a class="gdlr-core-social-share-pinterest" href="http://pinterest.com/pin/create/button/?url=--><?//= urlencode($link) ?><!--" target=_blank >-->
-<!--                                    <i class="fa fa-pinterest-p" ></i>-->
-<!--                                </a>-->
+                                <!--                                <a class="gdlr-core-social-share-pinterest" href="http://pinterest.com/pin/create/button/?url=--><?//= urlencode($link) ?><!--" target=_blank >-->
+                                <!--                                    <i class="fa fa-pinterest-p" ></i>-->
+                                <!--                                </a>-->
                                 <a class="gdlr-core-social-share-twitter" href="https://twitter.com/intent/tweet?url=<?= urlencode($link)?>" target=_blank id="a_2207_5"  >
                                     <i class="fa fa-twitter"></i>
                                 </a>

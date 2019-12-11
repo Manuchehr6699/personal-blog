@@ -10,14 +10,14 @@ use app\widgets\SiteMenu;
 
 ?>
 
-<header class="akea-header-wrap akea-header-style-plain  akea-style-splitted-menu akea-sticky-navigation akea-style-slide" data-navigation-offset=75px>
+<header class="akea-header-wrap akea-header-style-plain akea-style-splitted-menu akea-style-slide" data-navigation-offset='75px'>
     <div class=akea-header-background></div>
     <div class="akea-header-container  akea-container">
         <div class="akea-header-container-inner clearfix">
             <div class="akea-navigation akea-item-pdlr clearfix ">
                 <center>
                     <h3>
-                        <?= Yii::$app->settings->get('Site', 'sitename') ?>
+                        <a style="cursor: pointer" href="/"><?= Yii::$app->settings->get('Site', 'sitename') ?></a>
                     </h3>
                 </center>
                 <div class=akea-main-menu id=akea-main-menu style="margin-top: 20px">

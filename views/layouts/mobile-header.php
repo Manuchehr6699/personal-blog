@@ -12,7 +12,7 @@
         <div class="akea-mobile-header-container akea-container clearfix">
             <div class="akea-logo  akea-item-pdlr">
                 <div class=akea-logo-inner>
-                    <a class href=index.html><img src=/upload/logo-2-1.png alt width=140 height=33 title=logo-2></a>
+                    <a class href='/'><img src='/' alt width='140' height='33' title='logo-2'></a>
                 </div>
             </div>
             <div class=akea-mobile-menu-right>

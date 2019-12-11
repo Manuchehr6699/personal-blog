@@ -13,11 +13,14 @@ $this->title = 'CV';
         <div class="row">
             <div class="col-md-12">
                 <?php if(!empty($data)): ?>
+
                     <h3>CV</h3>
+
                     <?php foreach ($data as $text): ?>
                         <?= $text['text'] ?>
                     <?php endforeach; ?>
                 <?php endif; ?>
+                <?= $this->render('/layouts/sharing_buttons') ?>
             </div>
         </div>
     </div>

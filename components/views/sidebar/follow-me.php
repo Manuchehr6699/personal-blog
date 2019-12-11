@@ -21,7 +21,7 @@ use yii\widgets\ActiveForm;
                         <span class="gdlr-core-title-item-title-divider gdlr-core-skin-divider"></span>
                     </h3>
                     <?php if(\Yii::$app->session->hasFlash('saved')): ?>
-                    <h6 class="text-center m-2" style="color: green"><?= Yii::$app->session->getFlash('saved') ?></h6>
+                        <h6 class="text-center m-2" style="color: green"><?= Yii::$app->session->getFlash('saved') ?></h6>
                     <?php endif; ?>
                 </div>
             </div>

@@ -81,28 +81,30 @@ class BlogController extends Controller
         $blogCategory = new BlogCategory();
         $slug = new Slugify();
         $photo = new UploadForm();
-
         $categories = Category::find()->where(['status' => 1])->asArray()->all();
 
         if($model->load(Yii::$app->request->post()) && $blogCategory->load(Yii::$app->request->post())){
             ModelStatus::setTimeStampCreate($model);
             $model->alias = $slug->slugify($model->title);
             $model->tags = $this->setBlogTags($model->tags);
+            $model->like_count = 0;
             $photo->imageFile = UploadedFile::getInstance($model, 'photo');
             if(!empty($photo->imageFile) && $photo->upload('blog')){
                 $path = $photo->imageFile->baseName . '.' . $photo->imageFile->extension;
                 $model->photo = $path;
             }
             if($model->save()){
-                foreach($blogCategory->category_id as $id){
-                    $blogCat = new BlogCategory();
-                    $blogCat->category_id = $id;
-                    $blogCat->blog_id = $model->id;
-                    $blogCat->status =1;
-                    $blogCat->save();
-                    ModelStatus::setTimeStampCreate($blogCat);
-                    $blogCat->save();
-                    unset($blogCat);
+                if(!empty($blogCategory->category_id)){
+                    foreach($blogCategory->category_id as $id){
+                        $blogCat = new BlogCategory();
+                        $blogCat->category_id = $id;
+                        $blogCat->blog_id = $model->id;
+                        $blogCat->status =1;
+                        $blogCat->save();
+                        ModelStatus::setTimeStampCreate($blogCat);
+                        $blogCat->save();
+                        unset($blogCat);
+                    }
                 }
                 ModelStatus::setNotifySuccesSaved();
                 return $this->redirect(['index']);
@@ -110,7 +112,6 @@ class BlogController extends Controller
                 ModelStatus::setNotifyErrorSaved();
             }
         }
-
         return $this->render('create', [
             'model' => $model,
             'blogCategory' => $blogCategory,
@@ -131,6 +132,7 @@ class BlogController extends Controller
         $blogCategory = new BlogCategory();
         $slug = new Slugify();
         $photo = new UploadForm();
+        $oldPhoto = $model->photo;
         $categories = Category::find()->where(['status' => 1])->asArray()->all();
         $tags = unserialize($model->tags);
         $model->tags = implode(',', $tags);
@@ -142,18 +144,23 @@ class BlogController extends Controller
           if(!empty($photo->imageFile) && $photo->upload('blog')){
              $path = $photo->imageFile->baseName . '.' . $photo->imageFile->extension;
              $model->photo = $path;
+          }else{
+              $model->photo = $oldPhoto;
           }
           if($model->save()){
-             foreach ($blogCategory->category_id as $id){
-                $blogCat = new BlogCategory();
-                $blogCat->category_id = $id;
-                $blogCat->blog_id = $model->id;
-                $blogCat->status =1;
-                $blogCat->save();
-                ModelStatus::setTimeStampCreate($blogCat);
-                $blogCat->save();
-                unset($blogCat);
-             }
+              if(!empty($blogCategory->category_id)){
+                  foreach($blogCategory->category_id as $id){
+                      $blogCat = new BlogCategory();
+                      $blogCat->category_id = $id;
+                      $blogCat->blog_id = $model->id;
+                      $blogCat->status =1;
+                      $blogCat->save();
+                      ModelStatus::setTimeStampCreate($blogCat);
+                      $blogCat->save();
+                      unset($blogCat);
+                  }
+              }
+
              ModelStatus::setNotifySuccesSaved();
              return $this->redirect(['index']);
           }else{

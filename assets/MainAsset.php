@@ -36,6 +36,7 @@ class MainAsset extends AssetBundle
       'plugins/goodlayers-core/include/js/page-builder.js',
       'js/jquery/ui/effect.min.js',
       'js/script-core.js',
+
    ];
    public $depends = [
       'yii\web\YiiAsset',

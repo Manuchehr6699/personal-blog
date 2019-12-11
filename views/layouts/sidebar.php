@@ -20,11 +20,8 @@ use app\components\Tags;
     <div class="gdlr-core-sidebar-item gdlr-core-item-pdlr">
         <?php if (Yii::$app->controller->action->id != 'about-me' && Yii::$app->controller->action->id != 'cv'): ?>
             <?php
-            $dependency = [
-                'class' => 'yii\caching\DbDependency',
-                'sql' => 'SELECT COUNT(*) FROM about_me',
-            ];
-            if ($this->beginCache('AboutMe', ['dependency' => $dependency])) {
+
+            if ($this->beginCache('AboutMe')) {
                 echo AboutMe::widget();
                 $this->endCache();
             }

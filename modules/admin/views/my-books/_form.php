@@ -1,5 +1,6 @@
 <?php
 
+use app\modules\admin\models\ModelStatus;
 use dosamigos\tinymce\TinyMce;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
@@ -44,6 +45,14 @@ use yii\widgets\ActiveForm;
                 </div>
                 <div class="col-lg-6">
                     <?= $form->field($model, 'category')->textInput(['maxlength' => true]) ?>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <?= $form->field($model, 'link_to_buy')->textInput(['maxlength' => true]) ?>
+                </div>
+                <div class="col-lg-6">
+                    <?= $form->field($model, 'status')->dropDownList(ModelStatus::listData()) ?>
                 </div>
             </div>
             <div class="row">

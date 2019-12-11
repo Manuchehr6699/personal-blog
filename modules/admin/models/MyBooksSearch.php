@@ -17,8 +17,8 @@ class MyBooksSearch extends MyBooks
     public function rules()
     {
         return [
-            [['id', 'page_count', 'created_at', 'created_by', 'updated_at', 'updated_by'], 'integer'],
-            [['name', 'author', 'publisher', 'publish_year', 'isbn', 'language', 'category', 'description', 'photo', 'ebook_file'], 'safe'],
+            [['id', 'page_count', 'created_at', 'created_by', 'updated_at', 'updated_by', 'status'], 'integer'],
+            [['name', 'author', 'link_to_buy', 'publisher', 'publish_year', 'isbn', 'language', 'category', 'description', 'photo', 'ebook_file'], 'safe'],
         ];
     }
 
@@ -64,6 +64,7 @@ class MyBooksSearch extends MyBooks
             'created_by' => $this->created_by,
             'updated_at' => $this->updated_at,
             'updated_by' => $this->updated_by,
+            'status' => $this->status,
         ]);
 
         $query->andFilterWhere(['like', 'name', $this->name])

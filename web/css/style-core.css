@@ -3836,7 +3836,7 @@ body.blog .akea-single-article {
 	filter: alpha(opacity=27);
 	background-position: center;
 	background-size: cover;
-	background-image: url('../images/404-background.jpg');
+	/*background-image: url('../images/404-background.jpg');*/
 }
 
 .akea-not-found-wrap .akea-not-found-content {
@@ -6409,7 +6409,7 @@ html.mm-opening.akea-mmenu-right .akea-mobile-header {
 #div_2207_8{padding-bottom: 0px ;}
 #a_2207_9{margin-left: 13px ;margin-right: 13px ;}
 #div_2207_9{padding: 40px 0px 0px 0px;}
-#a_2207_10{font-size: 15px ;color: #990066 ;padding: 0px;text-transform: none ;margin-right: 20px;border-width: 0px;}
+#a_2207_10{font-size: 15px ;color: #7E3374 ;padding: 0px;text-transform: none ;margin-right: 20px;border-width: 0px;}
 #div_2207_10{color: #666666 ;padding: 50px 40px 65px;background-color: #f4f4f4 ;}
 #div_2207_11{padding-bottom: 10px ;}
 #h3_2207_9{font-size: 14px ;font-weight: 700 ;letter-spacing: 2px ;}
@@ -6424,11 +6424,7 @@ html.mm-opening.akea-mmenu-right .akea-mobile-header {
 #h3_2207_10{font-size: 14px ;font-weight: 700 ;letter-spacing: 2px ;}
 #span_2207_4{margin-top: 10px ;}
 #span_2207_5{margin-top: -20px ;}
-#li_2207_0{background-image: url(../upload/cat-bg-fashion.jpg) ;}
-#li_2207_1{background-image: url(../upload/cat-bg-food.jpg) ;}
-#li_2207_2{background-image: url(../upload/cat-bg-photography.jpg) ;}
-#li_2207_3{background-image: url(../upload/cat-bg-tech.jpg) ;}
-#li_2207_4{background-image: url(../upload/cat-bg-travel.jpg) ;}
+#li_2207_0{background-image: url(../upload/cat-bg.jpg) ;}
 #a_2207_16{font-size: 11.405405405405pt;}
 #a_2207_17{font-size: 13.675675675676pt;}
 #a_2207_18{font-size: 19.351351351351pt;}
@@ -6448,7 +6444,7 @@ html.mm-opening.akea-mmenu-right .akea-mobile-header {
 #h3_2207_11{font-size: 16px ;font-weight: 500 ;letter-spacing: 2px ;}
 #span_2207_6{margin-top: -20px ;}
 #span_2207_7{margin-top: -20px ;}
-#a_2207_30{color: #990066;}
+#a_2207_30{color: #7E3374;}
 #div_2207_16{padding-bottom: 0px ;}
 #a_2207_31{font-size: 15px ;color: #ffffff ;}
 #a_2207_32{font-size: 15px ;color: #ffffff ;margin-left: 25px ;}
@@ -6457,7 +6453,7 @@ html.mm-opening.akea-mmenu-right .akea-mobile-header {
 #a_2207_35{font-size: 15px ;color: #ffffff ;margin-left: 25px ;}
 #span_0bb9_0{margin-top: -20px ;}
 #span_0bb9_1{margin-top: -20px ;}
-#a_0bb9_0{color: #990066;}
+#a_0bb9_0{color: #7E3374;}
 #div_0bb9_0{padding-bottom: 0px ;}
 #a_0bb9_1{font-size: 15px ;color: #ffffff ;}
 #a_0bb9_2{font-size: 15px ;color: #ffffff ;margin-left: 25px ;}
@@ -6479,7 +6475,7 @@ html.mm-opening.akea-mmenu-right .akea-mobile-header {
 #p_afec_1{display: none;}
 #span_afec_6{margin-top: -20px ;}
 #span_afec_7{margin-top: -20px ;}
-#a_afec_0{color: #990066;}
+#a_afec_0{color: #7E3374;}
 #div_afec_1{padding-bottom: 0px ;}
 #a_afec_1{font-size: 15px ;color: #ffffff ;}
 #a_afec_2{font-size: 15px ;color: #ffffff ;margin-left: 25px ;}
@@ -6494,13 +6490,13 @@ html.mm-opening.akea-mmenu-right .akea-mobile-header {
 #div_aff0_3{background-color: #f5f5f5 ;}
 #div_aff0_4{max-width: 1240px ;}
 #div_aff0_5{margin: -280px 0px 0px 0px;}
-#div_aff0_6{background-image: url(../upload/3VLTPNZ3VD-1.jpg) ;background-size: cover ;background-position: center ;}
+#div_aff0_6{background-size: cover ;background-position: center ;}
 #div_aff0_7{margin: -280px 0px 0px 0px;padding: 90px 50px 50px 50px;}
 #div_aff0_8{box-shadow: 0px 0px 21px rgba(10, 10, 10,0.09); -moz-box-shadow: 0px 0px 21px rgba(10, 10, 10,0.09); -webkit-box-shadow: 0px 0px 21px rgba(10, 10, 10,0.09); background-color: #ffffff ;}
 #h3_aff0_1{font-size: 30px ;font-weight: 700 ;letter-spacing: 0px ;text-transform: none ;}
 #div_aff0_9{padding-bottom: 5px ;}
 #div_aff0_10{font-size: 16px ;text-transform: none ;}
-#span_aff0_1{color: #990066;}
+#span_aff0_1{color: #7E3374;}
 #span_aff0_2{margin-top: 6px ;}
 #i_aff0_0{font-size: 15px ;width: 15px ;}
 #span_aff0_3{color: #515151 ;font-size: 16px ;}
@@ -6510,7 +6506,7 @@ html.mm-opening.akea-mmenu-right .akea-mobile-header {
 #span_aff0_6{margin-top: 6px ;}
 #i_aff0_2{font-size: 15px ;width: 15px ;}
 #span_aff0_7{color: #515151 ;font-size: 16px ;}
-#a_aff0_0{font-size: 14px ;font-weight: 700 ;letter-spacing: 0px ;padding: 11px 28px 14px 30px;text-transform: none ;border-radius: 4px;-moz-border-radius: 4px;-webkit-border-radius: 4px;background: #990066 ;background: linear-gradient(#990066, #e87e37);-moz-background: linear-gradient(#990066, #e87e37);-o-background: linear-gradient(#990066, #e87e37);-webkit-background: linear-gradient(#990066, #e87e37);}
+#a_aff0_0{font-size: 14px ;font-weight: 700 ;letter-spacing: 0px ;padding: 11px 28px 14px 30px;text-transform: none ;border-radius: 4px;-moz-border-radius: 4px;-webkit-border-radius: 4px;background: #7E3374 ;background: linear-gradient(#7E3374, #e87e37);-moz-background: linear-gradient(#7E3374, #e87e37);-o-background: linear-gradient(#7E3374, #e87e37);-webkit-background: linear-gradient(#7E3374, #e87e37);}
 #div_aff0_11{padding: 80px 0px 60px 0px;}
 #div_aff0_12{background-color: #f5f5f5 ;}
 #div_aff0_13{max-width: 1280px ;}
@@ -6546,9 +6542,9 @@ html.mm-opening.akea-mmenu-right .akea-mobile-header {
 #div_aff0_40{padding-bottom: 15px ;}
 #h3_aff0_5{font-size: 20px ;font-weight: 700 ;letter-spacing: 0px ;text-transform: none ;}
 #div_aff0_41{max-width: 33px ;}
-#div_aff0_42{border-color: #990066 ;border-bottom-width: 3px ;}
+#div_aff0_42{border-color: #7E3374 ;border-bottom-width: 3px ;}
 #div_aff0_43{padding-bottom: 20px ;}
-#div_aff0_44{font-size: 20px ;font-weight: 400 ;letter-spacing: 0px ;text-transform: none ;color: #990066 ;}
+#div_aff0_44{font-size: 20px ;font-weight: 400 ;letter-spacing: 0px ;text-transform: none ;color: #7E3374 ;}
 #div_aff0_45{font-size: 17px ;font-weight: 400 ;letter-spacing: 0px ;text-transform: none ;color: #777777 ;}
 #div_aff0_46{margin-left: auto;margin-right: auto;padding: 112px 0px 0px 0px;max-width: 1280px ;}
 #div_aff0_47{padding: 0px 0px 20px 0px;}
@@ -6583,7 +6579,7 @@ html.mm-opening.akea-mmenu-right .akea-mobile-header {
 #div_aff0_58{border-color: #ec452a ;border-bottom-width: 3px ;}
 #span_aff0_8{margin-top: -20px ;}
 #span_aff0_9{margin-top: -20px ;}
-#a_aff0_17{color: #990066;}
+#a_aff0_17{color: #7E3374;}
 #div_aff0_59{padding-bottom: 0px ;}
 #a_aff0_18{font-size: 15px ;color: #ffffff ;}
 #a_aff0_19{font-size: 15px ;color: #ffffff ;margin-left: 25px ;}
@@ -6622,7 +6618,7 @@ html.mm-opening.akea-mmenu-right .akea-mobile-header {
 #a_e6a9_15{font-size: 15px ;color: #242424 ;margin-left: 17px ;}
 #span_e6a9_0{margin-top: -20px ;}
 #span_e6a9_1{margin-top: -20px ;}
-#a_e6a9_16{color: #990066;}
+#a_e6a9_16{color: #7E3374;}
 #div_e6a9_13{padding-bottom: 0px ;}
 #a_e6a9_17{font-size: 15px ;color: #ffffff ;}
 #a_e6a9_18{font-size: 15px ;color: #ffffff ;margin-left: 25px ;}
@@ -6647,7 +6643,7 @@ html.mm-opening.akea-mmenu-right .akea-mobile-header {
 #div_2322_8{padding-bottom: 0px ;}
 #span_2322_0{margin-top: -20px ;}
 #span_2322_1{margin-top: -20px ;}
-#a_2322_0{color: #990066;}
+#a_2322_0{color: #7E3374;}
 #div_2322_9{padding-bottom: 0px ;}
 #a_2322_1{font-size: 15px ;color: #ffffff ;}
 #a_2322_2{font-size: 15px ;color: #ffffff ;margin-left: 25px ;}
@@ -6674,7 +6670,7 @@ html.mm-opening.akea-mmenu-right .akea-mobile-header {
 #div_76ec_11{padding-bottom: 0px ;}
 #span_76ec_0{margin-top: -20px ;}
 #span_76ec_1{margin-top: -20px ;}
-#a_76ec_0{color: #990066;}
+#a_76ec_0{color: #7E3374;}
 #div_76ec_12{padding-bottom: 0px ;}
 #a_76ec_1{font-size: 15px ;color: #ffffff ;}
 #a_76ec_2{font-size: 15px ;color: #ffffff ;margin-left: 25px ;}
@@ -6703,7 +6699,7 @@ html.mm-opening.akea-mmenu-right .akea-mobile-header {
 #div_c441_10{padding-bottom: 0px ;}
 #span_c441_0{margin-top: -20px ;}
 #span_c441_1{margin-top: -20px ;}
-#a_c441_0{color: #990066;}
+#a_c441_0{color: #7E3374;}
 #div_c441_11{padding-bottom: 0px ;}
 #a_c441_1{font-size: 15px ;color: #ffffff ;}
 #a_c441_2{font-size: 15px ;color: #ffffff ;margin-left: 25px ;}
@@ -6733,7 +6729,7 @@ html.mm-opening.akea-mmenu-right .akea-mobile-header {
 #div_e291_11{padding-bottom: 0px ;}
 #span_e291_0{margin-top: -20px ;}
 #span_e291_1{margin-top: -20px ;}
-#a_e291_0{color: #990066;}
+#a_e291_0{color: #7E3374;}
 #div_e291_12{padding-bottom: 0px ;}
 #a_e291_1{font-size: 15px ;color: #ffffff ;}
 #a_e291_2{font-size: 15px ;color: #ffffff ;margin-left: 25px ;}
@@ -6770,7 +6766,7 @@ html.mm-opening.akea-mmenu-right .akea-mobile-header {
 #div_873e_19{padding-bottom: 0px ;}
 #span_873e_0{margin-top: -20px ;}
 #span_873e_1{margin-top: -20px ;}
-#a_873e_0{color: #990066;}
+#a_873e_0{color: #7E3374;}
 #div_873e_20{padding-bottom: 0px ;}
 #a_873e_1{font-size: 15px ;color: #ffffff ;}
 #a_873e_2{font-size: 15px ;color: #ffffff ;margin-left: 25px ;}
@@ -6803,7 +6799,7 @@ html.mm-opening.akea-mmenu-right .akea-mobile-header {
 #div_6ed7_16{padding-bottom: 0px ;}
 #div_6ed7_17{padding: 80px 0px 30px 30px;}
 #div_6ed7_18{background-color: #ffffff ;}
-#a_6ed7_0{font-size: 15px ;color: #990066 ;padding: 0px;text-transform: none ;margin-right: 20px;border-width: 0px;}
+#a_6ed7_0{font-size: 15px ;color: #7E3374 ;padding: 0px;text-transform: none ;margin-right: 20px;border-width: 0px;}
 #div_6ed7_19{color: #666666 ;padding: 50px 40px 65px;background-color: #f4f4f4 ;}
 #div_6ed7_20{padding-bottom: 10px ;}
 #h3_6ed7_7{font-size: 14px ;font-weight: 700 ;letter-spacing: 2px ;}
@@ -6839,7 +6835,7 @@ html.mm-opening.akea-mmenu-right .akea-mobile-header {
 #a_6ed7_19{font-size: 22pt;}
 #span_6ed7_3{margin-top: -20px ;}
 #span_6ed7_4{margin-top: -20px ;}
-#a_6ed7_20{color: #990066;}
+#a_6ed7_20{color: #7E3374;}
 #div_6ed7_23{padding-bottom: 0px ;}
 #a_6ed7_21{font-size: 15px ;color: #ffffff ;}
 #a_6ed7_22{font-size: 15px ;color: #ffffff ;margin-left: 25px ;}
@@ -6872,7 +6868,7 @@ html.mm-opening.akea-mmenu-right .akea-mobile-header {
 #div_28d1_16{margin-bottom: 90px ;}
 #h3_28d1_6{font-size: 27px ;font-weight: 700 ;letter-spacing: 0px ;}
 #div_28d1_17{padding-bottom: 0px ;}
-#a_28d1_0{font-size: 15px ;color: #990066 ;padding: 0px;text-transform: none ;margin-right: 20px;border-width: 0px;}
+#a_28d1_0{font-size: 15px ;color: #7E3374 ;padding: 0px;text-transform: none ;margin-right: 20px;border-width: 0px;}
 #div_28d1_18{color: #666666 ;padding: 50px 40px 65px;background-color: #f4f4f4 ;}
 #div_28d1_19{padding-bottom: 10px ;}
 #h3_28d1_7{font-size: 14px ;font-weight: 700 ;letter-spacing: 2px ;}
@@ -6908,7 +6904,7 @@ html.mm-opening.akea-mmenu-right .akea-mobile-header {
 #a_28d1_19{font-size: 22pt;}
 #span_28d1_3{margin-top: -20px ;}
 #span_28d1_4{margin-top: -20px ;}
-#a_28d1_20{color: #990066;}
+#a_28d1_20{color: #7E3374;}
 #div_28d1_22{padding-bottom: 0px ;}
 #a_28d1_21{font-size: 15px ;color: #ffffff ;}
 #a_28d1_22{font-size: 15px ;color: #ffffff ;margin-left: 25px ;}
@@ -6941,7 +6937,7 @@ html.mm-opening.akea-mmenu-right .akea-mobile-header {
 #h3_e83f_8{font-size: 20px ;font-weight: 700 ;letter-spacing: 0px ;}
 #span_e83f_0{margin-top: -20px ;}
 #span_e83f_1{margin-top: -20px ;}
-#a_e83f_0{color: #990066;}
+#a_e83f_0{color: #7E3374;}
 #div_e83f_14{padding-bottom: 0px ;}
 #a_e83f_1{font-size: 15px ;color: #ffffff ;}
 #a_e83f_2{font-size: 15px ;color: #ffffff ;margin-left: 25px ;}
@@ -6969,7 +6965,7 @@ html.mm-opening.akea-mmenu-right .akea-mobile-header {
 #h3_8565_8{font-size: 18px ;font-weight: 700 ;letter-spacing: 0px ;}
 #span_8565_0{margin-top: -20px ;}
 #span_8565_1{margin-top: -20px ;}
-#a_8565_0{color: #990066;}
+#a_8565_0{color: #7E3374;}
 #div_8565_10{padding-bottom: 0px ;}
 #a_8565_1{font-size: 15px ;color: #ffffff ;}
 #a_8565_2{font-size: 15px ;color: #ffffff ;margin-left: 25px ;}
@@ -7007,7 +7003,7 @@ html.mm-opening.akea-mmenu-right .akea-mobile-header {
 #div_4e10_3{padding: 0px 0px 50px 0px;}
 #div_4e10_4{background-color: #f5f5f5 ;}
 #div_4e10_5{margin: -160px 0px 0px 0px;padding: 75px 0px 15px 50px;}
-#div_4e10_6{background-color: #990066 ;border-radius: 4px 0px 0px 4px;-moz-border-radius: 4px 0px 0px 4px;-webkit-border-radius: 4px 0px 0px 4px;background: linear-gradient(rgba(221, 74, 185, 1), rgba(218, 53, 176, 1));-moz-background: linear-gradient(rgba(223, 83, 188, 1), rgba(236, 106, 42, 1));-o-background: linear-gradient(rgba(242, 143, 78, 1), rgba(236, 106, 42, 1));-webkit-background: linear-gradient(rgba(242, 143, 78, 1), rgba(236, 106, 42, 1));}
+#div_4e10_6{background-color: #7E3374 ;border-radius: 4px 0px 0px 4px;-moz-border-radius: 4px 0px 0px 4px;-webkit-border-radius: 4px 0px 0px 4px;background: linear-gradient(rgba(221, 74, 185, 1), rgba(218, 53, 176, 1));-moz-background: linear-gradient(rgba(223, 83, 188, 1), rgba(236, 106, 42, 1));-o-background: linear-gradient(rgba(242, 143, 78, 1), rgba(236, 106, 42, 1));-webkit-background: linear-gradient(rgba(242, 143, 78, 1), rgba(236, 106, 42, 1));}
 #i_4e10_0{color: #ffffff ;font-size: 32px ;min-width: 32px ;min-height: 32px ;}
 #div_4e10_7{padding-bottom: 17px ;}
 #h3_4e10_0{font-size: 22px ;font-weight: 700 ;letter-spacing: 0px ;text-transform: none ;}
@@ -7015,7 +7011,7 @@ html.mm-opening.akea-mmenu-right .akea-mobile-header {
 #div_4e10_9{font-size: 15px ;text-transform: none ;color: #ffffff;}
 #div_4e10_10{font-size: 16px ;text-transform: none ;color: #ffffff ;}
 #div_4e10_11{margin: -160px -1px 0px -1px;padding: 75px 10px 15px 40px;}
-#div_4e10_12{background-color: #990066 ;border-radius: 4px 0px 0px 4px;-moz-border-radius: 4px 0px 0px 4px;-webkit-border-radius: 4px 0px 0px 4px;background: linear-gradient(rgba(221, 74, 185, 1), rgba(218, 53, 176, 1));-moz-background: linear-gradient(rgba(223, 83, 188, 1), rgba(236, 106, 42, 1));-o-background: linear-gradient(rgba(242, 143, 78, 1), rgba(236, 106, 42, 1));-webkit-background: linear-gradient(rgba(242, 143, 78, 1), rgba(236, 106, 42, 1));}
+#div_4e10_12{background-color: #7E3374 ;border-radius: 4px 0px 0px 4px;-moz-border-radius: 4px 0px 0px 4px;-webkit-border-radius: 4px 0px 0px 4px;background: linear-gradient(rgba(221, 74, 185, 1), rgba(218, 53, 176, 1));-moz-background: linear-gradient(rgba(223, 83, 188, 1), rgba(236, 106, 42, 1));-o-background: linear-gradient(rgba(242, 143, 78, 1), rgba(236, 106, 42, 1));-webkit-background: linear-gradient(rgba(242, 143, 78, 1), rgba(236, 106, 42, 1));}
 #i_4e10_1{color: #ffffff ;font-size: 32px ;min-width: 32px ;min-height: 32px ;}
 #div_4e10_13{padding-bottom: 17px ;}
 #h3_4e10_1{font-size: 22px ;font-weight: 700 ;letter-spacing: 0px ;text-transform: none ;}
@@ -7023,7 +7019,7 @@ html.mm-opening.akea-mmenu-right .akea-mobile-header {
 #div_4e10_15{font-size: 15px ;text-transform: none; color: #ffffff!important;}
 #div_4e10_16{font-size: 16px ;text-transform: none ;color: #ffffff ;}
 #div_4e10_17{margin: -160px 0px 0px 0px;padding: 75px 40px 15px 10px;}
-#div_4e10_18{background-color: #990066 ;border-radius: 4px 0px 0px 4px;-moz-border-radius: 4px 0px 0px 4px;-webkit-border-radius: 4px 0px 0px 4px;background: linear-gradient(rgba(221, 74, 185, 1), rgba(218, 53, 176, 1));-moz-background: linear-gradient(rgba(223, 83, 188, 1), rgba(236, 106, 42, 1));-o-background: linear-gradient(rgba(242, 143, 78, 1), rgba(236, 106, 42, 1));-webkit-background: linear-gradient(rgba(242, 143, 78, 1), rgba(236, 106, 42, 1));}
+#div_4e10_18{background-color: #7E3374 ;border-radius: 4px 0px 0px 4px;-moz-border-radius: 4px 0px 0px 4px;-webkit-border-radius: 4px 0px 0px 4px;background: linear-gradient(rgba(221, 74, 185, 1), rgba(218, 53, 176, 1));-moz-background: linear-gradient(rgba(223, 83, 188, 1), rgba(236, 106, 42, 1));-o-background: linear-gradient(rgba(242, 143, 78, 1), rgba(236, 106, 42, 1));-webkit-background: linear-gradient(rgba(242, 143, 78, 1), rgba(236, 106, 42, 1));}
 #i_4e10_2{color: #ffffff ;font-size: 32px ;min-width: 32px ;min-height: 32px ;}
 #div_4e10_19{padding-bottom: 17px ;}
 #h3_4e10_2{font-size: 22px ;font-weight: 700 ;letter-spacing: 0px ;text-transform: none ;}
@@ -7051,7 +7047,7 @@ html.mm-opening.akea-mmenu-right .akea-mobile-header {
 #div_4e10_34{position: absolute;width: 80%;bottom: 20px;left: 0;right: 0;margin-left: auto;margin-right: auto;color: #000;}
 #span_4e10_0{margin-top: -20px ;}
 #span_4e10_1{margin-top: -20px ;}
-#a_4e10_5{color: #990066;}
+#a_4e10_5{color: #7E3374;}
 #div_4e10_35{padding-bottom: 0px ;}
 #a_4e10_6{font-size: 15px ;color: #ffffff ;}
 #a_4e10_7{font-size: 15px ;color: #ffffff ;margin-left: 25px ;}
@@ -7078,7 +7074,7 @@ html.mm-opening.akea-mmenu-right .akea-mobile-header {
 #div_f530_8{padding-bottom: 0px ;}
 #h3_f530_9{font-size: 28px ;}
 #div_f530_9{padding-bottom: 0px ;}
-#a_f530_0{font-size: 15px ;color: #990066 ;padding: 0px;text-transform: none ;margin-right: 20px;border-width: 0px;}
+#a_f530_0{font-size: 15px ;color: #7E3374 ;padding: 0px;text-transform: none ;margin-right: 20px;border-width: 0px;}
 #div_f530_10{color: #666666 ;padding: 50px 40px 65px;background-color: #f4f4f4 ;}
 #div_f530_11{padding-bottom: 10px ;}
 #h3_f530_10{font-size: 14px ;font-weight: 700 ;letter-spacing: 2px ;}
@@ -7114,7 +7110,7 @@ html.mm-opening.akea-mmenu-right .akea-mobile-header {
 #a_f530_19{font-size: 22pt;}
 #span_f530_3{margin-top: -20px ;}
 #span_f530_4{margin-top: -20px ;}
-#a_f530_20{color: #990066;}
+#a_f530_20{color: #7E3374;}
 #div_f530_14{padding-bottom: 0px ;}
 #a_f530_21{font-size: 15px ;color: #ffffff ;}
 #a_f530_22{font-size: 15px ;color: #ffffff ;margin-left: 25px ;}
@@ -7141,7 +7137,7 @@ html.mm-opening.akea-mmenu-right .akea-mobile-header {
 #div_e3a3_8{padding-bottom: 0px ;}
 #h3_e3a3_9{font-size: 28px ;}
 #div_e3a3_9{padding-bottom: 0px ;}
-#a_e3a3_0{font-size: 15px ;color: #990066 ;padding: 0px;text-transform: none ;margin-right: 20px;border-width: 0px;}
+#a_e3a3_0{font-size: 15px ;color: #7E3374 ;padding: 0px;text-transform: none ;margin-right: 20px;border-width: 0px;}
 #div_e3a3_10{color: #666666 ;padding: 50px 40px 65px;background-color: #f4f4f4 ;}
 #div_e3a3_11{padding-bottom: 10px ;}
 #h3_e3a3_10{font-size: 14px ;font-weight: 700 ;letter-spacing: 2px ;}
@@ -7177,7 +7173,7 @@ html.mm-opening.akea-mmenu-right .akea-mobile-header {
 #a_e3a3_19{font-size: 22pt;}
 #span_e3a3_3{margin-top: -20px ;}
 #span_e3a3_4{margin-top: -20px ;}
-#a_e3a3_20{color: #990066;}
+#a_e3a3_20{color: #7E3374;}
 #div_e3a3_14{padding-bottom: 0px ;}
 #a_e3a3_21{font-size: 15px ;color: #ffffff ;}
 #a_e3a3_22{font-size: 15px ;color: #ffffff ;margin-left: 25px ;}
@@ -7221,7 +7217,7 @@ html.mm-opening.akea-mmenu-right .akea-mobile-header {
 #span_1a12_5{font-style: normal ;}
 #span_1a12_6{margin-top: -20px ;}
 #span_1a12_7{margin-top: -20px ;}
-#a_1a12_0{color: #990066;}
+#a_1a12_0{color: #7E3374;}
 #div_1a12_23{padding-bottom: 0px ;}
 #a_1a12_1{font-size: 15px ;color: #ffffff ;}
 #a_1a12_2{font-size: 15px ;color: #ffffff ;margin-left: 25px ;}
@@ -7237,7 +7233,7 @@ html.mm-opening.akea-mmenu-right .akea-mobile-header {
 #p_a1c3_1{display: none;}
 #span_a1c3_2{margin-top: -20px ;}
 #span_a1c3_3{margin-top: -20px ;}
-#a_a1c3_0{color: #990066;}
+#a_a1c3_0{color: #7E3374;}
 #div_a1c3_1{padding-bottom: 0px ;}
 #a_a1c3_1{font-size: 15px ;color: #ffffff ;}
 #a_a1c3_2{font-size: 15px ;color: #ffffff ;margin-left: 25px ;}
@@ -7278,7 +7274,7 @@ html.mm-opening.akea-mmenu-right .akea-mobile-header {
 #div_da8c_8{padding-bottom: 0px ;}
 #h3_da8c_9{font-size: 28px ;}
 #div_da8c_9{padding-bottom: 0px ;}
-#a_da8c_0{font-size: 15px ;color: #990066 ;padding: 0px;text-transform: none ;margin-right: 20px;border-width: 0px;}
+#a_da8c_0{font-size: 15px ;color: #7E3374 ;padding: 0px;text-transform: none ;margin-right: 20px;border-width: 0px;}
 #div_da8c_10{color: #666666 ;padding: 50px 40px 65px;background-color: #f4f4f4 ;}
 #div_da8c_11{padding-bottom: 10px ;}
 #h3_da8c_10{font-size: 14px ;font-weight: 700 ;letter-spacing: 2px ;}
@@ -7314,7 +7310,7 @@ html.mm-opening.akea-mmenu-right .akea-mobile-header {
 #a_da8c_19{font-size: 22pt;}
 #span_da8c_3{margin-top: -20px ;}
 #span_da8c_4{margin-top: -20px ;}
-#a_da8c_20{color: #990066;}
+#a_da8c_20{color: #7E3374;}
 #div_da8c_14{padding-bottom: 0px ;}
 #a_da8c_21{font-size: 15px ;color: #ffffff ;}
 #a_da8c_22{font-size: 15px ;color: #ffffff ;margin-left: 25px ;}
@@ -7335,7 +7331,7 @@ html.mm-opening.akea-mmenu-right .akea-mobile-header {
 #div_bd89_7{font-size: 16px ;}
 #span_bd89_2{margin-top: -20px ;}
 #span_bd89_3{margin-top: -20px ;}
-#a_bd89_0{color: #990066;}
+#a_bd89_0{color: #7E3374;}
 #div_bd89_8{padding-bottom: 0px ;}
 #a_bd89_1{font-size: 15px ;color: #ffffff ;}
 #a_bd89_2{font-size: 15px ;color: #ffffff ;margin-left: 25px ;}
@@ -7362,7 +7358,7 @@ html.mm-opening.akea-mmenu-right .akea-mobile-header {
 #div_bf01_8{padding-bottom: 0px ;}
 #h3_bf01_9{font-size: 28px ;}
 #div_bf01_9{padding-bottom: 0px ;}
-#a_bf01_0{font-size: 15px ;color: #990066 ;padding: 0px;text-transform: none ;margin-right: 20px;border-width: 0px;}
+#a_bf01_0{font-size: 15px ;color: #7E3374 ;padding: 0px;text-transform: none ;margin-right: 20px;border-width: 0px;}
 #div_bf01_10{color: #666666 ;padding: 50px 40px 65px;background-color: #f4f4f4 ;}
 #div_bf01_11{padding-bottom: 10px ;}
 #h3_bf01_10{font-size: 14px ;font-weight: 700 ;letter-spacing: 2px ;}
@@ -7398,7 +7394,7 @@ html.mm-opening.akea-mmenu-right .akea-mobile-header {
 #a_bf01_19{font-size: 22pt;}
 #span_bf01_3{margin-top: -20px ;}
 #span_bf01_4{margin-top: -20px ;}
-#a_bf01_20{color: #990066;}
+#a_bf01_20{color: #7E3374;}
 #div_bf01_14{padding-bottom: 0px ;}
 #a_bf01_21{font-size: 15px ;color: #ffffff ;}
 #a_bf01_22{font-size: 15px ;color: #ffffff ;margin-left: 25px ;}
@@ -7425,7 +7421,7 @@ html.mm-opening.akea-mmenu-right .akea-mobile-header {
 #div_254e_8{padding-bottom: 0px ;}
 #h3_254e_9{font-size: 28px ;}
 #div_254e_9{padding-bottom: 0px ;}
-#a_254e_0{font-size: 15px ;color: #990066 ;padding: 0px;text-transform: none ;margin-right: 20px;border-width: 0px;}
+#a_254e_0{font-size: 15px ;color: #7E3374 ;padding: 0px;text-transform: none ;margin-right: 20px;border-width: 0px;}
 #div_254e_10{color: #666666 ;padding: 50px 40px 65px;background-color: #f4f4f4 ;}
 #div_254e_11{padding-bottom: 10px ;}
 #h3_254e_10{font-size: 14px ;font-weight: 700 ;letter-spacing: 2px ;}
@@ -7461,7 +7457,7 @@ html.mm-opening.akea-mmenu-right .akea-mobile-header {
 #a_254e_19{font-size: 22pt;}
 #span_254e_3{margin-top: -20px ;}
 #span_254e_4{margin-top: -20px ;}
-#a_254e_20{color: #990066;}
+#a_254e_20{color: #7E3374;}
 #div_254e_14{padding-bottom: 0px ;}
 #a_254e_21{font-size: 15px ;color: #ffffff ;}
 #a_254e_22{font-size: 15px ;color: #ffffff ;margin-left: 25px ;}

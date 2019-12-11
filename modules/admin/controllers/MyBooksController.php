@@ -72,7 +72,7 @@ class MyBooksController extends Controller
 
         if ($model->load(Yii::$app->request->post())) {
             $photo->imageFile = UploadedFile::getInstance($model, 'photo');
-            $photo->ebookFile = UploadedFile::getInstance($model, 'ebook_file');
+            //$photo->ebookFile = UploadedFile::getInstance($model, 'ebook_file');
 
             if(!empty($photo->imageFile) && $photo->upload('book_cover')){
                 $path = $photo->imageFile->baseName . '.' . $photo->imageFile->extension;
@@ -109,9 +109,37 @@ class MyBooksController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
+        $oldPhoto = $model->photo;
+        $file = $model->ebook_file;
+        $model->scenario = 'onUpdate';
+        $photo = new UploadForm();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+        if ($model->load(Yii::$app->request->post())){
+            $photo->imageFile = UploadedFile::getInstance($model, 'photo');
+            //$photo->ebookFile = UploadedFile::getInstance($model, 'ebook_file');
+
+            if(!empty($photo->imageFile) && $photo->upload('book_cover')){
+                $path = $photo->imageFile->baseName . '.' . $photo->imageFile->extension;
+                $model->photo = $path;
+            }else{
+                $model->photo = $oldPhoto;
+            }
+            if(!empty($_FILES['MyBooks']['tmp_name']['ebook_file'])) {
+                $filePath = \Yii::getAlias('@webroot') . '/upload/files/';
+                $uploadfile = $filePath . basename($_FILES['MyBooks']['name']['ebook_file']);
+                move_uploaded_file($_FILES['MyBooks']['tmp_name']['ebook_file'], $uploadfile);
+                $filename = basename($_FILES['MyBooks']['name']['ebook_file']);
+                $model->ebook_file = $filename;
+            }else{
+                $model->ebook_file = $file;
+            }
+            ModelStatus::setTimeStampCreate($model);
+            if($model->save()){
+                ModelStatus::setNotifySuccesSaved();
+                return $this->redirect(['index']);
+            }else{
+                ModelStatus::setNotifyErrorSaved();
+            }
         }
 
         return $this->render('update', [

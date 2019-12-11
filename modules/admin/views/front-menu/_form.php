@@ -43,24 +43,18 @@ use yii\widgets\ActiveForm;
                             ]) ?>
                         </div>
                         <div class="col-md-6">
-                            <?= $form->field($model, 'nodeorder')->dropDownList(ArrayHelper::map($menuItems, 'nodeorder', function ($item) {
-                                    return 'After ' . $item['nodename'];
-                                }) + ['-2' => "It's first Item", '-1' => "It's last Item"],
-                                ['prompt' => '----Select Order---'])
-                            ?>
+                                <?= $form->field($model, 'nodeorder')->dropDownList(ArrayHelper::map($menuItems, 'nodeorder', function ($item) {
+                                        return 'After -> ' . $item['nodename'];
+                                    }) + ['-2' => "It's first Item", '-1' => "It's last Item"],
+                                    ['prompt' => '----Select Order---'])
+                                ?>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-12">
                             <?= $form->field($model, 'nodeicon')->textInput(['maxlength' => true]) ?>
                         </div>
-                        <div class="col-md-6">
-                            <?= $form->field($model, 'nodeorder')->dropDownList(ArrayHelper::map($menuItems, 'nodeorder', function ($item) {
-                                    return 'After -> ' . $item['nodename'];
-                                }) + ['-2' => "It's first Item", '-1' => "It's last Item"],
-                                ['prompt' => '----Select Order---'])
-                            ?>
-                        </div>
+
                     </div>
                     <?= Html::submitButton('Save', ['class' => 'btn btn-primary']) ?>
                     <?php ActiveForm::end(); ?>

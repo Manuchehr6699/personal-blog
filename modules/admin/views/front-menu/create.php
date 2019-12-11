@@ -7,7 +7,8 @@ use yii\helpers\Html;
 
 $this->title = 'Add new Menu item for Users';
 $this->params['breadcrumbs'][] = ['label' => 'Site Menu items', 'url' => ['index']];
-$this->params['breadcrumbs'][] = $this->title;
+$this->params['breadcrumbs'][] = ['label' => $this->title, 'url' => ['']];
+
 ?>
 <div class="front-menu-create">
 

@@ -8,7 +8,7 @@
 	text-decoration: none;
 }
 .zilla-likes:hover,
-.zilla-likes.active {
+.zilla-likes.active{
 	background: url(../images/heart_active.png) no-repeat 0 49%;
 	border: 0 !important;
 	margin: 0 0 10px 0 !important;

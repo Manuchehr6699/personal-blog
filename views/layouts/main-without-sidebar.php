@@ -4,6 +4,7 @@
 
 /* @var $content string */
 
+use app\components\BottomList;
 use app\widgets\Alert;
 use yii\helpers\Html;
 use yii\widgets\Breadcrumbs;
@@ -43,7 +44,7 @@ MainAsset::register($this);
     <i class="fa fa-angle-up"></i>
 </a>
 <div class="akea-footer-recent-post-button" id=akea-footer-recent-post-button><i class=icon_plus></i></div>
-<?= $this->render('new-stories') ?>
+<?= BottomList::widget() ?>
 
 <script>
     var zilla_likes = {

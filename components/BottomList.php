@@ -16,7 +16,7 @@ use yii\base\Widget;
 use yii\helpers\Html;
 
 
-class MyBooks extends Widget
+class BottomList extends Widget
 {
     public $data;
 
@@ -29,7 +29,7 @@ class MyBooks extends Widget
 
     public function run()
     {
-        return $this->render('sidebar/my-books', [
+        return $this->render('bottom-list', [
             'data' => $this->data
         ]);
     }
