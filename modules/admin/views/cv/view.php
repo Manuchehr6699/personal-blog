@@ -12,6 +12,10 @@ echo ModelStatus::getNotify();
 ?>
 
 <div class="col-lg-12">
+    <a href="/admin/cv/create" class="btn btn-success p-2 mr-0" style="font-size: 13px">
+        <i class="fas fa-plus" aria-hidden="true" style="font-size: 10px"></i>
+        Add
+    </a>
     <a href="/admin/cv/index" class="btn btn-primary">
         Show Like Gridview
     </a>
@@ -40,6 +44,7 @@ echo ModelStatus::getNotify();
                         <div class="work-container" style="border-bottom: 0px">
                             <h3><?= $item['title'] ?></h3>
                             <div style="margin: 0px 20px 20px 0px">
+
                                 <a href="/admin/cv/update?id=<?= $item['id'] ?>" class="btn btn-primary p-2 mr-0"
                                    style="font-size: 13px">
                                     <i class="fas fa-pen" aria-hidden="true" style="font-size: 10px"></i>

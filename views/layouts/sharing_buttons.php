@@ -7,13 +7,10 @@
  */
 $link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 ?>
-<span style="color: #990066!important;">
-<?= Yii::$app->settings->get('Site', 'share_post') ?>
-   <?php if(Yii::$app->controller->action->id == 'cv'): ?>
-       <span>You can download PDF versions of my CV here.</span>
-       <a href="/main/print-to-pdf?type=cv" title="Get PDF file"><i class="fa fa-file"></i></a>
-   <?php endif; ?>
-<h3 id="social_buttons">
+<div class="row">
+    <div class="col-lg-12">
+
+            <h3 id="social_buttons">
     <a href="#" onclick="window.print();"><i class="fa fa-print"></i></a>
     <a class="gdlr-core-social-share-facebook"
        href="https://www.facebook.com/dialog/share?app_id=145634995501895&display=popup&href=<?= $link ?>redirect_uri=<?= urlencode($link)?>" target=_blank >
@@ -30,3 +27,6 @@ $link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "htt
     </a>
 </h3>
 </span>
+
+    </div>
+</div>

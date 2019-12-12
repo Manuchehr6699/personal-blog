@@ -33,6 +33,9 @@ class SocialProfiles implements BootstrapInterface {
         $sql_categories = $sql_categories->queryAll();
 
         foreach ($socials as $key => $val) {
+            if($val['icon'] == 'envelope'){
+                Yii::$app->params['email_address'] = $val['name'];
+            }
             Yii::$app->params['profiles'][$val['id']]['name'] = $val['name'];
             Yii::$app->params['profiles'][$val['id']]['link'] = $val['link'];
             Yii::$app->params['profiles'][$val['id']]['icon'] = $val['icon'];

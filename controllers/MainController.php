@@ -9,6 +9,7 @@
 namespace app\controllers;
 
 use app\models\AboutMe;
+use app\models\Contact;
 use app\models\CV;
 use app\models\Subcribers;
 use app\models\UserMessage;
@@ -109,9 +110,15 @@ class MainController extends Controller
 
     public function actionCv()
     {
-        $data = CV::find()->where(['status' => 1])->orderBy('order')->asArray()->all();
+        $data = CV::find()
+            ->where(['status' => 1])
+            ->orderBy('order')
+            ->asArray()
+            ->all();
+        $about = AboutMe::find()->where(['status' => 1])->asArray()->one();
+        $contact = Contact::find()->where(['status' => 1])->asArray()->one();
 
-        return $this->render('cv', ['data' => $data]);
+        return $this->render('cv', ['data' => $data, 'about' => $about, 'contact' => $contact]);
     }
 
     public function actionPage($slug)

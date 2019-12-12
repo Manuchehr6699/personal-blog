@@ -5,6 +5,8 @@
  * Date: 06.12.2019
  * Time: 19:30
  */
+
+
 $this->title = 'CV';
 ?>
 <div class="gdlr-core-pbf-sidebar-content  gdlr-core-column-40 gdlr-core-pbf-sidebar-padding gdlr-core-line-height gdlr-core-column-extend-left"
@@ -20,8 +22,18 @@ $this->title = 'CV';
                         <hr>
                    <?php endif; ?>
                     <h3>CV</h3>
-
+                <?php if(!empty($about)):  ?>
+                    <p> Full name: <?= $about['first_name'].' '.$about['last_name'] ?><br>
+                        Date of birth: <?= $about['birth_date'] ?><br>
+                        <?php if(!empty($contact)): ?>
+                        Phone: <?= $contact['phone_number'] ?><br>
+                        Email: <?= Yii::$app->params['email_address'] ?><br>
+                        <?php endif; ?>
+                    </p>
+                <?php endif; ?>
                     <?php foreach ($data as $text): ?>
+                        <h4><?= $text['title'] ?></h4>
+                        <hr>
                         <?= $text['text'] ?>
                     <?php endforeach; ?>
                 <?php endif; ?>

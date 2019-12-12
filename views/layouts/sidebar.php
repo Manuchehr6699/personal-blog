@@ -20,15 +20,22 @@ use app\components\Tags;
     <div class="gdlr-core-sidebar-item gdlr-core-item-pdlr">
         <?php if (Yii::$app->controller->action->id != 'about-me' && Yii::$app->controller->action->id != 'cv'): ?>
             <?php
-
-            if ($this->beginCache('AboutMe')) {
+            $dependency = [
+                'class' => 'yii\caching\DbDependency',
+                'sql' => 'SELECT MAX(updated_at) FROM about_me',
+            ];
+            if ($this->beginCache('AboutMe', ['dependency' => $dependency])) {
                 echo AboutMe::widget();
                 $this->endCache();
             }
             ?>
         <?php endif; ?>
         <?php
-        if ($this->beginCache('FollowMe')) {
+        $dependency = [
+            'class' => 'yii\caching\DbDependency',
+            'sql' => 'SELECT COUNT(*) FROM profiles',
+        ];
+        if ($this->beginCache('FollowMe', ['dependency' => $dependency])) {
             echo FollowMe::widget();
             $this->endCache();
         }
