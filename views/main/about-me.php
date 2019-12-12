@@ -2,10 +2,13 @@
 
 /* @var $this yii\web\View */
 
+use kartik\social\TwitterPlugin;
 use yii\helpers\Html;
 
-$this->title = 'About Me | Abel Polese | PhD';
+$this->title = 'About | Dr. Abel Polese';
 $this->params['breadcrumbs'][] = $this->title;
+
+
 ?>
 <div class="gdlr-core-pbf-sidebar-content  gdlr-core-column-40 gdlr-core-pbf-sidebar-padding gdlr-core-line-height gdlr-core-column-extend-left"
      id="div_2207_2">
@@ -23,6 +26,7 @@ $this->params['breadcrumbs'][] = $this->title;
                         <?= $text['text'] ?>
                     <?php endforeach; ?>
                 <?php endif; ?>
+                
                 <?= $this->render('/layouts/sharing_buttons') ?>
             </div>
         </div>

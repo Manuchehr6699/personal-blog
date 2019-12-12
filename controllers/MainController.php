@@ -121,14 +121,6 @@ class MainController extends Controller
         return $this->render('cv', ['data' => $data, 'about' => $about, 'contact' => $contact]);
     }
 
-    public function actionPage($slug)
-    {
-        $content = Pages::find()->where(['slug' => $slug])->asArray()->all();
-
-        return $this->render('page', [
-            'content' => $content
-        ]);
-    }
 
     public function actionSubcribe(){
 
@@ -145,23 +137,23 @@ class MainController extends Controller
                 Yii::$app->session->setFlash('saved', 'Your Email already exists in subcribers list!');
             }
         }
-
         return $this->redirect(['/']);
     }
 
-    public function actionExportToPdf($model)
-    {
-        $data = $model::getExportData();
-        //print_r($data); exit;
-        $type = 'Pdf';
+   public function actionPage($slug)
+   {
+      $slug = Html::encode($slug);
 
-        $html = $this->renderPartial($data['exportFile'],
-            ['model' => $data['data'], 'type' => $type,
-            ]);
+      $content = Pages::find()
+          ->where(['slug' => $slug])
+          ->andWhere(['status' => 1])
+          ->asArray()
+          ->one();
 
-        return Yii::$app->pdf->exportData($data['title'], $data['fileName'], $html);
-
-    }
+      return $this->render('page', [
+          'content' => $content
+      ]);
+   }
 
     public function actionError()
     {

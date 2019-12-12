@@ -20,8 +20,8 @@ MainAsset::register($this);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta property="og:type" content="article"/>
-    <meta property="og:title" content="Abel Polese, Phd" />
-    <meta property="og:description" content="Abel Polese | PhD | Senior Research Fellow with DCU Institute for International Conflict Resolution and Reconstruction" />
+    <meta property="og:title" content="Dr. Abel Polese" />
+    <meta property="og:description" content="Abel Polese | Dr | Senior Research Fellow with DCU Institute for International Conflict Resolution and Reconstruction" />
     <?php $this->registerCsrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
    <?php $this->head() ?>

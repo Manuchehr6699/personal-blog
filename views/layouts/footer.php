@@ -17,20 +17,22 @@
                             class=akea-widget-head-divider></span></h3><span class=clear></span>
                     <div class='textwidget'>
                         <span>
-                            <?= Yii::$app->params['contact']['city'].', '.
-                                Yii::$app->params['contact']['country'].' '.
-                                Yii::$app->params['contact']['address']
+                            <?php
+                               echo Yii::$app->params['contact']['address']."<br>".
+                                    Yii::$app->params['contact']['city'].", ".
+                                    Yii::$app->params['contact']['country'];
+
                             ?>
                         </span>
                             <br> <span class=gdlr-core-space-shortcode id="span_2207_6"></span>
-                            <br> <?= Yii::$app->params['contact']['phone_number'] ?>
+                            <br> <?= 'Tel: '. Yii::$app->params['contact']['phone_number'] ?>
                             <br> <span class=gdlr-core-space-shortcode id="span_2207_7"></span>
 
                             <?php
                             if(!empty(Yii::$app->params['profiles'])) {
                                foreach (Yii::$app->params['profiles'] as $item) {
                                   if ($item['icon'] == 'envelope') {
-                                     echo '<br> <a href="mailto:' . $item['name'] . '" class="contact_email">' . $item['name'] . '</a>';
+                                     echo '<br>Email: <a href="mailto:' . $item['name'] . '" class="contact_email">' . $item['name'] . '</a>';
                                   }
                                }
                             }

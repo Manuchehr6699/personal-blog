@@ -618,9 +618,9 @@ blockquote:before, q:before{ color: #ebebeb; }
 table tr th{ background-color: #7E3374; color: white}
 table tr th, .akea-body table tr th a, .akea-body table tr th a:hover{ color: #ffffff; } 
 table tr:nth-child(odd){ background-color: #f9f9f9; } 
-table tr:nth-child(odd){ color: #949494; } 
+
 table tr:nth-child(even){ background-color: #f3f3f3; } 
-table tr:nth-child(even){ color: #949494; } 
+
 .gdlr-core-testimonial-item .gdlr-core-testimonial-item-title{ color: #232323; } 
 .gdlr-core-testimonial-item .gdlr-core-testimonial-content{ color: #707070; } 
 .gdlr-core-testimonial-item .gdlr-core-testimonial-title{ color: #3b3b3b; } 
