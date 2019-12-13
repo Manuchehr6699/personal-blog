@@ -52,7 +52,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                     <div class="gdlr-core-text-box-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-left-align" id="div_4e10_8">
                                         <div class="gdlr-core-text-box-item-content" id="div_4e10_9">
                                             <p style="color: #ffffff;">
-                                                <?= Yii::$app->settings->get('Descriptons', 'phone_number_contact') ?>
+
                                             </p>
                                         </div>
                                     </div>
@@ -83,7 +83,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                 <div class="gdlr-core-pbf-element">
                                     <div class="gdlr-core-text-box-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-left-align" id="div_4e10_14">
                                         <div class="gdlr-core-text-box-item-content" id="div_4e10_15">
-                                            <p style="color: #ffffff;"><?= Yii::$app->settings->get('Descriptons', 'email_contact') ?></p>
+                                            <p style="color: #ffffff;"></p>
                                         </div>
                                     </div>
                                 </div>
@@ -121,7 +121,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                 <div class="gdlr-core-pbf-element">
                                     <div class="gdlr-core-text-box-item gdlr-core-item-pdlr gdlr-core-item-pdb gdlr-core-left-align" id="div_4e10_20">
                                         <div class="gdlr-core-text-box-item-content" id="div_4e10_21">
-                                            <p style="color: #ffffff;"><?= Yii::$app->settings->get('Descriptons', 'location_contact') ?></p>
+                                            <p style="color: #ffffff;"></p>
                                         </div>
                                     </div>
                                 </div>
