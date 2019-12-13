@@ -18,7 +18,7 @@
     <ul class=gdlr-core-category-background-widget>
         <?php foreach ($data as $item): ?>
         <li class=gdlr-core-with-bg id="li_2207_0">
-            <a href='/blog/posts-category?category=<?= $item['name'] ?>'>
+            <a href='/blog/posts-category/<?= $item['name'] ?>'>
                 <span class=gdlr-core-category-background-widget-content>
                     <span class=gdlr-core-category-background-widget-title><?= $item['name'] ?></span>
                     <span class=gdlr-core-category-background-widget-count><?= $item['amount'] ?></span>

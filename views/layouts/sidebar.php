@@ -65,7 +65,7 @@ use app\components\Tags;
 
         $dependency = [
             'class' => 'yii\caching\DbDependency',
-            'sql' => 'SELECT COUNT(*) FROM blog',
+            'sql' => 'SELECT MAX(updated_at) FROM blog',
         ];
 
         if($this->beginCache('Tags', ['dependency' => $dependency])) {

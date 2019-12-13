@@ -10,6 +10,7 @@ namespace app\modules\admin\controllers;
 
 
 use app\models\AboutMe;
+use app\models\Comment;
 use app\models\Contact;
 use app\models\Profiles;
 use app\models\ResetPasswordForm;
@@ -80,8 +81,15 @@ class MainController extends Controller
     }
 
     public function actionIndex(){
-
-        return $this->render('index');
+        $data = Comment::find()
+            ->select('comment.*, blog.title as title')
+            ->innerJoin('blog', 'comment.blog_id = blog.id')
+            ->orderBy('created_at DESC')
+            ->asArray()
+            ->all();
+        return $this->render('index', [
+            'data' => $data
+        ]);
     }
 
     public function actionLogout(){

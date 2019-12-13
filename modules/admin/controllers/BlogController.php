@@ -137,7 +137,7 @@ class BlogController extends Controller
         $tags = unserialize($model->tags);
         $model->tags = implode(',', $tags);
        if($model->load(Yii::$app->request->post()) && $blogCategory->load(Yii::$app->request->post())){
-          ModelStatus::setTimeStampCreate($model);
+          ModelStatus::setTimeStampUpdate($model);
           $model->alias = $slug->slugify($model->title);
           $model->tags = $this->setBlogTags($model->tags);
           $photo->imageFile = UploadedFile::getInstance($model, 'photo');

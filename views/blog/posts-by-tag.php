@@ -17,6 +17,7 @@ $this->title = 'Posts by tag | '.$tag;
     <div class=gdlr-core-pbf-sidebar-content-inner>
         <div class="row">
             <div class="col-md-12">
+
                 <?php if(!empty($posts)): ?>
                 <h5>Tag: <?= $tag ?></h5>
                 <?php foreach ($posts as $post): ?>

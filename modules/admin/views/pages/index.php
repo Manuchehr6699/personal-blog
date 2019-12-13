@@ -1,6 +1,7 @@
 <?php
 
 use app\modules\admin\models\ModelStatus;
+use app\modules\admin\models\Pages;
 use yii\helpers\Html;
 use kartik\grid\GridView;
 
@@ -16,7 +17,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <!--    <h1>--><? //= Html::encode($this->title) ?><!--</h1>-->
     <?= ModelStatus::getNotify() ?>
     <p>
-        <?= Html::a('Create Pages', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Create Page', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
@@ -28,11 +29,28 @@ $this->params['breadcrumbs'][] = $this->title;
                 'columns' => [
                     ['class' => 'yii\grid\SerialColumn'],
 
-                    'id',
-                    'parent_id',
-                    'title',
+                    [
+                        'attribute' => 'parent_id',
+                        'value' => function($dataProvider){
+                            $arr = Pages::find()->where(['id' => $dataProvider->parent_id])->asArray()->one();
+                            if(empty($arr)){
+                                return '-';
+                            }else{
+                                return $arr['title'];
+                            }
+                        }
+
+
+                    ],
+                    [
+                        'attribute' => 'title',
+                        'format' => 'html',
+                        'value' => function($dataProvider){
+                            return '<a href="/main/page/'.$dataProvider->slug.'">'.$dataProvider->title.'</a>';
+                        }
+                    ],
                     'menu_title',
-                    'text:html',
+                    //'text:html',
                     [
                         'class' => 'kartik\grid\EditableColumn',
                         'attribute' => 'status',

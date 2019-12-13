@@ -149,7 +149,9 @@ class MainController extends Controller
           ->andWhere(['status' => 1])
           ->asArray()
           ->one();
-
+      if(empty($content)){
+          return $this->redirect(['/main/error']);
+      }
       return $this->render('page', [
           'content' => $content
       ]);

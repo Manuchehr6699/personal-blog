@@ -86,7 +86,7 @@
                 <a href='/blog/posts'>Posts</a>
                 <a href='/main/about-me/'>About</a>
                 <a href='/main/contact'>Contact</a>
-                <a href='/book/my-books-list'>My Books</a>
+                <a href='/books/list'>My Books</a>
             </div>
         </div>
     </div>

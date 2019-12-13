@@ -75,8 +75,7 @@ $all = $this->params['commentCount'] + $this->params['messageCount'] + $this->pa
                     <li class="nav-item dropdown d-flex align-items-center mr-2">
                         <a class="dropdown-toggle nav-link arrow-none waves-effect nav-user"
                            data-toggle="dropdown" href="#" role="button" aria-haspopup="false"
-                           aria-expanded="false"><img src="/upload/avatars/<?= $this->params['avatar']['avatar'] ?>" alt="user"
-                                                      class="rounded-circle">
+                           aria-expanded="false"><img src="/upload/avatars/<?= $this->params['avatar']['avatar'] ?>" alt="user" class="rounded-circle">
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="/admin/main/profile"><i class="fas fa-user-circle mr-2"></i>Profile</a></li>
