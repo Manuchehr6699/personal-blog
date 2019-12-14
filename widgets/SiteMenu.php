@@ -63,10 +63,12 @@ class SiteMenu
             ->orderBy('nodeorder')->asArray()->all();
         if(!empty($parents)){
             $tags .= '<ul id="menu-main-navigation-2" class="menu">';
+
             foreach ($parents as $parent){
                 $childs = FrontMenu::find()->where(['parentnodeid' => $parent['nodeid'], 'nodeaccess' => 1])
                     ->orderBy('nodeorder')->asArray()->all();
                 $hasChildren = (!empty($childs)) ? 'menu-item-has-children' : '';
+
                 $tags .= '<li class = "menu-item '.$hasChildren.' akea-normal-menu">';
                 $tags .= '<a href = "'.$parent['nodeurl'].'" class = sf-with-ul-pre>'.$parent['nodename'].'</a>';
                 if(!empty($childs)){

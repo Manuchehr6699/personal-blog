@@ -66,6 +66,9 @@ use app\widgets\SiteMenu;
                             <i class="fa fa-<?= $item['icon'] ?>"></i>
                         </a>
                     <?php endforeach; ?>
+                    <a href='/admin' target='_blank' class=akea-top-bar-social-icon title='Login'>
+                        <i class="fa fa-sign-in"></i> Login
+                    </a>
                 </div>
             </div>
         </div>

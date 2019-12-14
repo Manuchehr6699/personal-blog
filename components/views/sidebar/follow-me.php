@@ -49,7 +49,7 @@ use yii\widgets\ActiveForm;
             <div class="tnp tnp-subscription-minimal ">
                 <?php $form = ActiveForm::begin(['action' => '/main/subcribe']) ?>
                 <?= $form->field($model, 'email')->textInput(['type' => 'email', 'class' => 'tnp-email', 'placeholder' => 'Email'])->label(false) ?>
-                    <input class="tnp-submit" type="submit" value="Subscribe" style="background: #990066">
+                    <input class="tnp-submit" type="submit" value="Subscribe" style="background: #7E3374">
                 <?php ActiveForm::end() ?>
             </div>
             <span class=gdlr-core-space-shortcode id="span_2207_5"></span>
