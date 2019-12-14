@@ -88,11 +88,12 @@ $config = [
                 'yii2mod.settings' => [
                     'class' => 'yii\i18n\PhpMessageSource',
                     'basePath' => '@yii2mod/settings/messages',
-                    //'sourceLanguage' => 'en-US'
+                    'sourceLanguage' => 'en-US'
                 ],
                 'yii2mod.rbac' => [
                     'class' => 'yii\i18n\PhpMessageSource',
                     'basePath' => '@yii2mod/rbac/messages',
+                    'sourceLanguage' => 'en-US'
                 ],
             ],
         ]
@@ -122,8 +123,7 @@ $config = [
             'main/*',
             'books/*',
             'blog/*',
-            'admin/*',
-            'rbac/*',
+            'admin/main/login',
         ]
     ],
     'params' => $params,
