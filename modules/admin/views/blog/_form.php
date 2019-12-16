@@ -74,7 +74,7 @@ TextEditorAssets::register($this);
                     <?= $form->field($model, 'photo')->fileInput(['maxlength' => true]) ?>
                 </div>
                 <div class="col-md-6">
-                    <?= $form->field($model, 'status')->dropDownList(ModelStatus::listData()) ?>
+                        <?= $form->field($model, 'status')->dropDownList(ModelStatus::listData()) ?>
                 </div>
             </div>
             <div class="form-group">

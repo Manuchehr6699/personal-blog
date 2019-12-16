@@ -122,40 +122,41 @@ class MainController extends Controller
     }
 
 
-    public function actionSubcribe(){
+    public function actionSubcribe()
+    {
 
         $model = new Subcribers();
-        if($model->load(Yii::$app->request->post())){
+        if ($model->load(Yii::$app->request->post())) {
             $model->created_at = time();
             $model->status = 0;
 
-            try{
-                if($model->save()){
+            try {
+                if ($model->save()) {
                     Yii::$app->session->setFlash('saved', 'Email successfully sent!');
                 }
-            }catch (\Exception $e){
+            } catch (\Exception $e) {
                 Yii::$app->session->setFlash('saved', 'Your Email already exists in subcribers list!');
             }
         }
         return $this->redirect(['/']);
     }
 
-   public function actionPage($slug)
-   {
-      $slug = Html::encode($slug);
+    public function actionPage($slug)
+    {
+        $slug = Html::encode($slug);
 
-      $content = Pages::find()
-          ->where(['slug' => $slug])
-          ->andWhere(['status' => 1])
-          ->asArray()
-          ->one();
-      if(empty($content)){
-          return $this->redirect(['/main/error']);
-      }
-      return $this->render('page', [
-          'content' => $content
-      ]);
-   }
+        $content = Pages::find()
+            ->where(['slug' => $slug])
+            ->andWhere(['status' => 1])
+            ->asArray()
+            ->one();
+        if (empty($content)) {
+            return $this->redirect(['/main/error']);
+        }
+        return $this->render('page', [
+            'content' => $content
+        ]);
+    }
 
     public function actionError()
     {
