@@ -39,7 +39,17 @@ use app\components\Tags;
             echo FollowMe::widget();
             $this->endCache();
         }
+        ?>
+        <h6>Follow me on twitter</h6>
+        <div style="height: 450px; overflow-y: auto; margin: 10px 0 10px 0">
 
+        <a class="twitter-timeline"
+           href="https://twitter.com/abiquitous">
+            National Park Tweets - Curated tweets by TwitterDev</a>
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8">
+        </script>
+        </div>
+        <?php
         $dependency = [
             'class' => 'yii\caching\DbDependency',
             'sql' => 'SELECT COUNT(*) FROM blog',

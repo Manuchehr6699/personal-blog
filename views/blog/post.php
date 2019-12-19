@@ -80,10 +80,8 @@ $this->title = $post['title'];
                                <?= $form->field($commentModel, 'web')
                                    ->textInput(['id' => 'url',  'placeholder' =>'Website', 'size' => '50'])->label(false) ?>
                             </div>
-
                                 <?= $form->field($commentModel, 'blog_id')
                                 ->hiddenInput(['id' => 'blog_id', 'value' => $post['id']])->label(false) ?>
-
                             <div class="clear"></div>
                             <p class="form-submit">
                                 <input name="submit" type="submit" id="submit" class="submit" value="Post Comment" style="background-color: #663366">
