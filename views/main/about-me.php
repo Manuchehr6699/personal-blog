@@ -10,7 +10,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
 
 ?>
-<div class="gdlr-core-pbf-sidebar-content  gdlr-core-column-40 gdlr-core-pbf-sidebar-padding gdlr-core-line-height gdlr-core-column-extend-left"
+<div class="gdlr-core-pbf-sidebar-content gdlr-core-column-40 gdlr-core-pbf-sidebar-padding gdlr-core-line-height gdlr-core-column-extend-left"
      id="div_2207_2">
     <div class=gdlr-core-pbf-sidebar-content-inner>
         <div class="row">
@@ -19,8 +19,9 @@ $this->params['breadcrumbs'][] = $this->title;
                     <div class="akea-above-logo" style="float: left; margin: 0px 10px 0px 0px">
                         <a href="/main/about-me">
                             <img src="/upload/avatars/<?= $data[0]['photo'] ?>"
-                                                      alt="my-photo" width="348"  height="252"
-                                                      title="<?= $data[0]['first_name'].' '.$data[0]['last_name'] ?>" style="border-radius: 50px"></a>
+                                                      alt="my-photo" width="348" height="252"
+                                                      title="<?= $data[0]['first_name'].' '.$data[0]['last_name'] ?>" style="border-radius: 40px">
+                        </a>
                     </div>
                     <?php foreach ($data as $text): ?>
                         <?= $text['text'] ?>

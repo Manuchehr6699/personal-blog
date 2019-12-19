@@ -74,7 +74,7 @@ class Profiles extends \yii\db\ActiveRecord
          $this->order = 0;
          Yii::$app->db->createCommand('UPDATE profiles p SET p.order = p.order + 1')->execute();
       }elseif($id == -1){
-         $lastItemOrder = $this::find()->max('order');
+         $lastItemOrder = $this::find()->max('profiles.order');
          $this->order = $lastItemOrder+1;
       }else{
          $id+=1;

@@ -66,9 +66,15 @@ use app\widgets\SiteMenu;
                             <i class="fa fa-<?= $item['icon'] ?>"></i>
                         </a>
                     <?php endforeach; ?>
+                    <?php if(Yii::$app->user->isGuest): ?>
                     <a href='/admin' target='_blank' class=akea-top-bar-social-icon title='Login'>
                         <i class="fa fa-sign-in"></i> Login
                     </a>
+                    <?php else: ?>
+                    <a href='/main/logout' class=akea-top-bar-social-icon title='Login'>
+                        <i class="fa fa-sign-out"></i> Logout
+                    </a>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>
