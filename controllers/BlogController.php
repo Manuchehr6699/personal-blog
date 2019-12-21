@@ -21,8 +21,12 @@ use yii\web\Cookie;
 class BlogController extends Controller
 {
 
-    public function actionPosts(){
+   public function actionMyTweets(){
 
+      return $this->render('my-tweets');
+   }
+
+    public function actionPosts(){
 
        $query = Blog::find()
            ->select([
