@@ -17,11 +17,9 @@ $this->title = 'Posts';
     <div class=gdlr-core-pbf-sidebar-content-inner>
         <div class="row">
             <div class="col-md-12">
-                <a class="twitter-timeline"
-                   href="https://twitter.com/abiquitous">
+                <a class="twitter-timeline" href="https://twitter.com/abiquitous">
                     Abel Polese @abiquitous</a>
-                <script async src="https://platform.twitter.com/widgets.js" charset="utf-8">
-                </script>
+                <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
             </div>
         </div>
     </div>

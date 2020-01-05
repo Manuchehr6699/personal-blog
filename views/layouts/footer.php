@@ -62,7 +62,8 @@
                 <div id=text-3 class="widget widget_text akea-widget">
                     <h3 class="akea-widget-title">
                         <span class=akea-widget-head-text>Follow Me</span>
-                        <span class=akea-widget-head-divider></span></h3>
+                        <span class=akea-widget-head-divider></span>
+                    </h3>
                     <span class=clear></span>
                     <div class=textwidget>
                         <div class="gdlr-core-social-network-item gdlr-core-item-pdb  gdlr-core-none-align" id="div_2207_16">
@@ -75,6 +76,7 @@
                         </div>
                     </div>
                 </div>
+                <h6>Developed by <a href="https://uniwork-it.de" target="_blank">UNIWORK IT</a></h6>
             </div>
         </div>
     </div>
