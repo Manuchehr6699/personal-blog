@@ -4289,8 +4289,7 @@ body.akea-boxed .gdlr-core-column-extend-right .gdlr-core-pbf-background-wrap {
 	.akea-header-background-transparent,
 	.akea-header-boxed-wrap,
 	.akea-header-side-nav,
-	.akea-header-transparent-substitute,
-	.akea-sticky-navigation {
+	.akea-header-transparent-substitute{
 		display: none !important;
 	}
 	.akea-mobile-header-wrap {

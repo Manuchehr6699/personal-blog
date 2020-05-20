@@ -38,7 +38,9 @@ MainAsset::register($this);
             <div class="gdlr-core-pbf-sidebar-wrapper ">
                 <div class="gdlr-core-pbf-sidebar-container gdlr-core-line-height-0 clearfix gdlr-core-js gdlr-core-container">
                     <?= $content ?>
+
                     <?= $this->render('sidebar') ?>
+
                 </div>
             </div>
             </div>

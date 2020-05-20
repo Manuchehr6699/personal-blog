@@ -28,8 +28,6 @@ class AdminModule extends \yii\base\Module
     public function init()
     {
         parent::init();
-
-
         \Yii::$app->view->params['AdminMenu'] = AdminMenu::getMenu();
         \Yii::$app->errorHandler->errorAction = '/admin/main/error';
         \Yii::$app->user->loginUrl = '/admin/main/login';

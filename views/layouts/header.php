@@ -17,8 +17,13 @@ use app\widgets\SiteMenu;
             <div class="akea-navigation akea-item-pdlr clearfix ">
                 <center>
                     <h3>
-                        <a style="cursor: pointer" href="/"><?= Yii::$app->settings->get('Site', 'sitename') ?></a>
+                        <a style="cursor: pointer; text-transform: uppercase; letter-spacing: 2px;" href="/">
+                        <img src="/upload/book_cover/the_scopus_diaries_and_the_logics_of_academic_survival.jpg"
+                             style="width: 42px; position: absolute; left: 27%; margin-top: 5px"/>
+                            The SCOPUS Diaries
+                        </a>
                     </h3>
+                    <b><h6  style="margin-top: -20px; color: #7E3374!important;">and the (il)logics of Academic Survivals</h6></b>
                 </center>
                 <div class=akea-main-menu id=akea-main-menu style="margin-top: 20px">
                     <?php
@@ -26,7 +31,7 @@ use app\widgets\SiteMenu;
                         'class' => 'yii\caching\DbDependency',
                         'sql' => 'SELECT COUNT(*) FROM front_menu',
                     ];
-                    if ($this->beginCache('FrontMenu')) {
+                    if ($this->beginCache('FrontMenu', ['dependency' => $dependency])) {
                         echo SiteMenu::getMenu();
                         $this->endCache();
                     }

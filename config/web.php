@@ -4,9 +4,9 @@ $params = require __DIR__ . '/params.php';
 $db = require __DIR__ . '/db.php';
 
 $config = [
-    'id' => 'Blog',
+    'id' => 'Scopus Diaries',
     'basePath' => dirname(__DIR__),
-    'defaultRoute' => '/main/about-me/',
+    'defaultRoute' => '/blog/posts/',
     'bootstrap' => [
         'log',
         'app\models\SocialProfiles',
@@ -46,8 +46,8 @@ $config = [
             'transport' => [
                 'class' => 'Swift_SmtpTransport',
                 'host' => 'smtp.yandex.ru',
-                'username' => 'muzafarov7001911@yandex.ru',
-                'password' => 'm7001911',
+                'username' => '',
+                'password' => '',
                 'port' => '465',
                 'encryption' => 'ssl',
             ],
@@ -129,16 +129,16 @@ $config = [
     'params' => $params,
 ];
 
-if (YII_ENV_DEV) {
-    $config['bootstrap'][] = 'debug';
-    $config['modules']['debug'] = [
-        'class' => 'yii\debug\Module',
-    ];
+// if (YII_ENV_DEV) {
+//     $config['bootstrap'][] = 'debug';
+//     $config['modules']['debug'] = [
+//         'class' => 'yii\debug\Module',
+//     ];
 
-    $config['bootstrap'][] = 'gii';
-    $config['modules']['gii'] = [
-        'class' => 'yii\gii\Module',
-    ];
-}
+//     $config['bootstrap'][] = 'gii';
+//     $config['modules']['gii'] = [
+//         'class' => 'yii\gii\Module',
+//     ];
+// }
 
 return $config;

@@ -62,8 +62,7 @@
                 <div id=text-3 class="widget widget_text akea-widget">
                     <h3 class="akea-widget-title">
                         <span class=akea-widget-head-text>Follow Me</span>
-                        <span class=akea-widget-head-divider></span>
-                    </h3>
+                        <span class=akea-widget-head-divider></span></h3>
                     <span class=clear></span>
                     <div class=textwidget>
                         <div class="gdlr-core-social-network-item gdlr-core-item-pdb  gdlr-core-none-align" id="div_2207_16">
@@ -76,20 +75,21 @@
                         </div>
                     </div>
                 </div>
-                <h6>Developed by <a href="https://uniwork-it.de" target="_blank">UNIWORK IT</a></h6>
             </div>
         </div>
     </div>
     <div class=akea-copyright-wrapper>
         <div class="akea-copyright-container akea-container clearfix">
-            <div class="akea-copyright-left akea-item-pdlr">Copyright <?= date('Y').' '.Yii::$app->settings->get('Site', 'sitename') ?>, All Right Reserved.</div>
+            <div class="akea-copyright-left akea-item-pdlr">Copyright <?= date('Y').'. '.Yii::$app->settings->get('Site', 'sitename') ?>, All Right Reserved.</div>
             <div class="akea-copyright-right akea-item-pdlr">
                 <a href='/'>Home</a>
                 <a href='/blog/posts'>Posts</a>
                 <a href='/main/about-me/'>About</a>
                 <a href='/main/contact'>Contact</a>
-                <a href='/books/list'>My Books</a>
+                <a href='/books/list'>My Books</a><br>
+                <span style="float: right!important; font-size: 11px">Developed by <a href="https://uniwork-it.de" target="_blank">UNIWORK-IT</a></span>
             </div>
         </div>
+
     </div>
 </footer>

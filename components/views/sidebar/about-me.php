@@ -12,7 +12,7 @@
     <h3 class="akea-widget-title"><span class=akea-widget-head-text>About Me</span><span
             class=akea-widget-head-divider></span></h3><span class=clear></span>
     <div class=textwidget>
-        <p><img class="alignnone size-full wp-image-6650" src='<?= Yii::getAlias('@web').'/upload/avatars/'.$text['photo'] ?>' alt="my photo" width='120' style="border-radius: 60px">
+        <p><img class="alignnone size-full wp-image-6650" src='<?= Yii::getAlias('@web').'/upload/avatars/33.jpg' ?>' alt="my photo" width='120' style="border-radius: 10px">
             <br>
         <?= substr($text['text'], 0, 250).'...' ?>
         </p>

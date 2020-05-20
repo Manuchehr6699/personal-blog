@@ -18,16 +18,15 @@ $this->params['breadcrumbs'][] = $this->title;
                 <?php if(!empty($data)): ?>
                     <div class="akea-above-logo" style="float: left; margin: 0px 10px 0px 0px">
                         <a href="/main/about-me">
-                            <img src="/upload/avatars/<?= $data[0]['photo'] ?>"
-                                                      alt="my-photo" width="348" height="252"
+                            <img src="/upload/avatars/<?= $data[0]['photo'] ?>" alt="my-photo" width="348" height="252"
                                                       title="<?= $data[0]['first_name'].' '.$data[0]['last_name'] ?>" style="border-radius: 40px">
                         </a>
                     </div>
+
                     <?php foreach ($data as $text): ?>
                         <?= $text['text'] ?>
                     <?php endforeach; ?>
                 <?php endif; ?>
-                
                 <?= $this->render('/layouts/sharing_buttons') ?>
             </div>
         </div>

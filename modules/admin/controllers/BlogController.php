@@ -8,7 +8,7 @@ use app\modules\admin\models\ModelStatus;
 use app\modules\admin\models\UploadForm;
 use Cocur\Slugify\Slugify;
 use Yii;
-use app\models\blog;
+use app\models\Blog;
 use app\modules\admin\models\BlogSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;

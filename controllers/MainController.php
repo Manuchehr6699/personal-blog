@@ -129,7 +129,6 @@ class MainController extends Controller
         if ($model->load(Yii::$app->request->post())) {
             $model->created_at = time();
             $model->status = 0;
-
             try {
                 if ($model->save()) {
                     Yii::$app->session->setFlash('saved', 'Email successfully sent!');

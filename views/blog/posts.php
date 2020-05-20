@@ -59,7 +59,7 @@ $this->title = 'Posts';
                             </div>
                         </div>
                         <div class=gdlr-core-blog-content>
-                            <?= $post['text'] ?>
+                            <?= substr($post['text'], 0, 623).'...' ?>
                         </div>
                         <div class="gdlr-core-social-share-item gdlr-core-item-pdb gdlr-core-left-align gdlr-core-social-share-left-text gdlr-core-style-plain" id="div_2207_4">
                             <span class="gdlr-core-social-share-wrap">
